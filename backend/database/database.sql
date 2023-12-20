@@ -5,7 +5,7 @@ CREATE SCHEMA IF NOT EXISTS `street_art` DEFAULT CHARACTER SET utf8 ;
 USE `street_art` ;
 
 -- -----------------------------------------------------
--- Table `street_art`.`user`
+-- Table USER
 -- -----------------------------------------------------
 CREATE TABLE IF NOT EXISTS `street_art`.`user` (
   `id` INT NOT NULL AUTO_INCREMENT,
@@ -21,7 +21,7 @@ CREATE TABLE IF NOT EXISTS `street_art`.`user` (
   PRIMARY KEY (`id`));
 
 -- -----------------------------------------------------
--- Table `street_art`.`avatar_image`
+-- Table AVATAR_IMAGE
 -- -----------------------------------------------------
 CREATE TABLE IF NOT EXISTS `street_art`.`avatar_image` (
   `id` INT NOT NULL AUTO_INCREMENT,
@@ -31,7 +31,7 @@ CREATE TABLE IF NOT EXISTS `street_art`.`avatar_image` (
   PRIMARY KEY (`id`));
 
 -- -----------------------------------------------------
--- Table `street_art`.`avatar_user`
+-- Table AVATAR_USER
 -- -----------------------------------------------------
 CREATE TABLE IF NOT EXISTS `street_art`.`avatar_user` (
   `avatar_image_id` INT NOT NULL,
@@ -51,7 +51,7 @@ CREATE TABLE IF NOT EXISTS `street_art`.`avatar_user` (
     ON UPDATE NO ACTION);
 
 -- -----------------------------------------------------
--- Table `street_art`.`artist`
+-- Table ARTIST
 -- -----------------------------------------------------
 CREATE TABLE IF NOT EXISTS `street_art`.`artist` (
   `id` INT NOT NULL AUTO_INCREMENT,
@@ -61,10 +61,10 @@ CREATE TABLE IF NOT EXISTS `street_art`.`artist` (
   PRIMARY KEY (`id`));
 
 -- -----------------------------------------------------
--- Table `street_art`.`artwork`
+-- Table ARTWORK
 -- -----------------------------------------------------
 CREATE TABLE IF NOT EXISTS `street_art`.`artwork` (
-  `id` INT NOT NULL AUTO_INCREMENT,
+  `id` INT PRIMARY KEY NOT NULL AUTO_INCREMENT,
   `image` VARCHAR(100) NOT NULL,
   `longitude` VARCHAR(30) NOT NULL,
   `latitude` VARCHAR(30) NOT NULL,
@@ -74,8 +74,7 @@ CREATE TABLE IF NOT EXISTS `street_art`.`artwork` (
   `ask_to_archived` TINYINT(1) NOT NULL,
   `is_archived` TINYINT(1) NOT NULL,
   `is_validate` TINYINT(1) NOT NULL,
-  `artist_id` INT NOT NULL,
-  PRIMARY KEY (`id`, `artist_id`),
+  `artist_id` INT,
   INDEX `fk_artwork_artist1_idx` (`artist_id` ASC) VISIBLE,
   CONSTRAINT `fk_artwork_artist1`
     FOREIGN KEY (`artist_id`)
@@ -84,7 +83,7 @@ CREATE TABLE IF NOT EXISTS `street_art`.`artwork` (
     ON UPDATE NO ACTION);
 
 -- -----------------------------------------------------
--- Table `street_art`.`photo`
+-- Table PHOTO
 -- -----------------------------------------------------
 CREATE TABLE IF NOT EXISTS `street_art`.`photo` (
   `id` INT NOT NULL AUTO_INCREMENT,
@@ -107,7 +106,7 @@ CREATE TABLE IF NOT EXISTS `street_art`.`photo` (
     ON UPDATE NO ACTION);
 
 -- -----------------------------------------------------
--- Table `street_art`.`article`
+-- Table ARTICLE
 -- -----------------------------------------------------
 CREATE TABLE IF NOT EXISTS `street_art`.`article` (
   `id` INT NOT NULL AUTO_INCREMENT,

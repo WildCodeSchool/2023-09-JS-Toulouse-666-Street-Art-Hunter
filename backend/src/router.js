@@ -3,21 +3,17 @@ const express = require("express");
 const router = express.Router();
 
 /* ************************************************************************* */
-// Define Your API Routes Here
+// Définir vos routes API ici
 /* ************************************************************************* */
 
-// Import itemControllers module for handling item-related operations
-const itemControllers = require("./controllers/itemControllers");
+// Importer le module artworkControllers pour gérer les opérations liées aux œuvres d'art
+const artworkControllers = require("./controllers/artworkControllers");
 
-// Route to get a list of items
-router.get("/items", itemControllers.browse);
-
-// Route to get a specific item by ID
-router.get("/items/:id", itemControllers.read);
-
-// Route to add a new item
-router.post("/items", itemControllers.add);
-
-/* ************************************************************************* */
+// Route for artworks
+router.get("/artworks", artworkControllers.browse);
+router.get("/artworks/:id", artworkControllers.read);
+router.post("/artworks", artworkControllers.add);
+router.put("/artworks/:id", artworkControllers.edit);
+router.delete("/artworks/:id", artworkControllers.destroy);
 
 module.exports = router;
