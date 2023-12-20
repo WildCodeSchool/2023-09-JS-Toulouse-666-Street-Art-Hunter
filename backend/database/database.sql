@@ -118,3 +118,12 @@ CREATE TABLE IF NOT EXISTS `street_art`.`article` (
   `image` VARCHAR(45) NULL,
   `is_archived` TINYINT(1) NOT NULL,
   PRIMARY KEY (`id`));
+
+-- -----------------------------------------------------
+-- Table `street_art`.`item`
+-- -----------------------------------------------------
+
+CREATE TABLE item (
+  id int unsigned primary key auto_increment not null,
+  title varchar(255) not null
+);
