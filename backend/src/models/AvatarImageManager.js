@@ -5,7 +5,7 @@ class AvatarImageManager extends AbstractManager {
     super({ table: "avatar_image" });
   }
 
-  // ------------------ Méthode GET ------------------
+  // --------- CRUD ---------
 
   // ------------------ Méthode POST ------------------
   async create(avatarImage) {
@@ -29,8 +29,6 @@ class AvatarImageManager extends AbstractManager {
     );
     return rows;
   }
-
-  // ------------------ Méthode DELETE ------------------
 }
 
 module.exports = AvatarImageManager;

@@ -7,14 +7,14 @@ const PhotoManager = require("./models/PhotoManager");
 const UserManager = require("./models/UserManager");
 const ArtworkManager = require("./models/ArtworkManager");
 const AvatarImageManager = require("./models/AvatarImageManager");
+const ArticleManager = require("./models/ArticleManager");
 
 const managers = [
   ArtworkManager,
   PhotoManager,
   UserManager,
   AvatarImageManager,
-  // Add other managers here
-  // Add other managers here
+  ArticleManager,
 ];
 
 // Create an empty object to hold data managers for different tables

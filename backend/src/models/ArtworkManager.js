@@ -5,7 +5,7 @@ class ArtworkManager extends AbstractManager {
     super({ table: "artwork" });
   }
 
-  // ------------------ Méthode GET BY ID ------------------
+  // --------- CRUD ---------
 
   // ------------------ Méthode POST ------------------
   async create(artwork) {
@@ -70,8 +70,6 @@ class ArtworkManager extends AbstractManager {
     );
     return rows;
   }
-
-  // ------------------ Méthode DELETE ------------------
 }
 
 module.exports = ArtworkManager;
