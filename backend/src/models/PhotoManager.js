@@ -7,8 +7,9 @@ class PhotoManager extends AbstractManager {
     super({ table: "photo" });
   }
 
-  // The C of CRUD - Create operation
+  // --------- CRUD ---------
 
+  // ------------------ Méthode POST ------------------
   async create(photo) {
     // Execute the SQL INSERT query to add a new photo to the "photo" table
     const [result] = await this.database.query(
@@ -20,11 +21,7 @@ class PhotoManager extends AbstractManager {
     return result.insertId;
   }
 
-  // The Rs of CRUD - Read operations
-
-  // The U of CRUD - Update operation
-  // TODO: Implement the update operation to modify an existing photo
-
+  // ------------------ Méthode PUT ------------------
   async update(id, photo) {
     // Execute the SQL SELECT query to update on photo from the "photo" table
     const [rows] = await this.database.query(
@@ -33,9 +30,6 @@ class PhotoManager extends AbstractManager {
     );
     return rows;
   }
-
-  // The D of CRUD - Delete operation
-  // TODO: Implement the delete operation to remove an photo by its ID
 }
 
 module.exports = PhotoManager;
