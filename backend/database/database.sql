@@ -89,11 +89,13 @@ CREATE TABLE IF NOT EXISTS `street_art`.`photo` (
   `id` INT NOT NULL AUTO_INCREMENT,
   `image` VARCHAR(100) NOT NULL,
   `is_validated` TINYINT(1) NOT NULL,
-  `user_id` INT NOT NULL,
-  `artwork_id` INT NOT NULL,
-  PRIMARY KEY (`id`, `user_id`, `artwork_id`),
-  INDEX `fk_photo_user1_idx` (`user_id` ASC) VISIBLE,
-  INDEX `fk_photo_artwork1_idx` (`artwork_id` ASC) VISIBLE,
+  `user_id` INT,
+  `artwork_id` INT,
+  PRIMARY KEY (`id`),
+  -- -----------------------------------------------------
+-- penser a remetre user et artwork non nullable !!!!!!
+-- -----------------------------------------------------
+
   CONSTRAINT `fk_photo_user1`
     FOREIGN KEY (`user_id`)
     REFERENCES `street_art`.`user` (`id`)
@@ -103,7 +105,8 @@ CREATE TABLE IF NOT EXISTS `street_art`.`photo` (
     FOREIGN KEY (`artwork_id`)
     REFERENCES `street_art`.`artwork` (`id`)
     ON DELETE NO ACTION
-    ON UPDATE NO ACTION);
+    ON UPDATE NO ACTION
+  );
 
 -- -----------------------------------------------------
 -- Table ARTICLE

@@ -28,19 +28,6 @@ class UserManager extends AbstractManager {
 
   // The Rs of CRUD - Read operations
 
-  async read(id) {
-    const [rows] = await this.database.query(
-      `SELECT * FROM ${this.table} WHERE id = ?`,
-      [id]
-    );
-    return rows[0];
-  }
-
-  async readAll() {
-    const [rows] = await this.database.query(`SELECT * FROM ${this.table}`);
-    return rows;
-  }
-
   // The U of CRUD - Update operation
 
   async update(id, user) {
@@ -63,14 +50,6 @@ class UserManager extends AbstractManager {
   }
 
   // The D of CRUD - Delete operation
-
-  async delete(id) {
-    const [rows] = await this.database.query(
-      `DELETE FROM ${this.table} WHERE id = ?`,
-      [id]
-    );
-    return rows;
-  }
 }
 
 module.exports = UserManager;

@@ -10,6 +10,27 @@ class AbstractManager {
     // Provide access to the database client
     this.database = database;
   }
+
+  async read(id) {
+    const [rows] = await this.database.query(
+      `SELECT * FROM ${this.table} WHERE id = ?`,
+      [id]
+    );
+    return rows[0];
+  }
+
+  async readAll() {
+    const [rows] = await this.database.query(`SELECT * FROM ${this.table}`);
+    return rows;
+  }
+
+  async delete(id) {
+    const [rows] = await this.database.query(
+      `DELETE FROM ${this.table} WHERE id = ?`,
+      [id]
+    );
+    return rows;
+  }
 }
 
 // Ready to export
