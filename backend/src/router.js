@@ -3,20 +3,34 @@ const express = require("express");
 const router = express.Router();
 
 /* ************************************************************************* */
-// Define Your API Routes Here
+// Définir vos routes API ici
 /* ************************************************************************* */
 
-// Import itemControllers module for handling item-related operations
-const itemControllers = require("./controllers/itemControllers");
+// Importer les modules :
+const artworkControllers = require("./controllers/artworkControllers");
+const avatarImageControllers = require("./controllers/avatarImageControllers");
+const userControllers = require("./controllers/userControllers");
 
-// Route to get a list of items
-router.get("/items", itemControllers.browse);
+// Route for artworks
+router.get("/artworks", artworkControllers.browse);
+router.get("/artworks/:id", artworkControllers.read);
+router.post("/artworks", artworkControllers.add);
+router.put("/artworks/:id", artworkControllers.edit);
+router.delete("/artworks/:id", artworkControllers.destroy);
 
-// Route to get a specific item by ID
-router.get("/items/:id", itemControllers.read);
+// Route for avatar_image
+router.get("/avatars", avatarImageControllers.browse);
+router.get("/avatars/:id", avatarImageControllers.read);
+router.post("/avatars", avatarImageControllers.add);
+router.put("/avatars/:id", avatarImageControllers.edit);
+router.delete("/avatars/:id", avatarImageControllers.destroy);
 
-// Route to add a new item
-router.post("/items", itemControllers.add);
+// Route for users
+router.get("/users", userControllers.browse);
+router.get("/users/:id", userControllers.read);
+router.post("/users", userControllers.add);
+router.put("/users/:id", userControllers.edit);
+router.delete("/users/:id", userControllers.destroy);
 
 /* ************************************************************************* */
 
