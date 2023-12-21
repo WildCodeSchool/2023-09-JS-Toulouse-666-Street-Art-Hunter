@@ -11,11 +11,11 @@ describe("GET /api/artworks", () => {
       latitude: "1°27'18.9°E",
       adress: "1 Rue de Valenciennes, 31000 Toulouse",
       description: "oeuvre expérimentale",
-      date_published: "2023-12-19",
-      ask_to_archived: 0,
-      is_archived: 0,
-      is_validate: 1,
-      artist_id: null,
+      datePublished: "2023-12-19",
+      askToArchived: 0,
+      isArchived: 0,
+      isValidate: 1,
+      artistId: null,
     };
 
     // Create a sample artwork in the database
@@ -49,11 +49,11 @@ describe("GET /api/artworks/:id", () => {
       latitude: "1°27'18.9°E",
       adress: "1 Rue de Valenciennes, 31000 Toulouse",
       description: "oeuvre expérimentale",
-      date_published: "2023-12-19",
-      ask_to_archived: 0,
-      is_archived: 0,
-      is_validate: 1,
-      artist_id: null,
+      datePublished: "2023-12-19",
+      askToArchived: 0,
+      isArchived: 0,
+      isValidate: 1,
+      artistId: null,
     };
 
     // Create a sample artwork in the database
@@ -91,11 +91,11 @@ describe("POST /api/artworks", () => {
       latitude: "1°27'18.9°E",
       adress: "1 Rue de Valenciennes, 31000 Toulouse",
       description: "oeuvre expérimentale",
-      date_published: "2023-12-19",
-      ask_to_archived: 0,
-      is_archived: 0,
-      is_validate: 1,
-      artist_id: null,
+      datePublished: "2023-12-19",
+      askToArchived: 0,
+      isArchived: 0,
+      isValidate: 1,
+      artistId: null,
     };
 
     // Send a POST request to the /api/artworks endpoint with a test artwork
@@ -107,7 +107,7 @@ describe("POST /api/artworks", () => {
     expect(response.body.insertId).toEqual(expect.any(Number));
 
     // Check if the newly added artwork exists in the database
-    const foundArtwork = await tables.artwork.getById(response.body.insertId);
+    const foundArtwork = await tables.artwork.read(response.body.insertId);
 
     // Assertions
     expect(foundArtwork).toBeDefined();
@@ -127,11 +127,11 @@ describe("PUT /api/artworks/:id", () => {
       latitude: "1°27'18.9°E",
       adress: "1 Rue de Valenciennes, 31000 Toulouse",
       description: "oeuvre expérimentale",
-      date_published: "2023-12-19",
-      ask_to_archived: 0,
-      is_archived: 0,
-      is_validate: 1,
-      artist_id: null,
+      datePublished: "2023-12-19",
+      askToArchived: 0,
+      isArchived: 0,
+      isValidate: 1,
+      artistId: null,
     };
 
     // Create a sample artwork in the database
@@ -139,16 +139,16 @@ describe("PUT /api/artworks/:id", () => {
 
     // Define an updated artwork object
     const updatedArtwork = {
-      image: "ex.img",
-      longitude: "43°35'90.4°N",
-      latitude: "1°27'18.9°E",
-      adress: "1 Rue de Valenciennes, 13000 Marseille",
-      description: "bleue",
-      date_published: "2023-12-19",
-      ask_to_archived: 0,
-      is_archived: 0,
-      is_validate: 0,
-      artist_id: null,
+      image: "exemple.img",
+      longitude: "43°35'46.4°S",
+      latitude: "1°27'18.9°S",
+      adress: "10 Rue de Valences, 13000 Marseille",
+      description: "Oeuvre cool",
+      datePublished: "2023-10-17",
+      askToArchived: 0,
+      isArchived: 1,
+      isValidate: 1,
+      artistId: null,
     };
 
     // Send a PUT request to the /api/artworks/:id endpoint with updated data
@@ -160,7 +160,7 @@ describe("PUT /api/artworks/:id", () => {
     expect(response.status).toBe(204);
 
     // Check if the artwork has been updated in the database
-    const foundArtwork = await tables.artwork.getById(insertId);
+    const foundArtwork = await tables.artwork.read(insertId);
 
     // Assertions
     expect(foundArtwork).toBeDefined();
@@ -178,11 +178,11 @@ describe("DELETE /api/artworks/:id", () => {
       latitude: "1°27'18.9°E",
       adress: "1 Rue de Valenciennes, 31000 Toulouse",
       description: "oeuvre expérimentale",
-      date_published: "2023-12-19",
-      ask_to_archived: 0,
-      is_archived: 0,
-      is_validate: 1,
-      artist_id: null,
+      datePublished: "2023-12-19",
+      askToArchived: 0,
+      isArchived: 0,
+      isValidate: 1,
+      artistId: null,
     };
 
     // Create a sample artwork in the database
@@ -195,7 +195,7 @@ describe("DELETE /api/artworks/:id", () => {
     expect(response.status).toBe(204);
 
     // Check if the artwork has been deleted from the database
-    const foundArtwork = await tables.artwork.getById(insertId);
+    const foundArtwork = await tables.artwork.read(insertId);
 
     // Assertions
     expect(foundArtwork).toBeUndefined();
