@@ -8,8 +8,8 @@ describe("GET /api/photos", () => {
     const testPhoto = {
       image: "liens vers l'image",
       is_validated: 1,
-      user_id: 4,
-      artwork_id: 4,
+      user_id: 1,
+      artwork_id: 1,
     };
 
     // Create a sample Photo in the database
@@ -45,8 +45,8 @@ describe("GET /api/photos/:id", () => {
     const testPhoto = {
       image: "liens vers l'image",
       is_validated: 1,
-      user_id: 4,
-      artwork_id: 4,
+      user_id: 1,
+      artwork_id: 1,
     };
 
     // Create a sample photo in the database
@@ -88,8 +88,8 @@ describe("POST /api/photos", () => {
     const testPhoto = {
       image: "liens vers l'image",
       is_validated: 1,
-      user_id: 4,
-      artwork_id: 4,
+      user_id: 1,
+      artwork_id: 1,
     };
 
     // Send a POST request to the /api/photos endpoint with a test photo
@@ -128,8 +128,8 @@ describe("PUT /api/photos/:id", () => {
     const testPhoto = {
       image: "liens vers l'image",
       is_validated: 1,
-      user_id: 4,
-      artwork_id: 4,
+      user_id: 1,
+      artwork_id: 1,
     };
 
     // Create a sample photo in the database
@@ -139,8 +139,8 @@ describe("PUT /api/photos/:id", () => {
     const updatedPhoto = {
       image: "liens vers l'image modifier",
       is_validated: 0,
-      user_id: 4,
-      artwork_id: 4,
+      user_id: 1,
+      artwork_id: 1,
     };
 
     // Send a PUT request to the /api/photos/:id endpoint with updated data
@@ -177,8 +177,8 @@ describe("DELETE /api/photos/:id", () => {
     const testPhoto = {
       image: "liens vers l'image modifier",
       is_validated: 0,
-      user_id: 4,
-      artwork_id: 4,
+      user_id: 1,
+      artwork_id: 1,
     };
 
     // Create a sample photo in the database

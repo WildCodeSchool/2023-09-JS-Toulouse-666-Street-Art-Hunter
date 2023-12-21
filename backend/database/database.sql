@@ -91,21 +91,21 @@ CREATE TABLE IF NOT EXISTS `street_art`.`photo` (
   `is_validated` TINYINT(1) NOT NULL,
   `user_id` INT,
   `artwork_id` INT,
-  PRIMARY KEY (`id`)
+  PRIMARY KEY (`id`),
   -- -----------------------------------------------------
 -- penser a remetre user et artwork non nullable !!!!!!
 -- -----------------------------------------------------
 
-  -- CONSTRAINT `fk_photo_user1`
-  --   FOREIGN KEY (`user_id`)
-  --   REFERENCES `street_art`.`user` (`id`)
-  --   ON DELETE NO ACTION
-  --   ON UPDATE NO ACTION,
-  -- CONSTRAINT `fk_photo_artwork1`
-  --   FOREIGN KEY (`artwork_id`)
-  --   REFERENCES `street_art`.`artwork` (`id`)
-  --   ON DELETE NO ACTION
-  --   ON UPDATE NO ACTION
+  CONSTRAINT `fk_photo_user1`
+    FOREIGN KEY (`user_id`)
+    REFERENCES `street_art`.`user` (`id`)
+    ON DELETE NO ACTION
+    ON UPDATE NO ACTION,
+  CONSTRAINT `fk_photo_artwork1`
+    FOREIGN KEY (`artwork_id`)
+    REFERENCES `street_art`.`artwork` (`id`)
+    ON DELETE NO ACTION
+    ON UPDATE NO ACTION
   );
 
 -- -----------------------------------------------------
