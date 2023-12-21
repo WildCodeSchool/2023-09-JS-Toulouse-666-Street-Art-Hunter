@@ -3,32 +3,43 @@ const express = require("express");
 const router = express.Router();
 
 /* ************************************************************************* */
-// Define Your API Routes Here
+// Définir vos routes API ici
 /* ************************************************************************* */
 
 // Import itemControllers module for handling item-related operations
 const itemControllers = require("./controllers/itemControllers");
-const photoControllers = require("./controllers/photoControllers");
 
 // Route to get a list of items
 router.get("/items", itemControllers.browse);
-router.get("/photos", photoControllers.browse);
 
 // Route to get a specific item by ID
 router.get("/items/:id", itemControllers.read);
-router.get("/photos/:id", photoControllers.read);
 
 // Route to add a new item
 router.post("/items", itemControllers.add);
-router.post("/photos", photoControllers.add);
 
 // Route to modifie a item
-router.put("/photos/:id", photoControllers.edit);
 
 // Route to destroy a item
-router.delete("/photos/:id", photoControllers.destroy);
 
 /* ************************************************************************* */
+const photoControllers = require("./controllers/photoControllers");
+
+router.get("/photos", photoControllers.browse);
+router.get("/photos/:id", photoControllers.read);
+router.post("/photos", photoControllers.add);
+router.put("/photos/:id", photoControllers.edit);
+router.delete("/photos/:id", photoControllers.destroy);
+
+// Importer le module artworkControllers pour gérer les opérations liées aux œuvres d'art
+const artworkControllers = require("./controllers/artworkControllers");
+
+// Route for artworks
+router.get("/artworks", artworkControllers.browse);
+router.get("/artworks/:id", artworkControllers.read);
+router.post("/artworks", artworkControllers.add);
+router.put("/artworks/:id", artworkControllers.edit);
+router.delete("/artworks/:id", artworkControllers.destroy);
 
 // Import userControllers module for handling user-related operations
 const userControllers = require("./controllers/userControllers");
