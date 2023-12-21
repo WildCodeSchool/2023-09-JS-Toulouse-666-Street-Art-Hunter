@@ -26,8 +26,6 @@ class UserManager extends AbstractManager {
     return result.insertId;
   }
 
-  // The Rs of CRUD - Read operations
-
   // The U of CRUD - Update operation
 
   async update(id, user) {
@@ -48,8 +46,6 @@ class UserManager extends AbstractManager {
     );
     return rows;
   }
-
-  // The D of CRUD - Delete operation
 }
 
 module.exports = UserManager;
