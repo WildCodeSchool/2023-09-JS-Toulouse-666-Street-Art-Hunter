@@ -5,8 +5,9 @@ class UserManager extends AbstractManager {
     super({ table: "user" });
   }
 
-  // The C of CRUD - Create operation
+  // --------- CRUD ---------
 
+  // ------------------ Méthode POST ------------------
   async create(user) {
     // Execute the SQL INSERT query to add a new user to the "user" table
     const [result] = await this.database.query(
@@ -26,10 +27,7 @@ class UserManager extends AbstractManager {
     return result.insertId;
   }
 
-  // The Rs of CRUD - Read operations
-
-  // The U of CRUD - Update operation
-
+  // ------------------ Méthode PUT ------------------
   async update(id, user) {
     const [rows] = await this.database.query(
       `UPDATE ${this.table} SET name = ?, description = ?, email = ?, password = ?, score = ?, is_admin = ?, is_banned = ?, selected_avatar = ?, border = ? WHERE id = ?`,
@@ -48,8 +46,6 @@ class UserManager extends AbstractManager {
     );
     return rows;
   }
-
-  // The D of CRUD - Delete operation
 }
 
 module.exports = UserManager;
