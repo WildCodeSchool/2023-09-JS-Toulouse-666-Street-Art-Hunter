@@ -5,12 +5,6 @@ class AvatarImageManager extends AbstractManager {
     super({ table: "avatar_image" });
   }
 
-  // ------------------ Méthode GET ------------------
-  async readAll() {
-    const [rows] = await this.database.query(`SELECT * FROM ${this.table}`);
-    return rows;
-  }
-
   // ------------------ Méthode GET BY ID ------------------
   async read(id) {
     const parseId = parseInt(id, 10);
@@ -19,6 +13,12 @@ class AvatarImageManager extends AbstractManager {
       [parseId]
     );
     return rows[0];
+  }
+
+  // ------------------ Méthode GET ------------------
+  async readAll() {
+    const [rows] = await this.database.query(`SELECT * FROM ${this.table}`);
+    return rows;
   }
 
   // ------------------ Méthode POST ------------------
