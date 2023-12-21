@@ -1,3 +1,5 @@
+SET foreign_key_checks = 0;
+
 -- -----------------------------------------------------
 -- Schema street_art
 -- -----------------------------------------------------
@@ -16,7 +18,7 @@ CREATE TABLE IF NOT EXISTS `street_art`.`user` (
   `score` INT NOT NULL,
   `is_admin` TINYINT(1) NOT NULL,
   `is_banned` TINYINT(1) NOT NULL,
-  `selected_avatar` INT(200) NOT NULL,
+  `selected_avatar` LONGTEXT NOT NULL,
   `border` VARCHAR(7) NOT NULL,
   PRIMARY KEY (`id`));
 
@@ -27,7 +29,7 @@ CREATE TABLE IF NOT EXISTS `street_art`.`avatar_image` (
   `id` INT NOT NULL AUTO_INCREMENT,
   `name` VARCHAR(45) NOT NULL,
   `objective` VARCHAR(300) NULL,
-  `img_url` VARCHAR(100) NOT NULL,
+  `img_url` LONGTEXT NOT NULL,
   PRIMARY KEY (`id`));
 
 -- -----------------------------------------------------
@@ -42,13 +44,13 @@ CREATE TABLE IF NOT EXISTS `street_art`.`avatar_user` (
   CONSTRAINT `fk_avatar_image_has_User_avatar_image`
     FOREIGN KEY (`avatar_image_id`)
     REFERENCES `street_art`.`avatar_image` (`id`)
-    ON DELETE NO ACTION
-    ON UPDATE NO ACTION,
+    ON DELETE CASCADE
+    ON UPDATE CASCADE,
   CONSTRAINT `fk_avatar_image_has_User_User1`
     FOREIGN KEY (`user_id`)
     REFERENCES `street_art`.`user` (`id`)
-    ON DELETE NO ACTION
-    ON UPDATE NO ACTION);
+    ON DELETE CASCADE
+    ON UPDATE CASCADE);
 
 -- -----------------------------------------------------
 -- Table ARTIST
@@ -57,7 +59,7 @@ CREATE TABLE IF NOT EXISTS `street_art`.`artist` (
   `id` INT NOT NULL AUTO_INCREMENT,
   `name` VARCHAR(45) NOT NULL,
   `description` VARCHAR(5000) NOT NULL,
-  `image` VARCHAR(100) NULL,
+  `image` LONGTEXT NULL,
   PRIMARY KEY (`id`));
 
 -- -----------------------------------------------------
@@ -65,7 +67,7 @@ CREATE TABLE IF NOT EXISTS `street_art`.`artist` (
 -- -----------------------------------------------------
 CREATE TABLE IF NOT EXISTS `street_art`.`artwork` (
   `id` INT PRIMARY KEY NOT NULL AUTO_INCREMENT,
-  `image` VARCHAR(100) NOT NULL,
+  `image` LONGTEXT NOT NULL,
   `longitude` VARCHAR(30) NOT NULL,
   `latitude` VARCHAR(30) NOT NULL,
   `adress` VARCHAR(100) NOT NULL,
@@ -79,32 +81,29 @@ CREATE TABLE IF NOT EXISTS `street_art`.`artwork` (
   CONSTRAINT `fk_artwork_artist1`
     FOREIGN KEY (`artist_id`)
     REFERENCES `street_art`.`artist` (`id`)
-    ON DELETE NO ACTION
-    ON UPDATE NO ACTION);
+    ON DELETE CASCADE
+    ON UPDATE CASCADE);
 
 -- -----------------------------------------------------
 -- Table PHOTO
 -- -----------------------------------------------------
 CREATE TABLE IF NOT EXISTS `street_art`.`photo` (
   `id` INT NOT NULL AUTO_INCREMENT,
-  `image` VARCHAR(100) NOT NULL,
+  `image` LONGTEXT NOT NULL,
   `is_validated` TINYINT(1) NOT NULL,
-  `user_id` INT,
-  `artwork_id` INT,
+  `user_id` INT NOT NULL,
+  `artwork_id` INT NOT NULL,
   PRIMARY KEY (`id`),
-  -- -----------------------------------------------------
--- penser à remettre user et artwork non nullable !!!!!!
--- -----------------------------------------------------
   CONSTRAINT `fk_photo_user1`
     FOREIGN KEY (`user_id`)
     REFERENCES `street_art`.`user` (`id`)
-    ON DELETE NO ACTION
-    ON UPDATE NO ACTION,
+    ON DELETE CASCADE
+    ON UPDATE CASCADE,
   CONSTRAINT `fk_photo_artwork1`
     FOREIGN KEY (`artwork_id`)
     REFERENCES `street_art`.`artwork` (`id`)
-    ON DELETE NO ACTION
-    ON UPDATE NO ACTION
+    ON DELETE CASCADE
+    ON UPDATE CASCADE
   );
 
 -- -----------------------------------------------------
@@ -114,6 +113,8 @@ CREATE TABLE IF NOT EXISTS `street_art`.`article` (
   `id` INT NOT NULL AUTO_INCREMENT,
   `title` VARCHAR(50) NOT NULL,
   `description` VARCHAR(5000) NOT NULL,
-  `image` VARCHAR(45) NULL,
+  `image` LONGTEXT NULL,
   `is_archived` TINYINT(1) NOT NULL,
   PRIMARY KEY (`id`));
+
+SET foreign_key_checks = 1;
