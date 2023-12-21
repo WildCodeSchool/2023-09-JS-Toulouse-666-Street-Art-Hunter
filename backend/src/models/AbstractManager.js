@@ -1,7 +1,7 @@
 // Import database client
 const database = require("../../database/client");
 
-// Provide database access through AbstractManager classssss
+// Provide database access through AbstractManager class
 class AbstractManager {
   constructor({ table }) {
     // Store the table name
