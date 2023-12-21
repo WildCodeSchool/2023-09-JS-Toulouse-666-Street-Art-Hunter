@@ -3,7 +3,7 @@ const tables = require("../tables");
 // ------------------ Méthode GET ------------------
 const browse = async (req, res, next) => {
   try {
-    const response = await tables.artwork.readAll();
+    const response = await tables.avatar_image.readAll();
     res.status(200).json(response);
   } catch (err) {
     console.error(err);
@@ -14,7 +14,7 @@ const browse = async (req, res, next) => {
 // ------------------ Méthode GET BY ID ------------------
 const read = async (req, res, next) => {
   try {
-    const response = await tables.artwork.read(req.params.id);
+    const response = await tables.avatar_image.read(req.params.id);
     if (response == null) {
       res.sendStatus(404);
     } else {
@@ -29,7 +29,7 @@ const read = async (req, res, next) => {
 // ------------------ Méthode POST ------------------
 const add = async (req, res, next) => {
   try {
-    const insertId = await tables.artwork.create(req.body);
+    const insertId = await tables.avatar_image.create(req.body);
     console.info(req.body);
     res.status(201).json({ insertId });
   } catch (err) {
@@ -41,7 +41,7 @@ const add = async (req, res, next) => {
 // ------------------ Méthode PUT ------------------
 const edit = async (req, res, next) => {
   try {
-    const response = await tables.artwork.update(req.params.id, req.body);
+    const response = await tables.avatar_image.update(req.params.id, req.body);
     if (response.affectedRows === 0) {
       res.sendStatus(404);
     } else {
@@ -55,7 +55,7 @@ const edit = async (req, res, next) => {
 // ------------------ Méthode DELETE ------------------
 const destroy = async (req, res, next) => {
   try {
-    const response = await tables.artwork.delete(req.params.id);
+    const response = await tables.avatar_image.delete(req.params.id);
     if (response.affectedRows === 0) {
       res.sendStatus(404);
     } else {

@@ -6,7 +6,7 @@ class ArtworkManager extends AbstractManager {
   }
 
   // ------------------ Méthode GET BY ID ------------------
-  async getById(id) {
+  async read(id) {
     const parseId = parseInt(id, 10);
     const [rows] = await this.database.query(
       `SELECT * FROM ${this.table} WHERE id = ?`,
@@ -16,7 +16,7 @@ class ArtworkManager extends AbstractManager {
   }
 
   // ------------------ Méthode GET ------------------
-  async getAll() {
+  async readAll() {
     const [rows] = await this.database.query(`SELECT * FROM ${this.table}`);
     return rows;
   }
