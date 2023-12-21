@@ -22,25 +22,6 @@ class PhotoManager extends AbstractManager {
 
   // The Rs of CRUD - Read operations
 
-  async read(id) {
-    // Execute the SQL SELECT query to retrieve a specific photo by its ID
-    const [rows] = await this.database.query(
-      `select * from ${this.table} where id = ?`,
-      [id]
-    );
-
-    // Return the first row of the result, which represents the photo
-    return rows[0];
-  }
-
-  async readAll() {
-    // Execute the SQL SELECT query to retrieve all photos from the "photo" table
-    const [rows] = await this.database.query(`select * from ${this.table}`);
-
-    // Return the array of photos
-    return rows;
-  }
-
   // The U of CRUD - Update operation
   // TODO: Implement the update operation to modify an existing photo
 
@@ -55,14 +36,6 @@ class PhotoManager extends AbstractManager {
 
   // The D of CRUD - Delete operation
   // TODO: Implement the delete operation to remove an photo by its ID
-
-  async delete(id) {
-    const [rows] = await this.database.query(
-      `delete from ${this.table} where id = ?`,
-      [id]
-    );
-    return rows;
-  }
 }
 
 module.exports = PhotoManager;

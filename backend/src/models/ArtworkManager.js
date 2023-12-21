@@ -6,20 +6,6 @@ class ArtworkManager extends AbstractManager {
   }
 
   // ------------------ Méthode GET BY ID ------------------
-  async read(id) {
-    const parseId = parseInt(id, 10);
-    const [rows] = await this.database.query(
-      `SELECT * FROM ${this.table} WHERE id = ?`,
-      [parseId]
-    );
-    return rows[0];
-  }
-
-  // ------------------ Méthode GET ------------------
-  async readAll() {
-    const [rows] = await this.database.query(`SELECT * FROM ${this.table}`);
-    return rows;
-  }
 
   // ------------------ Méthode POST ------------------
   async create(artwork) {
@@ -86,13 +72,6 @@ class ArtworkManager extends AbstractManager {
   }
 
   // ------------------ Méthode DELETE ------------------
-  async delete(id) {
-    const [rows] = await this.database.query(
-      `DELETE FROM ${this.table} WHERE id = ?`,
-      [id]
-    );
-    return rows;
-  }
 }
 
 module.exports = ArtworkManager;
