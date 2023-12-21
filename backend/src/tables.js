@@ -9,6 +9,7 @@ const PhotoManager = require("./models/PhotoManager");
 const UserManager = require("./models/UserManager");
 const ArtworkManager = require("./models/ArtworkManager");
 const AvatarImageManager = require("./models/AvatarImageManager");
+const ArtistManager = require("./models/ArtistManager");
 
 const managers = [
   ItemManager,
@@ -16,6 +17,7 @@ const managers = [
   PhotoManager,
   UserManager,
   AvatarImageManager,
+  ArtistManager,
   // Add other managers here
   // Add other managers here
 ];

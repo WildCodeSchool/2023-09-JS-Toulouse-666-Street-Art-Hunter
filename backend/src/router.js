@@ -31,6 +31,14 @@ router.post("/photos", photoControllers.add);
 router.put("/photos/:id", photoControllers.edit);
 router.delete("/photos/:id", photoControllers.destroy);
 
+const artistControllers = require("./controllers/artistControllers");
+
+router.get("/artists", artistControllers.browse);
+router.get("/artists/:id", artistControllers.read);
+router.post("/artists", artistControllers.add);
+router.put("/artists/:id", artistControllers.edit);
+router.delete("/artists/:id", artistControllers.destroy);
+
 // Importer les modules :
 const artworkControllers = require("./controllers/artworkControllers");
 const avatarImageControllers = require("./controllers/avatarImageControllers");
