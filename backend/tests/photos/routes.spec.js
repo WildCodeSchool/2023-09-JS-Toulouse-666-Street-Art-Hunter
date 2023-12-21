@@ -6,7 +6,10 @@ describe("GET /api/photos", () => {
   it("should fetch photos successfully", async () => {
     // Define a sample photo for testing
     const testPhoto = {
-      title: "Sample Photo",
+      image: "liens vers l'image",
+      is_validated: 1,
+      user_id: 4,
+      artwork_id: 4,
     };
 
     // Create a sample Photo in the database
@@ -24,7 +27,14 @@ describe("GET /api/photos", () => {
 
     // Assertions
     expect(foundPhoto).toBeInstanceOf(Object);
-    expect(foundPhoto.title).toBe(testPhoto.title);
+    expect(foundPhoto.image).toBe(testPhoto.image);
+    expect(typeof foundPhoto.image).toBe("string");
+    expect(foundPhoto.is_validated).toBe(testPhoto.is_validated);
+    expect(typeof foundPhoto.is_validated).toBe("number");
+    expect(foundPhoto.user_id).toBe(testPhoto.user_id);
+    expect(typeof foundPhoto.user_id).toBe("number");
+    expect(foundPhoto.artwork_id).toBe(testPhoto.artwork_id);
+    expect(typeof foundPhoto.artwork_id).toBe("number");
   });
 });
 
@@ -33,7 +43,10 @@ describe("GET /api/photos/:id", () => {
   it("should fetch a single photo successfully", async () => {
     // Define a sample photo for testing
     const testPhoto = {
-      title: "Sample Photo",
+      image: "liens vers l'image",
+      is_validated: 1,
+      user_id: 4,
+      artwork_id: 4,
     };
 
     // Create a sample photo in the database
@@ -46,7 +59,14 @@ describe("GET /api/photos/:id", () => {
     expect(response.status).toBe(200);
     expect(response.body).toBeInstanceOf(Object);
     expect(response.body.id).toBe(insertId);
-    expect(response.body.title).toBe(testPhoto.title);
+    expect(response.body.image).toBe(testPhoto.image);
+    expect(typeof response.body.image).toBe("string");
+    expect(response.body.is_validated).toBe(testPhoto.is_validated);
+    expect(typeof response.body.is_validated).toBe("number");
+    expect(response.body.user_id).toBe(testPhoto.user_id);
+    expect(typeof response.body.user_id).toBe("number");
+    expect(response.body.artwork_id).toBe(testPhoto.artwork_id);
+    expect(typeof response.body.artwork_id).toBe("number");
   });
 
   it("should return 404 for non-existent photo", async () => {
@@ -66,7 +86,10 @@ describe("POST /api/photos", () => {
   it("should add a new photo successfully", async () => {
     // Define a sample photo for testing
     const testPhoto = {
-      title: "Sample Photo",
+      image: "liens vers l'image",
+      is_validated: 1,
+      user_id: 4,
+      artwork_id: 4,
     };
 
     // Send a POST request to the /api/photos endpoint with a test photo
@@ -82,7 +105,17 @@ describe("POST /api/photos", () => {
 
     // Assertions
     expect(foundphoto).toBeDefined();
-    expect(foundphoto.title).toBe(testPhoto.title);
+    expect(foundphoto.image).toBe(testPhoto.image);
+    expect(typeof foundphoto.image).toBe("string");
+
+    expect(foundphoto.is_validated).toBe(testPhoto.is_validated);
+    expect(typeof foundphoto.is_validated).toBe("number");
+
+    expect(foundphoto.user_id).toBe(testPhoto.user_id);
+    expect(typeof foundphoto.user_id).toBe("number");
+
+    expect(foundphoto.artwork_id).toBe(testPhoto.artwork_id);
+    expect(typeof foundphoto.artwork_id).toBe("number");
   });
 });
 
@@ -93,7 +126,10 @@ describe("PUT /api/photos/:id", () => {
   it("should update an existing photo successfully", async () => {
     // Define a sample photo for testing
     const testPhoto = {
-      title: "Sample Photo",
+      image: "liens vers l'image",
+      is_validated: 1,
+      user_id: 4,
+      artwork_id: 4,
     };
 
     // Create a sample photo in the database
@@ -101,7 +137,10 @@ describe("PUT /api/photos/:id", () => {
 
     // Define an updated photo object
     const updatedPhoto = {
-      title: "Updated Photo",
+      image: "liens vers l'image modifier",
+      is_validated: 0,
+      user_id: 4,
+      artwork_id: 4,
     };
 
     // Send a PUT request to the /api/photos/:id endpoint with updated data
@@ -117,7 +156,17 @@ describe("PUT /api/photos/:id", () => {
 
     // Assertions
     expect(foundPhoto).toBeDefined();
-    expect(foundPhoto.title).toBe(updatedPhoto.title);
+    expect(foundPhoto.image).toBe(updatedPhoto.image);
+    expect(typeof foundPhoto.image).toBe("string");
+
+    expect(foundPhoto.is_validated).toBe(updatedPhoto.is_validated);
+    expect(typeof foundPhoto.is_validated).toBe("number");
+
+    expect(foundPhoto.user_id).toBe(updatedPhoto.user_id);
+    expect(typeof foundPhoto.user_id).toBe("number");
+
+    expect(foundPhoto.artwork_id).toBe(updatedPhoto.artwork_id);
+    expect(typeof foundPhoto.artwork_id).toBe("number");
   });
 });
 
@@ -126,7 +175,10 @@ describe("DELETE /api/photos/:id", () => {
   it("should delete an existing photo successfully", async () => {
     // Define a sample photo for testing
     const testPhoto = {
-      title: "Sample Photo",
+      image: "liens vers l'image modifier",
+      is_validated: 0,
+      user_id: 4,
+      artwork_id: 4,
     };
 
     // Create a sample photo in the database
