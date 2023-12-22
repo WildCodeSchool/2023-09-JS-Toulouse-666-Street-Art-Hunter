@@ -6,22 +6,13 @@ const router = express.Router();
 // Définir vos routes API ici
 /* ************************************************************************* */
 
-/* ************************************************************************* */
-
-const artistControllers = require("./controllers/artistControllers");
-
-router.get("/artists", artistControllers.browse);
-router.get("/artists/:id", artistControllers.read);
-router.post("/artists", artistControllers.add);
-router.put("/artists/:id", artistControllers.edit);
-router.delete("/artists/:id", artistControllers.destroy);
-
 // Importer les modules :
 const artworkControllers = require("./controllers/artworkControllers");
 const avatarImageControllers = require("./controllers/avatarImageControllers");
 const userControllers = require("./controllers/userControllers");
 const articleControllers = require("./controllers/articleControllers");
 const photoControllers = require("./controllers/photoControllers");
+const artistControllers = require("./controllers/artistControllers");
 
 // Route for ARTWORKS
 router.get("/artworks", artworkControllers.browse);
@@ -57,6 +48,13 @@ router.get("/articles/:id", articleControllers.read);
 router.post("/articles", articleControllers.add);
 router.put("/articles/:id", articleControllers.edit);
 router.delete("/articles/:id", articleControllers.destroy);
+
+// Route for ARTISTE
+router.get("/artists", artistControllers.browse);
+router.get("/artists/:id", artistControllers.read);
+router.post("/artists", artistControllers.add);
+router.put("/artists/:id", artistControllers.edit);
+router.delete("/artists/:id", artistControllers.destroy);
 
 /* ************************************************************************* */
 
