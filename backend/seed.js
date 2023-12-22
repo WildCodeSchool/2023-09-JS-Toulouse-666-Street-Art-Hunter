@@ -72,6 +72,17 @@ const seed = async () => {
         ]
       )
     );
+
+    queries.push(
+      database.query(
+        `insert into artist (name, description, image) values (?, ?, ?)`,
+        [
+          "Pikasaut",
+          "peintre depuis ma plus tendre enfance",
+          "httpmozillafirefox",
+        ]
+      )
+    );
     /* ************************************************************************* */
 
     // Wait for all the insertion queries to complete
