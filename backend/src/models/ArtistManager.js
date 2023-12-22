@@ -20,10 +20,7 @@ class ArtistManager extends AbstractManager {
     return result.insertId;
   }
 
-  // The Rs of CRUD - Read operations
-
   // The U of CRUD - Update operation
-  // TODO: Implement the update operation to modify an existing artist
 
   async update(id, artist) {
     // Execute the SQL SELECT query to update on artist from the "artist" table
@@ -33,9 +30,6 @@ class ArtistManager extends AbstractManager {
     );
     return rows;
   }
-
-  // The D of CRUD - Delete operation
-  // TODO: Implement the delete operation to remove an artist by its ID
 }
 
 module.exports = ArtistManager;
