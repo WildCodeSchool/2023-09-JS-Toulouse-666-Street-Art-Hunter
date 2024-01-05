@@ -9,7 +9,7 @@ describe("GET /api/articles", () => {
       title: "Voici un titre",
       description: "Et voilà une description",
       image: "image.img",
-      isArchived: 0,
+      is_archived: 0,
     };
 
     // Create a sample article in the database
@@ -41,7 +41,7 @@ describe("GET /api/articles/:id", () => {
       title: "Voici un titre",
       description: "Et voilà une description",
       image: "image.img",
-      isArchived: 0,
+      is_archived: 0,
     };
 
     // Create a sample article in the database
@@ -77,7 +77,7 @@ describe("POST /api/articles", () => {
       title: "Voici un titre",
       description: "Et voilà une description",
       image: "image.img",
-      isArchived: 0,
+      is_archived: 0,
     };
 
     // Send a POST request to the /api/articles endpoint with a test article
@@ -107,7 +107,7 @@ describe("PUT /api/articles/:id", () => {
       title: "Voici un titre",
       description: "Et voilà une description",
       image: "image.img",
-      isArchived: 0,
+      is_archived: 0,
     };
 
     // Create a sample article in the database
@@ -118,7 +118,7 @@ describe("PUT /api/articles/:id", () => {
       title: "Voici un titre modifié",
       description: "Et voilà une description modifiée",
       image: "image_modifiée.img",
-      isArchived: 1,
+      is_archived: 1,
     };
 
     // Send a PUT request to the /api/articles/:id endpoint with updated data
@@ -146,7 +146,7 @@ describe("DELETE /api/articles/:id", () => {
       title: "Voici un titre",
       description: "Et voilà une description",
       image: "image.img",
-      isArchived: 0,
+      is_archived: 0,
     };
 
     // Create a sample article in the database

@@ -15,10 +15,10 @@ class ArtworkManager extends AbstractManager {
       latitude,
       adress,
       description,
-      datePublished,
-      askToArchived,
-      isArchived,
-      isValidate,
+      date_published: datePublished,
+      ask_to_archived: askToArchived,
+      is_archived: isArchived,
+      is_validate: isValidate,
     } = artwork;
 
     const [rows] = await this.database.query(
@@ -47,10 +47,10 @@ class ArtworkManager extends AbstractManager {
       latitude,
       adress,
       description,
-      datePublished,
-      askToArchived,
-      isArchived,
-      isValidate,
+      date_published: datePublished,
+      ask_to_archived: askToArchived,
+      is_archived: isArchived,
+      is_validate: isValidate,
     } = artwork;
 
     const [rows] = await this.database.query(

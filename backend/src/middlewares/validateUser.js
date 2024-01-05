@@ -100,11 +100,11 @@ const validateUser = (req, res, next) => {
       message:
         "Attention ! Ce champ est obligatoire. Veuillez le remplir pour poursuivre",
     });
-  } else if (border.length >= 7) {
+  } else if (border.length >= 10) {
     errors.push({
       field: "border",
       message:
-        "Oups ! Vous avez dépassé la limite de caractères autorisée pour ce champ. Veuillez réduire le nombre de caractères à 7 ou moins et réessayer.",
+        "Oups ! Vous avez dépassé la limite de caractères autorisée pour ce champ. Veuillez réduire le nombre de caractères à 10 ou moins et réessayer.",
     });
   }
 

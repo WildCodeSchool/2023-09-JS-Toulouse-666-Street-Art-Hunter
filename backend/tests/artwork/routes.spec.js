@@ -11,10 +11,10 @@ describe("GET /api/artworks", () => {
       latitude: "1°27'18.9°E",
       adress: "1 Rue de Valenciennes, 31000 Toulouse",
       description: "oeuvre expérimentale",
-      datePublished: "2023-12-19",
-      askToArchived: 0,
-      isArchived: 0,
-      isValidate: 1,
+      date_published: "2023-12-19",
+      ask_to_archived: 0,
+      is_archived: 0,
+      is_validate: 1,
       artistId: null,
     };
 
@@ -49,10 +49,10 @@ describe("GET /api/artworks/:id", () => {
       latitude: "1°27'18.9°E",
       adress: "1 Rue de Valenciennes, 31000 Toulouse",
       description: "oeuvre expérimentale",
-      datePublished: "2023-12-19",
-      askToArchived: 0,
-      isArchived: 0,
-      isValidate: 1,
+      date_published: "2023-12-19",
+      ask_to_archived: 0,
+      is_archived: 0,
+      is_validate: 1,
       artistId: null,
     };
 
@@ -91,10 +91,10 @@ describe("POST /api/artworks", () => {
       latitude: "1°27'18.9°E",
       adress: "1 Rue de Valenciennes, 31000 Toulouse",
       description: "oeuvre expérimentale",
-      datePublished: "2023-12-19",
-      askToArchived: 0,
-      isArchived: 0,
-      isValidate: 1,
+      date_published: "2023-12-19",
+      ask_to_archived: 0,
+      is_archived: 0,
+      is_validate: 1,
       artistId: null,
     };
 
@@ -127,10 +127,10 @@ describe("PUT /api/artworks/:id", () => {
       latitude: "1°27'18.9°E",
       adress: "1 Rue de Valenciennes, 31000 Toulouse",
       description: "oeuvre expérimentale",
-      datePublished: "2023-12-19",
-      askToArchived: 0,
-      isArchived: 0,
-      isValidate: 1,
+      date_published: "2023-12-19",
+      ask_to_archived: 0,
+      is_archived: 0,
+      is_validate: 1,
       artistId: null,
     };
 
@@ -144,10 +144,10 @@ describe("PUT /api/artworks/:id", () => {
       latitude: "1°27'18.9°S",
       adress: "10 Rue de Valences, 13000 Marseille",
       description: "Oeuvre cool",
-      datePublished: "2023-10-17",
-      askToArchived: 0,
-      isArchived: 1,
-      isValidate: 1,
+      date_published: "2023-12-19",
+      ask_to_archived: 0,
+      is_archived: 1,
+      is_validate: 1,
       artistId: null,
     };
 
@@ -178,10 +178,10 @@ describe("DELETE /api/artworks/:id", () => {
       latitude: "1°27'18.9°E",
       adress: "1 Rue de Valenciennes, 31000 Toulouse",
       description: "oeuvre expérimentale",
-      datePublished: "2023-12-19",
-      askToArchived: 0,
-      isArchived: 0,
-      isValidate: 1,
+      date_published: "2023-12-19",
+      ask_to_archived: 0,
+      is_archived: 0,
+      is_validate: 1,
       artistId: null,
     };
 

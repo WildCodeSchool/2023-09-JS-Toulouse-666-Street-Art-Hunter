@@ -10,18 +10,29 @@ class UserManager extends AbstractManager {
   // ------------------ Méthode POST ------------------
   async create(user) {
     // Execute the SQL INSERT query to add a new user to the "user" table
+    const {
+      name,
+      description,
+      email,
+      password,
+      score,
+      is_admin: isAdmin,
+      is_banned: isBanned,
+      selected_avatar: selectedAvatar,
+      border,
+    } = user;
     const [result] = await this.database.query(
       `INSERT INTO ${this.table} (name, description, email, password, score, is_admin, is_banned, selected_avatar, border) VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?)`,
       [
-        user.name,
-        user.description,
-        user.email,
-        user.password,
-        user.score,
-        user.is_admin,
-        user.is_banned,
-        user.selected_avatar,
-        user.border,
+        name,
+        description,
+        email,
+        password,
+        score,
+        isAdmin,
+        isBanned,
+        selectedAvatar,
+        border,
       ]
     );
     return result.insertId;
@@ -29,18 +40,29 @@ class UserManager extends AbstractManager {
 
   // ------------------ Méthode PUT ------------------
   async update(id, user) {
+    const {
+      name,
+      description,
+      email,
+      password,
+      score,
+      is_admin: isAdmin,
+      is_banned: isBanned,
+      selected_avatar: selectedAvatar,
+      border,
+    } = user;
     const [rows] = await this.database.query(
       `UPDATE ${this.table} SET name = ?, description = ?, email = ?, password = ?, score = ?, is_admin = ?, is_banned = ?, selected_avatar = ?, border = ? WHERE id = ?`,
       [
-        user.name,
-        user.description,
-        user.email,
-        user.password,
-        user.score,
-        user.is_admin,
-        user.is_banned,
-        user.selected_avatar,
-        user.border,
+        name,
+        description,
+        email,
+        password,
+        score,
+        isAdmin,
+        isBanned,
+        selectedAvatar,
+        border,
         id,
       ]
     );
