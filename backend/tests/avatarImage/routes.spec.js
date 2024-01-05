@@ -8,7 +8,7 @@ describe("GET /api/avatars", () => {
     const testAvatarImage = {
       name: "Baleine",
       objective: "4900 pts",
-      imgUrl: "https://images.unsplash.com/photo-1676324647438",
+      img_url: "https://images.unsplash.com/photo-1676324647438",
     };
 
     // Create a sample avatar_image in the database
@@ -39,7 +39,7 @@ describe("GET /api/avatars/:id", () => {
     const testAvatarImage = {
       name: "Baleine",
       objective: "4900 pts",
-      imgUrl: "https://images.unsplash.com/photo-1676324647438",
+      img_url: "https://images.unsplash.com/photo-1676324647438",
     };
 
     // Create a sample avatar_image in the database
@@ -74,7 +74,7 @@ describe("POST /api/avatars", () => {
     const testAvatarImage = {
       name: "Baleine",
       objective: "4900 pts",
-      imgUrl: "https://images.unsplash.com/photo-1676324647438",
+      img_url: "https://images.unsplash.com/photo-1676324647438",
     };
 
     // Send a POST request to the /api/avatars endpoint with a test avatar_image
@@ -108,7 +108,7 @@ describe("PUT /api/avatars/:id", () => {
     const testAvatarImage = {
       name: "Baleine",
       objective: "4900 pts",
-      imgUrl: "https://images.unsplash.com/photo-1676324647438",
+      img_url: "https://images.unsplash.com/photo-1676324647438",
     };
 
     // Create a sample avatar_image in the database
@@ -118,7 +118,7 @@ describe("PUT /api/avatars/:id", () => {
     const updatedAvatarImage = {
       name: "Loup",
       objective: "9000 pts",
-      imgUrl: "https://images.unsplash.com/photo-456747438",
+      img_url: "https://images.unsplash.com/photo-456747438",
     };
 
     // Send a PUT request to the /api/avatars/:id endpoint with updated data
@@ -145,7 +145,7 @@ describe("DELETE /api/avatars/:id", () => {
     const testAvatarImage = {
       name: "Baleine",
       objective: "4900 pts",
-      imgUrl: "https://images.unsplash.com/photo-1676324647438",
+      img_url: "https://images.unsplash.com/photo-1676324647438",
     };
 
     // Create a sample avatar_image in the database

@@ -9,7 +9,7 @@ class ArticleManager extends AbstractManager {
 
   // ------------------ Méthode POST ------------------
   async create(article) {
-    const { title, description, image, isArchived } = article;
+    const { title, description, image, is_archived: isArchived } = article;
 
     const [rows] = await this.database.query(
       `INSERT INTO ${this.table} (title, description, image, is_archived) VALUES (?, ?, ?, ?)`,
@@ -21,7 +21,7 @@ class ArticleManager extends AbstractManager {
 
   // ------------------ Méthode PUT ------------------
   async update(id, article) {
-    const { title, description, image, isArchived } = article;
+    const { title, description, image, is_archived: isArchived } = article;
 
     const [rows] = await this.database.query(
       `UPDATE ${this.table} SET title = ?, description = ?, image = ?, is_archived = ? WHERE id = ?`,
