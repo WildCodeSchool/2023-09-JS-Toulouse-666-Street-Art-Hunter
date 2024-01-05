@@ -1,4 +1,4 @@
-const validatearticle = (req, res, next) => {
+const validateArticle = (req, res, next) => {
   // validate req.body then call next() if everything is ok
   const { title, description, is_archived: isArchived } = req.body;
   const errors = [];
@@ -44,4 +44,4 @@ const validatearticle = (req, res, next) => {
   }
 };
 
-module.exports = validatearticle;
+module.exports = validateArticle;

@@ -9,7 +9,7 @@ const router = express.Router();
 // Importer les modules :
 const validateArtist = require("./middlewares/validateArtist");
 const validatePhoto = require("./middlewares/validatePhoto");
-const validatearticle = require("./middlewares/validateArticle");
+const validateArticle = require("./middlewares/validateArticle");
 const validateArtwork = require("./middlewares/validateArtwork");
 const validateAvatarImage = require("./middlewares/validateAvatarImage");
 const validateUser = require("./middlewares/validateUser");
@@ -51,8 +51,8 @@ router.delete("/users/:id", userControllers.destroy);
 // Route for ARTICLES
 router.get("/articles", articleControllers.browse);
 router.get("/articles/:id", articleControllers.read);
-router.post("/articles", validatearticle, articleControllers.add);
-router.put("/articles/:id", validatearticle, articleControllers.edit);
+router.post("/articles", validateArticle, articleControllers.add);
+router.put("/articles/:id", validateArticle, articleControllers.edit);
 router.delete("/articles/:id", articleControllers.destroy);
 
 // Route for ARTISTE
