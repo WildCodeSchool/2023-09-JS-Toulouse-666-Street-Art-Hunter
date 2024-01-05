@@ -12,6 +12,7 @@ const validatePhoto = require("./middlewares/validatePhoto");
 const validatearticle = require("./middlewares/validateArticle");
 const validateArtwork = require("./middlewares/validateArtwork");
 const validateAvatarImage = require("./middlewares/validateAvatarImage");
+const validateUser = require("./middlewares/validateUser");
 const artworkControllers = require("./controllers/artworkControllers");
 const avatarImageControllers = require("./controllers/avatarImageControllers");
 const userControllers = require("./controllers/userControllers");
@@ -43,8 +44,8 @@ router.delete("/photos/:id", photoControllers.destroy);
 // Route for USERS
 router.get("/users", userControllers.browse);
 router.get("/users/:id", userControllers.read);
-router.post("/users", userControllers.add);
-router.put("/users/:id", userControllers.edit);
+router.post("/users", validateUser, userControllers.add);
+router.put("/users/:id", validateUser, userControllers.edit);
 router.delete("/users/:id", userControllers.destroy);
 
 // Route for ARTICLES
