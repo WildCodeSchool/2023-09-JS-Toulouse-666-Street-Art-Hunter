@@ -19,6 +19,11 @@ const userControllers = require("./controllers/userControllers");
 const articleControllers = require("./controllers/articleControllers");
 const photoControllers = require("./controllers/photoControllers");
 const artistControllers = require("./controllers/artistControllers");
+const {
+  hashPassword,
+  verifyPassword,
+  //   verifyToken,
+} = require("./middlewares/authentication");
 
 // Route for ARTWORKS
 router.get("/artworks", artworkControllers.browse);
@@ -44,7 +49,7 @@ router.delete("/photos/:id", photoControllers.destroy);
 // Route for USERS
 router.get("/users", userControllers.browse);
 router.get("/users/:id", userControllers.read);
-router.post("/users", validateUser, userControllers.add);
+router.post("/users", hashPassword, validateUser, userControllers.add);
 router.put("/users/:id", validateUser, userControllers.edit);
 router.delete("/users/:id", userControllers.destroy);
 
@@ -52,6 +57,11 @@ router.delete("/users/:id", userControllers.destroy);
 router.get("/articles", articleControllers.browse);
 router.get("/articles/:id", articleControllers.read);
 router.post("/articles", validateArticle, articleControllers.add);
+router.post(
+  "/users/login",
+  userControllers.readByEmailAndPassToNext,
+  verifyPassword
+);
 router.put("/articles/:id", validateArticle, articleControllers.edit);
 router.delete("/articles/:id", articleControllers.destroy);
 

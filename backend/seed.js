@@ -46,7 +46,7 @@ const seed = async () => {
 
     queries.push(
       database.query(
-        `INSERT INTO user (name, description, email, password, score, is_admin, is_banned, selected_avatar, border) VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?)`,
+        `INSERT INTO user (name, description, email, hashed_password, score, is_admin, is_banned, selected_avatar, border) VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?)`,
         [
           "Arthur",
           "J'aime les prototypes",

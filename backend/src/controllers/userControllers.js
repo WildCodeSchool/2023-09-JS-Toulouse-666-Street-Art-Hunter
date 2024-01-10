@@ -41,6 +41,20 @@ const edit = async (req, res, next) => {
     next(err);
   }
 };
+const readByEmailAndPassToNext = async (req, res, next) => {
+  try {
+    const user = await tables.user.readByEmail(req.body.email);
+
+    if (user == null) {
+      res.sendStatus(401);
+    } else {
+      req.user = user;
+      next();
+    }
+  } catch (err) {
+    next(err);
+  }
+};
 
 // The A of BREAD - Add (Create) operation
 const add = async (req, res, next) => {
@@ -74,6 +88,7 @@ module.exports = {
   browse,
   read,
   edit,
+  readByEmailAndPassToNext,
   add,
   destroy,
 };
