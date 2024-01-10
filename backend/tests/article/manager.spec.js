@@ -9,7 +9,7 @@ describe("Create article", () => {
       title: "Voici un titre",
       description: "Et voilà une description",
       image: "image.img",
-      isArchived: 0,
+      is_archived: 0,
     };
 
     // Envoyer une demande de création à la table article avec un test

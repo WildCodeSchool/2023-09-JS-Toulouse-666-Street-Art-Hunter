@@ -9,7 +9,7 @@ class AvatarImageManager extends AbstractManager {
 
   // ------------------ Méthode POST ------------------
   async create(avatarImage) {
-    const { name, objective, imgUrl } = avatarImage;
+    const { name, objective, img_url: imgUrl } = avatarImage;
 
     const [rows] = await this.database.query(
       `INSERT INTO ${this.table} (name, objective, img_url) VALUES (?, ?, ?)`,
@@ -21,7 +21,7 @@ class AvatarImageManager extends AbstractManager {
 
   // ------------------ Méthode PUT ------------------
   async update(id, avatarImage) {
-    const { name, objective, imgUrl } = avatarImage;
+    const { name, objective, img_url: imgUrl } = avatarImage;
 
     const [rows] = await this.database.query(
       `UPDATE ${this.table} SET name = ?, objective = ?, img_url = ?  WHERE id = ?`,

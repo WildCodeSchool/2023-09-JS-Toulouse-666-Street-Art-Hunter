@@ -1,7 +1,7 @@
 // // Import required dependencies
 const { database, tables } = require("../setup");
 
-// Test suite for the create method of ItemManager
+// Test suite for the create method of PhotoManager
 describe("Create photo", () => {
   it("should create an photo successfully", async () => {
     // Define a sample photo for testing

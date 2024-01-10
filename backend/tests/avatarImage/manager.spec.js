@@ -8,7 +8,7 @@ describe("Create avatar_image", () => {
     const testAvatarImage = {
       name: "Baleine",
       objective: "4900 pts",
-      imgUrl: "https://images.unsplash.com/photo-1676324647438",
+      img_url: "https://images.unsplash.com/photo-1676324647438",
     };
 
     // Envoyer une demande de création à la table avatar_image avec un test
