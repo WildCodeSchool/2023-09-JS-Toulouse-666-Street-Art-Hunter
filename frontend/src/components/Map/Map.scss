@@ -10,6 +10,13 @@
     background-color: red;
   }
 
+  .leaflet-control-zoom-in,
+  .leaflet-control-zoom-out {
+    span {
+      font-family: "PressStart2P";
+    }
+  }
+
   .marker-cluster {
     background-color: darkslategrey;
     height: 40px;
@@ -18,17 +25,19 @@
     text-align: center;
     color: white;
     font-weight: bold;
-    font-size: 20px;
+    font-size: 18px;
     display: flex;
     justify-content: center;
     align-items: center;
     transform: translate(-25%, -25%);
+    font-family: "PressStart2P";
+    padding-left: 2px;
   }
 
   .leaflet-popup {
     left: -40;
     .leaflet-popup-content-wrapper {
-      background-color: green;
+      background-color: #c7af16;
       border-radius: 0;
       .leaflet-popup-content {
         margin: 10px;
@@ -37,17 +46,19 @@
         align-items: center;
         justify-content: center;
         gap: 10px;
+        font-family: "PressStart2P";
         img {
           width: 100%;
         }
         button {
           width: 100%;
+          font-family: "PressStart2P";
         }
       }
     }
     .leaflet-popup-tip-container {
       .leaflet-popup-tip {
-        background-color: green;
+        background-color: #c7af16;
       }
     }
     .leaflet-popup-close-button {
