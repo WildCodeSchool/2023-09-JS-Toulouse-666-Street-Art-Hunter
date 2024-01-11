@@ -32,7 +32,6 @@ const verifyPassword = async (req, res, next) => {
       req.user.hashed_password,
       password
     );
-
     if (!isPasswordCorrect) {
       return res.sendStatus(401);
     }

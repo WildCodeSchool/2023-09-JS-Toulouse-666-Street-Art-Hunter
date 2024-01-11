@@ -1,17 +1,49 @@
 import React from "react";
-import { Form, redirect } from "react-router-dom";
+import { Form, redirect, useNavigate } from "react-router-dom";
 import Input from "../../components/Input";
+import PeintBomb from "../../assets/Peint-login.png";
+import "./LogIn.scss";
 
 function Login() {
+  const navigate = useNavigate();
+  const handleclique = () => {
+    localStorage.removeItem("user");
+    localStorage.removeItem("token");
+    navigate("/");
+  };
   return (
-    <div>
-      <div className="login-page">
-        <h1>Login</h1>
-        <Form method="post" action="/login" replace>
-          <Input labelName="Email" type="email" />
-          <Input labelName="Password" type="password" />
-          <button type="submit">Login</button>
+    <div className="login-page">
+      <div className="login-input">
+        <h1 className="login-title">CONNECTE-TOI</h1>
+        <Form className="form" method="post" action="/login" replace>
+          <Input
+            className="input"
+            labelName="email"
+            type="email"
+            labelText="Adresse Mail"
+          />
+          <Input
+            className="input"
+            labelName="password"
+            type="password"
+            labelText="Mot de passe"
+          />
+          <button className="continue" type="submit">
+            CONTINUE
+          </button>
         </Form>
+      </div>
+      <div className="logout-page">
+        <button type="submit" onClick={handleclique}>
+          LogOut
+        </button>
+      </div>
+      <div className="login-text">
+        <img src={PeintBomb} alt="BOmbe de peinture" />
+        <div className="text">Nouveau dans la jungle urbaine?</div>
+        <button className="inscription" type="submit">
+          INSCRITS-TOI
+        </button>
       </div>
     </div>
   );
