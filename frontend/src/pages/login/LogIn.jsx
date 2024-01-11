@@ -6,8 +6,8 @@ import "./LogIn.scss";
 
 function Login() {
   const navigate = useNavigate();
-  // Permet de suprimer le token au clique
-  const handleclique = () => {
+  // Permet de suprimer le token au Click
+  const handleClick = () => {
     localStorage.removeItem("user");
     localStorage.removeItem("token");
     navigate("/");
@@ -37,7 +37,7 @@ function Login() {
         </Form>
       </div>
       <div className="logout-page">
-        <button type="submit" onClick={handleclique}>
+        <button type="submit" onClick={handleClick}>
           LogOut
         </button>
       </div>
