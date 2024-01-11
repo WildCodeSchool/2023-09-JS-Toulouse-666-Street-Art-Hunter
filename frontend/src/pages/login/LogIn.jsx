@@ -22,12 +22,14 @@ function Login() {
             labelName="email"
             type="email"
             labelText="Adresse Mail"
+            maxLength="45"
           />
           <Input
             className="input"
             labelName="password"
             type="password"
             labelText="Mot de passe"
+            maxLength="455"
           />
           <button className="continue" type="submit">
             CONTINUE
