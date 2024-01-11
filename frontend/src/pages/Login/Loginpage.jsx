@@ -2,7 +2,7 @@ import React from "react";
 import { Form, redirect, useNavigate } from "react-router-dom";
 import Input from "../../components/Input-R/Input";
 import PeintBomb from "../../assets/Peint-login.png";
-import "./LogIn.scss";
+import "./Loginpage.scss";
 
 function Login() {
   const navigate = useNavigate();
@@ -11,6 +11,9 @@ function Login() {
     localStorage.removeItem("user");
     localStorage.removeItem("token");
     navigate("/");
+  };
+  const handleClickRegister = () => {
+    navigate("/register");
   };
   return (
     <div className="login-page">
@@ -38,13 +41,17 @@ function Login() {
       </div>
       <div className="logout-page">
         <button type="submit" onClick={handleClick}>
-          Déconexion
+          Déconnexion
         </button>
       </div>
       <div className="login-text">
         <img src={PeintBomb} alt="Bombe de peinture" />
         <div className="text">Nouveau dans la jungle urbaine?</div>
-        <button className="register" type="submit">
+        <button
+          className="register"
+          type="submit"
+          onClick={handleClickRegister}
+        >
           INSCRITS-TOI
         </button>
       </div>

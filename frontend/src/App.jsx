@@ -24,7 +24,7 @@ function App() {
       <h1>Hello</h1>
       <div className="Validate-x">X</div>
       <button type="submit" onClick={handleClick}>
-        Login
+        Connexion
       </button>
     </div>
   );
