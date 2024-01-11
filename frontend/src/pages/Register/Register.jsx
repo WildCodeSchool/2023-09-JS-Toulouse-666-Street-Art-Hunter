@@ -55,6 +55,8 @@ export const enrolment = async ({ request }) => {
 
   const formData = {
     ...data,
+    description:
+      "Explorateur urbain en quête d'art de rue. Je capture l'essence de la street, je partage ici mes trouvailles colorées.",
     score: 0,
     is_admin: 0,
     is_banned: 0,
@@ -79,12 +81,12 @@ export const enrolment = async ({ request }) => {
       );
     }
 
-    if (response.ok) {
-      return redirect("/");
+    if (!response.ok) {
+      throw new Error("cant fetch user");
     }
+    return redirect("/");
   } catch (error) {
     console.error(error);
+    return redirect("/register");
   }
-
-  return redirect("/login");
 };
