@@ -13,7 +13,7 @@ function App() {
         <h1>Hello</h1>
         <div className="Validate-v">V</div>
         <button type="submit" onClick={handleClick}>
-          Login
+          Connexion
         </button>
       </div>
     );

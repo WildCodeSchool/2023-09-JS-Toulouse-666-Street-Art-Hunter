@@ -38,13 +38,13 @@ function Login() {
       </div>
       <div className="logout-page">
         <button type="submit" onClick={handleClick}>
-          LogOut
+          Déconexion
         </button>
       </div>
       <div className="login-text">
         <img src={PeintBomb} alt="Bombe de peinture" />
         <div className="text">Nouveau dans la jungle urbaine?</div>
-        <button className="inscription" type="submit">
+        <button className="register" type="submit">
           INSCRITS-TOI
         </button>
       </div>
