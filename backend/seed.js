@@ -50,8 +50,8 @@ const seed = async () => {
         [
           "Arthur",
           "J'aime les prototypes",
-          "Arthur@me.com",
-          "password",
+          "a@a.com",
+          "$argon2id$v=19$m=65536,t=5,p=1$+S3Gb/M9gk60MWLsMtJB4A$I0/8gdRdQVhnsImLjdDNK2Uy7xdKnUnDvCaM7r2nYE0",
           1000,
           0,
           0,
