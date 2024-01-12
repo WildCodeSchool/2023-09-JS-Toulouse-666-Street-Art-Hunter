@@ -130,6 +130,11 @@ table {
 
 button {
   cursor: pointer;
+  border: none;
+  color: transparent;
+  padding: 0;
+  margin: 0;
+  background-color: transparent;
 }
 
 /* custom fonts */
