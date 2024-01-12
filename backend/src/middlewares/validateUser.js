@@ -2,7 +2,6 @@ const validateUser = (req, res, next) => {
   // validate req.body then call next() if everything is ok
   const {
     name,
-    description,
     email,
     hashed_password: hashedPassword,
     score,
@@ -25,19 +24,6 @@ const validateUser = (req, res, next) => {
       field: "name",
       message:
         "Oups ! Vous avez dépassé la limite de caractères autorisée pour ce champ. Veuillez réduire le nombre de caractères à 45 ou moins et réessayer.",
-    });
-  }
-  if (description == null) {
-    errors.push({
-      field: "description",
-      message:
-        "Attention ! Ce champ est obligatoire. Veuillez le remplir pour poursuivre",
-    });
-  } else if (description.length >= 255) {
-    errors.push({
-      field: "description",
-      message:
-        "Oups ! Vous avez dépassé la limite de caractères autorisée pour ce champ. Veuillez réduire le nombre de caractères à 255 ou moins et réessayer.",
     });
   }
   if (!emailRegex.test(email)) {

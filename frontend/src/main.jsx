@@ -2,7 +2,8 @@ import React from "react";
 import ReactDOM from "react-dom/client";
 
 import { createBrowserRouter, RouterProvider } from "react-router-dom";
-import Login, { authenticate } from "./pages/login/LogIn";
+import Login, { authenticate } from "./pages/Login/Loginpage";
+import Register, { enrolment } from "./pages/Register/Register";
 
 import RootLayout from "./Layouts/RootLayout/RootLayout";
 import App from "./App";
@@ -27,6 +28,11 @@ const router = createBrowserRouter([
         action: authenticate,
       },
     ],
+  },
+  {
+    path: "/register",
+    element: <Register />,
+    action: enrolment,
   },
 ]);
 
