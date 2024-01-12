@@ -4,7 +4,7 @@
   flex-direction: column;
   align-items: center;
   gap: 40px;
-  min-height: 100%;
+  min-height: 1200px;
   .left-boy {
     display: none;
   }
@@ -17,12 +17,14 @@
       flex-direction: column;
       align-items: center;
       color: rgba(217, 93, 0, 1);
+      font-size: 28px;
     }
     .form {
       display: flex;
       flex-direction: column;
       align-items: center;
       gap: 30px;
+      margin-top: 20px;
 
       .input {
         display: flex;
@@ -38,6 +40,9 @@
         font-style: normal;
         font-weight: 400;
         line-height: normal;
+        color: black;
+        font-family: "PressStart2P";
+        padding: 4px;
       }
     }
   }
@@ -50,10 +55,12 @@
     align-items: center;
     gap: 25px;
     .text {
+      text-align: center;
       color: rgba(217, 93, 0, 1);
       font-size: 14px;
       font-style: normal;
       font-weight: 400;
+      font-family: "PressStart2P";
       line-height: 20px; /* 142.857% */
     }
     .register {
@@ -64,6 +71,9 @@
       font-style: normal;
       font-weight: 400;
       line-height: normal;
+      color: black;
+      font-family: "PressStart2P";
+      padding: 4px;
     }
   }
 }
@@ -75,7 +85,7 @@
     flex-direction: column;
     align-items: center;
     gap: 40px;
-    min-height: 100%;
+
     .input-block {
       display: flex;
       flex-direction: row;
@@ -106,11 +116,12 @@
             background: rgba(200, 56, 56, 0.2);
             box-shadow: 2px 1px 0px 0px #5d75f0;
             text-align: center;
-            font-size: clamp(18px, 3vw, 34px);
+            font-size: clamp(14px, 3vw, 30px);
             font-style: normal;
             font-weight: 400;
             line-height: normal;
             padding-inline: 8px;
+            font-family: "PressStart2P";
           }
         }
       }
@@ -123,9 +134,7 @@
       flex-direction: column;
       align-items: center;
       gap: 25px;
-      .peint-bomb {
-        display: none;
-      }
+
       .text {
         color: rgba(217, 93, 0, 1);
         font-size: clamp(14px, 2.5vw, 24px);
@@ -137,10 +146,11 @@
         border: 3px solid #66b652;
         background: rgba(200, 56, 56, 0.2);
         box-shadow: 2px 1px 0px 0px #5d75f0;
-        font-size: clamp(18px, 3vw, 34px);
+        font-size: clamp(14px, 3vw, 30px);
         font-style: normal;
         font-weight: 400;
         line-height: normal;
+        font-family: "PressStart2P";
       }
     }
   }
@@ -160,5 +170,8 @@
         min-width: clamp(240px, 25vw, 370px);
       }
     }
+  }
+  .peint-bomb {
+    display: none;
   }
 }
