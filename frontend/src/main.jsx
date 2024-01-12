@@ -2,6 +2,7 @@ import React from "react";
 import ReactDOM from "react-dom/client";
 
 import { createBrowserRouter, RouterProvider } from "react-router-dom";
+import Login, { authenticate } from "./pages/login/LogIn";
 
 import App from "./App";
 import MapPage from "./pages/MapPage/MapPage";
@@ -14,6 +15,11 @@ const router = createBrowserRouter([
   {
     path: "/map",
     element: <MapPage />,
+  },
+  {
+    path: "/login",
+    element: <Login />,
+    action: authenticate,
   },
 ]);
 

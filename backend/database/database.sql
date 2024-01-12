@@ -14,7 +14,7 @@ CREATE TABLE IF NOT EXISTS `street_art`.`user` (
   `name` VARCHAR(14) NOT NULL,
   `description` VARCHAR(255) NULL,
   `email` VARCHAR(45) NOT NULL,
-  `password` VARCHAR(30) NOT NULL,
+  `hashed_password` VARCHAR(255) NOT NULL,
   `score` INT NOT NULL,
   `is_admin` TINYINT(1) NOT NULL,
   `is_banned` TINYINT(1) NOT NULL,

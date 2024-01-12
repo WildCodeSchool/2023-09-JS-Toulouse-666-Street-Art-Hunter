@@ -4,7 +4,7 @@ const validateUser = (req, res, next) => {
     name,
     description,
     email,
-    password,
+    hashed_password: hashedPassword,
     score,
     is_admin: isAdmin,
     is_banned: isBanned,
@@ -53,15 +53,15 @@ const validateUser = (req, res, next) => {
         "Oups ! Vous avez dépassé la limite de caractères autorisée pour ce champ. Veuillez réduire le nombre de caractères à 45 ou moins et réessayer.",
     });
   }
-  if (password == null) {
+  if (hashedPassword == null) {
     errors.push({
-      field: "password",
+      field: "hashed_password",
       message:
         "Attention ! Ce champ est obligatoire. Veuillez le remplir pour poursuivre",
     });
-  } else if (password.length >= 30) {
+  } else if (hashedPassword.length >= 255) {
     errors.push({
-      field: "password",
+      field: "hashed_password",
       message:
         "Oups ! Vous avez dépassé la limite de caractères autorisée pour ce champ. Veuillez réduire le nombre de caractères à 30 ou moins et réessayer.",
     });
