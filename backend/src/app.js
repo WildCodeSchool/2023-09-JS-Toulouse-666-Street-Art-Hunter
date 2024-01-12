@@ -52,7 +52,12 @@ app.use(
 
 // Uncomment one or more of these options depending on the format of the data sent by your client:
 
-app.use(express.json());
+// Configuration du middleware express.json pour limiter la taille maxi à 50 mégaoctets des requêtes json - cloudinary
+app.use(express.json({ limit: "50mb" }));
+
+// Configuration du middleware express.urlencoded pour limiter la taille maxi à 50 mégaoctets des requêtes au format URL - cloudinary
+app.use(express.urlencoded({ limit: "50mb", extended: true }));
+
 // app.use(express.urlencoded());
 // app.use(express.text());
 // app.use(express.raw());
@@ -83,9 +88,11 @@ app.use(express.json());
 /* ************************************************************************* */
 
 // Import the API routes from the router module
+
 const router = require("./router");
 
 // Mount the API routes under the "/api" endpoint
+
 app.use("/api", router);
 
 /* ************************************************************************* */

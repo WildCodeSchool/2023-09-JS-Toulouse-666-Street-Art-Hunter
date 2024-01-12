@@ -1,43 +1,43 @@
-// Import access to database tables
 const tables = require("../tables");
+const { cloudinary } = require("../services/cloudinary");
+require("dotenv").config();
 
-// The B of BREAD - Browse (Read All) operation
+// Variables d'environnement pour Cloudinary
+cloudinary.config({
+  cloud_name: process.env.CLOUDINARY_CLOUD_NAME,
+  upload_presets: process.env.CLOUDINARY_UPLOAD_PRESETS,
+  api_key: process.env.CLOUDINARY_API_KEY,
+  api_secret: process.env.CLOUDINARY_API_SECRET,
+});
+
+// ------------------ Méthode GET ------------------
 const browse = async (req, res, next) => {
   try {
-    // Fetch all photos from the database
     const photos = await tables.photo.readAll();
 
-    // Respond with the photos in JSON format
     res.json(photos);
   } catch (err) {
-    // Pass any errors to the error-handling middleware
     next(err);
   }
 };
 
-// The R of BREAD - Read operation
+// ------------------ Méthode GET BY ID ------------------
 const read = async (req, res, next) => {
   try {
-    // Fetch a specific photo from the database based on the provided ID
     const photo = await tables.photo.read(req.params.id);
-
-    // If the photo is not found, respond with HTTP 404 (Not Found)
-    // Otherwise, respond with the photo in JSON format
     if (photo == null) {
       res.sendStatus(404);
     } else {
       res.json(photo);
     }
   } catch (err) {
-    // Pass any errors to the error-handling middleware
     next(err);
   }
 };
 
-// The E of BREAD - Edit (Update) operation
+// ------------------ Méthode PUT ------------------
 const edit = async (req, res, next) => {
   try {
-    // Fetch all photos from the database
     const photos = await tables.photo.update(req.params.id, req.body);
 
     if (photos.affectedRows === 0) {
@@ -46,32 +46,26 @@ const edit = async (req, res, next) => {
       res.sendStatus(204);
     }
   } catch (err) {
-    // Pass any errors to the error-handling middleware
     next(err);
   }
 };
 
-// The A of BREAD - Add (Create) operation
+// ------------------ Méthode POST ------------------
 const add = async (req, res, next) => {
-  // Extract the photo data from the request body
   const photo = req.body;
 
   try {
-    // Insert the photo into the database
     const insertId = await tables.photo.create(photo);
 
-    // Respond with HTTP 201 (Created) and the ID of the newly inserted photo
     res.status(201).json({ insertId });
   } catch (err) {
-    // Pass any errors to the error-handling middleware
     next(err);
   }
 };
 
-// The D of BREAD - Destroy (Delete) operation
+// ------------------ Méthode DELETE ------------------
 const destroy = async (req, res, next) => {
   try {
-    // Fetch all photos from the database
     const photos = await tables.photo.delete(req.params.id);
     if (photos.affectedRows === 0) {
       res.sendStatus(404);
@@ -79,8 +73,49 @@ const destroy = async (req, res, next) => {
       res.sendStatus(204);
     }
   } catch (err) {
-    // Pass any errors to the error-handling middleware
     next(err);
+  }
+};
+
+// ------------------ Méthode POST for CLOUDINARY ------------------
+const uploadCloud = async (req, res) => {
+  // Post sur Cloudinary
+  try {
+    const { objectToPost } = req.body;
+    const uploadResponse = await cloudinary.uploader.upload(
+      objectToPost.image,
+      {
+        upload_presets: "wwh5pcwo",
+      }
+    );
+    delete objectToPost.image;
+    const updatedObject = { ...objectToPost, image: uploadResponse.secure_url };
+
+    console.info("updatedObject", updatedObject);
+    console.info("uploadResponse", uploadResponse);
+
+    // Post en database
+    const response = await tables.photo.create(updatedObject);
+    console.info(response);
+    res.json({ response, msg: "YAYAYAYAAY" });
+  } catch (error) {
+    console.error(error);
+  }
+};
+
+// ------------------ Méthode GET URL for CLOUDINARY ------------------
+const getImagesFromCloud = async (req, res) => {
+  try {
+    const { ressource } = await cloudinary.search
+      .expression("folder:dev_setups")
+      .sort_by("public_id", "desc")
+      .max_results(30)
+      .execute();
+    const publicIds = ressource.map((file) => file.public_id);
+    res.send(publicIds);
+  } catch (error) {
+    console.error(error);
+    res.status(500).send("Internal Server Error");
   }
 };
 
@@ -91,4 +126,6 @@ module.exports = {
   edit,
   add,
   destroy,
+  uploadCloud,
+  getImagesFromCloud,
 };
