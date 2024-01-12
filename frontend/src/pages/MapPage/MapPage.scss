@@ -1,0 +1,25 @@
+.map-page {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  background-color: #12141a;
+  padding-top: 20px;
+  padding-bottom: 50px;
+  .leaflet-container {
+    position: relative;
+  }
+  .photo-logo {
+    position: absolute;
+    z-index: 500;
+    bottom: 80px;
+    left: calc(50% - 75px);
+    width: 150px;
+    height: auto;
+    img {
+      width: 150px;
+      height: 150px;
+    }
+  }
+}
