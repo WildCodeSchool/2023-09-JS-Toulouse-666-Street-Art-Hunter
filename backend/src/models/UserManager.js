@@ -14,7 +14,7 @@ class UserManager extends AbstractManager {
       name,
       description,
       email,
-      password,
+      hashed_password: hashedPassword,
       score,
       is_admin: isAdmin,
       is_banned: isBanned,
@@ -22,12 +22,12 @@ class UserManager extends AbstractManager {
       border,
     } = user;
     const [result] = await this.database.query(
-      `INSERT INTO ${this.table} (name, description, email, password, score, is_admin, is_banned, selected_avatar, border) VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?)`,
+      `INSERT INTO ${this.table} (name, description, email, hashed_password, score, is_admin, is_banned, selected_avatar, border) VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?)`,
       [
         name,
         description,
         email,
-        password,
+        hashedPassword,
         score,
         isAdmin,
         isBanned,
@@ -44,7 +44,7 @@ class UserManager extends AbstractManager {
       name,
       description,
       email,
-      password,
+      hashed_password: hashedPassword,
       score,
       is_admin: isAdmin,
       is_banned: isBanned,
@@ -52,12 +52,12 @@ class UserManager extends AbstractManager {
       border,
     } = user;
     const [rows] = await this.database.query(
-      `UPDATE ${this.table} SET name = ?, description = ?, email = ?, password = ?, score = ?, is_admin = ?, is_banned = ?, selected_avatar = ?, border = ? WHERE id = ?`,
+      `UPDATE ${this.table} SET name = ?, description = ?, email = ?, hashed_password = ?, score = ?, is_admin = ?, is_banned = ?, selected_avatar = ?, border = ? WHERE id = ?`,
       [
         name,
         description,
         email,
-        password,
+        hashedPassword,
         score,
         isAdmin,
         isBanned,
@@ -67,6 +67,15 @@ class UserManager extends AbstractManager {
       ]
     );
     return rows;
+  }
+
+  async readByEmail(email) {
+    const [rows] = await this.database.query(
+      `select * from ${this.table} where email = ?`,
+      [email]
+    );
+
+    return rows[0];
   }
 }
 
