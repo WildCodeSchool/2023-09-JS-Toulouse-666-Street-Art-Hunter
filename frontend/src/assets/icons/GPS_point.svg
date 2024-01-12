@@ -1,0 +1,391 @@
+<svg width="100" height="100" viewBox="0 0 100 100" fill="none" xmlns="http://www.w3.org/2000/svg">
+<g id="gps">
+<g id="Group">
+<path id="Vector" d="M30 0H35V5H30V0Z" fill="#38B6FF"/>
+</g>
+<g id="Group_2">
+<path id="Vector_2" d="M35 0H40V5H35V0Z" fill="#38B6FF"/>
+</g>
+<g id="Group_3">
+<path id="Vector_3" d="M40 0H45V5H40V0Z" fill="#38B6FF"/>
+</g>
+<g id="Group_4">
+<path id="Vector_4" d="M45 0H50V5H45V0Z" fill="#38B6FF"/>
+</g>
+<g id="Group_5">
+<path id="Vector_5" d="M50 0H55V5H50V0Z" fill="#38B6FF"/>
+</g>
+<g id="Group_6">
+<path id="Vector_6" d="M55 0H60V5H55V0Z" fill="#38B6FF"/>
+</g>
+<g id="Group_7">
+<path id="Vector_7" d="M60 0H65V5H60V0Z" fill="#38B6FF"/>
+</g>
+<g id="Group_8">
+<path id="Vector_8" d="M65 0H70V5H65V0Z" fill="#FF65C3"/>
+</g>
+<g id="Group_9">
+<path id="Vector_9" d="M70 0H75V5H70V0Z" fill="#FF65C3"/>
+</g>
+<g id="Group_10">
+<path id="Vector_10" d="M75 0H80V5H75V0Z" fill="#FF65C3"/>
+</g>
+<g id="Group_11">
+<path id="Vector_11" d="M80 0H85V5H80V0Z" fill="#FF65C3"/>
+</g>
+<g id="Group_12">
+<path id="Vector_12" d="M85 0H90V5H85V0Z" fill="#FF65C3"/>
+</g>
+<g id="Group_13">
+<path id="Vector_13" d="M90 0H95V5H90V0Z" fill="#FF65C3"/>
+</g>
+<g id="Group_14">
+<path id="Vector_14" d="M25 5H30V10H25V5Z" fill="#38B6FF"/>
+</g>
+<g id="Group_15">
+<path id="Vector_15" d="M30 5H35V10H30V5Z" fill="#38B6FF"/>
+</g>
+<g id="Group_16">
+<path id="Vector_16" d="M35 5H45V15H35V20H30V45H25V50H20V20H25V15H30V10H35V5Z" fill="#38B6FF"/>
+<path id="Vector_17" d="M70 45H75V65H70V75H65V80H60V85H55V95H45V85H40V80H35V75H30V65H25V60H35V70H55V65H60V55H70V50V45Z" fill="#38B6FF"/>
+</g>
+<g id="Group_17">
+<path id="Vector_18" d="M45 5H50V10H45V5Z" fill="#38B6FF"/>
+<path id="Vector_19" d="M75 45H80V50H75V45Z" fill="#38B6FF"/>
+</g>
+<g id="Group_18">
+<path id="Vector_20" d="M50 5H55V10H50V5Z" fill="#FF65C3"/>
+</g>
+<g id="Group_19">
+<path id="Vector_21" d="M55 5H60V10H55V5Z" fill="#38B6FF"/>
+</g>
+<g id="Group_20">
+<path id="Vector_22" d="M60 5H65V10H60V5Z" fill="#FF65C3"/>
+</g>
+<g id="Group_21">
+<path id="Vector_23" d="M65 5H70V10H65V5Z" fill="#FF65C3"/>
+</g>
+<g id="Group_22">
+<path id="Vector_24" d="M70 5H75V10H70V5Z" fill="#FF65C3"/>
+</g>
+<g id="Group_23">
+<path id="Vector_25" d="M75 5H80V10H75V5Z" fill="#FF65C3"/>
+</g>
+<g id="Group_24">
+<path id="Vector_26" d="M80 5H85V10H80V5Z" fill="#FF65C3"/>
+</g>
+<g id="Group_25">
+<path id="Vector_27" d="M85 5H90V10H85V5Z" fill="#FF65C3"/>
+</g>
+<g id="Group_26">
+<path id="Vector_28" d="M90 5H95V10H90V5Z" fill="#FF65C3"/>
+</g>
+<g id="Group_27">
+<path id="Vector_29" d="M20 10H25V15H20V10Z" fill="#38B6FF"/>
+</g>
+<g id="Group_28">
+<path id="Vector_30" d="M25 10H30V15H25V10Z" fill="#38B6FF"/>
+</g>
+<g id="Group_29">
+<path id="Vector_31" d="M45 10H50V15H45V10Z" fill="#38B6FF"/>
+</g>
+<g id="Group_30">
+<path id="Vector_32" d="M50 10H55V15H50V10Z" fill="#FF65C3"/>
+</g>
+<g id="Group_31">
+<path id="Vector_33" d="M55 10H80V15H85V25H90V30H85V35H80V40H70V20H65V15H55V10Z" fill="#FF65C3"/>
+</g>
+<g id="Group_32">
+<path id="Vector_34" d="M80 10H85V15H80V10Z" fill="#FF65C3"/>
+</g>
+<g id="Group_33">
+<path id="Vector_35" d="M85 10H90V15H85V10Z" fill="#FF65C3"/>
+</g>
+<g id="Group_34">
+<path id="Vector_36" d="M15 15H20V20H15V15Z" fill="#38B6FF"/>
+<path id="Vector_37" d="M20 65H25V70H20V65Z" fill="#38B6FF"/>
+<path id="Vector_38" d="M75 65H80V70H75V65Z" fill="#38B6FF"/>
+</g>
+<g id="Group_35">
+<path id="Vector_39" d="M20 15H25V20H20V15Z" fill="#38B6FF"/>
+</g>
+<g id="Group_36">
+<path id="Vector_40" d="M35 15H40V20H35V15Z" fill="#38B6FF"/>
+</g>
+<g id="Group_37">
+<path id="Vector_41" d="M40 15H45V20H40V15Z" fill="#38B6FF"/>
+</g>
+<g id="Group_38">
+<path id="Vector_42" d="M45 15H50V20H45V15Z" fill="#38B6FF"/>
+</g>
+<g id="Group_39">
+<path id="Vector_43" d="M50 15H55V20H50V15Z" fill="#38B6FF"/>
+</g>
+<g id="Group_40">
+<path id="Vector_44" d="M55 15H60V20H55V15Z" fill="#FF65C3"/>
+</g>
+<g id="Group_41">
+<path id="Vector_45" d="M60 15H65V20H60V15Z" fill="#FF65C3"/>
+</g>
+<g id="Group_42">
+<path id="Vector_46" d="M85 15H90V20H85V15Z" fill="#FF65C3"/>
+</g>
+<g id="Group_43">
+<path id="Vector_47" d="M95 15H100V20H95V15Z" fill="#FF65C3"/>
+</g>
+<g id="Group_44">
+<path id="Vector_48" d="M15 20H20V25H15V20Z" fill="#38B6FF"/>
+</g>
+<g id="Group_45">
+<path id="Vector_49" d="M30 20H35V25H30V20Z" fill="#38B6FF"/>
+</g>
+<g id="Group_46">
+<path id="Vector_50" d="M35 20H40V25H35V20Z" fill="#38B6FF"/>
+</g>
+<g id="Group_47">
+<path id="Vector_51" d="M60 20H65V25H60V20Z" fill="#FF65C3"/>
+</g>
+<g id="Group_48">
+<path id="Vector_52" d="M65 20H70V25H65V20Z" fill="#FF65C3"/>
+</g>
+<g id="Group_49">
+<path id="Vector_53" d="M85 20H90V25H85V20Z" fill="#FF65C3"/>
+</g>
+<g id="Group_50">
+<path id="Vector_54" d="M90 20H95V25H90V20Z" fill="#FF65C3"/>
+</g>
+<g id="Group_51">
+<path id="Vector_55" d="M95 20H100V25H95V20Z" fill="#FF65C3"/>
+</g>
+<g id="Group_52">
+<path id="Vector_56" d="M15 25H20V30H15V25Z" fill="#38B6FF"/>
+</g>
+<g id="Group_53">
+<path id="Vector_57" d="M30 25H35V30H30V25Z" fill="#38B6FF"/>
+</g>
+<g id="Group_54">
+<path id="Vector_58" d="M65 25H70V30H65V25Z" fill="#FF65C3"/>
+</g>
+<g id="Group_55">
+<path id="Vector_59" d="M90 25H95V30H90V25Z" fill="#FF65C3"/>
+</g>
+<g id="Group_56">
+<path id="Vector_60" d="M15 30H20V35H15V30Z" fill="#38B6FF"/>
+</g>
+<g id="Group_57">
+<path id="Vector_61" d="M30 30H35V35H30V30Z" fill="#38B6FF"/>
+</g>
+<g id="Group_58">
+<path id="Vector_62" d="M65 30H70V35H65V30Z" fill="#FF65C3"/>
+</g>
+<g id="Group_59">
+<path id="Vector_63" d="M85 30H90V35H85V30Z" fill="#FF65C3"/>
+</g>
+<g id="Group_60">
+<path id="Vector_64" d="M90 30H95V35H90V30Z" fill="#FF65C3"/>
+</g>
+<g id="Group_61">
+<path id="Vector_65" d="M15 35H20V40H15V35Z" fill="#38B6FF"/>
+</g>
+<g id="Group_62">
+<path id="Vector_66" d="M30 35H35V40H30V35Z" fill="#38B6FF"/>
+</g>
+<g id="Group_63">
+<path id="Vector_67" d="M65 35H70V40H65V35Z" fill="#FF65C3"/>
+</g>
+<g id="Group_64">
+<path id="Vector_68" d="M80 35H85V40H80V35Z" fill="#FF65C3"/>
+</g>
+<g id="Group_65">
+<path id="Vector_69" d="M90 35H95V40H90V35Z" fill="#FF65C3"/>
+</g>
+<g id="Group_66">
+<path id="Vector_70" d="M95 35H100V40H95V35Z" fill="#FF65C3"/>
+</g>
+<g id="Group_67">
+<path id="Vector_71" d="M15 40H20V45H15V40Z" fill="#38B6FF"/>
+</g>
+<g id="Group_68">
+<path id="Vector_72" d="M30 40H35V45H30V40Z" fill="#38B6FF"/>
+</g>
+<g id="Group_69">
+<path id="Vector_73" d="M65 40H70V45H65V40Z" fill="#FF65C3"/>
+</g>
+<g id="Group_70">
+<path id="Vector_74" d="M70 40H75V45H70V40Z" fill="#FF65C3"/>
+</g>
+<g id="Group_71">
+<path id="Vector_75" d="M75 40H80V45H75V40Z" fill="#38B6FF"/>
+</g>
+<g id="Group_72">
+<path id="Vector_76" d="M80 40H85V45H80V40Z" fill="#38B6FF"/>
+</g>
+<g id="Group_73">
+<path id="Vector_77" d="M15 45H20V50H15V45Z" fill="#38B6FF"/>
+</g>
+<g id="Group_74">
+<path id="Vector_78" d="M25 45H30V50H25V45Z" fill="#38B6FF"/>
+</g>
+<g id="Group_75">
+<path id="Vector_79" d="M30 45H35V50H30V45Z" fill="#D4FF00"/>
+</g>
+<g id="Group_76">
+<path id="Vector_80" d="M35 45H40V50H35V45Z" fill="#D4FF00"/>
+</g>
+<g id="Group_77">
+<path id="Vector_81" d="M60 45H65V50H60V45Z" fill="#38B6FF"/>
+</g>
+<g id="Group_78">
+<path id="Vector_82" d="M65 45H70V50H65V45Z" fill="#38B6FF"/>
+</g>
+<g id="Group_79">
+<path id="Vector_83" d="M80 45H85V50H80V45Z" fill="#FF65C3"/>
+</g>
+<g id="Group_80">
+<path id="Vector_84" d="M15 50H20V55H15V50Z" fill="#38B6FF"/>
+</g>
+<g id="Group_81">
+<path id="Vector_85" d="M20 50H25V55H20V50Z" fill="#38B6FF"/>
+<path id="Vector_86" d="M40 85H45V90H40V85Z" fill="#38B6FF"/>
+<path id="Vector_87" d="M55 85H60V90H55V85Z" fill="#38B6FF"/>
+</g>
+<g id="Group_82">
+<path id="Vector_88" d="M25 50H30V55H25V50Z" fill="#D4FF00"/>
+</g>
+<g id="Group_83">
+<path id="Vector_89" d="M30 50H35V55H30V50Z" fill="#D4FF00"/>
+</g>
+<g id="Group_84">
+<path id="Vector_90" d="M35 50H40V55H35V50Z" fill="#D4FF00"/>
+</g>
+<g id="Group_85">
+<path id="Vector_91" d="M40 50H45V55H40V50Z" fill="#D4FF00"/>
+</g>
+<g id="Group_86">
+<path id="Vector_92" d="M45 50H50V55H45V50Z" fill="#D4FF00"/>
+</g>
+<g id="Group_87">
+<path id="Vector_93" d="M50 50H55V55H50V50Z" fill="#D4FF00"/>
+</g>
+<g id="Group_88">
+<path id="Vector_94" d="M55 50H60V55H55V50Z" fill="#38B6FF"/>
+</g>
+<g id="Group_89">
+<path id="Vector_95" d="M60 50H65V55H60V50Z" fill="#38B6FF"/>
+</g>
+<g id="Group_90">
+<path id="Vector_96" d="M65 50H70V55H65V50Z" fill="#38B6FF"/>
+</g>
+<g id="Group_91">
+<path id="Vector_97" d="M75 50H80V55H75V50Z" fill="#38B6FF"/>
+</g>
+<g id="Group_92">
+<path id="Vector_98" d="M80 50H85V55H80V50Z" fill="#38B6FF"/>
+</g>
+<g id="Group_93">
+<path id="Vector_99" d="M20 55H25V60H20V55Z" fill="#38B6FF"/>
+</g>
+<g id="Group_94">
+<path id="Vector_100" d="M25 55H30V60H25V55Z" fill="#38B6FF"/>
+</g>
+<g id="Group_95">
+<path id="Vector_101" d="M30 55H35V60H30V55Z" fill="#D4FF00"/>
+</g>
+<g id="Group_96">
+<path id="Vector_102" d="M35 55H40V60H35V55Z" fill="#D4FF00"/>
+</g>
+<g id="Group_97">
+<path id="Vector_103" d="M40 55H50V60H40V55Z" fill="#D4FF00"/>
+</g>
+<g id="Group_98">
+<path id="Vector_104" d="M50 55H55V60H50V55Z" fill="#D4FF00"/>
+</g>
+<g id="Group_99">
+<path id="Vector_105" d="M55 55H60V60H55V55Z" fill="#38B6FF"/>
+</g>
+<g id="Group_100">
+<path id="Vector_106" d="M75 55H80V60H75V55Z" fill="#38B6FF"/>
+</g>
+<g id="Group_101">
+<path id="Vector_107" d="M20 60H25V65H20V60Z" fill="#38B6FF"/>
+</g>
+<g id="Group_102">
+<path id="Vector_108" d="M35 60H40V65H35V60Z" fill="#D4FF00"/>
+</g>
+<g id="Group_103">
+<path id="Vector_109" d="M40 60H45V65H40V60Z" fill="#D4FF00"/>
+</g>
+<g id="Group_104">
+<path id="Vector_110" d="M45 60H50V65H45V60Z" fill="#D4FF00"/>
+</g>
+<g id="Group_105">
+<path id="Vector_111" d="M50 60H55V65H50V60Z" fill="#38B6FF"/>
+</g>
+<g id="Group_106">
+<path id="Vector_112" d="M55 60H60V65H55V60Z" fill="#38B6FF"/>
+</g>
+<g id="Group_107">
+<path id="Vector_113" d="M75 60H80V65H75V60Z" fill="#38B6FF"/>
+</g>
+<g id="Group_108">
+<path id="Vector_114" d="M25 65H30V70H25V65Z" fill="#38B6FF"/>
+</g>
+<g id="Group_109">
+<path id="Vector_115" d="M35 65H40V70H35V65Z" fill="#D4FF00"/>
+</g>
+<g id="Group_110">
+<path id="Vector_116" d="M40 65H45V70H40V65Z" fill="#38B6FF"/>
+</g>
+<g id="Group_111">
+<path id="Vector_117" d="M45 65H50V70H45V65Z" fill="#D4FF00"/>
+</g>
+<g id="Group_112">
+<path id="Vector_118" d="M50 65H55V70H50V65Z" fill="#38B6FF"/>
+</g>
+<g id="Group_113">
+<path id="Vector_119" d="M70 65H75V70H70V65Z" fill="#38B6FF"/>
+</g>
+<g id="Group_114">
+<path id="Vector_120" d="M25 70H30V75H25V70Z" fill="#38B6FF"/>
+<path id="Vector_121" d="M35 85H40V90H35V85Z" fill="#38B6FF"/>
+</g>
+<g id="Group_115">
+<path id="Vector_122" d="M70 70H75V75H70V70Z" fill="#38B6FF"/>
+<path id="Vector_123" d="M60 85H65V90H60V85Z" fill="#38B6FF"/>
+</g>
+<g id="Group_116">
+<path id="Vector_124" d="M30 75H35V80H30V75Z" fill="#38B6FF"/>
+</g>
+<g id="Group_117">
+<path id="Vector_125" d="M65 75H70V80H65V75Z" fill="#38B6FF"/>
+</g>
+<g id="Group_118">
+<path id="Vector_126" d="M30 80H35V85H30V80Z" fill="#38B6FF"/>
+</g>
+<g id="Group_119">
+<path id="Vector_127" d="M35 80H40V85H35V80Z" fill="#38B6FF"/>
+</g>
+<g id="Group_120">
+<path id="Vector_128" d="M60 80H65V85H60V80Z" fill="#38B6FF"/>
+</g>
+<g id="Group_121">
+<path id="Vector_129" d="M65 80H70V85H65V80Z" fill="#38B6FF"/>
+</g>
+<g id="Group_122">
+<path id="Vector_130" d="M40 90H45V95H40V90Z" fill="#38B6FF"/>
+</g>
+<g id="Group_123">
+<path id="Vector_131" d="M55 90H60V95H55V90Z" fill="#38B6FF"/>
+</g>
+<g id="Group_124">
+<path id="Vector_132" d="M45 95H50V100H45V95Z" fill="#38B6FF"/>
+</g>
+<g id="Group_125">
+<path id="Vector_133" d="M50 95H55V100H50V95Z" fill="#38B6FF"/>
+</g>
+<path id="Rectangle 29" d="M65 0.5H30.5V5.5H25.5V10.5H20.5V15.5H15.5V54.5H20.5V69.5H25.5V74.5H30.5V84.5H35.5V89.5H40.5V94.5H45.5V99.5H54.5V94.5H59.5V89.5H64.5V84.5H69.5V74.5H74.5V69.5H79.5V54.5H84.5V50" stroke="black"/>
+<path id="Rectangle 30" d="M84.5 40V45" stroke="black"/>
+<path id="Rectangle 31" d="M55 19.5H39.4999V24.5H36.9999H34.5V45" stroke="black"/>
+<path id="Rectangle 32" d="M65.0001 45.5H60.5V50.5H55" stroke="black"/>
+</g>
+</svg>

@@ -6,11 +6,16 @@ import Login, { authenticate } from "./pages/Login/Loginpage";
 import Register, { enrolment } from "./pages/Register/Register";
 
 import App from "./App";
+import MapPage from "./pages/MapPage/MapPage";
 
 const router = createBrowserRouter([
   {
     path: "/",
     element: <App />,
+  },
+  {
+    path: "/map",
+    element: <MapPage />,
   },
   {
     path: "/login",

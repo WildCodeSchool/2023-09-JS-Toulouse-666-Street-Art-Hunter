@@ -1,0 +1,23 @@
+.leaflet-container {
+  width: 80%;
+  height: 80vh;
+  border: 5px solid mediumvioletred;
+  .marker {
+    cursor: pointer;
+    border-radius: 50%;
+    width: 20px;
+    height: 20px;
+    background-color: red;
+  }
+
+  .leaflet-control-zoom-in,
+  .leaflet-control-zoom-out {
+    span {
+      font-family: "PressStart2P";
+    }
+  }
+
+  .leaflet-control-attribution {
+    display: none;
+  }
+}
