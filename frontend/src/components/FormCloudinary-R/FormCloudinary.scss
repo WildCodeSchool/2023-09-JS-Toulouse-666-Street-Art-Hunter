@@ -1,0 +1,21 @@
+.main-container-form-cloudinary {
+  background-color: aquamarine;
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+  width: 100%;
+  height: auto;
+
+  .preview-container {
+    background-color: chocolate;
+  }
+  .input-container {
+    background-color: darkblue;
+  }
+  .text-autorisation {
+    background-color: darkorange;
+  }
+  .btn-container {
+    background-color: firebrick;
+  }
+}

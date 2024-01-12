@@ -1,4 +1,5 @@
 import { useState } from "react";
+import "./FormCloudinary.scss";
 // Formulaire pour l'upload de photo dans cloudinary, puis dans la base de données
 function FormCloudinary() {
   const [previewSource, setPreviewSource] = useState();
@@ -50,18 +51,30 @@ function FormCloudinary() {
   };
 
   return (
-    <div>
+    <div className="main-container-form-cloudinary">
+      <div className="preview-container">
+        {previewSource && (
+          <img src={previewSource} alt="chosen" style={{ height: "300px" }} />
+        )}
+      </div>
       <form onSubmit={handleSubmitFile}>
-        <div>
+        <div className="input-container">
           <input type="file" name="image" onChange={handleFileInputChange} />
+        </div>
+        <div className="text-autorisation">
+          <p>
+            Lorem ipsum dolor sit amet, consectetur adipisicing elit.
+            Consequuntur obcaecati numquam suscipit aspernatur laborum odio
+            veritatis officiis consectetur ipsam, rerum accusamus deserunt
+            excepturi vitae, debitis, ipsa iure facilis tempore. Suscipit.
+          </p>
+        </div>
+        <div className="btn-container">
           <button type="submit" name="submit">
             Uploader
           </button>
         </div>
       </form>
-      {previewSource && (
-        <img src={previewSource} alt="chosen" style={{ height: "300px" }} />
-      )}
     </div>
   );
 }

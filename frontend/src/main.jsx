@@ -5,6 +5,7 @@ import { createBrowserRouter, RouterProvider } from "react-router-dom";
 import Login, { authenticate } from "./pages/login/LogIn";
 
 import App from "./App";
+import AddExistingArtwork from "./pages/AddExistingArtwork/AddExistingArtwork";
 
 const router = createBrowserRouter([
   {
@@ -15,6 +16,10 @@ const router = createBrowserRouter([
     path: "/login",
     element: <Login />,
     action: authenticate,
+  },
+  {
+    path: "/add-existing-artwork",
+    element: <AddExistingArtwork />,
   },
 ]);
 
