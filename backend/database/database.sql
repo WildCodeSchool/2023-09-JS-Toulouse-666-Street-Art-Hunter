@@ -28,7 +28,7 @@ CREATE TABLE IF NOT EXISTS `street_art`.`user` (
 CREATE TABLE IF NOT EXISTS `street_art`.`avatar_image` (
   `id` INT NOT NULL AUTO_INCREMENT,
   `name` VARCHAR(45) NOT NULL,
-  `objective` VARCHAR(300) NULL,
+  `objective` VARCHAR(300) NULL,  
   `img_url` LONGTEXT NOT NULL,
   PRIMARY KEY (`id`));
 

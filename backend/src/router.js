@@ -66,6 +66,10 @@ router.post("/photos", validatePhoto, photoControllers.add);
 router.put("/photos/:id", validatePhoto, photoControllers.edit);
 router.delete("/photos/:id", photoControllers.destroy);
 
+// Route for CLOUDINARY
+router.post("/upload", photoControllers.uploadCloud);
+router.get("/images", photoControllers.getImagesFromCloud);
+
 // Route for USERS
 
 router.put("/users/:id", validateUser, userControllers.edit);

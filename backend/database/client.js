@@ -12,6 +12,8 @@ const client = mysql.createPool({
   database: DB_NAME,
 });
 
+console.info(DB_HOST);
+
 // Try to get a connection to the database
 client
   .getConnection()
