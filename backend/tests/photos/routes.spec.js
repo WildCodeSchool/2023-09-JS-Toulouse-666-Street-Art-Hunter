@@ -1,7 +1,7 @@
-// Import required dependencies
+// Importation des dépendances requises
 const { app, request, tables } = require("../setup");
 
-// Test suite for the GET /api/photos route
+// -------------------------- Route GET /api/photos --------------------------
 describe("GET /api/photos", () => {
   it("should fetch photos successfully", async () => {
     // Define a sample photo for testing
@@ -12,17 +12,17 @@ describe("GET /api/photos", () => {
       artwork_id: 1,
     };
 
-    // Create a sample Photo in the database
+    // Créer une photo d'exemple dans la base de données
     const insertId = await tables.photo.create(testPhoto);
 
-    // Send a GET request to the /api/photos endpoint
+    // Envoyer une requête GET à l'endpoint /api/photos
     const response = await request(app).get("/api/photos");
 
     // Assertions
     expect(response.status).toBe(200);
     expect(response.body).toBeInstanceOf(Array);
 
-    // Check if the created photo is present in the response
+    // Vérifier si la photo créée est présente dans la réponse
     const foundPhoto = response.body.find((photo) => photo.id === insertId);
 
     // Assertions
@@ -38,10 +38,10 @@ describe("GET /api/photos", () => {
   });
 });
 
-// Test suite for the GET /api/photos/:id route
+// Suite de tests pour la route GET /api/photos/:id
 describe("GET /api/photos/:id", () => {
   it("should fetch a single photo successfully", async () => {
-    // Define a sample photo for testing
+    // Définir une photo d'exemple pour les tests
     const testPhoto = {
       image: "liens vers l'image",
       is_validated: 1,
@@ -49,10 +49,10 @@ describe("GET /api/photos/:id", () => {
       artwork_id: 1,
     };
 
-    // Create a sample photo in the database
+    // Créer une photo d'exemple dans la base de données
     const insertId = await tables.photo.create(testPhoto);
 
-    // Send a GET request to the /api/photos/:id endpoint
+    // Envoyer une requête GET à l'endpoint /api/photos/:id
     const response = await request(app).get(`/api/Photos/${insertId}`);
 
     // Assertions
@@ -79,12 +79,12 @@ describe("GET /api/photos/:id", () => {
   });
 });
 
-// Test suite for the POST /api/photos route
-// Doesn't pass: maybe something to change in app config :/
-// Hint: enabling log could help ;)
+// -------------------------- Route POST /api/photos  --------------------------
+// Ne passe pas : peut-être quelque chose à changer dans la configuration de l'application :/
+// Astuce : activer les journaux pourrait aider ;)
 describe("POST /api/photos", () => {
   it("should add a new photo successfully", async () => {
-    // Define a sample photo for testing
+    // Définir une photo d'exemple pour les tests
     const testPhoto = {
       image: "liens vers l'image",
       is_validated: 1,
@@ -92,7 +92,7 @@ describe("POST /api/photos", () => {
       artwork_id: 1,
     };
 
-    // Send a POST request to the /api/photos endpoint with a test photo
+    // Envoyer une requête POST à l'endpoint /api/photos avec une photo de test
     const response = await request(app).post("/api/photos").send(testPhoto);
 
     // Assertions
@@ -100,7 +100,7 @@ describe("POST /api/photos", () => {
     expect(response.body).toBeInstanceOf(Object);
     expect(response.body.insertId).toEqual(expect.any(Number));
 
-    // Check if the newly added photo exists in the database
+    // Vérifier si la nouvelle photo ajoutée existe dans la base de données
     const foundphoto = await tables.photo.read(response.body.insertId);
 
     // Assertions
@@ -119,12 +119,12 @@ describe("POST /api/photos", () => {
   });
 });
 
-// TODO: implement PUT and DELETE routes
+// -------------------------- Routes PUT et DELETE --------------------------
 
-// Test suite for the PUT /api/photos/:id route
+// Suite de tests pour la route PUT /api/photos/:id
 describe("PUT /api/photos/:id", () => {
   it("should update an existing photo successfully", async () => {
-    // Define a sample photo for testing
+    // Définir une photo d'exemple pour les tests
     const testPhoto = {
       image: "liens vers l'image",
       is_validated: 1,
@@ -132,10 +132,10 @@ describe("PUT /api/photos/:id", () => {
       artwork_id: 1,
     };
 
-    // Create a sample photo in the database
+    // Créer une photo d'exemple dans la base de données
     const insertId = await tables.photo.create(testPhoto);
 
-    // Define an updated photo object
+    // Définir un objet de photo mis à jour
     const updatedPhoto = {
       image: "liens vers l'image modifier",
       is_validated: 0,
@@ -143,7 +143,7 @@ describe("PUT /api/photos/:id", () => {
       artwork_id: 1,
     };
 
-    // Send a PUT request to the /api/photos/:id endpoint with updated data
+    // Envoyer une requête PUT à l'endpoint /api/photos/:id avec des données mises à jour
     const response = await request(app)
       .put(`/api/photos/${insertId}`)
       .send(updatedPhoto);
@@ -151,7 +151,7 @@ describe("PUT /api/photos/:id", () => {
     // Assertions
     expect(response.status).toBe(204);
 
-    // Check if the photo has been updated in the database
+    // Vérifier si la photo a été mise à jour dans la base de données
     const foundPhoto = await tables.photo.read(insertId);
 
     // Assertions
@@ -170,10 +170,10 @@ describe("PUT /api/photos/:id", () => {
   });
 });
 
-// Test suite for the DELETE /api/photos/:id route
+// Suite de tests pour la route DELETE /api/photos/:id
 describe("DELETE /api/photos/:id", () => {
   it("should delete an existing photo successfully", async () => {
-    // Define a sample photo for testing
+    // Définir une photo d'exemple pour les tests
     const testPhoto = {
       image: "liens vers l'image modifier",
       is_validated: 0,
@@ -181,16 +181,16 @@ describe("DELETE /api/photos/:id", () => {
       artwork_id: 1,
     };
 
-    // Create a sample photo in the database
+    // Créer une photo d'exemple dans la base de données
     const insertId = await tables.photo.create(testPhoto);
 
-    // Send a DELETE request to the /api/photos/:id endpoint
+    // Envoyer une requête DELETE à l'endpoint /api/photos/:id
     const response = await request(app).delete(`/api/photos/${insertId}`);
 
     // Assertions
     expect(response.status).toBe(204);
 
-    // Check if the photo has been deleted from the database
+    // Vérifier si la photo a été supprimée de la base de données
     const foundPhoto = await tables.photo.read(insertId);
 
     // Assertions
