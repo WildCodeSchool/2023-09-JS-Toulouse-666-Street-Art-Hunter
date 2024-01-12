@@ -13,28 +13,28 @@ function Register() {
             className="input"
             labelName="name"
             type="name"
-            labelText="Joueur"
+            labelText="Joueur :"
             maxLength="14"
           />
           <Input
             className="input"
             labelName="email"
             type="email"
-            labelText="email"
+            labelText="email :"
             maxLength="45"
           />
           <Input
             className="input"
             labelName="password"
             type="password"
-            labelText="Mot de passe"
+            labelText="Mot de passe :"
             maxLength="255"
           />
           <Input
             className="input"
             labelName="passwordConfirme"
             type="password"
-            labelText="Confirmation mdp"
+            labelText="Confirmation mdp :"
             maxLength="255"
           />
 

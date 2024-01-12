@@ -2,6 +2,8 @@ import React from "react";
 import { Form, redirect, useNavigate } from "react-router-dom";
 import Input from "../../components/Input-R/Input";
 import PeintBomb from "../../assets/Peint-login.png";
+import Boy from "../../assets/garçonHd.jpg";
+import Girl from "../../assets/filleHd.jpg";
 import "./Loginpage.scss";
 
 function Login() {
@@ -17,27 +19,31 @@ function Login() {
   };
   return (
     <div className="login-page">
-      <div className="login-input">
-        <h1 className="login-title">CONNECTE-TOI</h1>
-        <Form className="form" method="post" action="/login" replace>
-          <Input
-            className="input"
-            labelName="email"
-            type="email"
-            labelText="Adresse Mail"
-            maxLength="45"
-          />
-          <Input
-            className="input"
-            labelName="password"
-            type="password"
-            labelText="Mot de passe"
-            maxLength="455"
-          />
-          <button className="continue" type="submit">
-            CONTINUE
-          </button>
-        </Form>
+      <div className="input-block">
+        <img className="left-boy" src={Boy} alt="Un jeune garçon" />
+        <div className="login-input">
+          <h1 className="login-title">CONNECTE-TOI</h1>
+          <Form className="form" method="post" action="/login" replace>
+            <Input
+              className="input"
+              labelName="email"
+              type="email"
+              labelText="Adresse Mail"
+              maxLength="45"
+            />
+            <Input
+              className="input"
+              labelName="password"
+              type="password"
+              labelText="Mot de passe"
+              maxLength="455"
+            />
+            <button className="continue" type="submit">
+              CONTINUE
+            </button>
+          </Form>
+        </div>
+        <img className="right-girl" src={Girl} alt="Une jeunne fille" />
       </div>
       <div className="logout-page">
         <button type="submit" onClick={handleClick}>
@@ -45,7 +51,7 @@ function Login() {
         </button>
       </div>
       <div className="login-text">
-        <img src={PeintBomb} alt="Bombe de peinture" />
+        <img src={PeintBomb} className="peint-bomb" alt="Bombe de peinture" />
         <div className="text">Nouveau dans la jungle urbaine?</div>
         <button
           className="register"
