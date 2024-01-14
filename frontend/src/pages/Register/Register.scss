@@ -1,0 +1,101 @@
+.register-page {
+  background-color: rgba(18, 20, 26, 1);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 40px;
+  min-height: 1200px;
+
+  .register-input {
+    width: 100%;
+    .register-title {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      color: rgba(217, 93, 0, 1);
+      text-transform: uppercase;
+      font-size: 28px;
+    }
+    .form {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      gap: 30px;
+      margin-top: 60px;
+    }
+
+    .continue {
+      border: 3px solid #ff1c96;
+      background: rgba(200, 56, 56, 0.2);
+      box-shadow: 2px 1px 0px 0px #5d75f0;
+      text-align: center;
+      font-size: 18px;
+      font-style: normal;
+      font-weight: 400;
+      line-height: normal;
+      color: black;
+      font-family: "PressStart2P";
+      padding: 4px;
+    }
+  }
+}
+
+@media screen and (min-width: 800px) {
+  .register-page {
+    .register-input {
+      .register-title {
+        background-image: url(../../assets/BeatlsHd.jpg);
+        background-repeat: no-repeat;
+        background-size: cover;
+        width: 95%;
+        min-height: 450px;
+        filter: brightness(0.75);
+        margin-inline: 26px;
+        font-size: 36px;
+      }
+      .form {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: space-between;
+        gap: 40px;
+        margin-inline: 10%;
+
+        .label-composent-css {
+          color: red;
+          display: flex;
+          flex-direction: row;
+          justify-content: space-between;
+          gap: 40px;
+          text-shadow: 2px 1px 0px #5d75f0;
+          font-size: clamp(20px, 3vw, 28px);
+          font-style: normal;
+          font-weight: 400;
+          line-height: normal;
+          text-transform: uppercase;
+          width: 100%;
+
+          .input-composent-css {
+            width: clamp(320px, 34vw, 550px);
+            height: 45px;
+            background: rgba(182, 88, 140, 0.7);
+            margin-top: 0px;
+          }
+        }
+      }
+      .continue {
+        border: 3px solid #ff1c96;
+        background: rgba(200, 56, 56, 0.2);
+        box-shadow: 2px 1px 0px 0px #5d75f0;
+        text-align: center;
+        font-size: clamp(14px, 3vw, 30px);
+        font-style: normal;
+        font-weight: 400;
+        line-height: normal;
+        padding-inline: 8px;
+        margin-top: 24px;
+      }
+    }
+  }
+}

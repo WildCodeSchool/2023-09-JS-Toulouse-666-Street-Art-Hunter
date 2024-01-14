@@ -3,6 +3,7 @@ import "./FormCloudinary.scss";
 // Formulaire pour l'upload de photo dans cloudinary, puis dans la base de données
 function FormCloudinary() {
   const [previewSource, setPreviewSource] = useState();
+  const [fileName, setFileName] = useState("");
 
   // Récupère l'URL du fichier image puis le stock dans previewSource
   const previewFile = (file) => {
@@ -18,8 +19,10 @@ function FormCloudinary() {
   const handleFileInputChange = (e) => {
     const file = e.target.files[0];
     previewFile(file);
+    setFileName(file.name);
     console.info(file);
   };
+  console.info(fileName);
 
   // Post l'url du fichier image, ainsi que les autres champs de la table photo sur cloudinary puis sur la database
   const uploadImage = async (base64EncodedImage) => {
@@ -52,26 +55,35 @@ function FormCloudinary() {
 
   return (
     <div className="main-container-form-cloudinary">
+      <h1>Trouver ? </h1>
       <div className="preview-container">
         {previewSource && (
           <img src={previewSource} alt="chosen" style={{ height: "300px" }} />
         )}
       </div>
-      <form onSubmit={handleSubmitFile}>
-        <div className="input-container">
-          <input type="file" name="image" onChange={handleFileInputChange} />
-        </div>
+      <form className="form-container" onSubmit={handleSubmitFile}>
+        <label className="input-container" htmlFor="image">
+          <span className="label-title">Choisir fichier</span>
+          <span className="file-name">{fileName && fileName}</span>
+          <input
+            id="image"
+            type="file"
+            name="image"
+            onChange={handleFileInputChange}
+          />
+        </label>
         <div className="text-autorisation">
+          <h2>Autorisation*</h2>
           <p>
-            Lorem ipsum dolor sit amet, consectetur adipisicing elit.
-            Consequuntur obcaecati numquam suscipit aspernatur laborum odio
-            veritatis officiis consectetur ipsam, rerum accusamus deserunt
-            excepturi vitae, debitis, ipsa iure facilis tempore. Suscipit.
+            <span>Je confirme être l’auteur de</span>{" "}
+            <span>la photo et j’autorise son</span>{" "}
+            <span>exploitation sur le site</span>{" "}
+            <span>STREET ART HUNTER.</span>
           </p>
         </div>
         <div className="btn-container">
           <button type="submit" name="submit">
-            Uploader
+            <span className="btn-span">valider</span>
           </button>
         </div>
       </form>
