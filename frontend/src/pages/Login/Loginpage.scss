@@ -1,5 +1,4 @@
 .login-page {
-  background-color: rgba(18, 20, 26, 1);
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -17,9 +16,9 @@
       flex-direction: column;
       align-items: center;
       color: rgba(217, 93, 0, 1);
-      font-size: 28px;
+      font-size: 45px;
     }
-    .form {
+    .login-form {
       display: flex;
       flex-direction: column;
       align-items: center;
@@ -30,6 +29,7 @@
         display: flex;
         flex-direction: column;
         align-items: center;
+        row-gap: 30px;
       }
       .continue {
         border: 3px solid #ff1c96;
@@ -80,7 +80,6 @@
 
 @media screen and (min-width: 400px) {
   .login-page {
-    background-color: rgba(18, 20, 26, 1);
     display: flex;
     flex-direction: column;
     align-items: center;

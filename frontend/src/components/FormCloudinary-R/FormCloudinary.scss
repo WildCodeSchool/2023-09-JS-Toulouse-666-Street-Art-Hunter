@@ -1,26 +1,9 @@
-:root {
-  --primary-color: rgb(89, 50, 76);
-  --primary-font: "PressStart2P", sans-serif;
-  --secondary-font: "PixelBit", sans-serif;
-  --red-gradient: linear-gradient(
-    180deg,
-    #f00 0%,
-    #d95d00 28.13%,
-    #be7c68 50.52%,
-    #f5ff87 100%
-  );
-}
-
-* {
-  background-color: #12141a;
-}
-
 .main-container-form-cloudinary {
   display: flex;
   align-items: center;
   flex-direction: column;
-  row-gap: 2rem;
-  width: 100%;
+  row-gap: 3rem;
+  width: auto;
   height: 100vh;
   h1 {
     font-size: 2rem;
@@ -55,7 +38,7 @@
     align-items: center;
     flex-direction: column;
     width: 340px;
-    row-gap: 2rem;
+    row-gap: 3rem;
 
     .input-container {
       width: 340px;
@@ -119,7 +102,6 @@
     }
 
     .btn-container {
-      background-color: firebrick;
       button {
         padding: 0.5rem;
         display: flex;
@@ -131,6 +113,7 @@
         .btn-span {
           font-family: var(--primary-font);
           font-size: 18px;
+          text-transform: uppercase;
           background: var(--red-gradient);
           background-clip: text;
           -webkit-background-clip: text;

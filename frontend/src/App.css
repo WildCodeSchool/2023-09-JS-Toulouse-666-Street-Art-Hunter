@@ -107,6 +107,7 @@ section {
 }
 body {
   line-height: 1;
+  background-color: #12141a;
 }
 ol,
 ul {
@@ -138,6 +139,19 @@ button {
 }
 
 /* custom fonts */
+
+:root {
+  --primary-color: rgb(89, 50, 76);
+  --primary-font: "PressStart2P", sans-serif;
+  --secondary-font: "PixelBit", sans-serif;
+  --red-gradient: linear-gradient(
+    180deg,
+    #f00 0%,
+    #d95d00 28.13%,
+    #be7c68 50.52%,
+    #f5ff87 100%
+  );
+}
 
 @font-face {
   font-family: "PressStart2P";
