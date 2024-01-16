@@ -1,6 +1,6 @@
 .leaflet-container {
   width: 80%;
-  height: 80vh;
+  height: calc(80vh - 10px);
   border: 5px solid mediumvioletred;
   .marker {
     cursor: pointer;
@@ -19,5 +19,11 @@
 
   .leaflet-control-attribution {
     display: none;
+  }
+}
+
+@media screen and (min-width: 1024px) {
+  .leaflet-container {
+    width: 90%;
   }
 }
