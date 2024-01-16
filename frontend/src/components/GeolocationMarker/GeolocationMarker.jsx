@@ -9,7 +9,7 @@ function GeolocationMarker({ location }) {
   const { lat, lng } = location.coordinates;
   const map = useMapEvents({
     locationfound() {
-      map.flyTo([lat, lng], map.getZoom());
+      map.flyTo([lat, lng], 15);
     },
   });
 

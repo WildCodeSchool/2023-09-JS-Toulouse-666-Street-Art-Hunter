@@ -1,18 +1,18 @@
 import { useState } from "react";
 import { Link, useNavigate } from "react-router-dom";
+import PropTypes from "prop-types";
 
 import "./NavBar.scss";
 
 import burgerLogo from "../../assets/icons/burger-logo.svg";
 import profileLogo from "../../assets/icons/profile-logo.svg";
-import pinkSplatter from "../../assets/images/pink-splatter.svg";
-import tealSplatter from "../../assets/images/teal-splatter.svg";
-import greenSplatter from "../../assets/images/green-splatter.svg";
+import ProfileModal from "../ProfileModal/ProfileModal";
+import BurgerModal from "../BurgerModal/BurgerModal";
 
-function NavBar() {
+function NavBar({ isOpen, setIsOpen }) {
+  const [modalIsConnected, setModalIsConnected] = useState(false);
   const token = localStorage.getItem("token");
   const navigate = useNavigate();
-  const [isOpen, setIsOpen] = useState(false);
 
   const handleBurger = () => {
     setIsOpen(!isOpen);
@@ -23,21 +23,23 @@ function NavBar() {
   };
 
   const handleProfile = () => {
-    return navigate("/profile");
+    setModalIsConnected(!modalIsConnected);
   };
 
   return (
-    <header className="navbar-container">
-      <nav className="navbar">
+    <>
+      <header className="navbar-container">
         <button className="burger" type="button" onClick={handleBurger}>
           <img src={burgerLogo} alt="burger logo" />
         </button>
+
         <li>
-          <Link to="/map">Carte</Link>
-          <Link to="/leaderboard">Classement</Link>
-          <Link to="/article">Articles</Link>
-          <Link to="/artist">Artistes</Link>
-          <Link to="/rules">Regles</Link>
+          <Link to="/map">CARTE</Link>
+          <Link to="/leaderboard">CLASSEMENT</Link>
+          <Link to="/article">ARTICLES</Link>
+          <Link to="/artist">ARTISTES</Link>
+          <Link to="/rules">REGLES</Link>
+          <Link to="/about">CREATEURS</Link>
         </li>
         <button
           className="profile"
@@ -46,38 +48,23 @@ function NavBar() {
         >
           <img src={profileLogo} alt="profile logo" />
         </button>
-      </nav>
-      {isOpen && (
-        <div className="overlay-container">
-          <button className="burger" type="button" onClick={handleBurger}>
-            <img src={burgerLogo} alt="burger logo" />
-          </button>
-          <li>
-            <Link to="/map">Carte</Link>
-            <Link to="/leaderboard">Classement</Link>
-            <Link to="/article">Articles</Link>
-            <Link to="/artist">Artistes</Link>
-            <Link to="/rules">Regles</Link>
-          </li>
-          <img
-            className="splatter teal-splatter"
-            src={tealSplatter}
-            alt="teal splatter"
-          />
-          <img
-            className="splatter pink-splatter"
-            src={pinkSplatter}
-            alt="pink splatter"
-          />
-          <img
-            className="splatter green-splatter"
-            src={greenSplatter}
-            alt="green splatter"
-          />
-        </div>
-      )}
-    </header>
+      </header>
+      <BurgerModal
+        isOpen={isOpen}
+        setIsOpen={setIsOpen}
+        handleBurger={handleBurger}
+      />
+      <ProfileModal
+        setModalIsConnected={setModalIsConnected}
+        modalIsConnected={modalIsConnected}
+      />
+    </>
   );
 }
+
+NavBar.propTypes = {
+  isOpen: PropTypes.bool.isRequired,
+  setIsOpen: PropTypes.func.isRequired,
+};
 
 export default NavBar;

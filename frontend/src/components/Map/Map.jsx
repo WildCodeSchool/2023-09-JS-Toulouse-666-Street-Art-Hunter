@@ -34,14 +34,14 @@ function Map() {
           : [43.603274149517546, 1.442146329051954]
       }
       zoom={15}
-      minZoom={0}
+      minZoom={12}
       maxZoom={20}
     >
       <TileLayer
         attribution='© <a href="https://www.mapbox.com/about/maps/">Mapbox</a> © <a href="http://www.openstreetmap.org/copyright">OpenStreetMap</a>'
         url={`https://api.mapbox.com/styles/v1/${map.account}/${map.style}/tiles/256/{z}/{x}/{y}@2x?access_token=${map.key}`}
         maxNativeZoom={20}
-        minZoom={0}
+        minZoom={12}
         maxZoom={20}
       />
       <ArtworkMarker />

@@ -5,17 +5,16 @@
   align-items: center;
   width: 100%;
   background-color: #12141a;
-  padding-top: 20px;
-  padding-bottom: 50px;
+  height: calc(100vh - 160px);
   .leaflet-container {
     position: relative;
   }
   .photo-logo {
     position: absolute;
     z-index: 500;
-    bottom: 80px;
-    left: calc(50% - 75px);
-    width: 150px;
+    bottom: 40px;
+    left: calc(50% - 50px);
+    width: 100px;
     height: auto;
     img {
       width: 150px;
