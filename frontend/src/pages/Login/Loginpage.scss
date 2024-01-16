@@ -4,7 +4,24 @@
   flex-direction: column;
   align-items: center;
   gap: 40px;
-  min-height: 1200px;
+  min-height: calc(100vh - 160px);
+
+  &::-webkit-scrollbar {
+    width: 0;
+    height: 0.5rem;
+  }
+  &::-webkit-scrollbar-thumb {
+    background-color: var(--smoothGoldColor);
+    border-radius: 5px;
+    visibility: hidden;
+  }
+  &::-webkit-scrollbar-corner {
+    visibility: hidden;
+  }
+  &:hover::-webkit-scrollbar-thumb {
+    visibility: visible;
+  }
+
   .left-boy {
     display: none;
   }
@@ -61,7 +78,7 @@
       font-style: normal;
       font-weight: 400;
       font-family: "PressStart2P";
-      line-height: 20px; /* 142.857% */
+      line-height: 20px;
     }
     .register {
       border: 3px solid #66b652;
