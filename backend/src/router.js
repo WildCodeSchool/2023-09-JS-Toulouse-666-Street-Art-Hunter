@@ -72,7 +72,7 @@ router.get("/images", photoControllers.getImagesFromCloud);
 
 // Route for USERS
 
-router.put("/users/:id", validateUser, userControllers.edit);
+router.put("/users/:id", userControllers.edit);
 router.delete("/users/:id", userControllers.destroy);
 
 // Route for ARTICLES

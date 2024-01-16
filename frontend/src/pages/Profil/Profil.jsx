@@ -1,19 +1,28 @@
-import { Navigate, useLoaderData, useParams } from "react-router-dom";
+import {
+  Navigate,
+  useLoaderData,
+  useParams,
+  useNavigate,
+} from "react-router-dom";
+
 import "./Profil.scss";
+
 import Soldat from "../../assets/avatars/Soldat.png";
+import Trophy from "../../assets/icons/Trophy.png";
+import Option from "../../assets/icons/Icon_option.png";
 
 function Profil() {
   const profils = useLoaderData();
   const token = localStorage.getItem("token");
   const data = JSON.parse(localStorage.getItem("user"));
 
-  const id = useParams();
+  const { id } = useParams();
 
   if (!token) {
     return <Navigate to="/login" replace />;
   }
 
-  if (parseInt(id.id, 10) !== data.id) {
+  if (parseInt(id, 10) !== data.id) {
     return <Navigate to="/login" replace />;
   }
   const artPhoto = (nbr) => {
@@ -21,31 +30,50 @@ function Profil() {
       return el.user_id === nbr;
     });
   };
-  const a = id.id;
+  const a = id;
   const b = parseInt(a, 10);
-
   const userArt = artPhoto(b);
-
+  const navigate = useNavigate();
+  const handleClickOption = () => {
+    navigate(`/profil/${id}/option`);
+  };
   return (
-    <div className="profil-page">
-      <div className="profil-top">
-        <img src={Soldat} alt="avatar" />
+    <>
+      <div className="profil-page">
+        <div className="profil-top">
+          <img className="avatar" src={Soldat} alt="avatar" />
+
+          <button
+            className="profil-button"
+            type="button"
+            onClick={handleClickOption}
+          >
+            <img className="option" src={Option} alt="option" />
+          </button>
+        </div>
+        <div key={profils.user.id} className="profil-user">
+          <div className="topic">
+            <h1 className="pseudo">{profils.user.name}</h1>
+            <p className="resume"> {profils.user.description}</p>
+          </div>
+          <div className="score-block">
+            <img className="trophy" src={Trophy} alt="trophy" />
+            <p className="score">{profils.user.score} pts</p>
+          </div>
+        </div>
       </div>
-      <div key={profils.user.id} className="profile-user">
-        <h1>Pseudo {profils.user.name}</h1>
-        <p>Description {profils.user.description}</p>
-        <p>Ton score ! :{profils.user.score}</p>
-        <p>voici t'es sublicime photo! {profils.art[0].image}</p>
+      <div className="artwork">
+        <p className="title">Tableau de chasse</p>
         {userArt.map((item) => {
           return (
             <div key={item.id} className="item">
-              <h1>{item.image}</h1>
+              <h1 className="link-img">{item.image}</h1>
               <p>{item.id}</p>
             </div>
           );
         })}
       </div>
-    </div>
+    </>
   );
 }
 

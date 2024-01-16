@@ -5,7 +5,7 @@ import { createBrowserRouter, RouterProvider } from "react-router-dom";
 import Login, { authenticate } from "./pages/Login/Loginpage";
 import Register, { enrolment } from "./pages/Register/Register";
 import Profil, { profilLoader } from "./pages/Profil/Profil";
-
+import ProfilOption, { option } from "./pages/ProfilOption/ProfilOption";
 import App from "./App";
 import MapPage from "./pages/MapPage/MapPage";
 
@@ -29,6 +29,11 @@ const router = createBrowserRouter([
     action: enrolment,
   },
   { path: "/profil/:id", element: <Profil />, loader: profilLoader },
+  {
+    path: "/profil/:id/option",
+    element: <ProfilOption />,
+    action: option,
+  },
 ]);
 
 const root = ReactDOM.createRoot(document.getElementById("root"));

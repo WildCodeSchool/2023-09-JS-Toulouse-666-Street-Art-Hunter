@@ -1,5 +1,123 @@
 .profil-page {
+  display: flex;
+  flex-direction: column;
   background-color: rgba(18, 20, 26, 1);
   color: white;
   font-family: "PressStart2P";
+  gap: 40px;
+  padding-inline: 5%;
+
+  .profil-top {
+    padding-top: 40px;
+    display: flex;
+    justify-content: space-around;
+
+    .avatar {
+      width: 130px;
+    }
+    .profil-button {
+      .option {
+        text-align: center;
+      }
+    }
+  }
+  .profil-user {
+    display: flex;
+    gap: 40px;
+    flex-direction: column;
+    width: 100%;
+    .topic {
+      display: flex;
+      gap: 20px;
+      flex-direction: column;
+      .pseudo {
+        font-size: 30px;
+      }
+      .resume {
+      }
+    }
+    .score-block {
+      display: flex;
+      justify-content: space-around;
+      align-items: center;
+      .trophy {
+      }
+      .score {
+        font-size: 24px;
+      }
+    }
+  }
+}
+.artwork {
+  padding-top: 40px;
+  display: flex;
+  flex-direction: column;
+  background-color: rgba(18, 20, 26, 1);
+  color: white;
+  font-family: "PressStart2P";
+  gap: 40px;
+  padding-inline: 5%;
+  .title {
+    text-align: center;
+    text-transform: uppercase;
+  }
+  .item {
+    .link-img {
+      max-width: 390px;
+    }
+  }
+}
+@media screen and (min-width: 480px) {
+  .profil-page {
+    display: grid;
+    grid-template-columns: 30% 70%;
+    .profil-top {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      gap: 20px;
+      .avatar {
+        width: 230px;
+      }
+      .profil-button {
+        .option {
+          width: 150px;
+        }
+      }
+    }
+    .profil-user {
+      padding-top: 40px;
+      .topic {
+        .pseudo {
+        }
+        .resume {
+          min-height: 240px;
+          line-height: 2em;
+          font-size: 24px;
+        }
+      }
+      .score-block {
+        display: flex;
+        justify-content: flex-start;
+        gap: 60px;
+        .trophy {
+          width: 120px;
+        }
+        .score {
+        }
+      }
+    }
+  }
+  .artwork {
+    padding-top: 40px;
+    .title {
+      display: flex;
+      justify-content: flex-start;
+      font-size: 30px;
+    }
+    .item {
+      .link-img {
+      }
+    }
+  }
 }
