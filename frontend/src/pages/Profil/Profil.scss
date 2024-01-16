@@ -32,16 +32,26 @@
       flex-direction: column;
       .pseudo {
         font-size: 30px;
+        background: linear-gradient(
+          180deg,
+          #4475f5 0%,
+          #4e75ff 32.81%,
+          #aeb1ff 67.71%,
+          #fff 100%
+        );
+        background-clip: text;
+        -webkit-background-clip: text;
+        -webkit-text-fill-color: transparent;
       }
       .resume {
+        font-size: clamp(16px, 3vw, 24px);
       }
     }
     .score-block {
       display: flex;
       justify-content: space-around;
       align-items: center;
-      .trophy {
-      }
+
       .score {
         font-size: 24px;
       }
@@ -57,10 +67,23 @@
   font-family: "PressStart2P";
   gap: 40px;
   padding-inline: 5%;
-  .title {
-    text-align: center;
-    text-transform: uppercase;
-  }
+}
+
+.title {
+  text-align: center;
+  text-transform: uppercase;
+  background: linear-gradient(
+    180deg,
+    #f00 0%,
+    #d95d00 28.13%,
+    #be7c68 50.52%,
+    #f5ff87 100%
+  );
+
+  background-clip: text;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  text-transform: uppercase;
   .item {
     .link-img {
       max-width: 390px;
@@ -88,12 +111,9 @@
     .profil-user {
       padding-top: 40px;
       .topic {
-        .pseudo {
-        }
         .resume {
           min-height: 240px;
           line-height: 2em;
-          font-size: 24px;
         }
       }
       .score-block {
@@ -102,8 +122,6 @@
         gap: 60px;
         .trophy {
           width: 120px;
-        }
-        .score {
         }
       }
     }
@@ -116,8 +134,6 @@
       font-size: 30px;
     }
     .item {
-      .link-img {
-      }
     }
   }
 }

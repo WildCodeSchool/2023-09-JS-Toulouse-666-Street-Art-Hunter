@@ -1,12 +1,15 @@
 .input-option {
   color: white;
-  background-color: black;
+  background-color: rgba(18, 20, 26, 1);
   height: 100dvh;
   display: flex;
   gap: 40px;
   flex-direction: column;
   padding-inline: 5%;
   padding-top: 20px;
+  .input-option-title {
+    font-size: 24px;
+  }
   .form {
     display: flex;
     gap: 40px;
