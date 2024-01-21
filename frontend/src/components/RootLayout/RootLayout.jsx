@@ -15,6 +15,10 @@ function RootLayout() {
             <Link to="/register">Inscription</Link>
             <Link to="/login">Connexion</Link>
             <Link to="/add-existing-artwork">Ajouter-oeuvre</Link>
+            <Link to="/add-non-existing-artwork">
+              Ajouter-oeuvre-non-existante
+            </Link>
+            <Link to="/artwork-missing">Oeuvre-disparue</Link>
           </div>
         </header>
       )}

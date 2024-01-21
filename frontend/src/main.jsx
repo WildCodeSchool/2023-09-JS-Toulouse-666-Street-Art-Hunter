@@ -13,6 +13,8 @@ import MapPage from "./pages/MapPage/MapPage";
 import Register, { enrolment } from "./pages/Register/Register";
 import Login, { authenticate } from "./pages/Login/Loginpage";
 import AddExistingArtwork from "./pages/AddExistingArtwork/AddExistingArtwork";
+import AddNonExistingArtwork from "./pages/AddNonExistingArtwork/AddNonExistingArtwork";
+import ArtworkMissing from "./pages/ArtworkMissing/ArtworkMissing";
 
 const router = createBrowserRouter(
   createRoutesFromElements(
@@ -22,6 +24,12 @@ const router = createBrowserRouter(
       <Route path="/register" element={<Register />} action={enrolment} />
       <Route path="/login" element={<Login />} action={authenticate} />
       <Route path="/add-existing-artwork" element={<AddExistingArtwork />} />
+
+      <Route
+        path="/add-non-existing-artwork"
+        element={<AddNonExistingArtwork />}
+      />
+      <Route path="/artwork-missing" element={<ArtworkMissing />} />
     </Route>
   )
 );

@@ -1,18 +1,18 @@
 import React from "react";
 import FormCloudinary from "../../components/FormCloudinary-R/FormCloudinary";
 
-function AddExistingArtwork() {
+function AddNonExistingArtwork() {
   return (
     <div>
       <FormCloudinary
-        title="Trouve ?"
-        button="Valider"
-        validated
+        title="Nouvelle ?"
+        button="Ajouter"
         missing={false}
-        nonExisting={false}
+        nonExisting
+        validated
       />
     </div>
   );
 }
 
-export default AddExistingArtwork;
+export default AddNonExistingArtwork;

@@ -108,6 +108,9 @@ section {
 body {
   line-height: 1;
   background-color: #12141a;
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
 }
 ol,
 ul {

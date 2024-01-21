@@ -7,7 +7,7 @@
   row-gap: 3rem;
   position: relative;
   overflow: hidden;
-  background: no-repeat left -220px bottom -120px
+  background: no-repeat left -220px bottom -80px
     url("../../assets/spray/spray-blue.png");
 
   // LOGO
@@ -20,7 +20,7 @@
       position: absolute;
       top: 0;
       left: 0;
-      transform: translate(-57%, -42%);
+      transform: translate(-57%, -37%);
       z-index: -1;
     }
     .logo {
@@ -36,7 +36,8 @@
     display: flex;
     flex-direction: column;
     align-items: flex-start;
-    gap: 0.5rem;
+    gap: clamp(0.5rem, 3vw, 2rem);
+
     background-color: transparent;
     padding-right: 4rem;
 
@@ -51,7 +52,7 @@
         font-family: var(--primary-font);
         text-decoration: none;
         padding-top: 7px;
-        font-size: 1.5rem;
+        font-size: clamp(24px, 3vw, 32px);
         // Red-gradient color text
         background: var(--red-gradient);
         background-clip: text;
@@ -75,7 +76,7 @@
     padding-bottom: 24px;
     p {
       font-family: var(--primary-font);
-      font-size: 12px;
+      font-size: clamp(14px, 2vw, 20px);
       // Red-gradient color text
       background: var(--red-gradient);
       background-clip: text;
@@ -92,7 +93,7 @@
       // green-apple
       no-repeat left -220px top 100px url("../../assets/spray/spray-green-apple.png"),
       // blue
-      no-repeat left -220px bottom -120px
+      no-repeat left -220px bottom -80px
         url("../../assets/spray/spray-blue.png"),
       // orange
       no-repeat right -300px top -200px
@@ -105,11 +106,6 @@
       500px 500px,
       500px 500px,
       500px 500px;
-  }
-}
-
-@media screen and (min-width: 800px) {
-  .landing-page-main-container {
     .logo-container {
       position: relative;
       .spray-violet {
@@ -119,24 +115,26 @@
         position: absolute;
         top: 0;
         left: 0;
-        transform: translate(-57%, -45%);
+        transform: translate(-59%, -40%);
         z-index: -1;
       }
       .logo {
         background-color: transparent;
-        width: 400px;
-        height: 410px;
+        width: 390px;
+        height: 400px;
         margin-top: 18dvh;
       }
     }
   }
+}
 
+@media screen and (min-width: 800px) {
   .landing-page-main-container {
     background:
       // green-apple
       no-repeat left -220px top 0px url("../../assets/spray/spray-green-apple.png"),
       // blue
-      no-repeat left -220px bottom -120px
+      no-repeat left -220px bottom -80px
         url("../../assets/spray/spray-blue.png"),
       // orange
       no-repeat right -200px top -200px
@@ -149,5 +147,24 @@
       500px 500px,
       550px 550px,
       600px 600px;
+    .logo-container {
+      position: relative;
+      .spray-violet {
+        background-color: transparent;
+        width: 950px;
+        height: 950px;
+        position: absolute;
+        top: 0;
+        left: 0;
+        transform: translate(-56%, -40%);
+        z-index: -1;
+      }
+      .logo {
+        background-color: transparent;
+        width: 430px;
+        height: 440px;
+        margin-top: 18dvh;
+      }
+    }
   }
 }
