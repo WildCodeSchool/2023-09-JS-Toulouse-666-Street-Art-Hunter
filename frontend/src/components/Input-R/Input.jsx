@@ -33,6 +33,6 @@ Input.propTypes = {
   labelName: PropTypes.string.isRequired,
   type: PropTypes.string.isRequired,
   labelText: PropTypes.string.isRequired,
-  maxLength: PropTypes.number.isRequired,
+  maxLength: PropTypes.string.isRequired,
   height: PropTypes.string.isRequired,
 };

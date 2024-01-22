@@ -1,17 +1,18 @@
-import { useEffect, useState } from "react";
+import { useState } from "react";
 import PropTypes from "prop-types";
 import "./FormCloudinary.scss";
 import { createPortal } from "react-dom";
 import InputTextarea from "../InputTextarea/InputTextarea";
 import Input from "../Input-R/Input";
 import fetchPositionStack from "../../services/Loaders/FetchApiLocation";
-import uploadImage from "../../services/Actions/PostCloudinaryDatabase";
 import getCurrentFormattedDate from "../../services/utils";
-import fetchUrlPhotos from "../../services/Actions/GetUrlPhotos";
+import postCloudAndPhoto from "../../services/Actions/PostCloudAndPhoto";
+import postCloudAndArtwork from "../../services/Actions/PostCloudAndArtwork";
 
 import Graffeur from "../../assets/images/graffeur.svg";
 import Graf from "../../assets/garçonHd.jpg";
 import LogoUploader from "../../assets/images/logo-uploader.svg";
+
 import ModalValidation from "../ModalValidation/ModalValidation";
 
 function FormCloudinary({ title, button, nonExisting, missing, validated }) {
@@ -23,13 +24,14 @@ function FormCloudinary({ title, button, nonExisting, missing, validated }) {
   const [valueAddress, setValueAddress] = useState();
   const [valueDesc, setValueDesc] = useState();
   const [coordinates, setCoordinates] = useState();
-  const [dataUrl, setDataUrl] = useState();
   // console.info(previewSource);
-  console.info(fileName);
-  console.info(addresses);
-  console.info(valueAddress);
-  console.info(coordinates);
-  console.info(dataUrl);
+  // console.info(fileName);
+  // console.info(showModal)
+  // console.info(addresses);
+  // console.info(valueAddress);
+  // console.info(valueDesc)
+  // console.info(coordinates);
+  // console.info(previewSource);
 
   // ******************* LOGIQUE *******************
 
@@ -37,7 +39,6 @@ function FormCloudinary({ title, button, nonExisting, missing, validated }) {
   const user = JSON.parse(localStorage.getItem("user"));
   console.info(user);
 
-  // ---------- Fonctions POST de l'image de l'utilisateur sur cloudinary, puis en base de donnée (voir dossier Actions) ----------
   // Récupère l'URL du fichier image puis le stock dans previewSource
   const previewFile = (file) => {
     const reader = new FileReader();
@@ -45,6 +46,7 @@ function FormCloudinary({ title, button, nonExisting, missing, validated }) {
     reader.onloadend = () => {
       setPreviewSource(reader.result);
     };
+    console.info(reader);
   };
   // Se déclenche à la sélection d'un fichier image, puis appelle previewFile
   const handleFileInputChange = (e) => {
@@ -53,19 +55,42 @@ function FormCloudinary({ title, button, nonExisting, missing, validated }) {
     setFileName(file.name);
   };
 
-  // Se déclenche au submit du formulaire et passe à uploadImage l'URL base64 de l'image
-  const handleSubmitFile = (e) => {
+  // Date d'aujourd'hui (voir utils.js)
+  const currentFormattedDate = getCurrentFormattedDate();
+
+  // ---------- Fonctions POST de l'image de l'utilisateur sur cloudinary, puis en base de donnée (voir dossier /services/Actions) ----------
+  // Se déclenche au submit du formulaire et passe à postCloudinaryDatabase l'URL base64 de l'image
+  const handleSubmitPhoto = (e) => {
     e.preventDefault();
-    if (!previewSource) return;
-    uploadImage(previewSource);
+    if (!previewSource || Object.keys(previewSource).length === 0) {
+      console.error("Aucune source d'image à traiter.");
+      return;
+    }
+    postCloudAndPhoto(previewSource);
   };
 
+  const handleSubmitArtwork = (e) => {
+    e.preventDefault();
+    if (!previewSource || Object.keys(previewSource).length === 0) {
+      console.error("Aucune source d'image à traiter.");
+      return;
+    }
+    postCloudAndArtwork(
+      previewSource,
+      coordinates,
+      valueAddress,
+      valueDesc,
+      currentFormattedDate
+    );
+  };
+
+  //-------------------------------------------------------------
   // Toggle de la modal
   const handleModal = () => {
     if (fileName) setShowModal(true);
   };
 
-  // Fonction Fetch location IQ (voir dossier Loaders)
+  // Fonction Fetch location IQ (voir dossier /services/Loaders)
   const onChangeAddress = (e) => {
     const response = e.target.textContent;
     setValueAddress(response);
@@ -73,33 +98,6 @@ function FormCloudinary({ title, button, nonExisting, missing, validated }) {
       setAddresses([]);
     }
   };
-
-  // Date d'aujourd'hui (voir utils.js)
-  const currentFormattedDate = getCurrentFormattedDate();
-
-  useEffect(() => {
-    fetchUrlPhotos(setDataUrl);
-  }, []);
-  // const lastUrl = dataUrl.slice(-1)[0].image;
-  // console.log(lastUrl);
-
-  if (coordinates) {
-    const dataArtwork = {
-      image: previewSource,
-      longitude: coordinates.lon,
-      latitude: coordinates.lat,
-      adress: valueAddress,
-      description: valueDesc,
-      date_published: currentFormattedDate,
-      ask_to_archived: 0,
-      is_archived: 0,
-      is_validated: 0,
-      artist_id: 1,
-    };
-    console.info(dataArtwork);
-  } else {
-    console.info("Le state coordinates n'est pas défini.");
-  }
 
   // ******************* RENDER *******************
   return (
@@ -112,7 +110,10 @@ function FormCloudinary({ title, button, nonExisting, missing, validated }) {
           <img className="logo-uploader" src={LogoUploader} alt="graffeur" />
         )}
       </div>
-      <form className="form-container" onSubmit={handleSubmitFile}>
+      <form
+        className="form-container"
+        onSubmit={nonExisting ? handleSubmitArtwork : handleSubmitPhoto}
+      >
         <label className="input-container-file" htmlFor="image">
           <span className="label-title">Choisir fichier</span>
           <p className="file-name">{fileName && fileName}</p>
