@@ -3,7 +3,7 @@
   flex-direction: column;
   align-items: center;
   gap: 40px;
-  min-height: 1200px;
+  min-height: calc(100vh - 160px);
 
   .register-input {
     width: 100%;
@@ -44,7 +44,7 @@
   .register-page {
     .register-input {
       .register-title {
-        background-image: url(../../assets/BeatlsHd.jpg);
+        background-image: url(../../assets/photos/BeatlsHd.jpg);
         background-repeat: no-repeat;
         background-size: cover;
         width: 95%;

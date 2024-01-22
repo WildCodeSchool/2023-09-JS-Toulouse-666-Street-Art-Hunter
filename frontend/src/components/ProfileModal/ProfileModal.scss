@@ -1,0 +1,40 @@
+.profile-modal-container {
+  overflow: hidden;
+  display: flex;
+  height: 80px;
+  position: fixed;
+  top: 0;
+  right: -340px;
+  background: rgba(113, 24, 24, 0.9);
+  width: calc(340px - 40px);
+  justify-content: space-between;
+  padding-inline: 20px;
+  transition: right 0.5s ease;
+  z-index: 1001;
+
+  div {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+
+    a {
+      font-family: "PressStart2P";
+      text-decoration: none;
+      color: white;
+      text-transform: uppercase;
+      font-size: 1rem;
+    }
+
+    button {
+      font-family: "PressStart2P";
+      color: white;
+      text-transform: uppercase;
+      font-size: 1rem;
+    }
+  }
+}
+
+.profile-modal-container.slide-in {
+  right: 0px;
+  overflow-x: hidden;
+}

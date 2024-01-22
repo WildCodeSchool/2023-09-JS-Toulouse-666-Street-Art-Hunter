@@ -2,9 +2,10 @@
   display: flex;
   align-items: center;
   flex-direction: column;
-  row-gap: 3rem;
+  row-gap: 2.5rem;
   width: auto;
-  min-height: 100vh; // min-height: calc(100vh - taille de la navbar);
+  // min-height: calc(100vh - 80px);
+  height: auto;
 
   h1 {
     font-size: 2rem;
@@ -26,7 +27,7 @@
       1;
     box-shadow: 4px 4px 0px 0px #ed1385;
     background: var(--primary-color);
-    margin-bottom: 1rem;
+    margin-bottom: 2.5rem;
     img {
       width: 100%;
       object-fit: cover;
@@ -41,7 +42,7 @@
     align-items: center;
     flex-direction: column;
     width: 340px;
-    row-gap: 2rem;
+    row-gap: 2.5rem;
 
     .input-container-file {
       position: relative;

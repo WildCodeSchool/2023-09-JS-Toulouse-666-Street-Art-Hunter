@@ -1,9 +1,10 @@
 import React from "react";
 import FormCloudinary from "../../components/FormCloudinary-R/FormCloudinary";
+import "./AddExistingArtwork.scss";
 
 function AddExistingArtwork() {
   return (
-    <div>
+    <div className="add-existing-artwork-container">
       <FormCloudinary
         title="Trouve ?"
         button="Valider"

@@ -10,7 +10,7 @@ import postCloudAndPhoto from "../../services/Actions/PostCloudAndPhoto";
 import postCloudAndArtwork from "../../services/Actions/PostCloudAndArtwork";
 
 import Graffeur from "../../assets/images/graffeur.svg";
-import Graf from "../../assets/garçonHd.jpg";
+import Nuage from "../../assets/icons/nuage.png";
 import LogoUploader from "../../assets/images/logo-uploader.svg";
 
 import ModalValidation from "../ModalValidation/ModalValidation";
@@ -176,7 +176,7 @@ function FormCloudinary({ title, button, nonExisting, missing, validated }) {
             <div className="publication-container">
               <h2>Publié par</h2>
               <div className="user-container">
-                <img src={Graf} alt="avatar" />
+                <img src={Nuage} alt="avatar" />
                 <h3>{user.name}</h3>
               </div>
               <p>Le {currentFormattedDate}</p>

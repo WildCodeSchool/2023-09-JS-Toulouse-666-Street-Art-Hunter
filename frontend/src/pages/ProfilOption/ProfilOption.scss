@@ -1,0 +1,43 @@
+.profil-option-input-option {
+  color: white;
+  background-color: rgba(18, 20, 26, 1);
+  height: 100dvh;
+  display: flex;
+  gap: 40px;
+  flex-direction: column;
+  padding-inline: 5%;
+  padding-top: 20px;
+  .input-option-title {
+    font-size: 24px;
+  }
+  .form {
+    display: flex;
+    gap: 40px;
+    flex-direction: column;
+    .continue {
+      color: white;
+      font-size: 36px;
+    }
+  }
+  .option-button {
+    text-decoration: none;
+    color: white;
+    font-size: 36px;
+    text-align: center;
+  }
+}
+@media screen and (min-width: 480px) {
+  .profil-option-input-option {
+    align-items: center;
+    .input-option-title {
+      font-size: 40px;
+    }
+    .form {
+      .label-composent-css {
+        .input-composent-css {
+          width: clamp(320px, 34vw, 550px);
+        }
+      }
+    }
+  }
+}
