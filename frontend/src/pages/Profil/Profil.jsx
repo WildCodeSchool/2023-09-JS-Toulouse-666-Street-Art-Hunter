@@ -30,9 +30,9 @@ function Profil() {
       return el.user_id === nbr;
     });
   };
-  const a = id;
-  const b = parseInt(a, 10);
-  const userArt = artPhoto(b);
+  const userId = id;
+  const photoId = parseInt(userId, 10);
+  const userArt = artPhoto(photoId);
   const navigate = useNavigate();
   const handleClickOption = () => {
     navigate(`/profil/${id}/option`);
