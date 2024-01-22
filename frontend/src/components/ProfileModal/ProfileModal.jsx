@@ -14,6 +14,9 @@ function ProfileModal({ modalIsConnected, setModalIsConnected }) {
     return navigate("/login");
   };
   const data = JSON.parse(localStorage.getItem("user"));
+  if (!data) {
+    return <Navigate to="/login" replace />;
+  }
   const { id } = data;
   if (parseInt(id, 10) !== data.id) {
     return <Navigate to="/login" replace />;
