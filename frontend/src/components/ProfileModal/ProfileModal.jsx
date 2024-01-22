@@ -1,5 +1,5 @@
 import React from "react";
-import { Link, useNavigate } from "react-router-dom";
+import { Link, useNavigate, Navigate } from "react-router-dom";
 import PropTypes from "prop-types";
 
 import closeLogo from "../../assets/icons/close-logo.svg";
@@ -13,6 +13,14 @@ function ProfileModal({ modalIsConnected, setModalIsConnected }) {
     setModalIsConnected(!modalIsConnected);
     return navigate("/login");
   };
+  const data = JSON.parse(localStorage.getItem("user"));
+  if (!data) {
+    return <Navigate to="/login" replace />;
+  }
+  const { id } = data;
+  if (parseInt(id, 10) !== data.id) {
+    return <Navigate to="/login" replace />;
+  }
 
   return (
     <div
@@ -21,7 +29,7 @@ function ProfileModal({ modalIsConnected, setModalIsConnected }) {
       }`}
     >
       <div>
-        <Link to="/profile">Profile</Link>
+        <Link to={`/profil/${id}`}>Profile</Link>
         <button type="button" onClick={handleDisconnect}>
           Deconnexion
         </button>
