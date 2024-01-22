@@ -11,7 +11,7 @@ function ProfilOption() {
   }
 
   return (
-    <div className="input-option">
+    <div className="profil-option-input-option">
       <h1 className="input-option-title">Modifie tes donées!</h1>
       <Form
         className="form"
