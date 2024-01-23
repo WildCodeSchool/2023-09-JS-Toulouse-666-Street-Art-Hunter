@@ -1,9 +1,9 @@
 import React from "react";
 import { Form, redirect, useNavigate } from "react-router-dom";
 import Input from "../../components/Input-R/Input";
-import PeintBomb from "../../assets/Peint-login.png";
-import Boy from "../../assets/garçonHd.jpg";
-import Girl from "../../assets/filleHd.jpg";
+import PeintBomb from "../../assets/photos/Peint-login.png";
+import Boy from "../../assets/photos/garçonHd.jpg";
+import Girl from "../../assets/photos/filleHd.jpg";
 import "./Loginpage.scss";
 
 function Login() {
@@ -22,8 +22,8 @@ function Login() {
       <div className="input-block">
         <img className="left-boy" src={Boy} alt="Un jeune garçon" />
         <div className="login-input">
-          <h1 className="login-title">CONNECTE-TOI</h1>
-          <Form className="form" method="post" action="/login" replace>
+          <h1 className="login-title">connecte-toi</h1>
+          <Form className="login-form" method="post" action="/login" replace>
             <Input
               className="input"
               labelName="email"

@@ -1,5 +1,4 @@
 .login-page {
-  background-color: rgba(18, 20, 26, 1);
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -34,9 +33,20 @@
       flex-direction: column;
       align-items: center;
       color: rgba(217, 93, 0, 1);
+      font-size: 45px;
       font-size: 28px;
+      background: linear-gradient(
+        180deg,
+        #f00 0%,
+        #d95d00 28.13%,
+        #be7c68 50.52%,
+        #f5ff87 100%
+      );
+      background-clip: text;
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
     }
-    .form {
+    .login-form {
       display: flex;
       flex-direction: column;
       align-items: center;
@@ -47,6 +57,7 @@
         display: flex;
         flex-direction: column;
         align-items: center;
+        row-gap: 30px;
       }
       .continue {
         border: 3px solid #ff1c96;
@@ -73,13 +84,24 @@
     gap: 25px;
     .text {
       text-align: center;
-      color: rgba(217, 93, 0, 1);
+
       font-size: 14px;
       font-style: normal;
       font-weight: 400;
       font-family: "PressStart2P";
       line-height: 20px;
+      background: linear-gradient(
+        180deg,
+        #f00 0%,
+        #d95d00 28.13%,
+        #be7c68 50.52%,
+        #f5ff87 100%
+      );
+      background-clip: text;
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
     }
+
     .register {
       border: 3px solid #66b652;
       background: rgba(200, 56, 56, 0.2);
@@ -97,7 +119,6 @@
 
 @media screen and (min-width: 400px) {
   .login-page {
-    background-color: rgba(18, 20, 26, 1);
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -110,10 +131,6 @@
       .login-input {
         min-width: 350px;
         .login-title {
-          display: flex;
-          flex-direction: column;
-          align-items: center;
-          color: rgba(217, 93, 0, 1);
           font-size: clamp(30px, 4vw, 44px);
         }
         .form {

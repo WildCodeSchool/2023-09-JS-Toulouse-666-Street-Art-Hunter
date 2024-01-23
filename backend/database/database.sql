@@ -70,7 +70,7 @@ CREATE TABLE IF NOT EXISTS `street_art`.`artwork` (
   `image` LONGTEXT NOT NULL,
   `longitude` VARCHAR(30) NOT NULL,
   `latitude` VARCHAR(30) NOT NULL,
-  `adress` VARCHAR(100) NOT NULL,
+  `adress` LONGTEXT NOT NULL,
   `description` VARCHAR(500) NULL,
   `date_published` DATE NOT NULL,
   `ask_to_archived` TINYINT(1) NOT NULL,

@@ -107,6 +107,10 @@ section {
 }
 body {
   line-height: 1;
+  background-color: #12141a;
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
 }
 ol,
 ul {
@@ -139,7 +143,24 @@ button {
 
 /* custom fonts */
 
+:root {
+  --primary-color: rgb(89, 50, 76);
+  --primary-font: "PressStart2P", sans-serif;
+  --secondary-font: "PixelBit", sans-serif;
+  --red-gradient: linear-gradient(
+    180deg,
+    #f00 0%,
+    #d95d00 28.13%,
+    #be7c68 50.52%,
+    #f5ff87 100%
+  );
+}
+
 @font-face {
   font-family: "PressStart2P";
   src: url("./assets/fonts/PressStart2P.ttf");
+}
+@font-face {
+  font-family: "PixelBit";
+  src: url("./assets/fonts/pixel-bit-advanced.ttf");
 }

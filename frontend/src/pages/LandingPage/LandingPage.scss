@@ -1,0 +1,170 @@
+// PARENT
+.landing-page-main-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  min-height: 100dvh;
+  row-gap: 3rem;
+  position: relative;
+  overflow: hidden;
+  background: no-repeat left -220px bottom -80px
+    url("../../assets/spray/spray-blue.png");
+
+  // LOGO
+  .logo-container {
+    position: relative;
+    .spray-violet {
+      background-color: transparent;
+      width: 800px;
+      height: 800px;
+      position: absolute;
+      top: 0;
+      left: 0;
+      transform: translate(-57%, -37%);
+      z-index: -1;
+    }
+    .logo {
+      background-color: transparent;
+      width: 340px;
+      height: 350px;
+      margin-top: 18dvh;
+    }
+  }
+
+  // LINKS
+  .links-container {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    gap: clamp(0.5rem, 3vw, 2rem);
+
+    background-color: transparent;
+    padding-right: 4rem;
+
+    .links-block {
+      display: flex;
+      flex-direction: row;
+      width: 200px;
+      align-items: center;
+      column-gap: 1rem;
+
+      .links {
+        font-family: var(--primary-font);
+        text-decoration: none;
+        padding-top: 7px;
+        font-size: clamp(24px, 3vw, 32px);
+        // Red-gradient color text
+        background: var(--red-gradient);
+        background-clip: text;
+        -webkit-background-clip: text;
+        -webkit-text-fill-color: transparent;
+        // ----
+        &:hover {
+          cursor: pointer;
+          transform: scale(0.95);
+        }
+      }
+    }
+  }
+
+  // COPYRIGHT
+  .copyright-container {
+    position: absolute;
+    bottom: 0;
+    width: 100%;
+    text-align: center;
+    padding-bottom: 24px;
+    p {
+      font-family: var(--primary-font);
+      font-size: clamp(14px, 2vw, 20px);
+      // Red-gradient color text
+      background: var(--red-gradient);
+      background-clip: text;
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      // ----
+    }
+  }
+}
+
+@media screen and (min-width: 400px) {
+  .landing-page-main-container {
+    background:
+      // green-apple
+      no-repeat left -220px top 100px url("../../assets/spray/spray-green-apple.png"),
+      // blue
+      no-repeat left -220px bottom -80px
+        url("../../assets/spray/spray-blue.png"),
+      // orange
+      no-repeat right -300px top -200px
+        url("../../assets/spray/spray-orange.png"),
+      // pink
+      no-repeat right -200px bottom -100px
+        url("../../assets/spray/spray-pink.png");
+    background-size:
+      450px 450px,
+      500px 500px,
+      500px 500px,
+      500px 500px;
+    .logo-container {
+      position: relative;
+      .spray-violet {
+        background-color: transparent;
+        width: 950px;
+        height: 950px;
+        position: absolute;
+        top: 0;
+        left: 0;
+        transform: translate(-59%, -40%);
+        z-index: -1;
+      }
+      .logo {
+        background-color: transparent;
+        width: 390px;
+        height: 400px;
+        margin-top: 18dvh;
+      }
+    }
+  }
+}
+
+@media screen and (min-width: 800px) {
+  .landing-page-main-container {
+    background:
+      // green-apple
+      no-repeat left -220px top 0px url("../../assets/spray/spray-green-apple.png"),
+      // blue
+      no-repeat left -220px bottom -80px
+        url("../../assets/spray/spray-blue.png"),
+      // orange
+      no-repeat right -200px top -200px
+        url("../../assets/spray/spray-orange.png"),
+      // pink
+      no-repeat right -200px bottom -100px
+        url("../../assets/spray/spray-pink.png");
+    background-size:
+      550px 550px,
+      500px 500px,
+      550px 550px,
+      600px 600px;
+    .logo-container {
+      position: relative;
+      .spray-violet {
+        background-color: transparent;
+        width: 950px;
+        height: 950px;
+        position: absolute;
+        top: 0;
+        left: 0;
+        transform: translate(-56%, -40%);
+        z-index: -1;
+      }
+      .logo {
+        background-color: transparent;
+        width: 430px;
+        height: 440px;
+        margin-top: 18dvh;
+      }
+    }
+  }
+}

@@ -53,7 +53,7 @@ const validateArtwork = (req, res, next) => {
       message:
         "Attention ! Ce champ est obligatoire. Veuillez le remplir pour poursuivre",
     });
-  } else if (adress.length >= 100) {
+  } else if (adress.length >= 10000) {
     errors.push({
       field: "adress",
       message:
