@@ -14,6 +14,9 @@ import ProfilOption, { option } from "./pages/ProfilOption/ProfilOption";
 import App from "./App";
 import MapPage from "./pages/MapPage/MapPage";
 import RootLayout from "./Layouts/RootLayout/RootLayout";
+import AddExistingArtwork from "./pages/AddExistingArtwork/AddExistingArtwork";
+import AddNonExistingArtwork from "./pages/AddNonExistingArtwork/AddNonExistingArtwork";
+import ArtworkMissing from "./pages/ArtworkMissing/ArtworkMissing";
 
 const router = createBrowserRouter(
   createRoutesFromElements(
@@ -28,14 +31,17 @@ const router = createBrowserRouter(
         element={<ProfilOption />}
         action={option}
       />
+      <Route path="/add-existing-artwork" element={<AddExistingArtwork />} />
+
+      <Route
+        path="/add-non-existing-artwork"
+        element={<AddNonExistingArtwork />}
+      />
+      <Route path="/artwork-missing" element={<ArtworkMissing />} />
     </Route>
   )
 );
 
 const root = ReactDOM.createRoot(document.getElementById("root"));
 
-root.render(
-  <React.StrictMode>
-    <RouterProvider router={router} />
-  </React.StrictMode>
-);
+root.render(<RouterProvider router={router} />);

@@ -70,6 +70,9 @@ router.delete("/photos/:id", photoControllers.destroy);
 router.post("/upload", photoControllers.uploadCloud);
 router.get("/images", photoControllers.getImagesFromCloud);
 
+// Route for CLOUDINARY
+router.post("/artworks/upload", artworkControllers.uploadCloud);
+
 // Route for USERS
 
 router.put("/users/:id", userControllers.edit);

@@ -22,8 +22,8 @@ function Login() {
       <div className="input-block">
         <img className="left-boy" src={Boy} alt="Un jeune garçon" />
         <div className="login-input">
-          <h1 className="login-title">CONNECTE-TOI</h1>
-          <Form className="form" method="post" action="/login" replace>
+          <h1 className="login-title">connecte-toi</h1>
+          <Form className="login-form" method="post" action="/login" replace>
             <Input
               className="input"
               labelName="email"

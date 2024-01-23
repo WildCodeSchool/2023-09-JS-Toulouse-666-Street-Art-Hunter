@@ -79,8 +79,9 @@ const destroy = async (req, res, next) => {
 
 // ------------------ Méthode POST for CLOUDINARY ------------------
 const uploadCloud = async (req, res) => {
-  // Post sur Cloudinary
+  // Post on Cloudinary
   try {
+    // objectToPost = url image en base 64
     const { objectToPost } = req.body;
     const uploadResponse = await cloudinary.uploader.upload(
       objectToPost.image,
@@ -94,10 +95,10 @@ const uploadCloud = async (req, res) => {
     console.info("updatedObject", updatedObject);
     console.info("uploadResponse", uploadResponse);
 
-    // Post en database
+    // Post on database Photo
     const response = await tables.photo.create(updatedObject);
     console.info(response);
-    res.json({ response, msg: "YAYAYAYAAY" });
+    res.json({ response, msg: "POST URL CLOUDINARY SUR TABLE PHOTO" });
   } catch (error) {
     console.error(error);
   }

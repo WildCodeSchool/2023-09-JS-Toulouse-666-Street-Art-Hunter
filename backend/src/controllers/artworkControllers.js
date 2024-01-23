@@ -1,4 +1,14 @@
 const tables = require("../tables");
+const { cloudinary } = require("../services/cloudinary");
+require("dotenv").config();
+
+// Variables d'environnement pour Cloudinary
+cloudinary.config({
+  cloud_name: process.env.CLOUDINARY_CLOUD_NAME,
+  upload_presets: process.env.CLOUDINARY_UPLOAD_PRESETS,
+  api_key: process.env.CLOUDINARY_API_KEY,
+  api_secret: process.env.CLOUDINARY_API_SECRET,
+});
 
 // ------------------ Méthode GET ------------------
 const browse = async (req, res, next) => {
@@ -66,4 +76,28 @@ const destroy = async (req, res, next) => {
   }
 };
 
-module.exports = { browse, read, add, edit, destroy };
+// ------------------ Méthode POST for CLOUDINARY ------------------
+const uploadCloud = async (req, res) => {
+  // Post on Cloudinary
+  try {
+    const { dataArtwork } = req.body;
+    const uploadResponse = await cloudinary.uploader.upload(dataArtwork.image, {
+      upload_presets: "wwh5pcwo",
+    });
+
+    delete dataArtwork.image;
+    const updatedObject = { ...dataArtwork, image: uploadResponse.secure_url };
+
+    console.info("updatedObject", updatedObject);
+    console.info("uploadResponse", uploadResponse);
+
+    // Post on database artwork
+    const response = await tables.artwork.create(updatedObject);
+    console.info(response);
+    res.json({ response, msg: "ARTWORKKKKK" });
+  } catch (error) {
+    console.error(error);
+  }
+};
+
+module.exports = { browse, read, add, edit, destroy, uploadCloud };
