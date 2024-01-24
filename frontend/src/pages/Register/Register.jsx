@@ -32,7 +32,7 @@ function Register() {
           />
           <Input
             className="input"
-            labelName="passwordConfirme"
+            labelName="passwordConfirm"
             type="password"
             labelText="confirmation mdp"
             maxLength="255"

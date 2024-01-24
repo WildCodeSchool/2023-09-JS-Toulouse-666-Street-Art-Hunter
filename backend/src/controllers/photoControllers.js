@@ -34,6 +34,15 @@ const read = async (req, res, next) => {
     next(err);
   }
 };
+const readValidatePhoto = async (req, res, next) => {
+  try {
+    const photos = await tables.photo.readAllToValidate();
+    res.status(200).json(photos);
+  } catch (err) {
+    console.error(err);
+    next(err);
+  }
+};
 
 // ------------------ Méthode PUT ------------------
 const edit = async (req, res, next) => {
@@ -129,4 +138,5 @@ module.exports = {
   destroy,
   uploadCloud,
   getImagesFromCloud,
+  readValidatePhoto,
 };

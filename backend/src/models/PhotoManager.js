@@ -30,6 +30,13 @@ class PhotoManager extends AbstractManager {
     );
     return rows;
   }
+
+  async readAllToValidate() {
+    const [rows] = await this.database.query(
+      `SELECT * FROM ${this.table} WHERE is_validated='0'`
+    );
+    return rows;
+  }
 }
 
 module.exports = PhotoManager;

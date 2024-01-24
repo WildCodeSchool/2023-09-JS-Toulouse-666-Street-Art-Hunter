@@ -11,6 +11,15 @@ const browse = async (req, res, next) => {
     next(err);
   }
 };
+const count = async (req, res, next) => {
+  try {
+    const users = await tables.user.countAll();
+    res.status(200).json(users);
+  } catch (err) {
+    console.error(err);
+    next(err);
+  }
+};
 
 // The R of BREAD - Read operation
 const read = async (req, res, next) => {
@@ -91,4 +100,5 @@ module.exports = {
   readByEmailAndPassToNext,
   add,
   destroy,
+  count,
 };

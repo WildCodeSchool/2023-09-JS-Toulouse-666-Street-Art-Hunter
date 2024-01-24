@@ -23,6 +23,7 @@ const {
   hashPassword,
   verifyPassword,
   verifyToken,
+  verifyAdmin,
 } = require("./middlewares/authentication");
 
 router.get("/artworks", artworkControllers.browse);
@@ -45,8 +46,29 @@ router.get("/users", userControllers.browse);
 
 // Mur d'authentification
 router.use(verifyToken);
+router.use(verifyAdmin);
 // Mur d'authentification
 
+router.get("/pannel-administrateur/users", userControllers.count);
+router.get("/pannel-administrateur/artworks", artworkControllers.count);
+router.get(
+  "/pannel-administrateur/artworks-no-validate",
+  artworkControllers.countNoValidate
+);
+router.get(
+  "/pannel-administrateur/photo-no-validate",
+  photoControllers.readValidatePhoto
+);
+router.get(
+  "/pannel-administrateur/artworks-to-validate",
+  artworkControllers.readToAdd
+);
+router.get(
+  "/pannel-administrateur/artworks-to-missing",
+  artworkControllers.readToMissing
+);
+
+router.get("/pannel-administrateur/artists", artistControllers.count);
 // Route for ARTWORKS
 
 router.get("/users/:id", userControllers.read);

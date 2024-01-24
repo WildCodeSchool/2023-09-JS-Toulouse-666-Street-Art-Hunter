@@ -1,0 +1,24 @@
+.testeadmin {
+  color: wheat;
+}
+.map-admin {
+  color: white;
+}
+.tableau {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  margin-inline: 10%;
+  justify-content: space-between;
+  .map-tableau {
+    .Teste {
+      display: flex;
+      flex-direction: row;
+      flex-wrap: wrap;
+
+      .link-img {
+        width: 130px;
+      }
+    }
+  }
+}

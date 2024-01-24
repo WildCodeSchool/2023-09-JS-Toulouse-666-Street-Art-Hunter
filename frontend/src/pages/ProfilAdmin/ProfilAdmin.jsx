@@ -39,7 +39,7 @@ function ProfilAdmin() {
     navigate(`/profil/admin/${id}/option`);
   };
   const handleClickAdmin = () => {
-    navigate(`/map`);
+    navigate(`/pannel-administrateur/${id}`);
   };
   return (
     <>
