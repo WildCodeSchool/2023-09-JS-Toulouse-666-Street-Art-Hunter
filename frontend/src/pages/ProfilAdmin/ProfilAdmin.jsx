@@ -5,19 +5,19 @@ import {
   useNavigate,
 } from "react-router-dom";
 
-import "./Profil.scss";
+import "./ProfilAdmin.scss";
 
 import Soldat from "../../assets/avatars/Soldat.png";
 import Trophy from "../../assets/icons/Trophy.png";
 import Option from "../../assets/icons/Icon_option.png";
+import Admin from "../../assets/icons/adminLogo.png";
 
-function Profil() {
+function ProfilAdmin() {
   const profils = useLoaderData();
   const token = localStorage.getItem("token");
   const data = JSON.parse(localStorage.getItem("user"));
 
   const { id } = useParams();
-
   if (!token) {
     return <Navigate to="/login" replace />;
   }
@@ -25,9 +25,7 @@ function Profil() {
   if (parseInt(id, 10) !== data.id) {
     return <Navigate to="/login" replace />;
   }
-  if (profils.user.is_admin === 1) {
-    return <Navigate to={`/profil/admin/${id}`} replace />;
-  }
+
   const artPhoto = (nbr) => {
     return profils.art.filter((el) => {
       return el.user_id === nbr;
@@ -38,11 +36,14 @@ function Profil() {
   const userArt = artPhoto(photoId);
   const navigate = useNavigate();
   const handleClickOption = () => {
-    navigate(`/profil/${id}/option`);
+    navigate(`/profil/admin/${id}/option`);
+  };
+  const handleClickAdmin = () => {
+    navigate(`/map`);
   };
   return (
     <>
-      <div className="profil-page">
+      <div className="profil-admin-page">
         <div className="profil-top">
           <img className="avatar" src={Soldat} alt="avatar" />
 
@@ -64,6 +65,17 @@ function Profil() {
             <p className="score">{profils.user.score} pts</p>
           </div>
         </div>
+        <div className="admin-block">
+          <img className="admin-img" src={Admin} alt="icon admin" />
+          <button
+            type="button"
+            className="admin-text"
+            onClick={handleClickAdmin}
+          >
+            Pannel Administrateur
+          </button>
+          <img className="admin-img" src={Admin} alt="icon admin" />
+        </div>
       </div>
       <div className="artwork">
         <p className="title">Tableau de chasse</p>
@@ -80,9 +92,9 @@ function Profil() {
   );
 }
 
-export default Profil;
+export default ProfilAdmin;
 
-export const profilLoader = async (req) => {
+export const profilLoaderAdmin = async (req) => {
   const apiURL = import.meta.env.VITE_BACKEND_URL;
   const token = localStorage.getItem("token");
 
