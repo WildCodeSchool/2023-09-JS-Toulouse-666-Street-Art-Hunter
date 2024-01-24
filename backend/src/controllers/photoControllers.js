@@ -120,6 +120,19 @@ const getImagesFromCloud = async (req, res) => {
   }
 };
 
+const readByUser = async (req, res, next) => {
+  try {
+    const photos = await tables.photo.readByUser(req.params.id);
+    if (photos == null) {
+      res.sendStatus(404);
+    } else {
+      res.json(photos);
+    }
+  } catch (err) {
+    next(err);
+  }
+};
+
 module.exports = {
   browse,
   read,
@@ -128,4 +141,5 @@ module.exports = {
   destroy,
   uploadCloud,
   getImagesFromCloud,
+  readByUser,
 };
