@@ -73,7 +73,6 @@ CREATE TABLE IF NOT EXISTS `street_art`.`artwork` (
   `adress` LONGTEXT NOT NULL,
   `description` VARCHAR(500) NULL,
   `date_published` DATE NOT NULL,
-  `image_archived` LONGTEXT NULL, 
   `ask_to_archived` TINYINT(1) NOT NULL,
   `is_archived` TINYINT(1) NOT NULL,
   `is_validate` TINYINT(1) NOT NULL,

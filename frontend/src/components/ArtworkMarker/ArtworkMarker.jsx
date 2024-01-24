@@ -67,7 +67,14 @@ function ArtworkMarker() {
               </button>
             </Popup>
           ) : (
-            <Popup>Trouve moi !!!</Popup>
+            <Popup>
+              <button
+                type="button"
+                onClick={() => navigate("/add-non-existing-artwork")}
+              >
+                Trouve moi !
+              </button>
+            </Popup>
           )}
         </Marker>
       ))}
