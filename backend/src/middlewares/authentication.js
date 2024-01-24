@@ -45,6 +45,9 @@ const verifyPassword = async (req, res, next) => {
     });
 
     delete req.user.hashed_password;
+    delete req.user.is_admin;
+    delete req.user.is_banned;
+
     res.status(200).send({ token, user: req.user });
   } catch (error) {
     next(error);

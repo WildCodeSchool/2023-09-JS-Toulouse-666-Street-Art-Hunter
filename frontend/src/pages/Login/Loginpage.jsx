@@ -86,7 +86,6 @@ export const authenticate = async ({ request }) => {
         body: JSON.stringify(formData),
       }
     );
-
     // Vérification de la réponse HTTP
     if (!response.ok) {
       // En cas d'échec, une erreur est levée avec un message explicatif
