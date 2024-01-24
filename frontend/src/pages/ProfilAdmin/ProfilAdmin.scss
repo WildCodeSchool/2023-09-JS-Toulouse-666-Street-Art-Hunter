@@ -1,4 +1,4 @@
-.profil-page {
+.profil-admin-page {
   display: flex;
   flex-direction: column;
   background-color: rgba(18, 20, 26, 1);
@@ -60,6 +60,26 @@
       }
     }
   }
+  .admin-block {
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    flex-direction: row;
+    gap: 8px;
+    .admin-text {
+      background: linear-gradient(
+        180deg,
+        #4475f5 0%,
+        #4e75ff 32.81%,
+        #aeb1ff 67.71%,
+        #fff 100%
+      );
+      padding: 12px;
+      text-align: center;
+      color: white;
+      font-family: "PressStart2P";
+    }
+  }
 }
 .artwork {
   padding-top: 40px;
@@ -94,7 +114,7 @@
   }
 }
 @media screen and (min-width: 480px) {
-  .profil-page {
+  .profil-admin-page {
     display: grid;
     grid-template-columns: 30% 70%;
     .profil-top {
@@ -126,6 +146,29 @@
         .trophy {
           width: 120px;
         }
+      }
+    }
+    .admin-block {
+      display: flex;
+      justify-content: space-around;
+      align-items: center;
+      flex-direction: row;
+      gap: 8px;
+      margin-block: 36px;
+
+      .admin-text {
+        background: linear-gradient(
+          180deg,
+          #4475f5 0%,
+          #4e75ff 32.81%,
+          #aeb1ff 67.71%,
+          #fff 100%
+        );
+        padding: 12px;
+        text-align: center;
+        color: white;
+        font-family: "PressStart2P";
+        font-size: 26px;
       }
     }
   }

@@ -75,7 +75,8 @@ export const enrolment = async ({ request }) => {
         body: JSON.stringify(formData),
       }
     );
-    if (data.password !== data.passwordconfirme) {
+
+    if (data.password !== data.passwordConfirme) {
       throw new Error(
         "Le mot de passe ou l'adresse e-mail que vous avez entré est incorrect. Veuillez vérifier vos informations et réessayer. Assurez-vous que votre adresse e-mail est correctement saisie et que le mot de passe respecte les critères requis."
       );
