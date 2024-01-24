@@ -27,7 +27,7 @@
       background-color: transparent;
       width: 340px;
       height: 350px;
-      margin-top: 18dvh;
+      margin-top: 16dvh;
     }
   }
 
@@ -39,7 +39,7 @@
     gap: clamp(0.5rem, 3vw, 2rem);
 
     background-color: transparent;
-    padding-right: 4rem;
+    // padding-right: 4rem;
 
     .links-block {
       display: flex;
@@ -52,7 +52,7 @@
         font-family: var(--primary-font);
         text-decoration: none;
         padding-top: 7px;
-        font-size: clamp(24px, 3vw, 32px);
+        font-size: clamp(24px, 3vw, 28px);
         // Red-gradient color text
         background: var(--red-gradient);
         background-clip: text;
@@ -68,7 +68,7 @@
   }
 
   // COPYRIGHT
-  .copyright-container {
+  .copyright-container-main {
     position: absolute;
     bottom: 0;
     width: 100%;
@@ -87,7 +87,7 @@
   }
 }
 
-@media screen and (min-width: 400px) {
+@media screen and (min-width: 450px) {
   .landing-page-main-container {
     background:
       // green-apple
@@ -122,7 +122,7 @@
         background-color: transparent;
         width: 390px;
         height: 400px;
-        margin-top: 18dvh;
+        margin-top: 16dvh;
       }
     }
   }
@@ -163,7 +163,7 @@
         background-color: transparent;
         width: 430px;
         height: 440px;
-        margin-top: 18dvh;
+        margin-top: 16dvh;
       }
     }
   }

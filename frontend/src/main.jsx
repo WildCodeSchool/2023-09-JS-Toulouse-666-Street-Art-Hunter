@@ -20,6 +20,8 @@ import RootLayout from "./Layouts/RootLayout/RootLayout";
 import AddExistingArtwork from "./pages/AddExistingArtwork/AddExistingArtwork";
 import AddNonExistingArtwork from "./pages/AddNonExistingArtwork/AddNonExistingArtwork";
 import ArtworkMissing from "./pages/ArtworkMissing/ArtworkMissing";
+import DetailsArtwork from "./pages/DetailsArtwork/DetailsArtwork";
+import Rules from "./pages/Rules/Rules";
 
 const router = createBrowserRouter(
   createRoutesFromElements(
@@ -46,6 +48,8 @@ const router = createBrowserRouter(
         element={<AddNonExistingArtwork />}
       />
       <Route path="/artwork-missing" element={<ArtworkMissing />} />
+      <Route path="/details-artwork" element={<DetailsArtwork />} />
+      <Route path="/rules" element={<Rules />} />
     </Route>
   )
 );

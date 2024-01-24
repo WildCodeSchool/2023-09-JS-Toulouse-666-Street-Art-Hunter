@@ -1,0 +1,102 @@
+.rules-main-container {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  row-gap: 2.5rem;
+  margin-inline: 5%;
+  margin-block: 10%;
+  width: auto;
+  min-height: calc(100vh - 160px);
+
+  .rules-main-title {
+    display: flex;
+    justify-content: center;
+    font-size: 2rem;
+    font-family: var(--secondary-font);
+    // Red-gradient color text
+    background: var(--red-gradient);
+    background-clip: text;
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    // -----------------------
+  }
+
+  .section-container {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    row-gap: 2.5rem;
+
+    .section-1 {
+      display: flex;
+      flex-direction: column;
+      row-gap: 1.5rem;
+
+      .text-section-1 {
+        font-size: 0.8rem;
+        font-family: var(--primary-font);
+        line-height: 1.5rem;
+      }
+    }
+
+    .section-2 {
+      display: flex;
+      flex-direction: column;
+      row-gap: 1.5rem;
+
+      .list-section-2 {
+        display: flex;
+        flex-direction: column;
+        row-gap: 1rem;
+        padding-left: 1rem;
+        li {
+          list-style: square;
+          font-size: 0.8rem;
+          font-family: var(--primary-font);
+          line-height: 1.5rem;
+        }
+      }
+    }
+
+    .section-3 {
+      display: flex;
+      flex-direction: column;
+      row-gap: 1.5rem;
+
+      .text-1-section-3 {
+        display: flex;
+        flex-direction: column;
+        row-gap: 1.5rem;
+        font-size: 0.8rem;
+        font-family: var(--primary-font);
+        line-height: 1.5rem;
+
+        .question-1-section-3 {
+          // Red-gradient color text
+          background: var(--red-gradient);
+          background-clip: text;
+          -webkit-background-clip: text;
+          -webkit-text-fill-color: transparent;
+          // -----------------------
+        }
+      }
+      .text-2-section-3 {
+        display: flex;
+        flex-direction: column;
+        row-gap: 1.5rem;
+        font-size: 0.8rem;
+        font-family: var(--primary-font);
+        line-height: 1.5rem;
+
+        .question-2-section-3 {
+          // Red-gradient color text
+          background: var(--red-gradient);
+          background-clip: text;
+          -webkit-background-clip: text;
+          -webkit-text-fill-color: transparent;
+          // -----------------------
+        }
+      }
+    }
+  }
+}

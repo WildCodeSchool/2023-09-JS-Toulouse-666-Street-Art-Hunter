@@ -1,6 +1,7 @@
 import { DivIcon, Icon } from "leaflet";
 import { Marker, Popup } from "react-leaflet";
 import MarkerClusterGroup from "react-leaflet-cluster";
+import { useNavigate } from "react-router-dom";
 
 import "./ArtworkMarker.scss";
 
@@ -9,6 +10,7 @@ import artToFind from "../../assets/icons/art_to_find.png";
 import artFound from "../../assets/icons/art_found.png";
 
 function ArtworkMarker() {
+  const navigate = useNavigate();
   /** Set marker icon */
   const found = new Icon({
     iconUrl: artFound,
@@ -57,7 +59,12 @@ function ArtworkMarker() {
                 src="https://www.toulouse-tourisme.com/sites/www.toulouse-tourisme.com/files/styles/edito_paragraphes/public/thumbnails/image/visiter_toulouse_street_art_maye_monde.jpg?itok=LEpf1fNj"
                 alt="Street art de Maye et Mondé"
               />
-              <button type="button">Details</button>
+              <button
+                type="button"
+                onClick={() => navigate("/details-artwork")}
+              >
+                Details
+              </button>
             </Popup>
           ) : (
             <Popup>Trouve moi !!!</Popup>
