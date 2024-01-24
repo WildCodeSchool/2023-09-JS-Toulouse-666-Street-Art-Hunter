@@ -103,6 +103,7 @@ function FormCloudinary({ title, button, nonExisting, missing, validated }) {
   return (
     <div className="main-container-form-cloudinary">
       <h1>{title}</h1>
+
       <div className="preview-container">
         {previewSource ? (
           <img src={previewSource} alt="chosen" style={{ height: "340px" }} />

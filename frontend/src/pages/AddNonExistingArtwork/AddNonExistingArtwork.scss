@@ -1,0 +1,16 @@
+.add-non-existing-artwork-container {
+  margin-top: 2.5rem;
+  background:
+  // // green-apple
+  //   no-repeat left -220px top 0px url("../../assets/spray/spray-green-apple.png"),
+    // blue
+    no-repeat left -220px bottom 80px url("../../assets/spray/spray-blue.png"),
+    // orange
+    no-repeat left -200px top 400px url("../../assets/spray/spray-orange.png"),
+    // yellow
+    no-repeat right -100px top 800px url("../../assets/spray/spray-yellow.png"),
+    // green-forest
+    no-repeat right -100px top 100px url("../../assets/spray/spray-green-forest.png"),
+    // pink
+    no-repeat left -330px top -100px url("../../assets/spray/spray-pink.png");
+}

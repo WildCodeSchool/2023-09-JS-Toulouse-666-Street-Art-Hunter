@@ -23,6 +23,8 @@ import ArtworkMissing from "./pages/ArtworkMissing/ArtworkMissing";
 import PannelAdministrateur, {
   profilPannelAdmin,
 } from "./pages/PannelAdministrateur/PannelAdministrateur";
+import DetailsArtwork from "./pages/DetailsArtwork/DetailsArtwork";
+import Rules from "./pages/Rules/Rules";
 
 const router = createBrowserRouter(
   createRoutesFromElements(
@@ -54,6 +56,8 @@ const router = createBrowserRouter(
         element={<AddNonExistingArtwork />}
       />
       <Route path="/artwork-missing" element={<ArtworkMissing />} />
+      <Route path="/details-artwork" element={<DetailsArtwork />} />
+      <Route path="/rules" element={<Rules />} />
     </Route>
   )
 );

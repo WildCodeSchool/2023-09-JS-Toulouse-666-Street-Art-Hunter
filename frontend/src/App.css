@@ -154,6 +154,13 @@ button {
     #be7c68 50.52%,
     #f5ff87 100%
   );
+  --blue-gradient: linear-gradient(
+    180deg,
+    #4475f5 0%,
+    #4e75ff 32.81%,
+    #aeb1ff 67.71%,
+    #fff 100%
+  );
 }
 
 @font-face {

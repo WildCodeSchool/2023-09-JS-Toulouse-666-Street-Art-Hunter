@@ -32,6 +32,7 @@ router.get("/avatars", avatarImageControllers.browse);
 router.get("/avatars/:id", avatarImageControllers.read);
 router.get("/photos", photoControllers.browse);
 router.get("/photos/:id", photoControllers.read);
+router.get("/photos/users/:id", photoControllers.readByUser);
 router.post("/users", hashPassword, validateUser, userControllers.add);
 router.post(
   "/users/login",

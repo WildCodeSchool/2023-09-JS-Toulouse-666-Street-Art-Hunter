@@ -1,0 +1,27 @@
+.button-main-container {
+  .button {
+    padding: 0.5rem;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border: 3px solid #ff1c96;
+    background: #361a20;
+    filter: drop-shadow(2px 2px #4475f5);
+    &:hover {
+      transform: scale(1.05);
+    }
+    &:active {
+      transform: scale(0.95);
+    }
+
+    .button-span {
+      font-family: var(--primary-font);
+      font-size: 18px;
+      text-transform: uppercase;
+      background: var(--red-gradient);
+      background-clip: text;
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+    }
+  }
+}
