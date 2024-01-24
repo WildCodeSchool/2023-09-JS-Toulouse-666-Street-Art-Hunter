@@ -1,5 +1,5 @@
 import React from "react";
-import { Link } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 import "./LandingPage.scss";
 
 import Purple from "../../assets/spray/spray-purple.png";
@@ -8,6 +8,8 @@ import BombSpray from "../../assets/icons/bomb-spray-green.svg";
 import Logo from "../../assets/spray/logo.png";
 
 function LandingPage() {
+  const navigate = useNavigate();
+
   return (
     <div className="landing-page-main-container">
       <div className="logo-container">
@@ -23,12 +25,18 @@ function LandingPage() {
         </div>
         <div className="links-block">
           <img src={BombSpray} alt="Bombe spray" />
-          <Link to="/rules" className="links">
+          <Link
+            to="/rules"
+            className="links"
+            onClick={() => {
+              navigate("/rules");
+            }}
+          >
             Options
           </Link>
         </div>
       </div>
-      <div className="copyright-container">
+      <div className="copyright-container-main">
         <p>©2023 Wild Code School</p>
       </div>
     </div>

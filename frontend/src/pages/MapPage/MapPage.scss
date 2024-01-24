@@ -6,13 +6,14 @@
   width: 100%;
   background-color: #12141a;
   height: calc(100vh - 160px);
+  margin-block: 2.5rem;
   .leaflet-container {
     position: relative;
   }
   .photo-logo {
     position: absolute;
     z-index: 500;
-    bottom: 40px;
+    bottom: 10px;
     left: calc(50% - 50px);
     width: 100px;
     height: auto;

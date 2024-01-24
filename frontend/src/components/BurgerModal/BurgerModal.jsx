@@ -1,5 +1,5 @@
 import React from "react";
-import { Link } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 import PropTypes from "prop-types";
 
 import pinkSplatter from "../../assets/images/pink-splatter.svg";
@@ -9,6 +9,7 @@ import burgerLogo from "../../assets/icons/burger-logo.svg";
 import "./BurgerModal.scss";
 
 function BurgerModal({ isOpen, handleBurger }) {
+  const navigate = useNavigate();
   return (
     <div className={`overlay-container ${isOpen ? "profile-modal-slide" : ""}`}>
       <div className="logo-container">
@@ -29,7 +30,13 @@ function BurgerModal({ isOpen, handleBurger }) {
         <Link to="/artist" onClick={handleBurger}>
           ARTISTES
         </Link>
-        <Link to="/rules" onClick={handleBurger}>
+        <Link
+          to="/rules"
+          onClick={() => {
+            navigate("/rules");
+            handleBurger();
+          }}
+        >
           REGLES
         </Link>
         <Link to="/about" onClick={handleBurger}>

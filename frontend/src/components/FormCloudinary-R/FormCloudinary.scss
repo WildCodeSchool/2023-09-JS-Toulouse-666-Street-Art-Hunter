@@ -10,11 +10,12 @@
   h1 {
     font-size: 2rem;
     font-family: var(--secondary-font);
+    // Red-gradient color text
     background: var(--red-gradient);
     background-clip: text;
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
-    // ----
+    // -----------------------
   }
 
   .preview-container {
@@ -68,8 +69,9 @@
         background-clip: text;
         -webkit-background-clip: text;
         -webkit-text-fill-color: transparent;
+
+        // -----------------------
         text-align: center;
-        // ----
         margin-bottom: 2rem;
         &:hover {
           transform: scale(0.95);
@@ -125,7 +127,8 @@
         background-clip: text;
         -webkit-background-clip: text;
         -webkit-text-fill-color: transparent;
-        // ----
+        filter: drop-shadow(2px 2px #4475f5);
+        // -----------------------
       }
       p {
         font-family: var(--primary-font);
@@ -182,7 +185,7 @@
         background-clip: text;
         -webkit-background-clip: text;
         -webkit-text-fill-color: transparent;
-        // ----
+        // -----------------------
       }
     }
 
@@ -213,4 +216,11 @@
       }
     }
   }
+}
+
+// ******************************************************
+// *                   MEDIA QUERIES                    *
+// ******************************************************
+
+@media screen and (min-width: 768px) {
 }

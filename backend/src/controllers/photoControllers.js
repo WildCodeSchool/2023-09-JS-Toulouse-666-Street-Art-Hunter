@@ -120,7 +120,6 @@ const getImagesFromCloud = async (req, res) => {
   }
 };
 
-// Ready to export the controller functions
 module.exports = {
   browse,
   read,
