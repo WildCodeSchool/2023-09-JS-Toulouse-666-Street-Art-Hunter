@@ -41,7 +41,6 @@ function FormCloudinary({ title, button, nonExisting, missing, validated }) {
 
   // Récupérer l'utilisateur connecté (localStorage) pour l'afficher
   const user = JSON.parse(localStorage.getItem("user"));
-  console.info(user);
 
   // Récupère l'URL du fichier image puis le stock dans previewSource
   const previewFile = (file) => {
@@ -50,7 +49,6 @@ function FormCloudinary({ title, button, nonExisting, missing, validated }) {
     reader.onloadend = () => {
       setPreviewSource(reader.result);
     };
-    console.info(reader);
   };
   // Se déclenche à la sélection d'un fichier image, puis appelle previewFile
   const handleFileInputChange = (e) => {
