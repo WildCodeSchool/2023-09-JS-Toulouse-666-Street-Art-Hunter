@@ -14,13 +14,16 @@ import ProfilOption, { option } from "./pages/ProfilOption/ProfilOption";
 import ProfilAdmin, {
   profilLoaderAdmin,
 } from "./pages/ProfilAdmin/ProfilAdmin";
+
 import App from "./App";
 import MapPage from "./pages/MapPage/MapPage";
 import RootLayout from "./Layouts/RootLayout/RootLayout";
 import AddExistingArtwork from "./pages/AddExistingArtwork/AddExistingArtwork";
 import AddNonExistingArtwork from "./pages/AddNonExistingArtwork/AddNonExistingArtwork";
 import ArtworkMissing from "./pages/ArtworkMissing/ArtworkMissing";
-import DetailsArtwork from "./pages/DetailsArtwork/DetailsArtwork";
+import DetailsArtwork, {
+  dataArtwork,
+} from "./pages/DetailsArtwork/DetailsArtwork";
 import Rules from "./pages/Rules/Rules";
 
 const router = createBrowserRouter(
@@ -48,7 +51,11 @@ const router = createBrowserRouter(
         element={<AddNonExistingArtwork />}
       />
       <Route path="/artwork-missing" element={<ArtworkMissing />} />
-      <Route path="/details-artwork" element={<DetailsArtwork />} />
+      <Route
+        path="/details-artwork/:id"
+        element={<DetailsArtwork />}
+        loader={dataArtwork}
+      />
       <Route path="/rules" element={<Rules />} />
     </Route>
   )

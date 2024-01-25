@@ -61,7 +61,7 @@ function ArtworkMarker() {
               />
               <button
                 type="button"
-                onClick={() => navigate("/details-artwork")}
+                onClick={() => navigate(`/details-artwork`)}
               >
                 Details
               </button>

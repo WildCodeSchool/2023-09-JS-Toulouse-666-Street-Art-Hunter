@@ -87,3 +87,12 @@ function DetailsArtwork() {
 }
 
 export default DetailsArtwork;
+
+export const dataArtwork = async (req) => {
+  const apiUrl = import.meta.env.VITE_BACKEND_URL;
+  const { id } = req.params;
+  const response = await fetch(`${apiUrl}/api/artworks/${id}`);
+
+  const data = await response.json();
+  console.info(data);
+};
