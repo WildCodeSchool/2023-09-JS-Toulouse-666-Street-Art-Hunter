@@ -8,6 +8,7 @@ import {
 import "./PannelAdministrateur.scss";
 import LinkAdmin from "../../components/LinkAdmin/LinkAdmin";
 import ArtworkPannel from "../../components/ArtworkPannel/ArtworkPannel";
+import Thors from "../../assets/photos/Thors.png";
 
 function PannelAdministrateur() {
   const profils = useLoaderData();
@@ -18,21 +19,28 @@ function PannelAdministrateur() {
 
   return (
     <div className="pannel-administrateur-page">
-      <div className="title">Statistiques</div>
-      <div className="map-admin">
-        Nombres d'utilisateurs : {profils.users[0].numberOfUser} <br />
-        Nombres d'oeuvres : {profils.artworks[0].numberOfUser}
-        <br />
-        Nombres d'oeuvres pas validé :{" "}
-        {profils.artworksNoValidate[0].numberOfArtwork}
-        <br />
-        Nombres d'artists : {profils.artists[0].numberOfUser}
+      <div className="pannel-stats">
+        <img
+          src={Thors}
+          className="img-admin"
+          alt="Magnifique street art de thors"
+        />
+        <div className="title">Statistiques</div>
+        <div className="map-admin">
+          Nombres d'utilisateurs : {profils.users[0].numberOfUser} <br />
+          Nombres d'oeuvres : {profils.artworks[0].numberOfUser}
+          <br />
+          Nombres d'oeuvres non validé :{" "}
+          {profils.artworksNoValidate[0].numberOfArtwork}
+          <br />
+          Nombres d'artists : {profils.artists[0].numberOfUser}
+        </div>
       </div>
 
-      <p className="title">Œuvres à validées</p>
+      <p className="title">Œuvres à valider</p>
       <ArtworkPannel dataMap={profils.ArtworksToAdd} />
 
-      <p className="title">Œuvres ajoutées</p>
+      <p className="title">Œuvres ajouter</p>
       <ArtworkPannel dataMap={profils.ArtworksToMissing} />
 
       <p className="title">Œuvres disparues</p>

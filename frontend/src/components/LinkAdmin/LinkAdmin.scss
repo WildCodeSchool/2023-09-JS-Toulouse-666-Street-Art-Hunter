@@ -8,13 +8,12 @@
   align-items: center;
   gap: 10px;
   border: 2px solid #000;
-
   box-shadow: 4px 4px 4px 0px rgba(0, 0, 0, 0.25);
   color: #fff;
   text-align: center;
-  font-size: 18px;
   font-style: normal;
   font-weight: 400;
+  font-size: 18px;
   line-height: normal;
 
   &.b {
@@ -37,5 +36,13 @@
   }
   &.black {
     background: #33363d;
+  }
+}
+
+@media screen and (min-width: 480px) {
+  .link-admin {
+    width: 530px;
+    font-size: 26px;
+    padding-block: 26px;
   }
 }

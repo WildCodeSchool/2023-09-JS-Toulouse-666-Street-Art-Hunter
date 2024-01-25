@@ -85,6 +85,30 @@ const artworkData = [
   },
   {
     image:
+      "https://res.cloudinary.com/dikhzx4qt/image/upload/v1706108272/Avatar/a50ae9cf-dcc6-4b52-8ded-59f6ae704776_gci64j.jpg",
+    longitude: "43.60568091093529",
+    latitude: "1.4491256754932784",
+    adress: "18 All. Jean Jaurès",
+    description: "C'est un mur !",
+    date_published: "2022/01/01",
+    ask_to_archived: 0,
+    is_archived: 0,
+    is_validate: 0,
+  },
+  {
+    image:
+      "https://res.cloudinary.com/dikhzx4qt/image/upload/v1706108272/Avatar/a50ae9cf-dcc6-4b52-8ded-59f6ae704776_gci64j.jpg",
+    longitude: "43.60568091093529",
+    latitude: "1.4491256754932784",
+    adress: "18 All. Jean Jaurès",
+    description: "C'est un mur !",
+    date_published: "2022/01/01",
+    ask_to_archived: 0,
+    is_archived: 0,
+    is_validate: 0,
+  },
+  {
+    image:
       "https://3.bp.blogspot.com/-v3QXxWDaV4g/WyaK66UcrcI/AAAAAAAAQN4/Ibd1RhTqA0QTlAvSnBsFX1NV_ychGM6WgCLcBGAs/s1600/01.JPG",
     longitude: "43.605918557771076",
     latitude: "1.4560548575085943",
