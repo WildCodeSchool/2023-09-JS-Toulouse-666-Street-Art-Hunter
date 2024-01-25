@@ -6,6 +6,8 @@ import {
   //   useNavigate,
 } from "react-router-dom";
 import "./PannelAdministrateur.scss";
+import LinkAdmin from "../../components/LinkAdmin/LinkAdmin";
+import ArtworkPannel from "../../components/ArtworkPannel/ArtworkPannel";
 
 function PannelAdministrateur() {
   const profils = useLoaderData();
@@ -15,58 +17,65 @@ function PannelAdministrateur() {
   }
 
   return (
-    <>
-      <div className="testeadmin">PannelAdministrateur</div>;
+    <div className="pannel-administrateur-page">
+      <div className="title">Statistiques</div>
       <div className="map-admin">
         Nombres d'utilisateurs : {profils.users[0].numberOfUser} <br />
         Nombres d'oeuvres : {profils.artworks[0].numberOfUser}
         <br />
-        Nombres d'oeuvres pas validé :
+        Nombres d'oeuvres pas validé :{" "}
         {profils.artworksNoValidate[0].numberOfArtwork}
         <br />
         Nombres d'artists : {profils.artists[0].numberOfUser}
       </div>
-      <p className="title">Tableau de chasse</p>
-      <div className="tableau">
-        {profils.ArtworksToAdd.map((item) => {
-          return (
-            <div className="map-tableau">
-              <div key={item.id} className="Teste">
-                <img className="link-img" src={item.image} alt="street art" />
-                <p>{item.id}</p>
-              </div>
-            </div>
-          );
-        })}
+
+      <p className="title">Œuvres à validées</p>
+      <ArtworkPannel dataMap={profils.ArtworksToAdd} />
+
+      <p className="title">Œuvres ajoutées</p>
+      <ArtworkPannel dataMap={profils.ArtworksToMissing} />
+
+      <p className="title">Œuvres disparues</p>
+      <ArtworkPannel dataMap={profils.PhotoNoValidate} />
+
+      <div className="pannel-link">
+        <LinkAdmin
+          lien="/map"
+          textLink="Liste Utilisateurs"
+          nameClass="link-admin b"
+        />
+        <LinkAdmin
+          lien="/map"
+          textLink="Liste Œuvres"
+          nameClass="link-admin g"
+        />
+        <LinkAdmin
+          lien="/map"
+          textLink="Listes Artistes"
+          nameClass="link-admin y"
+        />
+        <LinkAdmin
+          lien="/map"
+          textLink="Listes Articles"
+          nameClass="link-admin v"
+        />
+        <LinkAdmin
+          lien="/map"
+          textLink="Créer Artistes"
+          nameClass="link-admin r"
+        />
+        <LinkAdmin
+          lien="/map"
+          textLink="Créer Articles"
+          nameClass="link-admin p"
+        />
+        <LinkAdmin
+          lien="/map"
+          textLink="Liste Utilisateurs Banni"
+          nameClass="link-admin black"
+        />
       </div>
-      <p className="title">Tableau de chasse</p>
-      <div className="tableau">
-        {profils.ArtworksToMissing.map((item) => {
-          return (
-            <div className="map-tableau">
-              <div key={item.id} className="Teste">
-                <img className="link-img" src={item.image} alt="street art" />
-                <p>{item.id}</p>
-              </div>
-            </div>
-          );
-        })}
-      </div>
-      <p className="title">Tableau de chasse</p>
-      <div className="tableau">
-        {profils.PhotoNoValidate.map((item) => {
-          return (
-            <div className="map-tableau">
-              <div key={item.id} className="Teste">
-                <img className="link-img" src={item.image} alt="street art" />
-                <p>{item.id}</p>
-              </div>
-            </div>
-          );
-        })}
-      </div>
-      ;
-    </>
+    </div>
   );
 }
 

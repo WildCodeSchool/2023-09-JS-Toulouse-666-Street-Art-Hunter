@@ -1,0 +1,41 @@
+.link-admin {
+  font-family: "PressStart2P";
+  text-decoration: inherit;
+  display: flex;
+  width: 330px;
+  padding: 10px;
+  justify-content: center;
+  align-items: center;
+  gap: 10px;
+  border: 2px solid #000;
+
+  box-shadow: 4px 4px 4px 0px rgba(0, 0, 0, 0.25);
+  color: #fff;
+  text-align: center;
+  font-size: 18px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: normal;
+
+  &.b {
+    background: #7189b9;
+  }
+  &.g {
+    background: #77b971;
+  }
+  &.y {
+    background: #b9b271;
+  }
+  &.v {
+    background: #8656c2;
+  }
+  &.r {
+    background: #b97171;
+  }
+  &.p {
+    background: #b771b9;
+  }
+  &.black {
+    background: #33363d;
+  }
+}

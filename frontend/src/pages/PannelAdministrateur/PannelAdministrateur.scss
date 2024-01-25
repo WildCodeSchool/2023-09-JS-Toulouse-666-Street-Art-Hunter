@@ -1,24 +1,45 @@
-.testeadmin {
-  color: wheat;
-}
-.map-admin {
-  color: white;
-}
-.tableau {
+.pannel-administrateur-page {
+  padding-inline: 5%;
   display: flex;
-  flex-direction: row;
-  flex-wrap: wrap;
-  margin-inline: 10%;
-  justify-content: space-between;
-  .map-tableau {
-    .Teste {
-      display: flex;
-      flex-direction: row;
-      flex-wrap: wrap;
+  flex-direction: column;
+  gap: 16px;
+  .title {
+    font-size: 18px;
+  }
+  .map-admin {
+    color: white;
+    padding-block: 0.5rem;
+    border: 2px solid #dd0bff;
+    padding-inline: 8px;
+    box-shadow: 4px 4px 0px 0px #ed1385;
+  }
 
-      .link-img {
-        width: 130px;
+  .tableau {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    border: 2px solid #dd0bff;
+    box-shadow: 4px 4px 0px 0px #ed1385;
+    padding: 8px;
+    .map-tableau {
+      .div-img {
+        display: flex;
+        flex-direction: row;
+        flex-wrap: wrap;
+
+        .link-img {
+          width: 105px;
+          max-height: 110px;
+          margin-block: 4px;
+        }
       }
     }
+  }
+  .pannel-link {
+    padding-block: 16px;
+    display: flex;
+    flex-direction: column;
+    gap: 24px;
   }
 }

@@ -41,6 +41,7 @@ function ProfilAdmin() {
   const handleClickAdmin = () => {
     navigate(`/pannel-administrateur/${id}`);
   };
+
   return (
     <>
       <div className="profil-admin-page">
