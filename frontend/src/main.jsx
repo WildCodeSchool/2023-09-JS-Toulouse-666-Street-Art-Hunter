@@ -25,12 +25,13 @@ import DetailsArtwork, {
   dataArtwork,
 } from "./pages/DetailsArtwork/DetailsArtwork";
 import Rules from "./pages/Rules/Rules";
+import { markerArtworkLoader } from "./components/ArtworkMarker/ArtworkMarker";
 
 const router = createBrowserRouter(
   createRoutesFromElements(
     <Route path="/" element={<RootLayout />}>
       <Route index element={<App />} />
-      <Route path="/map" element={<MapPage />} />
+      <Route path="/map" element={<MapPage />} loader={markerArtworkLoader} />
       <Route path="/register" element={<Register />} action={enrolment} />
       <Route path="/login" element={<Login />} action={authenticate} />
       <Route path="/profil/:id" element={<Profil />} loader={profilLoader} />

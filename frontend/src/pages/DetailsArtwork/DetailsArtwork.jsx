@@ -17,7 +17,6 @@ function DetailsArtwork() {
   const currentDate = getCurrentFormattedDate();
 
   const currentUser = JSON.parse(localStorage.getItem("user"));
-  console.info(currentUser.name);
   // A remplacer l'utilisateur actuel
 
   return (
