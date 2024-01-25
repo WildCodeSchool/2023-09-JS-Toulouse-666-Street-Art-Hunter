@@ -4,7 +4,7 @@ import "./ModalValidation.scss";
 import Feux from "../../assets/icons/feux-1.png";
 import Feux2 from "../../assets/icons/feux-2.png";
 
-function ModalValidation({ setShowModal, text1, text2 }) {
+function ModalValidation({ setShowModal, loadingModal, text1, text2 }) {
   const handleModalReverse = () => {
     setShowModal(false);
   };
@@ -13,25 +13,39 @@ function ModalValidation({ setShowModal, text1, text2 }) {
     <div
       className="modal-main-container"
       onClick={handleModalReverse}
-      onKeyDown={(e) => e.key === "Enter" && handleModalReverse()} // Ajout d'une gestion du clavier pour la touche "Enter"
-      role="button" // Ajout d'un rôle pour indiquer que c'est un élément interactif
-      tabIndex="0" // Ajout de l'attribut tabIndex pour le rendre focusable
+      onKeyDown={(e) => e.key === "Enter" && handleModalReverse()}
+      role="button"
+      tabIndex="0"
     >
-      <div className="modal-section">
-        <div className="modal-text">
-          <p>{text1}</p>
-          <div>
-            <img className="modal-img" src={Feux} alt="feux d'artifice" />
-            <img className="modal-img" src={Feux2} alt="feux d'artifice" />
-          </div>
-          <p>{text2}</p>
+      {loadingModal ? (
+        <div className="gif-unicorn">
+          <iframe
+            title="Unicorn GIF"
+            src="https://gifer.com/embed/XDZW"
+            width="300"
+            height="500"
+            className="giphy-embed"
+            allowFullScreen
+          />
         </div>
-      </div>
+      ) : (
+        <div className="modal-section">
+          <div className="modal-text">
+            <p>{text1}</p>
+            <div>
+              <img className="modal-img" src={Feux} alt="feux d'artifice" />
+              <img className="modal-img" src={Feux2} alt="feux d'artifice" />
+            </div>
+            <p>{text2}</p>
+          </div>
+        </div>
+      )}
     </div>
   );
 }
 
 ModalValidation.propTypes = {
+  loadingModal: PropTypes.func.isRequired,
   setShowModal: PropTypes.func.isRequired,
   text1: PropTypes.string.isRequired,
   text2: PropTypes.string.isRequired,

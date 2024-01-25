@@ -17,7 +17,7 @@ function BurgerModal({ isOpen, handleBurger }) {
           <img src={burgerLogo} alt="burger logo" />
         </button>
       </div>
-      <li>
+      <li className="links-container">
         <Link to="/map" onClick={handleBurger}>
           CARTE
         </Link>
