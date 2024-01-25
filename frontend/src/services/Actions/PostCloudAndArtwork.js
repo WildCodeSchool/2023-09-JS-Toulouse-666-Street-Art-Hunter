@@ -3,7 +3,9 @@ const postCloudAndArtwork = async (
   coordinates,
   valueAddress,
   valueDesc,
-  currentFormattedDate
+  currentFormattedDate,
+  setShowModal,
+  setLoadingModal
 ) => {
   const dataArtwork = {
     image: base64EncodedImage,
@@ -42,11 +44,13 @@ const postCloudAndArtwork = async (
         }`
       );
     }
-
+    if (response.status === 200) {
+      setShowModal(true);
+      setLoadingModal(false);
+    }
     console.info("Artwork uploaded successfully!");
   } catch (error) {
     console.error("Error:", error.message);
-    // Renvoyer l'erreur pour permettre au code appelant de la traiter
     throw error;
   }
 };

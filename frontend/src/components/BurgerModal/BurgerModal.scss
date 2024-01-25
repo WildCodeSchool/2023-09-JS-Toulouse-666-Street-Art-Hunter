@@ -25,47 +25,46 @@
     }
   }
 
-  li {
+  .links-container {
     display: flex;
     flex-direction: column;
-    gap: 16px;
-    height: calc(60vh - 60px);
+    height: calc(55vh - 60px);
     align-self: center;
     z-index: 1002;
-    justify-content: space-around;
+    justify-content: space-between;
+    margin-top: 15vh;
     a {
       text-decoration: none;
-      color: white;
-      font-family: "PressStart2P";
+      font-family: var(--primary-font);
       font-size: clamp(24px, 5vw, 32px); //24px;
-      background: linear-gradient(
-        180deg,
-        #f00 0%,
-        #d95d00 28.13%,
-        #be7c68 50.52%,
-        #f5ff87 100%
-      );
+      background: var(--red-gradient);
       background-clip: text;
       -webkit-background-clip: text;
       -webkit-text-fill-color: transparent;
       text-transform: uppercase;
+      &:hover {
+        transform: scale(1.05);
+      }
+      &:active {
+        transform: scale(0.95);
+      }
     }
   }
   .splatter {
     position: absolute;
   }
   .pink-splatter {
-    width: clamp(300px, 60vw, 400px);
-    height: clamp(300px, 60vw, 400px);
-    bottom: calc(-200px + 20%);
-    right: -100px;
-    rotate: -45deg;
+    width: clamp(325px, 60vw, 400px);
+    height: clamp(325px, 60vw, 400px);
+    bottom: calc(-100px + 20%);
+    right: -150px;
+    rotate: -50deg;
   }
   .teal-splatter {
-    width: clamp(300px, 60vw, 400px);
-    height: clamp(300px, 60vw, 400px);
-    top: -100px;
-    right: -100px;
+    width: clamp(300px, 60vw, 550px);
+    height: clamp(300px, 60vw, 550px);
+    top: -150px;
+    right: -150px;
   }
   .green-splatter {
     width: clamp(300px, 60vw, 400px);
@@ -82,7 +81,7 @@
 @media screen and (min-width: 768px) {
   .overlay-container {
     background:
-      no-repeat left -150px bottom 400px url(../../assets/images/blue-splatter.svg),
+      no-repeat left -200px top 20px url(../../assets/images/blue-splatter.svg),
       no-repeat center bottom -150px url(../../assets/images/orange-splatter.svg),
       #12141a;
     background-size: 400px;
