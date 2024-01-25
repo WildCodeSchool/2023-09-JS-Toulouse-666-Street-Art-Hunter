@@ -1,4 +1,8 @@
-const postCloudAndPhoto = async (base64EncodedImage) => {
+const postCloudAndPhoto = async (
+  base64EncodedImage,
+  setShowModal,
+  setLoadingModal
+) => {
   const objectToPost = {
     image: base64EncodedImage,
     is_validated: 0,
@@ -26,8 +30,14 @@ const postCloudAndPhoto = async (base64EncodedImage) => {
         `Erreur de téléversement sur Cloudinary : ${response.status}`
       );
     }
+
+    if (response.status === 200) {
+      setShowModal(true);
+      setLoadingModal(false);
+    }
   } catch (error) {
     console.error("Erreur lors du téléversement sur Cloudinary:", error);
+
     throw error;
   }
 };

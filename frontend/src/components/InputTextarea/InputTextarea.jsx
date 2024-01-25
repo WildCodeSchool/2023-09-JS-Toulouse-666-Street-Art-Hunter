@@ -26,7 +26,7 @@ function InputTextarea({
         name={labelName}
         value={value}
         onChange={handleClick}
-        style={{ textareaheight: height }}
+        style={{ height }}
       />
     </label>
   );

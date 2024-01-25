@@ -10,6 +10,17 @@
   justify-content: center;
   align-items: center;
   backdrop-filter: blur(3.5px);
+  .loading {
+    background-image: url("../../assets/images/graffeur.svg");
+    z-index: 3;
+  }
+  .gif-unicorn {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+  }
   .modal-section {
     display: flex;
     flex-direction: column;

@@ -2,6 +2,7 @@ import { useState } from "react";
 import PropTypes from "prop-types";
 import "./FormCloudinary.scss";
 import { createPortal } from "react-dom";
+import { useNavigate } from "react-router-dom";
 import InputTextarea from "../InputTextarea/InputTextarea";
 import Input from "../Input-R/Input";
 import fetchPositionStack from "../../services/Loaders/FetchApiLocation";
@@ -12,6 +13,7 @@ import postCloudAndArtwork from "../../services/Actions/PostCloudAndArtwork";
 import Graffeur from "../../assets/images/graffeur.svg";
 import Nuage from "../../assets/icons/nuage.png";
 import LogoUploader from "../../assets/images/logo-uploader.svg";
+import Previous from "../../assets/icons/previous.svg";
 
 import ModalValidation from "../ModalValidation/ModalValidation";
 
@@ -20,10 +22,12 @@ function FormCloudinary({ title, button, nonExisting, missing, validated }) {
   const [previewSource, setPreviewSource] = useState();
   const [fileName, setFileName] = useState("");
   const [showModal, setShowModal] = useState(false); // Modal
+  const [loadingModal, setLoadingModal] = useState(false); // Modal
   const [addresses, setAddresses] = useState([]);
-  const [valueAddress, setValueAddress] = useState();
+  const [valueAddress, setValueAddress] = useState(null);
   const [valueDesc, setValueDesc] = useState();
   const [coordinates, setCoordinates] = useState();
+  const navigate = useNavigate();
   // console.info(previewSource);
   // console.info(fileName);
   // console.info(showModal)
@@ -66,7 +70,8 @@ function FormCloudinary({ title, button, nonExisting, missing, validated }) {
       console.error("Aucune source d'image à traiter.");
       return;
     }
-    postCloudAndPhoto(previewSource);
+    setLoadingModal(true);
+    postCloudAndPhoto(previewSource, setShowModal, setLoadingModal);
   };
 
   const handleSubmitArtwork = (e) => {
@@ -75,20 +80,19 @@ function FormCloudinary({ title, button, nonExisting, missing, validated }) {
       console.error("Aucune source d'image à traiter.");
       return;
     }
+    setLoadingModal(true);
     postCloudAndArtwork(
       previewSource,
       coordinates,
       valueAddress,
       valueDesc,
-      currentFormattedDate
+      currentFormattedDate,
+      setShowModal,
+      setLoadingModal
     );
   };
 
   //-------------------------------------------------------------
-  // Toggle de la modal
-  const handleModal = () => {
-    if (fileName) setShowModal(true);
-  };
 
   // Fonction Fetch location IQ (voir dossier /services/Loaders)
   const onChangeAddress = (e) => {
@@ -102,8 +106,18 @@ function FormCloudinary({ title, button, nonExisting, missing, validated }) {
   // ******************* RENDER *******************
   return (
     <div className="main-container-form-cloudinary">
-      <h1>{title}</h1>
+      <div className="section-title">
+        <button
+          type="button"
+          onClick={() => {
+            navigate(-1);
+          }}
+        >
+          <img src={Previous} alt="button previous" />
+        </button>
 
+        <h1>{title}</h1>
+      </div>
       <div className="preview-container">
         {previewSource ? (
           <img src={previewSource} alt="chosen" style={{ height: "340px" }} />
@@ -205,39 +219,39 @@ function FormCloudinary({ title, button, nonExisting, missing, validated }) {
           </p>
         </div>
         <div className="btn-container">
-          <button type="submit" name="submit" onClick={handleModal}>
+          <button type="submit" name="submit">
             <span className="btn-span">{button}</span>
           </button>
         </div>
       </form>
-      {missing && (
-        <div>
-          {showModal &&
-            fileName &&
-            createPortal(
-              <ModalValidation
-                setShowModal={setShowModal}
-                text1="merci de nous en informer"
-                text2="attente de validation"
-              />,
-              document.body
-            )}
-        </div>
-      )}
-      {validated && (
-        <div>
-          {showModal &&
-            fileName &&
-            createPortal(
-              <ModalValidation
-                setShowModal={setShowModal}
-                text1="wouah super découverte"
-                text2="attente de validation"
-              />,
-              document.body
-            )}
-        </div>
-      )}
+
+      <div>
+        {missing &&
+          (showModal || loadingModal) &&
+          createPortal(
+            <ModalValidation
+              setShowModal={setShowModal}
+              loadingModal={loadingModal}
+              text1="merci de nous en informer"
+              text2="attente de validation"
+            />,
+            document.body
+          )}
+      </div>
+
+      <div>
+        {validated &&
+          (showModal || loadingModal) &&
+          createPortal(
+            <ModalValidation
+              setShowModal={setShowModal}
+              loadingModal={loadingModal}
+              text1="wouah super découverte"
+              text2="attente de validation"
+            />,
+            document.body
+          )}
+      </div>
     </div>
   );
 }
