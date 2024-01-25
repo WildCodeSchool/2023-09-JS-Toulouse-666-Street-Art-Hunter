@@ -79,7 +79,7 @@ const userData = [
     description: "J'aime les prototypes",
     email: "Arthur@mail.com",
     hashed_password:
-      "$argon2id$v=19$m=65536,t=5,p=1$+S3Gb/M9gk60MWLsMtJB4A$I0/8gdRdQVhnsImLjdDNK2Uy7xdKnUnDvCaM7r2nYE0",
+      "$argon2id$v=19$m=65536,t=5,p=1$gchAbeLDP59sJZs35SWYqg$sAsiLe6qaxjX2wAzvHusVMb/fmkCY0huxibzvOyj0UM",
     score: 1000,
     is_admin: 0,
     is_banned: 0,
@@ -92,7 +92,7 @@ const userData = [
     description: "Où sont les genies ?",
     email: "adrien@mail.com",
     hashed_password:
-      "$argon2id$v=19$m=65536,t=5,p=1$+S3Gb/M9gk60MWLsMtJB4A$I0/8gdRdQVhnsImLjdDNK2Uy7xdKnUnDvCaM7r2nYE0",
+      "$argon2id$v=19$m=65536,t=5,p=1$gchAbeLDP59sJZs35SWYqg$sAsiLe6qaxjX2wAzvHusVMb/fmkCY0huxibzvOyj0UM",
     score: 0,
     is_admin: 0,
     is_banned: 0,

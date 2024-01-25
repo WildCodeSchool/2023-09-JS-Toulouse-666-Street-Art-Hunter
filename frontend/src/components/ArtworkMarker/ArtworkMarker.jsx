@@ -1,7 +1,7 @@
 import { DivIcon, Icon } from "leaflet";
 import { Marker, Popup } from "react-leaflet";
 import MarkerClusterGroup from "react-leaflet-cluster";
-import { useNavigate } from "react-router-dom";
+import { useLoaderData, useNavigate } from "react-router-dom";
 
 import "./ArtworkMarker.scss";
 
@@ -11,6 +11,8 @@ import artFound from "../../assets/icons/art_found.png";
 
 function ArtworkMarker() {
   const navigate = useNavigate();
+  const { artworks, userPhotos } = useLoaderData();
+
   /** Set marker icon */
   const found = new Icon({
     iconUrl: artFound,
@@ -21,23 +23,6 @@ function ArtworkMarker() {
     iconUrl: artToFind,
     iconSize: [65, 65],
   });
-
-  /** Set marker */
-  const markers = [
-    {
-      position: [43.59658957848975, 1.4515414498524917],
-      icon: notFound,
-      popup: "A chasser",
-      find: false,
-    },
-    {
-      position: [43.596226827237466, 1.4511449128802183],
-      icon: found,
-      popup: "Description de l'oeuvre",
-      find: true,
-    },
-  ];
-
   /** Set marker cluster */
   const clusters = (cluster) => {
     return new DivIcon({
@@ -45,20 +30,19 @@ function ArtworkMarker() {
     });
   };
 
+  const userPhotoId = userPhotos.map((photo) => photo.artwork_id);
+
   return (
     <MarkerClusterGroup chunkedLoading iconCreateFunction={clusters}>
-      {markers.map((marker) => (
+      {artworks.map((artwork) => (
         <Marker
-          key={marker.popup}
-          position={marker.position}
-          icon={marker.find === true ? found : notFound}
+          key={artwork.id}
+          position={[artwork.longitude, artwork.latitude]}
+          icon={userPhotoId.includes(artwork.id) ? found : notFound}
         >
-          {marker.find === true ? (
+          {userPhotoId.includes(artwork.id) ? (
             <Popup>
-              <img
-                src="https://www.toulouse-tourisme.com/sites/www.toulouse-tourisme.com/files/styles/edito_paragraphes/public/thumbnails/image/visiter_toulouse_street_art_maye_monde.jpg?itok=LEpf1fNj"
-                alt="Street art de Maye et Mondé"
-              />
+              <img src={artwork.image} alt={artwork.description} />
               <button
                 type="button"
                 onClick={() => navigate("/details-artwork")}
@@ -76,3 +60,39 @@ function ArtworkMarker() {
 }
 
 export default ArtworkMarker;
+
+export const markerArtworkLoader = async () => {
+  const token = localStorage.getItem("token");
+  const user = localStorage.getItem("user");
+
+  try {
+    const dataArtwork = await fetch(
+      `${import.meta.env.VITE_BACKEND_URL}/api/artworks`
+    );
+
+    const allArtwork = await dataArtwork.json();
+    const artworks = allArtwork.filter(
+      (artwork) => artwork.is_validate === 1 && artwork.is_archived === 0
+    );
+
+    if (token && user) {
+      const { id } = JSON.parse(user);
+      const photoByUser = await fetch(
+        `${import.meta.env.VITE_BACKEND_URL}/api/photos/users/${id}`,
+        {
+          headers: {
+            Authorization: `Bearer ${token}`,
+          },
+        }
+      );
+
+      const userPhotos = await photoByUser.json();
+
+      return { artworks, userPhotos };
+    }
+
+    return { artworks };
+  } catch (error) {
+    throw Error(error);
+  }
+};

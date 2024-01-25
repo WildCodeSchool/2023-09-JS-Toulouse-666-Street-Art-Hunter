@@ -29,9 +29,6 @@ router.get("/artworks", artworkControllers.browse);
 router.get("/artworks/:id", artworkControllers.read);
 router.get("/avatars", avatarImageControllers.browse);
 router.get("/avatars/:id", avatarImageControllers.read);
-router.get("/photos", photoControllers.browse);
-router.get("/photos/:id", photoControllers.read);
-router.get("/photos/users/:id", photoControllers.readByUser);
 router.post("/users", hashPassword, validateUser, userControllers.add);
 router.post(
   "/users/login",
@@ -63,9 +60,12 @@ router.delete("/avatars/:id", avatarImageControllers.destroy);
 
 // Route for PHOTOS
 
+router.get("/photos", photoControllers.browse);
+router.get("/photos/:id", photoControllers.read);
 router.post("/photos", validatePhoto, photoControllers.add);
 router.put("/photos/:id", validatePhoto, photoControllers.edit);
 router.delete("/photos/:id", photoControllers.destroy);
+router.get("/photos/users/:id", photoControllers.readByUser);
 
 // Route for CLOUDINARY
 router.post("/upload", photoControllers.uploadCloud);
