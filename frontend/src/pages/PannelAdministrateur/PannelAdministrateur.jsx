@@ -1,10 +1,5 @@
 import React from "react";
-import {
-  Navigate,
-  useLoaderData,
-  //   useParams,
-  //   useNavigate,
-} from "react-router-dom";
+import { Navigate, useLoaderData } from "react-router-dom";
 import "./PannelAdministrateur.scss";
 import LinkAdmin from "../../components/LinkAdmin/LinkAdmin";
 import ArtworkPannel from "../../components/ArtworkPannel/ArtworkPannel";
