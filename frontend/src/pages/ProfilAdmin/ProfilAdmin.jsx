@@ -6,8 +6,6 @@ import {
 } from "react-router-dom";
 
 import "./ProfilAdmin.scss";
-
-import Soldat from "../../assets/avatars/Soldat.png";
 import Trophy from "../../assets/icons/Trophy.png";
 import Option from "../../assets/icons/Icon_option.png";
 import Admin from "../../assets/icons/adminLogo.png";
@@ -46,7 +44,11 @@ function ProfilAdmin() {
     <>
       <div className="profil-admin-page">
         <div className="profil-top">
-          <img className="avatar" src={Soldat} alt="avatar" />
+          <img
+            className="avatar"
+            src={profils.user.selected_avatar}
+            alt="avatar"
+          />
 
           <button
             className="profil-button"

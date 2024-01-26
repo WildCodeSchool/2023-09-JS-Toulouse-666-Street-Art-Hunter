@@ -35,7 +35,7 @@ function PannelAdministrateur() {
       <p className="title">Œuvres à valider</p>
       <ArtworkPannel dataMap={profils.ArtworksToAdd} />
 
-      <p className="title">Œuvres ajouter</p>
+      <p className="title">Œuvres ajoutées</p>
       <ArtworkPannel dataMap={profils.ArtworksToMissing} />
 
       <p className="title">Œuvres disparues</p>

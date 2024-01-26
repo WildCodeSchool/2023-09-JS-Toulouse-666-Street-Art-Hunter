@@ -12,6 +12,8 @@ function AdminUsers() {
 
   return (
     <div className="admin-users">
+      <div className="admin-title">utilisateurs</div>
+      <div className="admin-table">Listes des utilisateurs</div>
       <div className="div-users">
         {profils.users.map((item) => {
           return (
@@ -47,14 +49,6 @@ export default AdminUsers;
 export const adminUsers = async () => {
   const apiURL = import.meta.env.VITE_BACKEND_URL;
   const token = localStorage.getItem("token");
-
-  //   const { id } = req.params;
-  //   const responseAdmin = await fetch(`${apiURL}/api/users/${id}`, {
-  //     headers: {
-  //       Authorization: `Bearer ${token}`,
-  //     },
-  //   });
-  //   const admin = await responseAdmin.json();
 
   const responseUsers = await fetch(`${apiURL}/api/users`, {
     headers: {
