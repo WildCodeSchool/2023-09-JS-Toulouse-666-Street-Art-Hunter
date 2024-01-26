@@ -23,6 +23,7 @@ import ArtworkMissing from "./pages/ArtworkMissing/ArtworkMissing";
 import DetailsArtwork from "./pages/DetailsArtwork/DetailsArtwork";
 import Rules from "./pages/Rules/Rules";
 import { markerArtworkLoader } from "./components/ArtworkMarker/ArtworkMarker";
+import Legals from "./pages/Legal/Legal";
 
 const router = createBrowserRouter(
   createRoutesFromElements(
@@ -51,6 +52,7 @@ const router = createBrowserRouter(
       <Route path="/artwork-missing" element={<ArtworkMissing />} />
       <Route path="/details-artwork" element={<DetailsArtwork />} />
       <Route path="/rules" element={<Rules />} />
+      <Route path="/legals" element={<Legals />} />
     </Route>
   )
 );
