@@ -27,6 +27,9 @@ import DetailsArtwork from "./pages/DetailsArtwork/DetailsArtwork";
 import Rules from "./pages/Rules/Rules";
 import { markerArtworkLoader } from "./components/ArtworkMarker/ArtworkMarker";
 import Legals from "./pages/Legal/Legal";
+import AdminArtworks, {
+  adminArtworksLoader,
+} from "./pages/AdminArtworks/AdminArtworks";
 
 const router = createBrowserRouter(
   createRoutesFromElements(
@@ -61,6 +64,11 @@ const router = createBrowserRouter(
       <Route path="/details-artwork" element={<DetailsArtwork />} />
       <Route path="/rules" element={<Rules />} />
       <Route path="/legals" element={<Legals />} />
+      <Route
+        path="/admin-artworks"
+        element={<AdminArtworks />}
+        loader={adminArtworksLoader}
+      />
     </Route>
   )
 );

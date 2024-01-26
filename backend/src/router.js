@@ -42,6 +42,8 @@ router.get("/artists", artistControllers.browse);
 router.get("/artists/:id", artistControllers.read);
 router.get("/users", userControllers.browse);
 router.get("/users/:id", userControllers.read);
+router.get("/photos", photoControllers.browse);
+router.get("/photos/:id", photoControllers.read);
 // Mur d'authentification
 router.use(verifyToken);
 
@@ -50,6 +52,7 @@ router.post("/artworks", validateArtwork, artworkControllers.add);
 router.put("/artworks/:id", validateArtwork, artworkControllers.edit);
 router.post("/photos", validatePhoto, photoControllers.add);
 router.put("/photos/:id", validatePhoto, photoControllers.edit);
+router.get("/photos/users/:id", photoControllers.readByUser);
 
 router.use(verifyAdmin);
 // Mur d'authentification
@@ -86,12 +89,9 @@ router.delete("/avatars/:id", avatarImageControllers.destroy);
 
 // Route for PHOTOS
 
-router.get("/photos", photoControllers.browse);
-router.get("/photos/:id", photoControllers.read);
 router.post("/photos", validatePhoto, photoControllers.add);
 router.put("/photos/:id", validatePhoto, photoControllers.edit);
 router.delete("/photos/:id", photoControllers.destroy);
-router.get("/photos/users/:id", photoControllers.readByUser);
 
 // Route for CLOUDINARY
 router.post("/upload", photoControllers.uploadCloud);
