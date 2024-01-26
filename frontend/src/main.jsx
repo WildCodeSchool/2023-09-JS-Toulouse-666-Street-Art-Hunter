@@ -31,6 +31,7 @@ import AdminUserDetails, {
   userDetails,
 } from "./pages/AdminUserDetails/AdminUserDetails";
 import AdminLayout, { adminLayout } from "./Layouts/RootLayout/AdminLayout";
+import Legals from "./pages/Legal/Legal";
 
 const router = createBrowserRouter(
   createRoutesFromElements(
@@ -77,6 +78,7 @@ const router = createBrowserRouter(
       <Route path="/artwork-missing" element={<ArtworkMissing />} />
       <Route path="/details-artwork" element={<DetailsArtwork />} />
       <Route path="/rules" element={<Rules />} />
+      <Route path="/legals" element={<Legals />} />
     </Route>
   )
 );
