@@ -35,7 +35,7 @@ function PannelAdministrateur() {
       <p className="title">Œuvres à valider</p>
       <ArtworkPannel dataMap={profils.ArtworksToAdd} />
 
-      <p className="title">Œuvres ajouter</p>
+      <p className="title">Œuvres ajoutées</p>
       <ArtworkPannel dataMap={profils.ArtworksToMissing} />
 
       <p className="title">Œuvres disparues</p>
@@ -43,7 +43,7 @@ function PannelAdministrateur() {
 
       <div className="pannel-link">
         <LinkAdmin
-          lien="/map"
+          lien="/admin/pannel-administrateur/users"
           textLink="Liste Utilisateurs"
           nameClass="link-admin b"
         />

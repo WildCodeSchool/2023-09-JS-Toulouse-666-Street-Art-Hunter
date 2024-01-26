@@ -6,8 +6,8 @@ function ArtworkPannel({ dataMap }) {
     <div className="tableau">
       {dataMap.map((item) => {
         return (
-          <div className="map-tableau">
-            <div key={item.id} className="div-img">
+          <div key={item.id} className="map-tableau">
+            <div className="div-img">
               <img className="link-img" src={item.image} alt="street art" />
             </div>
           </div>

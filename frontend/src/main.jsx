@@ -26,6 +26,11 @@ import PannelAdministrateur, {
 import DetailsArtwork from "./pages/DetailsArtwork/DetailsArtwork";
 import Rules from "./pages/Rules/Rules";
 import { markerArtworkLoader } from "./components/ArtworkMarker/ArtworkMarker";
+import AdminUsers, { adminUsers } from "./pages/AdminUsers/AdminUsers";
+import AdminUserDetails, {
+  userDetails,
+} from "./pages/AdminUserDetails/AdminUserDetails";
+import AdminLayout, { adminLayout } from "./Layouts/RootLayout/AdminLayout";
 import Legals from "./pages/Legal/Legal";
 
 const router = createBrowserRouter(
@@ -36,16 +41,29 @@ const router = createBrowserRouter(
       <Route path="/register" element={<Register />} action={enrolment} />
       <Route path="/login" element={<Login />} action={authenticate} />
       <Route path="/profil/:id" element={<Profil />} loader={profilLoader} />
-      <Route
-        path="/profil/admin/:id"
-        element={<ProfilAdmin />}
-        loader={profilLoaderAdmin}
-      />
-      <Route
-        path="/pannel-administrateur/:id"
-        element={<PannelAdministrateur />}
-        loader={profilPannelAdmin}
-      />
+      <Route element={<AdminLayout />} path="/admin" loader={adminLayout}>
+        <Route
+          path="profil/:id"
+          element={<ProfilAdmin />}
+          loader={profilLoaderAdmin}
+        />
+        <Route
+          path="pannel-administrateur/:id"
+          element={<PannelAdministrateur />}
+          loader={profilPannelAdmin}
+        />
+        <Route
+          path="pannel-administrateur/users"
+          element={<AdminUsers />}
+          loader={adminUsers}
+        />
+        <Route
+          path="pannel-administrateur/users/:id"
+          element={<AdminUserDetails />}
+          loader={userDetails}
+        />
+      </Route>
+
       <Route
         path="/profil/:id/option"
         element={<ProfilOption />}
