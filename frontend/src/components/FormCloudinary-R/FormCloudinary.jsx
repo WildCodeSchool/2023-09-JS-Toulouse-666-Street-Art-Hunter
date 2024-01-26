@@ -28,13 +28,6 @@ function FormCloudinary({ title, button, nonExisting, missing, validated }) {
   const [valueDesc, setValueDesc] = useState();
   const [coordinates, setCoordinates] = useState();
   const navigate = useNavigate();
-  // console.info(previewSource);
-  // console.info(fileName);
-  // console.info(showModal)
-  console.info(addresses);
-  console.info(valueAddress);
-  console.info(valueDesc);
-  console.info(coordinates);
 
   // ******************* LOGIQUE *******************
 

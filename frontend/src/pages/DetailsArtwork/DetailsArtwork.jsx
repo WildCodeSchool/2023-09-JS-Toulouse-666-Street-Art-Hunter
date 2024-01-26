@@ -8,13 +8,10 @@ import Button from "../../components/Button-R/Button";
 
 function DetailsArtwork() {
   const dataArtworkById = useLoaderData();
-  console.info(dataArtworkById);
   const { data, userPhotos } = dataArtworkById;
-  console.info(userPhotos);
   const idPhotos = userPhotos.map((el) => {
     return el.artwork_id;
   });
-  console.info(idPhotos);
 
   const navigate = useNavigate();
 
