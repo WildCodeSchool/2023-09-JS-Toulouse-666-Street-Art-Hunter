@@ -48,7 +48,7 @@ function PannelAdministrateur() {
           nameClass="link-admin b"
         />
         <LinkAdmin
-          lien="/admin-artworks"
+          lien="/admin/admin-artworks"
           textLink="Liste Œuvres"
           nameClass="link-admin g"
         />

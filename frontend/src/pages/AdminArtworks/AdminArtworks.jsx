@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import { useLoaderData } from "react-router-dom";
+import { redirect, useLoaderData } from "react-router-dom";
 import "./AdminArtworks.scss";
 
 import askToArchived from "../../assets/icons/ask_to_archived.png";
@@ -21,6 +21,10 @@ function AdminArtworks() {
     setValue(e.target.value);
   };
 
+  const handleArtworkClick = (id) => {
+    redirect(`/artworks/${id}`);
+  };
+
   return (
     <div className="admin-artworks-container">
       <h1>OEuvres</h1>
@@ -36,7 +40,12 @@ function AdminArtworks() {
       </label>
       <div className="list-artworks">
         {artworks.map((artwork) => (
-          <div className="one-artwork" key={artwork.id}>
+          <button
+            type="button"
+            className="one-artwork"
+            key={artwork.id}
+            onClick={handleArtworkClick(artwork.id)}
+          >
             <img
               className="image-artwork"
               src={artwork.image}
@@ -50,22 +59,26 @@ function AdminArtworks() {
                   src={askToArchived}
                   alt="ask to archived icon"
                   className={
-                    artwork.ask_to_archived === 0 && "transparent-icon"
+                    artwork.ask_to_archived === 0 ? "transparent-icon" : ""
                   }
                 />
                 <img
                   src={archived}
                   alt="archived icon"
-                  className={artwork.is_archived === 0 && "transparent-icon"}
+                  className={
+                    artwork.is_archived === 0 ? "transparent-icon" : ""
+                  }
                 />
                 <img
                   src={validate}
                   alt="validate icon"
-                  className={artwork.is_validate === 0 && "transparent-icon"}
+                  className={
+                    artwork.is_validate === 0 ? "transparent-icon" : ""
+                  }
                 />
               </div>
             </div>
-          </div>
+          </button>
         ))}
       </div>
     </div>

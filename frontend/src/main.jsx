@@ -65,6 +65,11 @@ const router = createBrowserRouter(
           element={<AdminUserDetails />}
           loader={userDetails}
         />
+        <Route
+          path="admin-artworks"
+          element={<AdminArtworks />}
+          loader={adminArtworksLoader}
+        />
       </Route>
 
       <Route
@@ -82,11 +87,6 @@ const router = createBrowserRouter(
       <Route path="/details-artwork" element={<DetailsArtwork />} />
       <Route path="/rules" element={<Rules />} />
       <Route path="/legals" element={<Legals />} />
-      <Route
-        path="/admin-artworks"
-        element={<AdminArtworks />}
-        loader={adminArtworksLoader}
-      />
     </Route>
   )
 );
