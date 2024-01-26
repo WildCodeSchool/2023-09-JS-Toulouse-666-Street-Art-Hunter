@@ -7,7 +7,6 @@ import {
 
 import "./Profil.scss";
 
-import Soldat from "../../assets/avatars/Soldat.png";
 import Trophy from "../../assets/icons/Trophy.png";
 import Option from "../../assets/icons/Icon_option.png";
 
@@ -26,7 +25,7 @@ function Profil() {
     return <Navigate to="/login" replace />;
   }
   if (profils.user.is_admin === 1) {
-    return <Navigate to={`/profil/admin/${id}`} replace />;
+    return <Navigate to={`/admin/profil/${id}`} replace />;
   }
   const artPhoto = (nbr) => {
     return profils.art.filter((el) => {
@@ -45,7 +44,11 @@ function Profil() {
     <>
       <div className="profil-page">
         <div className="profil-top">
-          <img className="avatar" src={Soldat} alt="avatar" />
+          <img
+            className="avatar"
+            src={profils.user.selected_avatar}
+            alt="avatar"
+          />
 
           <button
             className="profil-button"

@@ -6,8 +6,6 @@ import {
 } from "react-router-dom";
 
 import "./ProfilAdmin.scss";
-
-import Soldat from "../../assets/avatars/Soldat.png";
 import Trophy from "../../assets/icons/Trophy.png";
 import Option from "../../assets/icons/Icon_option.png";
 import Admin from "../../assets/icons/adminLogo.png";
@@ -36,17 +34,21 @@ function ProfilAdmin() {
   const userArt = artPhoto(photoId);
   const navigate = useNavigate();
   const handleClickOption = () => {
-    navigate(`/profil/admin/${id}/option`);
+    navigate(`/profil/${id}/option`);
   };
   const handleClickAdmin = () => {
-    navigate(`/pannel-administrateur/${id}`);
+    navigate(`/admin/pannel-administrateur/${id}`);
   };
 
   return (
     <>
       <div className="profil-admin-page">
         <div className="profil-top">
-          <img className="avatar" src={Soldat} alt="avatar" />
+          <img
+            className="avatar"
+            src={profils.user.selected_avatar}
+            alt="avatar"
+          />
 
           <button
             className="profil-button"
@@ -66,17 +68,13 @@ function ProfilAdmin() {
             <p className="score">{profils.user.score} pts</p>
           </div>
         </div>
-        <div className="admin-block">
-          <img className="admin-img" src={Admin} alt="icon admin" />
-          <button
-            type="button"
-            className="admin-text"
-            onClick={handleClickAdmin}
-          >
-            Pannel Administrateur
-          </button>
-          <img className="admin-img" src={Admin} alt="icon admin" />
-        </div>
+      </div>
+      <div className="admin-block">
+        <img className="admin-img" src={Admin} alt="icon admin" />
+        <button type="button" className="admin-text" onClick={handleClickAdmin}>
+          Pannel Administrateur
+        </button>
+        <img className="admin-img" src={Admin} alt="icon admin" />
       </div>
       <div className="artwork">
         <p className="title">Tableau de chasse</p>
