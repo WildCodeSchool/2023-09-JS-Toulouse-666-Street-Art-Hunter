@@ -60,25 +60,30 @@
       }
     }
   }
-  .admin-block {
-    display: flex;
-    justify-content: space-around;
-    align-items: center;
-    flex-direction: row;
-    gap: 8px;
-    .admin-text {
-      background: linear-gradient(
-        180deg,
-        #4475f5 0%,
-        #4e75ff 32.81%,
-        #aeb1ff 67.71%,
-        #fff 100%
-      );
-      padding: 12px;
-      text-align: center;
-      color: white;
-      font-family: "PressStart2P";
-    }
+}
+.admin-block {
+  margin: 16px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: row;
+  gap: 8px;
+  .admin-img {
+    width: 79px;
+  }
+
+  .admin-text {
+    background: linear-gradient(
+      180deg,
+      #4475f5 0%,
+      #4e75ff 32.81%,
+      #aeb1ff 67.71%,
+      #fff 100%
+    );
+    padding: 12px;
+    text-align: center;
+    color: white;
+    font-family: "PressStart2P";
   }
 }
 .artwork {
@@ -159,28 +164,27 @@
         }
       }
     }
-    .admin-block {
-      display: flex;
-      justify-content: space-around;
-      align-items: center;
-      flex-direction: row;
-      gap: 8px;
-      margin-block: 36px;
+  }
+  .admin-block {
+    display: flex;
+    align-items: center;
+    flex-direction: row;
+    gap: 16px;
+    margin-block: 36px;
 
-      .admin-text {
-        background: linear-gradient(
-          180deg,
-          #4475f5 0%,
-          #4e75ff 32.81%,
-          #aeb1ff 67.71%,
-          #fff 100%
-        );
-        padding: 12px;
-        text-align: center;
-        color: white;
-        font-family: "PressStart2P";
-        font-size: 26px;
-      }
+    .admin-text {
+      background: linear-gradient(
+        180deg,
+        #4475f5 0%,
+        #4e75ff 32.81%,
+        #aeb1ff 67.71%,
+        #fff 100%
+      );
+      padding: 24px;
+      text-align: center;
+      color: white;
+      font-family: "PressStart2P";
+      font-size: 26px;
     }
   }
   .artwork {
