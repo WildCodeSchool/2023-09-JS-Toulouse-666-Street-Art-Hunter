@@ -42,7 +42,12 @@ router.get("/artists", artistControllers.browse);
 router.get("/artists/:id", artistControllers.read);
 router.get("/users", userControllers.browse);
 router.get("/users/:id", userControllers.read);
-// Mur d'authentification
+
+router.get("/photos", photoControllers.browse);
+router.get("/photos/:id", photoControllers.read);
+router.get("/artworks/publishers/:id", artworkControllers.readArtworkAndUser);
+
+// --------------------------- Mur d'authentification ---------------------------
 router.use(verifyToken);
 
 router.put("/users/:id", userControllers.edit);
@@ -50,9 +55,15 @@ router.post("/artworks", validateArtwork, artworkControllers.add);
 router.put("/artworks/:id", validateArtwork, artworkControllers.edit);
 router.post("/photos", validatePhoto, photoControllers.add);
 router.put("/photos/:id", validatePhoto, photoControllers.edit);
+router.get("/photos/users/:id", photoControllers.readByUser);
+router.post("/artworks/upload", artworkControllers.uploadCloud);
 
+// Route for CLOUDINARY
+router.post("/upload", photoControllers.uploadCloud);
+router.get("/images", photoControllers.getImagesFromCloud);
+
+// --------------------------- Mur d'authentification Admin ---------------------------
 router.use(verifyAdmin);
-// Mur d'authentification
 
 router.get("/pannel-administrateur/users", userControllers.count);
 router.get("/pannel-administrateur/artworks", artworkControllers.count);
@@ -74,44 +85,26 @@ router.get(
 );
 
 router.get("/pannel-administrateur/artists", artistControllers.count);
+
 // Route for ARTWORKS
-
 router.delete("/artworks/:id", artworkControllers.destroy);
-
-// Route for AVATAR_IMAGE
 
 router.post("/avatars", validateAvatarImage, avatarImageControllers.add);
 router.put("/avatars/:id", validateAvatarImage, avatarImageControllers.edit);
 router.delete("/avatars/:id", avatarImageControllers.destroy);
 
-// Route for PHOTOS
-
-router.get("/photos", photoControllers.browse);
-router.get("/photos/:id", photoControllers.read);
 router.post("/photos", validatePhoto, photoControllers.add);
 router.put("/photos/:id", validatePhoto, photoControllers.edit);
 router.delete("/photos/:id", photoControllers.destroy);
-router.get("/photos/users/:id", photoControllers.readByUser);
-
-// Route for CLOUDINARY
-router.post("/upload", photoControllers.uploadCloud);
-router.get("/images", photoControllers.getImagesFromCloud);
-
-// Route for CLOUDINARY
-router.post("/artworks/upload", artworkControllers.uploadCloud);
-
-// Route for USERS
 
 router.delete("/users/:id", userControllers.destroy);
 
 // Route for ARTICLES
-
 router.post("/articles", validateArticle, articleControllers.add);
 router.put("/articles/:id", validateArticle, articleControllers.edit);
 router.delete("/articles/:id", articleControllers.destroy);
 
 // Route for ARTISTE
-
 router.post("/artists", validateArtist, artistControllers.add);
 router.put("/artists/:id", validateArtist, artistControllers.edit);
 router.delete("/artists/:id", artistControllers.destroy);

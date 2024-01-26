@@ -9,15 +9,13 @@ function MapPage() {
   /** Import de la fonstion navigate */
   const navigate = useNavigate();
 
-  /** A changer pour la page d'ajout d'oeuvre */
-  const handleRedirect = () => {
-    return navigate("/");
-  };
-
   return (
     <div className="map-page">
       <Map />
-      <button type="button" onClick={handleRedirect}>
+      <button
+        type="button"
+        onClick={() => navigate("/add-non-existing-artwork")}
+      >
         <img className="photo-logo" src={photoLogo} alt="logo de la camera" />
       </button>
     </div>

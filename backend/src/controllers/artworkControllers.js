@@ -138,6 +138,21 @@ const uploadCloud = async (req, res) => {
   }
 };
 
+// ------------------ Méthode GET BY ID ------------------
+const readArtworkAndUser = async (req, res, next) => {
+  try {
+    const response = await tables.artwork.readArtworkAndUser(req.params.id);
+    if (response == null) {
+      res.sendStatus(404);
+    } else {
+      res.status(200).json(response);
+    }
+  } catch (err) {
+    console.error(err);
+    next(err);
+  }
+};
+
 module.exports = {
   browse,
   read,
@@ -149,4 +164,5 @@ module.exports = {
   countNoValidate,
   readToAdd,
   readToMissing,
+  readArtworkAndUser,
 };

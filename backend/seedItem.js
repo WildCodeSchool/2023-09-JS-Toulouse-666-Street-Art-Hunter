@@ -10,6 +10,7 @@ const artworkData = [
     ask_to_archived: 0,
     is_archived: 0,
     is_validate: 1,
+    publisher_id: 1,
   },
   {
     image:
@@ -22,6 +23,7 @@ const artworkData = [
     ask_to_archived: 0,
     is_archived: 0,
     is_validate: 1,
+    publisher_id: 2,
   },
   {
     image:
@@ -34,6 +36,7 @@ const artworkData = [
     ask_to_archived: 1,
     is_archived: 0,
     is_validate: 1,
+    publisher_id: 2,
   },
   {
     image:
@@ -46,6 +49,7 @@ const artworkData = [
     ask_to_archived: 0,
     is_archived: 0,
     is_validate: 0,
+    publisher_id: 1,
   },
   {
     image:
@@ -58,6 +62,7 @@ const artworkData = [
     ask_to_archived: 0,
     is_archived: 0,
     is_validate: 0,
+    publisher_id: 2,
   },
   {
     image:
@@ -70,6 +75,7 @@ const artworkData = [
     ask_to_archived: 0,
     is_archived: 0,
     is_validate: 0,
+    publisher_id: 2,
   },
   {
     image:
@@ -82,6 +88,7 @@ const artworkData = [
     ask_to_archived: 0,
     is_archived: 0,
     is_validate: 0,
+    publisher_id: 2,
   },
   {
     image:
@@ -94,6 +101,7 @@ const artworkData = [
     ask_to_archived: 0,
     is_archived: 0,
     is_validate: 0,
+    publisher_id: 2,
   },
   {
     image:
@@ -106,6 +114,7 @@ const artworkData = [
     ask_to_archived: 0,
     is_archived: 0,
     is_validate: 0,
+    publisher_id: 1,
   },
   {
     image:
@@ -118,6 +127,7 @@ const artworkData = [
     ask_to_archived: 1,
     is_archived: 0,
     is_validate: 1,
+    publisher_id: 1,
   },
 ];
 

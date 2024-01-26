@@ -38,23 +38,6 @@ const seed = async () => {
       );
     });
 
-    const artworkQueryPromises = artworkData.map((artwork) => {
-      return database.query(
-        `INSERT INTO artwork (image, longitude, latitude, adress, description, date_published, ask_to_archived, is_archived, is_validate) VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?)`,
-        [
-          artwork.image,
-          artwork.longitude,
-          artwork.latitude,
-          artwork.adress,
-          artwork.description,
-          artwork.date_published,
-          artwork.ask_to_archived,
-          artwork.is_archived,
-          artwork.is_validate,
-        ]
-      );
-    });
-
     const artistQueryPromises = artistData.map((artist) => {
       return database.query(
         `INSERT INTO artist (name, description, image) VALUES (?, ?, ?)`,
@@ -69,32 +52,52 @@ const seed = async () => {
       );
     });
 
+    /* ************************************************************************* */
+
+    // ALL
+    const allPromises = [
+      ...userQueryPromises,
+      ...artistQueryPromises,
+      ...avatarImageQueryPromises,
+    ];
+    await Promise.all(allPromises);
+
+    // ARTWORK
+    const artworkQueryPromises = artworkData.map((artwork) => {
+      return database.query(
+        `INSERT INTO artwork (image, longitude, latitude, adress, description, date_published, ask_to_archived, is_archived, is_validate, publisher_id) VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?)`,
+        [
+          artwork.image,
+          artwork.longitude,
+          artwork.latitude,
+          artwork.adress,
+          artwork.description,
+          artwork.date_published,
+          artwork.ask_to_archived,
+          artwork.is_archived,
+          artwork.is_validate,
+          artwork.publisher_id,
+        ]
+      );
+    });
+    await Promise.all(artworkQueryPromises);
+
+    // PHOTO
     const photoQueryPromises = photoData.map((photo) => {
       return database.query(
         `INSERT INTO photo (image, is_validated, user_id, artwork_id) VALUES (?, ?, ?, ?)`,
         [photo.image, photo.is_validated, photo.user_id, photo.artwork_id]
       );
     });
+    await Promise.all(photoQueryPromises);
 
-    /* ************************************************************************* */
-
-    const allPromises = [
-      ...userQueryPromises,
-      ...artworkQueryPromises,
-      ...avatarImageQueryPromises,
-      ...photoQueryPromises,
-      ...artistQueryPromises,
-    ];
-
-    await Promise.all(allPromises);
-
+    // AVATAR USER
     const avatarUserQueryPromises = avatarUserData.map((avatarUser) => {
       return database.query(
         `INSERT INTO avatar_user (user_id, avatar_image_id) VALUES (?, ?)`,
         [avatarUser.user_id, avatarUser.avatar_image_id]
       );
     });
-
     await Promise.all(avatarUserQueryPromises);
 
     // Wait for all the insertion queries to complete
