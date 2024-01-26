@@ -21,6 +21,44 @@ const browse = async (req, res, next) => {
   }
 };
 
+const count = async (req, res, next) => {
+  try {
+    const artworks = await tables.artwork.countAll();
+    res.status(200).json(artworks);
+  } catch (err) {
+    console.error(err);
+    next(err);
+  }
+};
+
+const countNoValidate = async (req, res, next) => {
+  try {
+    const artworks = await tables.artwork.countArtworkNoValidate();
+    res.status(200).json(artworks);
+  } catch (err) {
+    console.error(err);
+    next(err);
+  }
+};
+const readToAdd = async (req, res, next) => {
+  try {
+    const artworks = await tables.artwork.readAllToAdd();
+    res.status(200).json(artworks);
+  } catch (err) {
+    console.error(err);
+    next(err);
+  }
+};
+const readToMissing = async (req, res, next) => {
+  try {
+    const artworks = await tables.artwork.readAllToMissing();
+    res.status(200).json(artworks);
+  } catch (err) {
+    console.error(err);
+    next(err);
+  }
+};
+
 // ------------------ Méthode GET BY ID ------------------
 const read = async (req, res, next) => {
   try {
@@ -100,4 +138,31 @@ const uploadCloud = async (req, res) => {
   }
 };
 
-module.exports = { browse, read, add, edit, destroy, uploadCloud };
+// ------------------ Méthode GET BY ID ------------------
+const readArtworkAndUser = async (req, res, next) => {
+  try {
+    const response = await tables.artwork.readArtworkAndUser(req.params.id);
+    if (response == null) {
+      res.sendStatus(404);
+    } else {
+      res.status(200).json(response);
+    }
+  } catch (err) {
+    console.error(err);
+    next(err);
+  }
+};
+
+module.exports = {
+  browse,
+  read,
+  add,
+  edit,
+  destroy,
+  uploadCloud,
+  count,
+  countNoValidate,
+  readToAdd,
+  readToMissing,
+  readArtworkAndUser,
+};

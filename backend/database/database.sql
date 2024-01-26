@@ -80,7 +80,7 @@ CREATE TABLE IF NOT EXISTS `street_art`.`artwork` (
   INDEX `fk_artwork_publisher1_idx` (`publisher_id` ASC) VISIBLE,
   CONSTRAINT `fk_artwork_publisher1`
     FOREIGN KEY (`publisher_id`)
-    REFERENCES `street_art`.`publisher` (`id`)
+    REFERENCES `street_art`.`user` (`id`)
     ON DELETE CASCADE
     ON UPDATE CASCADE,
   `artist_id` INT,

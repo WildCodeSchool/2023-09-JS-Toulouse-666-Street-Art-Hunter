@@ -9,25 +9,30 @@ import Button from "../../components/Button-R/Button";
 function DetailsArtwork() {
   const dataArtworkById = useLoaderData();
   console.info(dataArtworkById);
+  const { data, userPhotos } = dataArtworkById;
+  console.info(userPhotos);
+  const idPhotos = userPhotos.map((el) => {
+    return el.artwork_id;
+  });
+  console.info(idPhotos);
 
   const navigate = useNavigate();
-  // A remplacer par l'artiste actuel
+
   const currentArtist = "Miss Van";
 
-  const currentAddress = dataArtworkById.adress;
+  const currentAddress = data.adress;
 
-  const currentDate = dataArtworkById.date_published;
+  const currentDate = data.date_published;
 
   const dateNoHour = currentDate.split("T")[0];
   const dateSplitted = dateNoHour.split("-");
   const normalDate = `${dateSplitted[2]}/${dateSplitted[1]}/${dateSplitted[0]}`;
 
-  const currentImage = dataArtworkById.image;
+  const currentImage = data.image;
 
-  const currentDescription = dataArtworkById.description;
+  const currentDescription = data.description;
 
-  const currentUser = JSON.parse(localStorage.getItem("user"));
-  // A remplacer l'utilisateur actuel
+  const publisherUser = data.name;
 
   return (
     <div className="main-container-details-artwork">
@@ -61,9 +66,8 @@ function DetailsArtwork() {
         <div className="user-container">
           <img src={AstroBoy} alt="user-avatar" />
           <p className="user-name">
-            {currentUser.name &&
-              currentUser.name.charAt(0).toUpperCase() +
-                currentUser.name.slice(1)}
+            {publisherUser &&
+              publisherUser.charAt(0).toUpperCase() + publisherUser.slice(1)}
           </p>
         </div>
         <p className="current-date">Le {normalDate}</p>
@@ -75,11 +79,13 @@ function DetailsArtwork() {
       </div>
 
       <div className="btn-container">
-        <Button
-          name="submit"
-          textBtn="Trouver ?"
-          onClick={() => navigate("/add-existing-artwork")}
-        />
+        {idPhotos.includes(data.id) === false && (
+          <Button
+            name="submit"
+            textBtn="Trouver ?"
+            onClick={() => navigate("/add-existing-artwork")}
+          />
+        )}
         <Button
           name="submit"
           textBtn="Disparu ?"
@@ -93,11 +99,38 @@ function DetailsArtwork() {
 export default DetailsArtwork;
 
 export const dataArtwork = async (req) => {
-  const apiUrl = import.meta.env.VITE_BACKEND_URL;
-  const { id } = req.params;
-  const response = await fetch(`${apiUrl}/api/artworks/${id}`);
+  const token = localStorage.getItem("token");
+  const user = localStorage.getItem("user");
+  try {
+    const apiUrl = import.meta.env.VITE_BACKEND_URL;
+    const { id } = req.params;
+    const response = await fetch(`${apiUrl}/api/artworks/publishers/${id}`);
 
-  const data = await response.json();
-  console.info(data);
-  return data;
+    if (!response.ok) {
+      throw new Error(`Error fetching data: ${response.statusText}`);
+    }
+
+    const data = await response.json();
+
+    if (token && user) {
+      const { id: userId } = JSON.parse(user);
+      const photoByUser = await fetch(
+        `${import.meta.env.VITE_BACKEND_URL}/api/photos/users/${userId}`,
+        {
+          headers: {
+            Authorization: `Bearer ${token}`,
+          },
+        }
+      );
+
+      const userPhotos = await photoByUser.json();
+
+      return { data, userPhotos };
+    }
+
+    return { data };
+  } catch (error) {
+    console.error(`An error occurred: ${error.message}`);
+    throw error;
+  }
 };

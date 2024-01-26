@@ -26,6 +26,13 @@ class AbstractManager {
     return rows;
   }
 
+  async countAll() {
+    const [rows] = await this.database.query(
+      `SELECT COUNT(*) AS numberOfUser FROM ${this.table}`
+    );
+    return rows;
+  }
+
   // ------------------ Méthode DELETE ------------------
   async delete(id) {
     const [rows] = await this.database.query(

@@ -55,7 +55,7 @@ function ArtworkMarker() {
               <Popup>
                 <button
                   type="button"
-                  onClick={() => navigate("/add-non-existing-artwork")}
+                  onClick={() => navigate(`/details-artwork/${artwork.id}`)}
                 >
                   Trouve moi !
                 </button>

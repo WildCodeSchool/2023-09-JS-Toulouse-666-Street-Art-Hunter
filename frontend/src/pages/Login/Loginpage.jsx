@@ -104,5 +104,5 @@ export const authenticate = async ({ request }) => {
     console.error(error);
   }
   // Redirection de l'utilisateur vers la page d'accueil
-  return redirect("/");
+  return redirect("/map");
 };

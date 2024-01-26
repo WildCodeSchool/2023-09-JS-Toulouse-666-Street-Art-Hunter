@@ -70,6 +70,36 @@ class ArtworkManager extends AbstractManager {
     );
     return rows;
   }
+
+  async countArtworkNoValidate() {
+    const [rows] = await this.database.query(
+      `SELECT COUNT(*) AS numberOfArtwork FROM ${this.table} WHERE is_validate='0'`
+    );
+    return rows;
+  }
+
+  async readAllToAdd() {
+    const [rows] = await this.database.query(
+      `SELECT * FROM ${this.table} WHERE is_validate='0'`
+    );
+    return rows;
+  }
+
+  async readAllToMissing() {
+    const [rows] = await this.database.query(
+      `SELECT * FROM ${this.table} WHERE ask_to_archived='1'`
+    );
+    return rows;
+  }
+
+  // ------------------ Méthode GET BY ID ------------------
+  async readArtworkAndUser(id) {
+    const [rows] = await this.database.query(
+      `SELECT ${this.table}.*, user.name FROM ${this.table} INNER JOIN user ON ${this.table}.publisher_id = user.id WHERE ${this.table}.id = ?`,
+      [id]
+    );
+    return rows[0];
+  }
 }
 
 module.exports = ArtworkManager;
