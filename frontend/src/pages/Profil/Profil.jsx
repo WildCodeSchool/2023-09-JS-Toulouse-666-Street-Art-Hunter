@@ -26,7 +26,7 @@ function Profil() {
     return <Navigate to="/login" replace />;
   }
   if (profils.user.is_admin === 1) {
-    return <Navigate to={`/profil/admin/${id}`} replace />;
+    return <Navigate to={`/admin/profil/${id}`} replace />;
   }
   const artPhoto = (nbr) => {
     return profils.art.filter((el) => {

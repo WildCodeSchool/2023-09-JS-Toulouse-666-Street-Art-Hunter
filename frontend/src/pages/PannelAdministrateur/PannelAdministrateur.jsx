@@ -43,7 +43,7 @@ function PannelAdministrateur() {
 
       <div className="pannel-link">
         <LinkAdmin
-          lien="/map"
+          lien="/admin/pannel-administrateur/users"
           textLink="Liste Utilisateurs"
           nameClass="link-admin b"
         />

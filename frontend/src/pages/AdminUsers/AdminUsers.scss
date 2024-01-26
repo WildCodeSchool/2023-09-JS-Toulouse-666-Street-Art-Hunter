@@ -1,0 +1,33 @@
+.admin-users {
+  min-height: calc(100vh - 160px);
+  .div-users {
+    font-family: "PressStart2P";
+    margin: 5%;
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    color: white;
+    padding-block: 0.5rem;
+    border: 2px solid #dd0bff;
+    padding-inline: 8px;
+    font-size: 12px;
+    box-shadow: 4px 4px 0px 0px #ed1385;
+
+    .div-fiche-perso {
+      margin-block: 8px;
+      align-items: center;
+      display: flex;
+      flex-direction: row;
+      justify-content: space-between;
+      gap: 16px;
+      .link-img {
+        width: 50px;
+      }
+      .score {
+        display: flex;
+        justify-content: space-between;
+        width: 120px;
+      }
+    }
+  }
+}

@@ -36,10 +36,10 @@ function ProfilAdmin() {
   const userArt = artPhoto(photoId);
   const navigate = useNavigate();
   const handleClickOption = () => {
-    navigate(`/profil/admin/${id}/option`);
+    navigate(`/profil/${id}/option`);
   };
   const handleClickAdmin = () => {
-    navigate(`/pannel-administrateur/${id}`);
+    navigate(`/admin/pannel-administrateur/${id}`);
   };
 
   return (
@@ -66,17 +66,13 @@ function ProfilAdmin() {
             <p className="score">{profils.user.score} pts</p>
           </div>
         </div>
-        <div className="admin-block">
-          <img className="admin-img" src={Admin} alt="icon admin" />
-          <button
-            type="button"
-            className="admin-text"
-            onClick={handleClickAdmin}
-          >
-            Pannel Administrateur
-          </button>
-          <img className="admin-img" src={Admin} alt="icon admin" />
-        </div>
+      </div>
+      <div className="admin-block">
+        <img className="admin-img" src={Admin} alt="icon admin" />
+        <button type="button" className="admin-text" onClick={handleClickAdmin}>
+          Pannel Administrateur
+        </button>
+        <img className="admin-img" src={Admin} alt="icon admin" />
       </div>
       <div className="artwork">
         <p className="title">Tableau de chasse</p>
