@@ -1,0 +1,126 @@
+.pannel-administrateur-page {
+  padding-inline: 5%;
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+  font-family: "PressStart2P";
+  .pannel-stats {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 16px;
+    line-height: 1.5rem;
+    .img-admin {
+      display: none;
+    }
+    .title {
+      font-size: clamp(18px, 2vw, 32px);
+      background: linear-gradient(
+        180deg,
+        #f00 0%,
+        #d95d00 28.13%,
+        #be7c68 50.52%,
+        #f5ff87 100%
+      );
+
+      background-clip: text;
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+    }
+    .map-admin {
+      display: flex;
+      justify-content: center;
+      color: white;
+      padding-block: 0.5rem;
+      border: 2px solid #dd0bff;
+      padding-inline: 8px;
+      font-size: 12px;
+      box-shadow: 4px 4px 0px 0px #ed1385;
+      // width: 800px;
+    }
+  }
+  .title {
+    font-size: clamp(18px, 2vw, 32px);
+    background: linear-gradient(
+      180deg,
+      #f00 0%,
+      #d95d00 28.13%,
+      #be7c68 50.52%,
+      #f5ff87 100%
+    );
+
+    background-clip: text;
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+  }
+
+  .tableau {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: space-around;
+    gap: 8px;
+    border: 2px solid #dd0bff;
+    box-shadow: 4px 4px 0px 0px #ed1385;
+    padding: 8px;
+    .map-tableau {
+      .div-img {
+        display: flex;
+        flex-direction: row;
+        flex-wrap: wrap;
+
+        .link-img {
+          width: 105px;
+          max-height: 110px;
+          aspect-ratio: 1;
+          object-fit: cover;
+        }
+      }
+    }
+  }
+  .pannel-link {
+    padding-block: 16px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 24px;
+  }
+}
+@media screen and (min-width: 480px) {
+  .pannel-administrateur-page {
+    gap: 40px;
+    .pannel-stats {
+      margin-top: 16px;
+      .img-admin {
+        display: block;
+      }
+      .title {
+        padding: 8px;
+      }
+      .map-admin {
+        width: 800px;
+        font-size: 22px;
+        line-height: 2rem;
+      }
+    }
+    .tableau {
+      .map-tableau {
+        .div-img {
+          .link-img {
+            width: 300px;
+            aspect-ratio: 1;
+            max-height: none;
+            object-fit: cover;
+          }
+        }
+      }
+    }
+    .pannel-link {
+      gap: 80px;
+      display: flex;
+      flex-direction: row;
+      flex-wrap: wrap;
+      justify-content: center;
+    }
+  }
+}

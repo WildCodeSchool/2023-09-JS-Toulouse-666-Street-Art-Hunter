@@ -20,6 +20,9 @@ import RootLayout from "./Layouts/RootLayout/RootLayout";
 import AddExistingArtwork from "./pages/AddExistingArtwork/AddExistingArtwork";
 import AddNonExistingArtwork from "./pages/AddNonExistingArtwork/AddNonExistingArtwork";
 import ArtworkMissing from "./pages/ArtworkMissing/ArtworkMissing";
+import PannelAdministrateur, {
+  profilPannelAdmin,
+} from "./pages/PannelAdministrateur/PannelAdministrateur";
 import DetailsArtwork from "./pages/DetailsArtwork/DetailsArtwork";
 import Rules from "./pages/Rules/Rules";
 import { markerArtworkLoader } from "./components/ArtworkMarker/ArtworkMarker";
@@ -37,6 +40,11 @@ const router = createBrowserRouter(
         path="/profil/admin/:id"
         element={<ProfilAdmin />}
         loader={profilLoaderAdmin}
+      />
+      <Route
+        path="/pannel-administrateur/:id"
+        element={<PannelAdministrateur />}
+        loader={profilPannelAdmin}
       />
       <Route
         path="/profil/:id/option"

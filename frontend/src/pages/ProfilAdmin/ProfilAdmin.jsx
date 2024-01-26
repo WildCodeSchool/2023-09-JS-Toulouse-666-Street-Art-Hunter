@@ -39,8 +39,9 @@ function ProfilAdmin() {
     navigate(`/profil/admin/${id}/option`);
   };
   const handleClickAdmin = () => {
-    navigate(`/map`);
+    navigate(`/pannel-administrateur/${id}`);
   };
+
   return (
     <>
       <div className="profil-admin-page">
@@ -79,14 +80,15 @@ function ProfilAdmin() {
       </div>
       <div className="artwork">
         <p className="title">Tableau de chasse</p>
-        {userArt.map((item) => {
-          return (
-            <div key={item.id} className="item">
-              <h1 className="link-img">{item.image}</h1>
-              <p>{item.id}</p>
-            </div>
-          );
-        })}
+        <div className="map-artwork">
+          {userArt.map((item) => {
+            return (
+              <div key={item.id} className="item">
+                <img className="link-img" src={item.image} alt="street art" />
+              </div>
+            );
+          })}
+        </div>
       </div>
     </>
   );

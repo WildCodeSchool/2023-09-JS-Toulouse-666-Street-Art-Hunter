@@ -23,6 +23,7 @@ const {
   hashPassword,
   verifyPassword,
   verifyToken,
+  verifyAdmin,
 } = require("./middlewares/authentication");
 
 router.get("/artworks", artworkControllers.browse);
@@ -40,16 +41,41 @@ router.get("/articles/:id", articleControllers.read);
 router.get("/artists", artistControllers.browse);
 router.get("/artists/:id", artistControllers.read);
 router.get("/users", userControllers.browse);
-
+router.get("/users/:id", userControllers.read);
 // Mur d'authentification
 router.use(verifyToken);
-// Mur d'authentification
 
-// Route for ARTWORKS
-
-router.get("/users/:id", userControllers.read);
+router.put("/users/:id", userControllers.edit);
 router.post("/artworks", validateArtwork, artworkControllers.add);
 router.put("/artworks/:id", validateArtwork, artworkControllers.edit);
+router.post("/photos", validatePhoto, photoControllers.add);
+router.put("/photos/:id", validatePhoto, photoControllers.edit);
+
+router.use(verifyAdmin);
+// Mur d'authentification
+
+router.get("/pannel-administrateur/users", userControllers.count);
+router.get("/pannel-administrateur/artworks", artworkControllers.count);
+router.get(
+  "/pannel-administrateur/artworks-no-validate",
+  artworkControllers.countNoValidate
+);
+router.get(
+  "/pannel-administrateur/photo-no-validate",
+  photoControllers.readValidatePhoto
+);
+router.get(
+  "/pannel-administrateur/artworks-to-validate",
+  artworkControllers.readToAdd
+);
+router.get(
+  "/pannel-administrateur/artworks-to-missing",
+  artworkControllers.readToMissing
+);
+
+router.get("/pannel-administrateur/artists", artistControllers.count);
+// Route for ARTWORKS
+
 router.delete("/artworks/:id", artworkControllers.destroy);
 
 // Route for AVATAR_IMAGE
@@ -76,7 +102,6 @@ router.post("/artworks/upload", artworkControllers.uploadCloud);
 
 // Route for USERS
 
-router.put("/users/:id", userControllers.edit);
 router.delete("/users/:id", userControllers.destroy);
 
 // Route for ARTICLES
