@@ -1,6 +1,5 @@
 import React from "react";
-import { useNavigate } from "react-router-dom";
-import getCurrentFormattedDate from "../../services/utils";
+import { useLoaderData, useNavigate } from "react-router-dom";
 import "./DetailsArtwork.scss";
 import GeolocIcon from "../../assets/icons/geoloc-icon.png";
 import AstroBoy from "../../assets/avatars/astro-boy.png";
@@ -8,26 +7,38 @@ import Title from "../../components/TitleRed-R/Title";
 import Button from "../../components/Button-R/Button";
 
 function DetailsArtwork() {
+  const dataArtworkById = useLoaderData();
+  console.info(dataArtworkById);
+
   const navigate = useNavigate();
   // A remplacer par l'artiste actuel
   const currentArtist = "Miss Van";
-  // A remplacer par l'adresse de l'oeuvre
-  const currentAddress = "10 rue Saint-Anne, 3100 Toulouse";
-  // A remplacer le bon format de date
-  const currentDate = getCurrentFormattedDate();
+
+  const currentAddress = dataArtworkById.adress;
+
+  const currentDate = dataArtworkById.date_published;
+
+  const dateNoHour = currentDate.split("T")[0];
+  const dateSplitted = dateNoHour.split("-");
+  const normalDate = `${dateSplitted[2]}/${dateSplitted[1]}/${dateSplitted[0]}`;
+
+  const currentImage = dataArtworkById.image;
+
+  const currentDescription = dataArtworkById.description;
 
   const currentUser = JSON.parse(localStorage.getItem("user"));
   // A remplacer l'utilisateur actuel
 
   return (
     <div className="main-container-details-artwork">
+      {/* Pensez à rajouter des artistes si besoin  */}
       <div className="artist-container">
         <Title title="Artiste:" />
         <p className="artist-name">{currentArtist}</p>
       </div>
       <div className="preview-main">
         <div className="preview-container">
-          <img className="preview-image" src="" alt="artwork" />
+          <img className="preview-image" src={currentImage} alt="artwork" />
         </div>
       </div>
 
@@ -55,18 +66,12 @@ function DetailsArtwork() {
                 currentUser.name.slice(1)}
           </p>
         </div>
-        <p className="current-date">Le {currentDate}</p>
+        <p className="current-date">Le {normalDate}</p>
       </div>
 
       <div className="description-container">
         <Title title="Description:" />
-        <p className="description-text">
-          Sur un mur délabré, un graffiti intrigant dépeint une femme
-          désarticulée tenant un bâton de berger. Sa silhouette déformée semble
-          flotter, capturant une dualité entre la fragilité et la force. Les
-          couleurs vibrantes contrastent avec l'obscurité de la ruelle, créant
-          une scène mystérieuse et envoûtante.
-        </p>
+        <p className="description-text">{currentDescription}</p>
       </div>
 
       <div className="btn-container">
@@ -94,4 +99,5 @@ export const dataArtwork = async (req) => {
 
   const data = await response.json();
   console.info(data);
+  return data;
 };

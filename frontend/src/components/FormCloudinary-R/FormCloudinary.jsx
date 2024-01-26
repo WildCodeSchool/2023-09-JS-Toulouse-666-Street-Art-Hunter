@@ -31,11 +31,10 @@ function FormCloudinary({ title, button, nonExisting, missing, validated }) {
   // console.info(previewSource);
   // console.info(fileName);
   // console.info(showModal)
-  // console.info(addresses);
-  // console.info(valueAddress);
-  // console.info(valueDesc)
-  // console.info(coordinates);
-  // console.info(previewSource);
+  console.info(addresses);
+  console.info(valueAddress);
+  console.info(valueDesc);
+  console.info(coordinates);
 
   // ******************* LOGIQUE *******************
 

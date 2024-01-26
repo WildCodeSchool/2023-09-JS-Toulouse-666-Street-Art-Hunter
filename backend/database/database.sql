@@ -76,6 +76,13 @@ CREATE TABLE IF NOT EXISTS `street_art`.`artwork` (
   `ask_to_archived` TINYINT(1) NOT NULL,
   `is_archived` TINYINT(1) NOT NULL,
   `is_validate` TINYINT(1) NOT NULL,
+    `publisher_id` INT,
+  INDEX `fk_artwork_publisher1_idx` (`publisher_id` ASC) VISIBLE,
+  CONSTRAINT `fk_artwork_publisher1`
+    FOREIGN KEY (`publisher_id`)
+    REFERENCES `street_art`.`publisher` (`id`)
+    ON DELETE CASCADE
+    ON UPDATE CASCADE,
   `artist_id` INT,
   INDEX `fk_artwork_artist1_idx` (`artist_id` ASC) VISIBLE,
   CONSTRAINT `fk_artwork_artist1`

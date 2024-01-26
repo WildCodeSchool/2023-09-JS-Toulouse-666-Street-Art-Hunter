@@ -47,6 +47,8 @@
       box-shadow: 4px 4px 0px 0px #ed1385;
       background: var(--primary-color);
       .preview-image {
+        width: 340px;
+        height: 340px;
         object-fit: cover;
       }
     }
