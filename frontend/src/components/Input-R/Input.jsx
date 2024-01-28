@@ -27,6 +27,10 @@ function Input({ labelName, type, labelText, maxLength, height }) {
   );
 }
 
+Input.defaultProps = {
+  height: "auto",
+};
+
 export default Input;
 
 Input.propTypes = {
@@ -34,5 +38,5 @@ Input.propTypes = {
   type: PropTypes.string.isRequired,
   labelText: PropTypes.string.isRequired,
   maxLength: PropTypes.string.isRequired,
-  height: PropTypes.string.isRequired,
+  height: PropTypes.string,
 };
