@@ -69,9 +69,9 @@ function AdminUserModify() {
             name="is_admin"
             value={AdminValue}
           />
-          <div className="teste">
+          <div className="button-admin">
             <button className={AdminButton} type="button" onClick={toggleAdmin}>
-              ahah
+              x
             </button>
           </div>
         </label>
