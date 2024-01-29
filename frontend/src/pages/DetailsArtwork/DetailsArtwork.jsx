@@ -7,7 +7,10 @@ import Title from "../../components/TitleRed-R/Title";
 import Button from "../../components/Button-R/Button";
 
 function DetailsArtwork() {
+  // ********************* STATE *********************
   const dataArtworkById = useLoaderData();
+
+  // ********************* LOGIQUE *********************
   const { data, userPhotos } = dataArtworkById;
   const idPhotos = userPhotos.map((el) => {
     return el.artwork_id;
@@ -31,6 +34,7 @@ function DetailsArtwork() {
 
   const publisherUser = data.name;
 
+  // ********************* RENDER *********************
   return (
     <div className="main-container-details-artwork">
       {/* Pensez à rajouter des artistes si besoin  */}

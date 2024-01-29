@@ -35,11 +35,11 @@ function NavBar({ isOpen, setIsOpen }) {
 
         <li>
           <Link to="/map">CARTE</Link>
-          <Link to="/leaderboard">CLASSEMENT</Link>
+          <Link to="/ranking">CLASSEMENT</Link>
           <Link to="/article">ARTICLES</Link>
           <Link to="/artist">ARTISTES</Link>
           <Link to="/rules">REGLES</Link>
-          <Link to="/about">CREATEURS</Link>
+          <Link to="/about-us">CREATEURS</Link>
         </li>
         <button
           className="profile"
