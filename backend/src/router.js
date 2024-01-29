@@ -93,23 +93,9 @@ router.post("/avatars", validateAvatarImage, avatarImageControllers.add);
 router.put("/avatars/:id", validateAvatarImage, avatarImageControllers.edit);
 router.delete("/avatars/:id", avatarImageControllers.destroy);
 
-// Route for PHOTOS
-
-router.get("/photos", photoControllers.browse);
-router.get("/photos/:id", photoControllers.read);
 router.post("/photos", validatePhoto, photoControllers.add);
 router.put("/photos/:id", validatePhoto, photoControllers.edit);
 router.delete("/photos/:id", photoControllers.destroy);
-router.get("/photos/users/:id", photoControllers.readByUser);
-
-// Route for CLOUDINARY
-router.post("/upload", photoControllers.uploadCloud);
-router.get("/images", photoControllers.getImagesFromCloud);
-
-// Route for CLOUDINARY
-router.post("/artworks/upload", artworkControllers.uploadCloud);
-
-// Route for USERS
 
 router.delete("/users/:id", userControllers.destroy);
 

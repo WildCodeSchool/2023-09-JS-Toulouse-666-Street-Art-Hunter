@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import { redirect, useLoaderData } from "react-router-dom";
+import { useNavigate, useLoaderData } from "react-router-dom";
 import "./AdminArtworks.scss";
 
 import askToArchived from "../../assets/icons/ask_to_archived.png";
@@ -9,6 +9,7 @@ import validate from "../../assets/icons/validate.png";
 function AdminArtworks() {
   const [value, setValue] = useState("");
   const artworks = useLoaderData();
+  const navigate = useNavigate();
 
   const date = (e) => {
     const dateNoHour = e.split("T")[0];
@@ -17,18 +18,31 @@ function AdminArtworks() {
     return normalDate;
   };
 
+  const filteredArtworks = artworks.filter((artwork) => {
+    if (value !== "") {
+      const lowercaseValue = value.toLowerCase();
+      const lowercaseAddress = artwork.adress.toLowerCase();
+      const filtered = lowercaseAddress.includes(lowercaseValue);
+      return filtered;
+    }
+    return artworks;
+  });
+
   const handleChange = (e) => {
     setValue(e.target.value);
   };
 
   const handleArtworkClick = (id) => {
-    redirect(`/artworks/${id}`);
+    navigate(`/details-artwork/${id}`);
   };
 
   return (
     <div className="admin-artworks-container">
       <h1>OEuvres</h1>
-      <label className="label-container" htmlFor="input-artwork">
+      <label
+        className="label-container admin-artworks-label"
+        htmlFor="input-artwork"
+      >
         <span className="label-title">LISTE DES OEUVRES</span>
         <input
           className="input-container"
@@ -39,12 +53,12 @@ function AdminArtworks() {
         />
       </label>
       <div className="list-artworks">
-        {artworks.map((artwork) => (
+        {filteredArtworks.map((artwork) => (
           <button
             type="button"
             className="one-artwork"
             key={artwork.id}
-            onClick={handleArtworkClick(artwork.id)}
+            onClick={() => handleArtworkClick(artwork.id)}
           >
             <img
               className="image-artwork"
