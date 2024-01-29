@@ -21,7 +21,13 @@ function BurgerModal({ isOpen, handleBurger }) {
         <Link to="/map" onClick={handleBurger}>
           CARTE
         </Link>
-        <Link to="/leaderboard" onClick={handleBurger}>
+        <Link
+          to="/ranking"
+          onClick={() => {
+            navigate("/ranking");
+            handleBurger();
+          }}
+        >
           CLASSEMENT
         </Link>
         <Link to="/article" onClick={handleBurger}>
@@ -39,7 +45,13 @@ function BurgerModal({ isOpen, handleBurger }) {
         >
           REGLES
         </Link>
-        <Link to="/about" onClick={handleBurger}>
+        <Link
+          to="/about-us"
+          onClick={() => {
+            navigate("/about-us");
+            handleBurger();
+          }}
+        >
           CREATEURS
         </Link>
       </li>

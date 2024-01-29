@@ -30,7 +30,7 @@ function AdminUsers() {
                   src={item.selected_avatar}
                   alt="icon users"
                 />
-                <div>{item.name}</div>
+                <div className="user-name">{item.name}</div>
                 <div className="score">
                   <div>{item.score}</div>
                   <div>POINT</div>

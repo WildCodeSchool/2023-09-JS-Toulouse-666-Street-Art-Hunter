@@ -32,22 +32,17 @@ function PannelAdministrateur() {
         </div>
       </div>
 
-      <p className="title">Œuvres à valider</p>
-      <ArtworkPannel
-        dataMap={profils.ArtworksToAdd}
-        pageName="validate-photo"
-      />
-
-      <p className="title">Œuvres ajoutées</p>
-      <ArtworkPannel
-        dataMap={profils.ArtworksToMissing}
-        pageName="validate-photo"
-      />
-
-      <p className="title">Œuvres disparues</p>
+      <p className="title">Photos à valider</p>
       <ArtworkPannel
         dataMap={profils.PhotoNoValidate}
         pageName="validate-photo"
+      />
+      <p className="title">Œuvres ajoutées</p>
+      <ArtworkPannel dataMap={profils.ArtworksToAdd} pageName="add-artwork" />
+      <p className="title">Œuvres disparues</p>
+      <ArtworkPannel
+        dataMap={profils.ArtworksToMissing}
+        pageName="missing-artwork"
       />
 
       <div className="pannel-link">

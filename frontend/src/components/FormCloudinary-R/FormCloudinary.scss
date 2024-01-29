@@ -31,6 +31,7 @@
       -webkit-background-clip: text;
       -webkit-text-fill-color: transparent;
       // -----------------------
+      font-size: clamp(1.5rem, 8vw, 3.5rem);
     }
   }
   .preview-container {
@@ -113,18 +114,26 @@
     }
 
     .address-input {
-      .btn-addresses {
+      position: relative;
+      .btn-addresses-on {
         position: absolute;
-        width: 340px;
+        width: calc(100% - 2rem);
         background-color: var(--primary-color);
         backdrop-filter: blur(10px);
         display: flex;
         flex-direction: column;
         row-gap: 0.5rem;
         // border: 1px solid white;
+        z-index: 1000;
+        padding: 1rem;
+        border: 2px solid var(--Stroke-violet, #dd0bff);
+        .btn-addresses-off {
+          display: none;
+        }
         button {
-          border: 1px solid white;
           color: aliceblue;
+          padding: 0.5rem;
+          border: 2px solid pink;
         }
       }
     }
