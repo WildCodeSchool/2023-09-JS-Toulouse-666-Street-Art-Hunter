@@ -60,6 +60,7 @@ const seed = async () => {
       ...artistQueryPromises,
       ...avatarImageQueryPromises,
     ];
+
     await Promise.all(allPromises);
 
     // ARTWORK
