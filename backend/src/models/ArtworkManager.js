@@ -91,6 +91,15 @@ class ArtworkManager extends AbstractManager {
     );
     return rows;
   }
+
+  // ------------------ Méthode GET BY ID ------------------
+  async readArtworkAndUser(id) {
+    const [rows] = await this.database.query(
+      `SELECT ${this.table}.*, user.name FROM ${this.table} INNER JOIN user ON ${this.table}.publisher_id = user.id WHERE ${this.table}.id = ?`,
+      [id]
+    );
+    return rows[0];
+  }
 }
 
 module.exports = ArtworkManager;

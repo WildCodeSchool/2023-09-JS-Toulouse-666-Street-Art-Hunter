@@ -1,6 +1,5 @@
 import React from "react";
-import { useNavigate } from "react-router-dom";
-import getCurrentFormattedDate from "../../services/utils";
+import { useLoaderData, useNavigate } from "react-router-dom";
 import "./DetailsArtwork.scss";
 import GeolocIcon from "../../assets/icons/geoloc-icon.png";
 import AstroBoy from "../../assets/avatars/astro-boy.png";
@@ -8,26 +7,40 @@ import Title from "../../components/TitleRed-R/Title";
 import Button from "../../components/Button-R/Button";
 
 function DetailsArtwork() {
-  const navigate = useNavigate();
-  // A remplacer par l'artiste actuel
-  const currentArtist = "Miss Van";
-  // A remplacer par l'adresse de l'oeuvre
-  const currentAddress = "10 rue Saint-Anne, 3100 Toulouse";
-  // A remplacer le bon format de date
-  const currentDate = getCurrentFormattedDate();
+  const dataArtworkById = useLoaderData();
+  const { data, userPhotos } = dataArtworkById;
+  const idPhotos = userPhotos.map((el) => {
+    return el.artwork_id;
+  });
 
-  const currentUser = JSON.parse(localStorage.getItem("user"));
-  // A remplacer l'utilisateur actuel
+  const navigate = useNavigate();
+
+  const currentArtist = "Miss Van";
+
+  const currentAddress = data.adress;
+
+  const currentDate = data.date_published;
+
+  const dateNoHour = currentDate.split("T")[0];
+  const dateSplitted = dateNoHour.split("-");
+  const normalDate = `${dateSplitted[2]}/${dateSplitted[1]}/${dateSplitted[0]}`;
+
+  const currentImage = data.image;
+
+  const currentDescription = data.description;
+
+  const publisherUser = data.name;
 
   return (
     <div className="main-container-details-artwork">
+      {/* Pensez à rajouter des artistes si besoin  */}
       <div className="artist-container">
         <Title title="Artiste:" />
         <p className="artist-name">{currentArtist}</p>
       </div>
       <div className="preview-main">
         <div className="preview-container">
-          <img className="preview-image" src="" alt="artwork" />
+          <img className="preview-image" src={currentImage} alt="artwork" />
         </div>
       </div>
 
@@ -50,31 +63,26 @@ function DetailsArtwork() {
         <div className="user-container">
           <img src={AstroBoy} alt="user-avatar" />
           <p className="user-name">
-            {currentUser.name &&
-              currentUser.name.charAt(0).toUpperCase() +
-                currentUser.name.slice(1)}
+            {publisherUser &&
+              publisherUser.charAt(0).toUpperCase() + publisherUser.slice(1)}
           </p>
         </div>
-        <p className="current-date">Le {currentDate}</p>
+        <p className="current-date">Le {normalDate}</p>
       </div>
 
       <div className="description-container">
         <Title title="Description:" />
-        <p className="description-text">
-          Sur un mur délabré, un graffiti intrigant dépeint une femme
-          désarticulée tenant un bâton de berger. Sa silhouette déformée semble
-          flotter, capturant une dualité entre la fragilité et la force. Les
-          couleurs vibrantes contrastent avec l'obscurité de la ruelle, créant
-          une scène mystérieuse et envoûtante.
-        </p>
+        <p className="description-text">{currentDescription}</p>
       </div>
 
       <div className="btn-container">
-        <Button
-          name="submit"
-          textBtn="Trouver ?"
-          onClick={() => navigate("/add-existing-artwork")}
-        />
+        {idPhotos.includes(data.id) === false && (
+          <Button
+            name="submit"
+            textBtn="Trouver ?"
+            onClick={() => navigate("/add-existing-artwork")}
+          />
+        )}
         <Button
           name="submit"
           textBtn="Disparu ?"
@@ -86,3 +94,40 @@ function DetailsArtwork() {
 }
 
 export default DetailsArtwork;
+
+export const dataArtwork = async (req) => {
+  const token = localStorage.getItem("token");
+  const user = localStorage.getItem("user");
+  try {
+    const apiUrl = import.meta.env.VITE_BACKEND_URL;
+    const { id } = req.params;
+    const response = await fetch(`${apiUrl}/api/artworks/publishers/${id}`);
+
+    if (!response.ok) {
+      throw new Error(`Error fetching data: ${response.statusText}`);
+    }
+
+    const data = await response.json();
+
+    if (token && user) {
+      const { id: userId } = JSON.parse(user);
+      const photoByUser = await fetch(
+        `${import.meta.env.VITE_BACKEND_URL}/api/photos/users/${userId}`,
+        {
+          headers: {
+            Authorization: `Bearer ${token}`,
+          },
+        }
+      );
+
+      const userPhotos = await photoByUser.json();
+
+      return { data, userPhotos };
+    }
+
+    return { data };
+  } catch (error) {
+    console.error(`An error occurred: ${error.message}`);
+    throw error;
+  }
+};

@@ -34,34 +34,36 @@ function ArtworkMarker() {
 
   return (
     <MarkerClusterGroup chunkedLoading iconCreateFunction={clusters}>
-      {artworks.map((artwork) => (
-        <Marker
-          key={artwork.id}
-          position={[artwork.longitude, artwork.latitude]}
-          icon={userPhotoId.includes(artwork.id) ? found : notFound}
-        >
-          {userPhotoId.includes(artwork.id) ? (
-            <Popup>
-              <img src={artwork.image} alt={artwork.description} />
-              <button
-                type="button"
-                onClick={() => navigate("/details-artwork")}
-              >
-                Details
-              </button>
-            </Popup>
-          ) : (
-            <Popup>
-              <button
-                type="button"
-                onClick={() => navigate("/add-non-existing-artwork")}
-              >
-                Trouve moi !
-              </button>
-            </Popup>
-          )}
-        </Marker>
-      ))}
+      {artworks.map((artwork) => {
+        return (
+          <Marker
+            key={artwork.id}
+            position={[artwork.longitude, artwork.latitude]}
+            icon={userPhotoId.includes(artwork.id) ? found : notFound}
+          >
+            {userPhotoId.includes(artwork.id) ? (
+              <Popup>
+                <img src={artwork.image} alt={artwork.description} />
+                <button
+                  type="button"
+                  onClick={() => navigate(`/details-artwork/${artwork.id}`)}
+                >
+                  Details
+                </button>
+              </Popup>
+            ) : (
+              <Popup>
+                <button
+                  type="button"
+                  onClick={() => navigate(`/details-artwork/${artwork.id}`)}
+                >
+                  Trouve moi !
+                </button>
+              </Popup>
+            )}
+          </Marker>
+        );
+      })}
     </MarkerClusterGroup>
   );
 }
