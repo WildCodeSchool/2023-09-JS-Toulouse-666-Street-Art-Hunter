@@ -1,0 +1,134 @@
+.admin-artworks-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  min-height: calc(100vh - 160px);
+  background-color: #12141a;
+  width: 80%;
+  padding-inline: 10%;
+  gap: 2rem;
+  h1 {
+    font-family: "PixelBit";
+    text-align: center;
+    text-transform: uppercase;
+    background: var(--red-gradient);
+    background-clip: text;
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    font-size: 2rem;
+  }
+  .admin-artworks-label {
+    font-family: "PressStart2P";
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 80vw;
+    text-align: center;
+    input {
+      width: 90%;
+    }
+  }
+  .list-artworks {
+    display: flex;
+    flex-direction: column;
+    border: 2px solid #dd0bff;
+    box-shadow: 4px 4px 0px 0px #ed1385;
+    padding-block: 0.5rem;
+    padding-inline: 8px;
+    gap: 1rem;
+    background: rgba(255, 255, 255, 0.1);
+    width: 100%;
+    font-family: "PressStart2P";
+    font-size: 10px;
+    .one-artwork {
+      border: solid 1px black;
+      display: flex;
+      flex-direction: row;
+      padding: 1rem;
+      gap: 1rem;
+      height: 100%;
+      .image-artwork {
+        width: 100px;
+        aspect-ratio: 1;
+        object-fit: cover;
+      }
+      div {
+        display: flex;
+        flex-direction: column;
+        justify-content: space-around;
+        width: 100%;
+        height: 100%;
+        align-items: space-around;
+        gap: 1rem;
+        p {
+          font-family: "PressStart2P";
+        }
+        div {
+          display: flex;
+          flex-direction: row;
+          gap: 1rem;
+          img {
+            width: 20px;
+            height: 20px;
+          }
+          .transparent-icon {
+            opacity: 0.2;
+          }
+        }
+      }
+    }
+  }
+}
+
+@media screen and (min-width: 1024px) {
+  .admin-artworks-container {
+    .admin-artworks-label {
+      input {
+        width: 80%;
+      }
+    }
+    .list-artworks {
+      .one-artwork {
+        .image-artwork {
+          width: 200px;
+        }
+        div {
+          gap: 3.5rem;
+          p {
+            font-size: 1rem;
+          }
+          div {
+            img {
+              width: 40px;
+              height: 40px;
+            }
+          }
+        }
+      }
+    }
+  }
+}
+
+@media screen and (min-width: 1280px) {
+  .admin-artworks-container {
+    .admin-artworks-label {
+      input {
+        width: 60%;
+      }
+    }
+    .list-artworks {
+      .one-artwork {
+        .image-artwork {
+          width: 300px;
+        }
+        div {
+          padding-block: 1rem;
+          gap: 5rem;
+          p {
+            font-size: 1rem;
+          }
+        }
+      }
+    }
+  }
+}

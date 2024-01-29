@@ -35,6 +35,9 @@ import AdminUserDetails, {
 } from "./pages/AdminUserDetails/AdminUserDetails";
 import AdminLayout, { adminLayout } from "./Layouts/RootLayout/AdminLayout";
 import Legals from "./pages/Legal/Legal";
+import AdminArtworks, {
+  adminArtworksLoader,
+} from "./pages/AdminArtworks/AdminArtworks";
 
 const router = createBrowserRouter(
   createRoutesFromElements(
@@ -64,6 +67,11 @@ const router = createBrowserRouter(
           path="pannel-administrateur/users/:id"
           element={<AdminUserDetails />}
           loader={userDetails}
+        />
+        <Route
+          path="admin-artworks"
+          element={<AdminArtworks />}
+          loader={adminArtworksLoader}
         />
       </Route>
 
