@@ -42,6 +42,7 @@ import AdminArtworks, {
   adminArtworksLoader,
 } from "./pages/AdminArtworks/AdminArtworks";
 import Ranking from "./pages/Ranking/Ranking";
+import AboutUs from "./pages/AboutUs/AboutUs";
 
 const router = createBrowserRouter(
   createRoutesFromElements(
@@ -104,6 +105,7 @@ const router = createBrowserRouter(
       <Route path="/rules" element={<Rules />} />
       <Route path="/legals" element={<Legals />} />
       <Route path="/ranking" element={<Ranking />} />
+      <Route path="/about-us" element={<AboutUs />} />
     </Route>
   )
 );

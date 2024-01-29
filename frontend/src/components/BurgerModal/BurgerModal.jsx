@@ -45,7 +45,13 @@ function BurgerModal({ isOpen, handleBurger }) {
         >
           REGLES
         </Link>
-        <Link to="/about" onClick={handleBurger}>
+        <Link
+          to="/about-us"
+          onClick={() => {
+            navigate("/about-us");
+            handleBurger();
+          }}
+        >
           CREATEURS
         </Link>
       </li>

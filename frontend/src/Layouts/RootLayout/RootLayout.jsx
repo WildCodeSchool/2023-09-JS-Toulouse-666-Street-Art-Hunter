@@ -10,6 +10,18 @@ function RootLayout() {
 
   const mainRootStyles = isOpen ? { overflow: "hidden" } : {};
 
+  if (location.pathname === "/about-us") {
+    return (
+      <div className="background-page" style={mainRootStyles}>
+        {location.pathname !== "/" && (
+          <NavBar isOpen={isOpen} setIsOpen={setIsOpen} />
+        )}
+        <Outlet />
+        {location.pathname !== "/" && <Footer />}
+      </div>
+    );
+  }
+
   return (
     <div className="main-root" style={mainRootStyles}>
       {location.pathname !== "/" && (
