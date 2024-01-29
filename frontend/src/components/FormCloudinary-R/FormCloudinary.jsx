@@ -81,7 +81,6 @@ function FormCloudinary({ title, button, nonExisting, missing, validated }) {
       setLoadingModal
     );
   };
-
   //-------------------------------------------------------------
 
   // Fonction Fetch location IQ (voir dossier /services/Loaders)

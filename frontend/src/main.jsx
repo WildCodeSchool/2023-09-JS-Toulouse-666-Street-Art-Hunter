@@ -35,6 +35,7 @@ import AdminUserDetails, {
 } from "./pages/AdminUserDetails/AdminUserDetails";
 import AdminLayout, { adminLayout } from "./Layouts/RootLayout/AdminLayout";
 import Legals from "./pages/Legal/Legal";
+import Ranking from "./pages/Ranking/Ranking";
 
 const router = createBrowserRouter(
   createRoutesFromElements(
@@ -86,6 +87,7 @@ const router = createBrowserRouter(
       />
       <Route path="/rules" element={<Rules />} />
       <Route path="/legals" element={<Legals />} />
+      <Route path="/ranking" element={<Ranking />} />
     </Route>
   )
 );
