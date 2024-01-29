@@ -38,6 +38,7 @@ import Legals from "./pages/Legal/Legal";
 import AdminArtworks, {
   adminArtworksLoader,
 } from "./pages/AdminArtworks/AdminArtworks";
+import Ranking from "./pages/Ranking/Ranking";
 
 const router = createBrowserRouter(
   createRoutesFromElements(
@@ -94,6 +95,7 @@ const router = createBrowserRouter(
       />
       <Route path="/rules" element={<Rules />} />
       <Route path="/legals" element={<Legals />} />
+      <Route path="/ranking" element={<Ranking />} />
     </Route>
   )
 );
