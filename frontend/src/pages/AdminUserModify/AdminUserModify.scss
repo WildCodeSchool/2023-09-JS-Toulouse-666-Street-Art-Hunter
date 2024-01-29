@@ -1,0 +1,34 @@
+.profil-option-input-option {
+  .form {
+    .label-container {
+      .input-container-invisi {
+        display: none;
+      }
+      .teste {
+        background-color: aliceblue;
+        width: 90px;
+
+        .red {
+          background-color: red;
+          width: 45px;
+
+          height: 40px;
+        }
+        .blue {
+          background-color: green;
+          width: 45px;
+
+          height: 40px;
+          margin-left: 45px;
+        }
+      }
+    }
+    .continue {
+      font-family: "PressStart2P";
+      font-size: clamp(18px, 3vw, 28px);
+    }
+  }
+  .option-button {
+    font-size: clamp(18px, 3vw, 28px);
+  }
+}

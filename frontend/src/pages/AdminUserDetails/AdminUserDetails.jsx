@@ -20,7 +20,11 @@ function AdminUserDetails() {
     <>
       <div className="admin-user-details-block">
         <div className="admin-user-detail-block-link">
-          <LinkAdmin lien="/map" textLink="Modifier" nameClass="link-admin b" />
+          <LinkAdmin
+            lien={`/admin/pannel-administrateur/users/option/${id}`}
+            textLink="Modifier"
+            nameClass="link-admin b"
+          />
           <LinkAdmin lien="/map" textLink="Bannir" nameClass="link-admin y" />
           <LinkAdmin
             lien="/map"
