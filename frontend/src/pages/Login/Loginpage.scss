@@ -1,9 +1,11 @@
 .login-page {
   display: flex;
   flex-direction: column;
-  align-items: center;
-  gap: 40px;
-  min-height: calc(100vh - 160px);
+  row-gap: 2.5rem;
+  margin-inline: 5%;
+  margin-block: 2.5rem;
+  width: 90%;
+  min-height: calc(100vh - 160px - 5rem);
 
   &::-webkit-scrollbar {
     width: 0;
@@ -23,28 +25,27 @@
 
   .left-boy {
     display: none;
+    aspect-ratio: 1/1;
   }
   .right-girl {
     display: none;
+    aspect-ratio: 1/1;
   }
   .login-input {
+    display: flex;
+    flex-direction: column;
+    row-gap: 2.5rem;
     .login-title {
       display: flex;
-      flex-direction: column;
-      align-items: center;
-      color: rgba(217, 93, 0, 1);
-      font-size: 45px;
-      font-size: 28px;
-      background: linear-gradient(
-        180deg,
-        #f00 0%,
-        #d95d00 28.13%,
-        #be7c68 50.52%,
-        #f5ff87 100%
-      );
+      justify-content: center;
+      font-size: clamp(1.5rem, 8vw, 2rem);
+      font-family: var(--secondary-font);
+      // Red-gradient color text
+      background: var(--red-gradient);
       background-clip: text;
       -webkit-background-clip: text;
       -webkit-text-fill-color: transparent;
+      // -----------------------
     }
     .login-form {
       display: flex;
@@ -59,18 +60,31 @@
         align-items: center;
         row-gap: 30px;
       }
-      .continue {
-        border: 3px solid #ff1c96;
-        background: rgba(200, 56, 56, 0.2);
-        box-shadow: 2px 1px 0px 0px #5d75f0;
-        text-align: center;
-        font-size: 18px;
-        font-style: normal;
-        font-weight: 400;
-        line-height: normal;
-        color: black;
-        font-family: "PressStart2P";
-        padding: 4px;
+      .btn-container {
+        button {
+          padding: 0.5rem;
+          display: flex;
+          justify-content: center;
+          align-items: center;
+          border: 3px solid #ff1c96;
+          background: var(--primary-color);
+          &:hover {
+            transform: scale(0.95);
+          }
+          &:active {
+            transform: scale(0.9);
+          }
+
+          .btn-span {
+            font-family: var(--primary-font);
+            font-size: 18px;
+            text-transform: uppercase;
+            background: var(--red-gradient);
+            background-clip: text;
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+          }
+        }
       }
     }
   }
@@ -81,41 +95,55 @@
     display: flex;
     flex-direction: column;
     align-items: center;
-    gap: 25px;
+    margin-inline: 15%;
+    margin-top: clamp(0.5rem, 5vw, 4rem);
+    gap: 2rem;
+
     .text {
       text-align: center;
-
-      font-size: 14px;
-      font-style: normal;
-      font-weight: 400;
-      font-family: "PressStart2P";
-      line-height: 20px;
-      background: linear-gradient(
-        180deg,
-        #f00 0%,
-        #d95d00 28.13%,
-        #be7c68 50.52%,
-        #f5ff87 100%
-      );
+      font-size: 18px;
+      font-family: var(--primary-font);
+      line-height: 1.5rem;
+      // Red-gradient color text
+      background: var(--red-gradient);
       background-clip: text;
       -webkit-background-clip: text;
       -webkit-text-fill-color: transparent;
+      // -----------------------
     }
-
-    .register {
-      border: 3px solid #66b652;
-      background: rgba(200, 56, 56, 0.2);
-      box-shadow: 2px 1px 0px 0px #5d75f0;
-      font-size: 18px;
-      font-style: normal;
-      font-weight: 400;
-      line-height: normal;
-      color: black;
-      font-family: "PressStart2P";
-      padding: 4px;
+    .btn-container {
+      button {
+        padding: 0.5rem;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        border: 3px solid #66b652;
+        background: var(--primary-color);
+        &:hover {
+          transform: scale(0.95);
+        }
+        &:active {
+          transform: scale(0.9);
+        }
+        .btn-span {
+          font-family: var(--primary-font);
+          font-size: clamp(16px, 3vw, 18px);
+          text-transform: uppercase;
+          // Red-gradient color text
+          background: var(--red-gradient);
+          background-clip: text;
+          -webkit-background-clip: text;
+          -webkit-text-fill-color: transparent;
+          // -----------------------
+        }
+      }
     }
   }
 }
+
+// ***************************
+// *      MEDIA QUERIES      *
+// ***************************
 
 @media screen and (min-width: 400px) {
   .login-page {
@@ -130,9 +158,6 @@
 
       .login-input {
         min-width: 350px;
-        .login-title {
-          font-size: clamp(30px, 4vw, 44px);
-        }
         .form {
           display: flex;
           flex-direction: column;
@@ -145,18 +170,6 @@
             flex-direction: column;
             align-items: center;
           }
-          .continue {
-            border: 3px solid #ff1c96;
-            background: rgba(200, 56, 56, 0.2);
-            box-shadow: 2px 1px 0px 0px #5d75f0;
-            text-align: center;
-            font-size: clamp(14px, 3vw, 30px);
-            font-style: normal;
-            font-weight: 400;
-            line-height: normal;
-            padding-inline: 8px;
-            font-family: "PressStart2P";
-          }
         }
       }
     }
@@ -167,28 +180,14 @@
       display: flex;
       flex-direction: column;
       align-items: center;
-      gap: 25px;
-
+      gap: 2rem;
       .text {
-        color: rgba(217, 93, 0, 1);
-        font-size: clamp(14px, 2.5vw, 24px);
-        font-style: normal;
-        font-weight: 400;
-        line-height: 20px; /* 142.857% */
-      }
-      .register {
-        border: 3px solid #66b652;
-        background: rgba(200, 56, 56, 0.2);
-        box-shadow: 2px 1px 0px 0px #5d75f0;
-        font-size: clamp(14px, 3vw, 30px);
-        font-style: normal;
-        font-weight: 400;
-        line-height: normal;
-        font-family: "PressStart2P";
+        line-height: 1.5rem;
       }
     }
   }
 }
+
 @media screen and (min-width: 800px) {
   .login-page {
     .input-block {
@@ -198,10 +197,35 @@
       .left-boy {
         display: flex;
         min-width: clamp(240px, 25vw, 370px);
+        aspect-ratio: 1/1;
+      }
+      .right-girl {
+        display: none;
+        min-width: clamp(240px, 25vw, 370px);
+        aspect-ratio: 1/1;
+      }
+    }
+  }
+  .peint-bomb {
+    display: none;
+  }
+}
+
+@media screen and (min-width: 1024px) {
+  .login-page {
+    .input-block {
+      display: flex;
+      flex-direction: row;
+      gap: clamp(2.5rem, 5vw, 10rem);
+      .left-boy {
+        display: flex;
+        min-width: clamp(240px, 25vw, 370px);
+        aspect-ratio: 1/1;
       }
       .right-girl {
         display: flex;
         min-width: clamp(240px, 25vw, 370px);
+        aspect-ratio: 1/1;
       }
     }
   }
