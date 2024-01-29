@@ -1,11 +1,13 @@
 import React, { useEffect, useState } from "react";
 import "./Ranking.scss";
+import { useNavigate } from "react-router-dom";
 
 function Ranking() {
   // ********************* STATE *********************
   const [userData, setUserData] = useState();
   const [userDataByScore, setUserDataByScore] = useState();
   const [othersPlayers, setOthersPlayers] = useState();
+  const navigate = useNavigate();
 
   // ********************* LOGIQUE *********************
   const userScoreLoader = async () => {
@@ -62,7 +64,7 @@ function Ranking() {
       <div className="score-container">
         <div className="score-tiers-list">
           <div className="first-player">
-            <p>1er</p>
+            <p id="rank">1er</p>
             {userDataByScore && (
               <>
                 <img
@@ -70,13 +72,24 @@ function Ranking() {
                   src={userDataByScore[0].selected_avatar}
                   alt="avatar"
                 />
-                <p className="name-player">{userDataByScore[0].name}</p>
+                <button
+                  className="name-player"
+                  type="button"
+                  onClick={() => navigate(`/profil/${userDataByScore[0].id}`)}
+                  onKeyDown={(e) => {
+                    if (e.key === "Enter" || e.key === " ") {
+                      navigate(`/profil/${userDataByScore[0].id}`);
+                    }
+                  }}
+                >
+                  {userDataByScore[0].name}
+                </button>
                 <p className="score-player">{userDataByScore[0].score} pts</p>
               </>
             )}
           </div>
-          <div className="first-player">
-            <p>2e</p>
+          <div className="second-player">
+            <p id="rank">2e</p>
             {userDataByScore && (
               <>
                 <img
@@ -84,13 +97,24 @@ function Ranking() {
                   src={userDataByScore[1].selected_avatar}
                   alt="avatar"
                 />
-                <p className="name-player">{userDataByScore[1].name}</p>
+                <button
+                  className="name-player"
+                  type="button"
+                  onClick={() => navigate(`/profil/${userDataByScore[1].id}`)}
+                  onKeyDown={(e) => {
+                    if (e.key === "Enter" || e.key === " ") {
+                      navigate(`/profil/${userDataByScore[0].id}`);
+                    }
+                  }}
+                >
+                  {userDataByScore[1].name}
+                </button>
                 <p className="score-player">{userDataByScore[1].score} pts</p>
               </>
             )}
           </div>
-          <div className="first-player">
-            <p>3e</p>
+          <div className="third-player">
+            <p id="rank">3e</p>
             {userDataByScore && (
               <>
                 <img
@@ -98,7 +122,18 @@ function Ranking() {
                   src={userDataByScore[2].selected_avatar}
                   alt="avatar"
                 />
-                <p className="name-player">{userDataByScore[2].name}</p>
+                <button
+                  className="name-player"
+                  type="button"
+                  onClick={() => navigate(`/profil/${userDataByScore[2].id}`)}
+                  onKeyDown={(e) => {
+                    if (e.key === "Enter" || e.key === " ") {
+                      navigate(`/profil/${userDataByScore[0].id}`);
+                    }
+                  }}
+                >
+                  {userDataByScore[2].name}
+                </button>
                 <p className="score-player">{userDataByScore[2].score} pts</p>
               </>
             )}
@@ -110,7 +145,18 @@ function Ranking() {
             othersPlayers.map((el, index) => (
               <div className="other-player" key={el.id}>
                 <p id="rank-other">{index + 4}e</p>
-                <p id="name-other">{el.name}</p>
+                <button
+                  id="name-other"
+                  type="button"
+                  onClick={() => navigate(`/profil/${el.id}`)}
+                  onKeyDown={(e) => {
+                    if (e.key === "Enter" || e.key === " ") {
+                      navigate(`/profil/${userDataByScore[0].id}`);
+                    }
+                  }}
+                >
+                  {el.name}
+                </button>
                 <p id="score-other">{el.score}pts</p>
               </div>
             ))}
@@ -125,7 +171,18 @@ function Ranking() {
                 alt="avatar"
               />
               {userDataByScore && <p>{indexCurrentUser() + 1}e</p>}
-              <p className="name-player-current">{currentUser.name}</p>
+              <button
+                className="name-player-current"
+                type="button"
+                onClick={() => navigate(`/profil/${currentUser.id}`)}
+                onKeyDown={(e) => {
+                  if (e.key === "Enter" || e.key === " ") {
+                    navigate(`/profil/${userDataByScore[0].id}`);
+                  }
+                }}
+              >
+                {currentUser.name}
+              </button>
               <p className="score-player-current">{currentUser.score} pts</p>
             </>
           )}

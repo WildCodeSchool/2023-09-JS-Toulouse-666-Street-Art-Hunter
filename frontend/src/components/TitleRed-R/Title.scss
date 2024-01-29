@@ -3,7 +3,7 @@
   flex-direction: row;
 
   .title {
-    font-size: 1.2rem;
+    font-size: clamp(1rem, 3vw, 2rem);
     font-family: var(--primary-font);
     text-transform: uppercase;
     // Red-gradient color text
@@ -12,7 +12,7 @@
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
     filter: drop-shadow(2px 1px #4475f5);
-    line-height: 1.5rem;
+    line-height: clamp(1rem, 3vw, 2rem);
     // -----------------------
   }
 }
