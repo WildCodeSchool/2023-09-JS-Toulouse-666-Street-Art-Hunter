@@ -5,11 +5,100 @@
   gap: 24px;
   margin-inline: 5%;
   font-family: "PressStart2P";
+  .modal-delete {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: absolute;
+    width: 100vw;
+    height: 100vh;
+    backdrop-filter: blur(10px);
+    left: 0px;
+    top: 0px;
+
+    .modale-delete-texte {
+      background-color: #12141a;
+      display: flex;
+      justify-content: space-around;
+      align-items: center;
+      flex-direction: column;
+      width: 100vw;
+      height: 100vh;
+      .modale-validate {
+        font-family: "PressStart2P";
+        color: white;
+        text-align: right;
+        width: 100%;
+        display: flex;
+        justify-content: flex-end;
+        .button-validate {
+          background-color: green;
+          width: 190px;
+          padding: 20px;
+          font-size: 20px;
+        }
+      }
+      .modale-return {
+        font-family: "PressStart2P";
+        color: white;
+        text-align: left;
+        width: 100%;
+
+        .button-return {
+          background-color: red;
+          width: 190px;
+          padding: 20px;
+          font-size: 20px;
+        }
+      }
+    }
+  }
+  .modal-open {
+    display: none;
+  }
   .admin-user-detail-block-link {
     display: flex;
     flex-direction: column;
     align-items: center;
     gap: 24px;
+    .button-admin-delete {
+      font-family: "PressStart2P";
+      text-decoration: inherit;
+      display: flex;
+      width: 330px;
+      padding: 10px;
+      justify-content: center;
+      align-items: center;
+      gap: 10px;
+      border: 2px solid #000;
+      box-shadow: 4px 4px 4px 0px rgba(0, 0, 0, 0.25);
+      color: #fff;
+      text-align: center;
+      font-style: normal;
+      font-weight: 400;
+      font-size: 18px;
+      line-height: normal;
+      background: #b9b271;
+    }
+    .button-admin-ban {
+      font-family: "PressStart2P";
+      text-decoration: inherit;
+      display: flex;
+      width: 330px;
+      padding: 10px;
+      justify-content: center;
+      align-items: center;
+      gap: 10px;
+      border: 2px solid #000;
+      box-shadow: 4px 4px 4px 0px rgba(0, 0, 0, 0.25);
+      color: #fff;
+      text-align: center;
+      font-style: normal;
+      font-weight: 400;
+      font-size: 18px;
+      line-height: normal;
+      background: #b97171;
+    }
   }
 
   .admin-user-info {
@@ -75,6 +164,48 @@
     flex-direction: row-reverse;
     align-items: center;
     justify-content: space-between;
+    .admin-user-detail-block-link {
+      .button-admin-delete {
+        width: 534px;
+        font-size: 26px;
+        padding-block: 26px;
+      }
+      .button-admin-ban {
+        width: 534px;
+        font-size: 26px;
+        padding-block: 26px;
+      }
+    }
+    .modal-delete {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      position: absolute;
+      width: 100vw;
+      height: 100vh;
+      backdrop-filter: blur(10px);
+      left: 0px;
+      top: 0px;
+
+      .modale-delete-texte {
+        background-color: #12141a;
+        height: 650px;
+        width: 850px;
+        display: flex;
+        justify-content: space-around;
+        align-items: center;
+        flex-direction: column;
+        .modale-validate {
+          color: white;
+        }
+        .modale-return {
+          color: white;
+        }
+      }
+    }
+    .modal-open {
+      display: none;
+    }
 
     .admin-user-info {
       gap: 36px;
