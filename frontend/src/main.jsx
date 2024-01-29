@@ -38,6 +38,9 @@ import Legals from "./pages/Legal/Legal";
 import AdminArtworks, {
   adminArtworksLoader,
 } from "./pages/AdminArtworks/AdminArtworks";
+import ValidatePhoto, {
+  artworksLoader,
+} from "./pages/ValidatePhoto/ValidatePhoto";
 
 const router = createBrowserRouter(
   createRoutesFromElements(
@@ -72,6 +75,11 @@ const router = createBrowserRouter(
           path="admin-artworks"
           element={<AdminArtworks />}
           loader={adminArtworksLoader}
+        />
+        <Route
+          path="validate-photo/:id"
+          element={<ValidatePhoto />}
+          loader={artworksLoader}
         />
       </Route>
 

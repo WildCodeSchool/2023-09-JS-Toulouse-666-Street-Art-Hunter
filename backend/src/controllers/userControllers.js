@@ -92,6 +92,29 @@ const destroy = async (req, res, next) => {
   }
 };
 
+const readAllWithoutPassword = async (req, res, next) => {
+  try {
+    const users = await tables.user.readAllWithoutPassword();
+    res.status(200).json(users);
+  } catch (err) {
+    console.error(err);
+    next(err);
+  }
+};
+
+const readWithoutPassword = async (req, res, next) => {
+  try {
+    const user = await tables.user.readWithoutPassword(req.params.id);
+    if (user == null) {
+      res.sendStatus(404);
+    } else {
+      res.status(200).json(user);
+    }
+  } catch (err) {
+    console.error(err);
+    next(err);
+  }
+};
 // Ready to export the controller functions
 module.exports = {
   browse,
@@ -101,4 +124,6 @@ module.exports = {
   add,
   destroy,
   count,
+  readAllWithoutPassword,
+  readWithoutPassword,
 };
