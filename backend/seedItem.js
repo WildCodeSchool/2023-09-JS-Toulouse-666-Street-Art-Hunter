@@ -223,45 +223,6 @@ const userData = [
       "https://res.cloudinary.com/dikhzx4qt/image/upload/v1706104114/Avatar/6_qomins.png",
     border: "#8FED7C",
   },
-  {
-    name: "Sophie",
-    description: "Voyageuse du monde à temps plein.",
-    email: "sophie@mail.com",
-    hashed_password:
-      "$argon2id$v=19$m=65536,t=5,p=1$gchAbeLDP59sJZs35SWYqg$sAsiLe6qaxjX2wAzvHusVMb/fmkCY0huxibzvOyj0UM",
-    score: 420,
-    is_admin: 0,
-    is_banned: 0,
-    selected_avatar:
-      "https://res.cloudinary.com/dikhzx4qt/image/upload/v1706104114/Avatar/6_qomins.png",
-    border: "#5D75F0",
-  },
-  {
-    name: "Sophie",
-    description: "Voyageuse du monde à temps plein.",
-    email: "sophie@mail.com",
-    hashed_password:
-      "$argon2id$v=19$m=65536,t=5,p=1$gchAbeLDP59sJZs35SWYqg$sAsiLe6qaxjX2wAzvHusVMb/fmkCY0huxibzvOyj0UM",
-    score: 420,
-    is_admin: 0,
-    is_banned: 0,
-    selected_avatar:
-      "https://res.cloudinary.com/dikhzx4qt/image/upload/v1706104114/Avatar/6_qomins.png",
-    border: "#5D75F0",
-  },
-  {
-    name: "Sophie",
-    description: "Voyageuse du monde à temps plein.",
-    email: "sophie@mail.com",
-    hashed_password:
-      "$argon2id$v=19$m=65536,t=5,p=1$gchAbeLDP59sJZs35SWYqg$sAsiLe6qaxjX2wAzvHusVMb/fmkCY0huxibzvOyj0UM",
-    score: 420,
-    is_admin: 0,
-    is_banned: 0,
-    selected_avatar:
-      "https://res.cloudinary.com/dikhzx4qt/image/upload/v1706104114/Avatar/6_qomins.png",
-    border: "#5D75F0",
-  },
 ];
 
 const photoData = [
