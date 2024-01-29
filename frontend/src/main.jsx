@@ -38,6 +38,10 @@ import Legals from "./pages/Legal/Legal";
 import AdminUserModify, {
   adminModify,
 } from "./pages/AdminUserModify/AdminUserModify";
+import AdminArtworks, {
+  adminArtworksLoader,
+} from "./pages/AdminArtworks/AdminArtworks";
+import Ranking from "./pages/Ranking/Ranking";
 
 const router = createBrowserRouter(
   createRoutesFromElements(
@@ -73,6 +77,11 @@ const router = createBrowserRouter(
           element={<AdminUserModify />}
           action={adminModify}
         />
+        <Route
+          path="admin-artworks"
+          element={<AdminArtworks />}
+          loader={adminArtworksLoader}
+        />
       </Route>
 
       <Route
@@ -94,6 +103,7 @@ const router = createBrowserRouter(
       />
       <Route path="/rules" element={<Rules />} />
       <Route path="/legals" element={<Legals />} />
+      <Route path="/ranking" element={<Ranking />} />
     </Route>
   )
 );

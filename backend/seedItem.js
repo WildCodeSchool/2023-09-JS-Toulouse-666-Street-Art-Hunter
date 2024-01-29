@@ -133,19 +133,6 @@ const artworkData = [
 
 const userData = [
   {
-    name: "Arthur",
-    description: "J'aime les prototypes",
-    email: "Arthur@mail.com",
-    hashed_password:
-      "$argon2id$v=19$m=65536,t=5,p=1$gchAbeLDP59sJZs35SWYqg$sAsiLe6qaxjX2wAzvHusVMb/fmkCY0huxibzvOyj0UM",
-    score: 1000,
-    is_admin: 0,
-    is_banned: 0,
-    selected_avatar:
-      "https://res.cloudinary.com/dikhzx4qt/image/upload/v1706104114/Avatar/6_qomins.png",
-    border: "#FFFFFF",
-  },
-  {
     name: "Adrien",
     description: "Où sont les genies ?",
     email: "adrien@mail.com",
@@ -156,7 +143,85 @@ const userData = [
     is_banned: 0,
     selected_avatar:
       "https://res.cloudinary.com/dikhzx4qt/image/upload/v1706104114/Avatar/6_qomins.png",
-    border: "#FFFFFF",
+    border: "#FFDD32",
+  },
+  {
+    name: "Arthur",
+    description: "J'aime les prototypes",
+    email: "arthur@mail.com",
+    hashed_password:
+      "$argon2id$v=19$m=65536,t=5,p=1$gchAbeLDP59sJZs35SWYqg$sAsiLe6qaxjX2wAzvHusVMb/fmkCY0huxibzvOyj0UM",
+    score: 1000,
+    is_admin: 0,
+    is_banned: 0,
+    selected_avatar:
+      "https://res.cloudinary.com/dikhzx4qt/image/upload/v1706104114/Avatar/6_qomins.png",
+    border: "#32FFFF",
+  },
+  {
+    name: "Nathalie",
+    description: "La créativité est contagieuse, transmettez-la.",
+    email: "nathalie@mail.com",
+    hashed_password:
+      "$argon2id$v=19$m=65536,t=5,p=1$gchAbeLDP59sJZs35SWYqg$sAsiLe6qaxjX2wAzvHusVMb/fmkCY0huxibzvOyj0UM",
+    score: 750,
+    is_admin: 0,
+    is_banned: 0,
+    selected_avatar:
+      "https://res.cloudinary.com/dikhzx4qt/image/upload/v1706104114/Avatar/6_qomins.png",
+    border: "#F5FF87",
+  },
+  {
+    name: "Sophie",
+    description: "Voyageuse du monde à temps plein.",
+    email: "sophie@mail.com",
+    hashed_password:
+      "$argon2id$v=19$m=65536,t=5,p=1$gchAbeLDP59sJZs35SWYqg$sAsiLe6qaxjX2wAzvHusVMb/fmkCY0huxibzvOyj0UM",
+    score: 420,
+    is_admin: 0,
+    is_banned: 0,
+    selected_avatar:
+      "https://res.cloudinary.com/dikhzx4qt/image/upload/v1706104114/Avatar/6_qomins.png",
+    border: "#5D75F0",
+  },
+  {
+    name: "Nicolas",
+    description: "Passionné par la technologie et l'innovation.",
+    email: "nicolas@mail.com",
+    hashed_password:
+      "$argon2id$v=19$m=65536,t=5,p=1$gchAbeLDP59sJZs35SWYqg$sAsiLe6qaxjX2wAzvHusVMb/fmkCY0huxibzvOyj0UM",
+    score: 890,
+    is_admin: 0,
+    is_banned: 0,
+    selected_avatar:
+      "https://res.cloudinary.com/dikhzx4qt/image/upload/v1706104114/Avatar/6_qomins.png",
+    border: "#FF0000",
+  },
+  {
+    name: "Julie",
+    description: "Exploratrice culinaire et amatrice de bons livres.",
+    email: "julie@mail.com",
+    hashed_password:
+      "$argon2id$v=19$m=65536,t=5,p=1$gchAbeLDP59sJZs35SWYqg$sAsiLe6qaxjX2wAzvHusVMb/fmkCY0huxibzvOyj0UM",
+    score: 600,
+    is_admin: 0,
+    is_banned: 0,
+    selected_avatar:
+      "https://res.cloudinary.com/dikhzx4qt/image/upload/v1706104114/Avatar/6_qomins.png",
+    border: "#ED7CC6",
+  },
+  {
+    name: "Alexandre",
+    description: "Amateur de musique et de sports extrêmes.",
+    email: "alexandre@mail.com",
+    hashed_password:
+      "$argon2id$v=19$m=65536,t=5,p=1$gchAbeLDP59sJZs35SWYqg$sAsiLe6qaxjX2wAzvHusVMb/fmkCY0huxibzvOyj0UM",
+    score: 300,
+    is_admin: 0,
+    is_banned: 0,
+    selected_avatar:
+      "https://res.cloudinary.com/dikhzx4qt/image/upload/v1706104114/Avatar/6_qomins.png",
+    border: "#8FED7C",
   },
   {
     name: "Sophie",

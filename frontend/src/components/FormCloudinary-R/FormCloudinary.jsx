@@ -4,7 +4,6 @@ import "./FormCloudinary.scss";
 import { createPortal } from "react-dom";
 import { useNavigate } from "react-router-dom";
 import InputTextarea from "../InputTextarea/InputTextarea";
-import Input from "../Input-R/Input";
 import fetchPositionStack from "../../services/Loaders/FetchApiLocation";
 import getCurrentFormattedDate from "../../services/utils";
 import postCloudAndPhoto from "../../services/Actions/PostCloudAndPhoto";
@@ -27,6 +26,7 @@ function FormCloudinary({ title, button, nonExisting, missing, validated }) {
   const [valueAddress, setValueAddress] = useState(null);
   const [valueDesc, setValueDesc] = useState();
   const [coordinates, setCoordinates] = useState();
+  const [toggleBtn, setToggleBtn] = useState("off");
   const navigate = useNavigate();
 
   // ******************* LOGIQUE *******************
@@ -81,7 +81,6 @@ function FormCloudinary({ title, button, nonExisting, missing, validated }) {
       setLoadingModal
     );
   };
-
   //-------------------------------------------------------------
 
   // Fonction Fetch location IQ (voir dossier /services/Loaders)
@@ -132,14 +131,6 @@ function FormCloudinary({ title, button, nonExisting, missing, validated }) {
 
         {nonExisting && (
           <>
-            <Input
-              labelName="input"
-              type="input"
-              labelText="Artiste:"
-              maxLength="100"
-              height="50px"
-              value={valueDesc}
-            />
             <div className="address-input">
               <InputTextarea
                 labelName="input"
@@ -153,12 +144,15 @@ function FormCloudinary({ title, button, nonExisting, missing, validated }) {
               <button
                 type="button"
                 style={{ color: "white" }}
-                onClick={() => fetchPositionStack(setAddresses, valueAddress)}
+                onClick={() => {
+                  fetchPositionStack(setAddresses, valueAddress);
+                  setToggleBtn("on");
+                }}
               >
-                Click
+                Rechercher
               </button>
 
-              <div className="btn-addresses">
+              <div className={`btn-addresses-${toggleBtn}`}>
                 {addresses &&
                   addresses.map((el) => (
                     <button
@@ -167,6 +161,7 @@ function FormCloudinary({ title, button, nonExisting, missing, validated }) {
                       onClick={(e) => {
                         onChangeAddress(e);
                         setCoordinates({ lat: el.lat, lon: el.lon });
+                        setToggleBtn("off");
                       }}
                     >
                       {el.display_name}

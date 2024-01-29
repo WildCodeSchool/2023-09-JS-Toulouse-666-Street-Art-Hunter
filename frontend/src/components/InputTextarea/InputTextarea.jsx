@@ -32,6 +32,10 @@ function InputTextarea({
   );
 }
 
+InputTextarea.defaultProps = {
+  height: "auto", // Vous pouvez ajuster la valeur par défaut selon vos besoins
+};
+
 export default InputTextarea;
 
 InputTextarea.propTypes = {
@@ -39,7 +43,7 @@ InputTextarea.propTypes = {
   type: PropTypes.string.isRequired,
   labelText: PropTypes.string.isRequired,
   maxLength: PropTypes.string.isRequired,
-  height: PropTypes.string.isRequired,
+  height: PropTypes.string,
   value: PropTypes.string.isRequired,
   setValue: PropTypes.func.isRequired,
 };

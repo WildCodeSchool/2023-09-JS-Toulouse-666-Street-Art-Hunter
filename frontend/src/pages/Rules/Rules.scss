@@ -2,11 +2,11 @@
   display: flex;
   flex-direction: column;
   justify-content: center;
-  row-gap: 2.5rem;
+  row-gap: clamp(2.5rem, 10vw, 5rem);
   margin-inline: 5%;
-  margin-block: 10%;
+  margin-block: 2.5rem;
   width: auto;
-  min-height: calc(100vh - 160px);
+  min-height: calc(100vh - 160px - 5rem);
 
   .rules-main-title {
     display: flex;
@@ -19,13 +19,14 @@
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
     // -----------------------
+    font-size: clamp(1.5rem, 8vw, 3.5rem);
   }
 
   .section-container {
     display: flex;
     flex-direction: column;
     align-items: flex-start;
-    row-gap: 2.5rem;
+    row-gap: clamp(2.5rem, 10vw, 4rem);
 
     .section-1 {
       display: flex;
@@ -33,9 +34,9 @@
       row-gap: 1.5rem;
 
       .text-section-1 {
-        font-size: 0.8rem;
+        font-size: clamp(0.8rem, 3vw, 1.5rem);
         font-family: var(--primary-font);
-        line-height: 1.5rem;
+        line-height: clamp(1.5rem, 5vw, 3rem);
       }
     }
 
@@ -51,9 +52,9 @@
         padding-left: 1rem;
         li {
           list-style: square;
-          font-size: 0.8rem;
+          font-size: clamp(0.8rem, 3vw, 1.5rem);
           font-family: var(--primary-font);
-          line-height: 1.5rem;
+          line-height: clamp(1.5rem, 5vw, 3rem);
         }
       }
     }
@@ -67,9 +68,9 @@
         display: flex;
         flex-direction: column;
         row-gap: 1.5rem;
-        font-size: 0.8rem;
+        font-size: clamp(0.8rem, 3vw, 1.5rem);
         font-family: var(--primary-font);
-        line-height: 1.5rem;
+        line-height: clamp(1.5rem, 5vw, 3rem);
 
         .question-1-section-3 {
           // Red-gradient color text
@@ -84,9 +85,9 @@
         display: flex;
         flex-direction: column;
         row-gap: 1.5rem;
-        font-size: 0.8rem;
+        font-size: clamp(0.8rem, 3vw, 1.5rem);
         font-family: var(--primary-font);
-        line-height: 1.5rem;
+        line-height: clamp(1.5rem, 5vw, 3rem);
 
         .question-2-section-3 {
           // Red-gradient color text
@@ -98,5 +99,31 @@
         }
       }
     }
+  }
+}
+
+@media only screen and (min-width: 1024px) {
+  .rules-main-container {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    row-gap: clamp(2.5rem, 8vw, 5rem);
+    margin-inline: 10%;
+    margin-block: 2.5rem;
+    width: auto;
+    min-height: calc(100vh - 160px - 5rem);
+  }
+}
+
+@media only screen and (min-width: 1280px) {
+  .rules-main-container {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    row-gap: clamp(2.5rem, 8vw, 5rem);
+    margin-inline: 15%;
+    margin-block: 2.5rem;
+    width: auto;
+    min-height: calc(100vh - 160px - 5rem);
   }
 }

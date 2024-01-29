@@ -13,7 +13,6 @@ import Option from "../../assets/icons/Icon_option.png";
 function Profil() {
   const profils = useLoaderData();
   const token = localStorage.getItem("token");
-  const data = JSON.parse(localStorage.getItem("user"));
 
   const { id } = useParams();
 
@@ -21,9 +20,6 @@ function Profil() {
     return <Navigate to="/login" replace />;
   }
 
-  if (parseInt(id, 10) !== data.id) {
-    return <Navigate to="/login" replace />;
-  }
   if (profils.user.is_admin === 1) {
     return <Navigate to={`/admin/profil/${id}`} replace />;
   }
