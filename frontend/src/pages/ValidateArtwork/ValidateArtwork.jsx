@@ -1,77 +1,107 @@
 import { useEffect, useState } from "react";
-import { useLoaderData, useNavigate, useParams } from "react-router-dom";
-import "./ValidatePhoto.scss";
+import { useNavigate, useParams } from "react-router-dom";
+import "./ValidateArtwork.scss";
 
 import tealSplatter from "../../assets/images/teal-splatter.svg";
 import pinkSplatter from "../../assets/images/pink-splatter.svg";
 import greenSplatter from "../../assets/images/green-splatter.svg";
 
-function ValidatePhoto() {
+function ValidateArtwork() {
   const navigate = useNavigate();
   const { id } = useParams();
-  const [photo, setPhoto] = useState(null);
+  const [artwork, setArtwork] = useState(null);
   const [modalValidate, setModalValidate] = useState(false);
   const [modalRefuse, setModalRefuse] = useState(false);
-  const data = useLoaderData();
-  const { artworksData, usersData } = data;
+  const [publisher, setPublisher] = useState(null);
+
   const token = localStorage.getItem("token");
   const user = JSON.parse(localStorage.getItem("user"));
 
+  const date = (e) => {
+    const dateNoHour = e.split("T")[0];
+    const dateSplited = dateNoHour.split("-");
+    const normalDate = `${dateSplited[2]}/${dateSplited[1]}/${dateSplited[0]}`;
+    return normalDate;
+  };
+
+  const dateSplitHour = (e) => {
+    const dateSplit = e.split("T")[0];
+    const hour = e.split("T")[1];
+    const hourSplited = hour.split("Z")[0];
+    return `${dateSplit} ${hourSplited}`;
+  };
+
   useEffect(() => {
-    const fetchPhoto = async () => {
+    const fetchArtwork = async () => {
       try {
         const response = await fetch(
-          `${import.meta.env.VITE_BACKEND_URL}/api/photos/publishers/${id}`
+          `${import.meta.env.VITE_BACKEND_URL}/api/artworks/publishers/${id}`
         );
         if (!response.ok) {
-          throw new Error("Failed to fetch photo");
+          throw new Error("Failed to fetch artwork");
         }
-        const photoData = await response.json();
-        setPhoto(photoData);
+        const artworkData = await response.json();
+        setArtwork(artworkData);
+
+        const responseUsers = await fetch(
+          `${import.meta.env.VITE_BACKEND_URL}/api/users/${
+            artworkData.publisher_id
+          }`
+        );
+
+        if (!responseUsers.ok) {
+          throw new Error("Failed to fetch users");
+        }
+        const usersData = await responseUsers.json();
+        setPublisher(usersData);
       } catch (error) {
-        console.error("Error fetching photo:", error);
+        console.error("Error fetching artwork:", error);
       }
     };
 
-    fetchPhoto();
+    fetchArtwork();
   }, []);
 
   const handleValidate = async () => {
-    const validateData = {
-      image: photo.image,
-      is_validated: 1,
-      user_id: photo.user_id,
-      artwork_id: photo.artwork_id,
+    const validateDataArtwork = {
+      image: artwork.image,
+      longitude: artwork.longitude,
+      latitude: artwork.latitude,
+      adress: artwork.adress,
+      description: artwork.description,
+      date_published: dateSplitHour(artwork.date_published),
+      ask_to_archived: artwork.ask_to_archived,
+      is_archived: artwork.is_archived,
+      is_validate: 1,
+      publisher_id: artwork.publisher_id,
     };
 
-    const userOfPhoto = usersData.find((el) => el.id === photo.user_id);
-
     const validateUserData = {
-      name: userOfPhoto.name,
-      description: userOfPhoto.description,
-      email: userOfPhoto.email,
-      score: userOfPhoto.score + 100,
-      is_admin: userOfPhoto.is_admin,
-      is_banned: userOfPhoto.is_banned,
-      selected_avatar: userOfPhoto.selected_avatar,
-      border: userOfPhoto.border,
+      name: publisher.name,
+      description: publisher.description,
+      email: publisher.email,
+      score: publisher.score + 300,
+      is_admin: publisher.is_admin,
+      is_banned: publisher.is_banned,
+      selected_avatar: publisher.selected_avatar,
+      border: publisher.border,
     };
 
     try {
-      const responsePhoto = await fetch(
-        `${import.meta.env.VITE_BACKEND_URL}/api/photos/${id}`,
+      const responseArtwork = await fetch(
+        `${import.meta.env.VITE_BACKEND_URL}/api/artworks/${id}`,
         {
           method: "Put",
           headers: {
             "Content-Type": "application/json",
             Authorization: `Bearer ${token}`,
           },
-          body: JSON.stringify(validateData),
+          body: JSON.stringify(validateDataArtwork),
         }
       );
 
       const responseUser = await fetch(
-        `${import.meta.env.VITE_BACKEND_URL}/api/users/${photo.user_id}`,
+        `${import.meta.env.VITE_BACKEND_URL}/api/users/${publisher.id}`,
         {
           method: "Put",
           headers: {
@@ -81,22 +111,22 @@ function ValidatePhoto() {
           body: JSON.stringify(validateUserData),
         }
       );
-      if (!responsePhoto.ok) {
-        throw new Error("Failed to validate photo");
+      if (!responseArtwork.ok) {
+        throw new Error("Failed to validate artwork");
       }
       if (!responseUser.ok) {
-        throw new Error("Failed to validate user");
+        throw new Error("Failed to update user");
       }
       navigate(`/admin/pannel-administrateur/${user.id}`);
     } catch (error) {
-      console.error("Error validating photo:", error);
+      console.error("Error validating artwork:", error);
     }
   };
 
   const handleRefuse = async () => {
     try {
       const response = await fetch(
-        `${import.meta.env.VITE_BACKEND_URL}/api/photos/${id}`,
+        `${import.meta.env.VITE_BACKEND_URL}/api/artworks/${id}`,
         {
           method: "Delete",
           headers: {
@@ -114,51 +144,43 @@ function ValidatePhoto() {
     }
   };
 
-  if (!photo) {
-    return <div>Loading...</div>; // Render a loading indicator while fetching photo
-  }
-
-  const selectedArtwork = artworksData.find((el) => el.id === photo.artwork_id);
-
-  return (
-    <div className="validate-photo-container">
-      <div className="images-container">
-        <div className="one-image-container">
-          <h3>Photo utilisateur</h3>
-          <img className="image" src={photo.image} alt={photo.title} />
-        </div>
-        <div className="one-image-container">
-          <h3>Original</h3>
+  return publisher && artwork ? (
+    <div className="validate-artwork-container">
+      <img
+        src={artwork.image}
+        alt={`artwork published ${publisher.name}`}
+        className="image"
+      />
+      <div className="content-container">
+        <h2>Publie par</h2>
+        <div className="avatar">
           <img
-            className="image"
-            src={selectedArtwork.image}
-            alt={photo.title}
+            src={publisher.selected_avatar}
+            alt={`${publisher.name} avatar`}
           />
+          <p>{publisher.name}</p>
         </div>
+        <h2>Adresse</h2>
+        <p>{artwork.adress}</p>
+        <p>Le {date(artwork.date_published)}</p>
+        <h2>Description</h2>
+        <p>{artwork.description}</p>
+        <button
+          type="button"
+          onClick={() => setModalValidate(true)}
+          className="validate-button"
+        >
+          Valider
+        </button>
+        <button
+          type="button"
+          onClick={() => setModalRefuse(true)}
+          className="refuse-button"
+        >
+          Refuser
+        </button>
       </div>
 
-      <h2>PUBLIE PAR</h2>
-      <div className="avatar">
-        <img
-          src={photo.selected_avatar}
-          alt={`Selected avatar of ${photo.name}`}
-        />
-        <p>{photo.name}</p>
-      </div>
-      <button
-        type="button"
-        className="validate-button"
-        onClick={() => setModalValidate(true)}
-      >
-        Valider
-      </button>
-      <button
-        type="button"
-        className="refuse-button"
-        onClick={() => setModalRefuse(true)}
-      >
-        Refuser
-      </button>
       <div
         className={`modal-validate modal ${modalValidate ? "modal-slide" : ""}`}
       >
@@ -230,31 +252,9 @@ function ValidatePhoto() {
         </div>
       </div>
     </div>
+  ) : (
+    <h1>Loading...</h1>
   );
 }
 
-export default ValidatePhoto;
-
-export const artworksLoader = async () => {
-  try {
-    const responseArtworks = await fetch(
-      `${import.meta.env.VITE_BACKEND_URL}/api/artworks`
-    );
-    if (!responseArtworks.ok) {
-      throw new Error("Failed to fetch artworks");
-    }
-    const artworksData = await responseArtworks.json();
-
-    const responseUsers = await fetch(
-      `${import.meta.env.VITE_BACKEND_URL}/api/users`
-    );
-    if (!responseUsers.ok) {
-      throw new Error("Failed to fetch users");
-    }
-    const usersData = await responseUsers.json();
-
-    return { artworksData, usersData };
-  } catch (error) {
-    throw new Error(error);
-  }
-};
+export default ValidateArtwork;
