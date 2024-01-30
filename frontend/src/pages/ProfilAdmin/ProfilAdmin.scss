@@ -149,7 +149,9 @@
     }
     .profil-user {
       padding-top: 40px;
+
       .topic {
+        padding-left: 24px;
         .resume {
           min-height: 240px;
           line-height: 2em;
@@ -159,6 +161,8 @@
         display: flex;
         justify-content: flex-start;
         gap: 60px;
+        padding-left: 24px;
+
         .trophy {
           width: 120px;
         }
