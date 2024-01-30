@@ -111,6 +111,7 @@ body {
   box-sizing: border-box;
   margin: 0;
   padding: 0;
+  color: white;
 }
 ol,
 ul {
@@ -161,6 +162,7 @@ button {
     #aeb1ff 67.71%,
     #fff 100%
   );
+  --background-text-opacity: rgba(255, 255, 255, 0.119);
 }
 
 @font-face {

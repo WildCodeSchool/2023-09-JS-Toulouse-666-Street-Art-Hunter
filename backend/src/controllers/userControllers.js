@@ -11,6 +11,8 @@ const browse = async (req, res, next) => {
     next(err);
   }
 };
+
+// -------------
 const count = async (req, res, next) => {
   try {
     const users = await tables.user.countAll();

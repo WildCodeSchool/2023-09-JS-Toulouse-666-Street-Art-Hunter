@@ -31,7 +31,8 @@ const artworkData = [
     longitude: "43.595109572714044",
     latitude: "1.4555986919348944",
     adress: "5 Rue Jean Aillet",
-    description: "C'est beau !",
+    description:
+      "Au cœur des ruelles animées d'Oulan-Bator, une femme empreinte de la richesse de ses expériences, a laissé sa marque artistique sur un mur délaissé. 'L'Éclat de la Sagesse Nomade' est une œuvre qui transcende le temps, capturant la quintessence de la vie nomade à travers le regard sage d'une femme âgée.",
     date_published: "2024/01/03",
     ask_to_archived: 1,
     is_archived: 0,

@@ -38,6 +38,7 @@ import Legals from "./pages/Legal/Legal";
 import AdminArtworks, {
   adminArtworksLoader,
 } from "./pages/AdminArtworks/AdminArtworks";
+import AdminDetailsArtworks from "./pages/AdminDetailsArtwork/AdminDetailsArtwork";
 import Ranking from "./pages/Ranking/Ranking";
 import AboutUs from "./pages/AboutUs/AboutUs";
 
@@ -74,6 +75,11 @@ const router = createBrowserRouter(
           path="admin-artworks"
           element={<AdminArtworks />}
           loader={adminArtworksLoader}
+        />
+        <Route
+          path="admin-details-artwork/:id"
+          element={<AdminDetailsArtworks />}
+          loader={dataArtwork}
         />
       </Route>
 

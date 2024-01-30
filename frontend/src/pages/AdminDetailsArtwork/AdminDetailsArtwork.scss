@@ -1,4 +1,4 @@
-.main-container-details-artwork {
+.main-container-admin-details-artwork {
   display: flex;
   flex-direction: column;
   row-gap: 3rem;
@@ -6,6 +6,15 @@
   margin-block: 2.5rem;
   width: 80%;
   min-height: calc(100vh - 160px - 5rem);
+  h1 {
+    display: flex;
+    justify-content: center;
+    text-transform: uppercase;
+    border: 2px solid white;
+    border-radius: 15px;
+    padding: 10px;
+    background-color: rgba(240, 248, 255, 0.122);
+  }
 
   .artist-container {
     display: flex;
@@ -157,7 +166,7 @@
 // ***************************
 
 @media only screen and (min-width: 1024px) {
-  .main-container-details-artwork {
+  .main-container-admin-details-artwork {
     display: grid; //
     grid-template-columns: 1fr 1fr; //
     grid-template-rows: 1fr 1fr 1fr 1fr; //

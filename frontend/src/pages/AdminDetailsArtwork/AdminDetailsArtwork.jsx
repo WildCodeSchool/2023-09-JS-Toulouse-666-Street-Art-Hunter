@@ -1,12 +1,12 @@
-import React, { useEffect, useState } from "react";
+import React from "react";
 import { useLoaderData, useNavigate } from "react-router-dom";
-import "./DetailsArtwork.scss";
+import "./AdminDetailsArtwork.scss";
 import GeolocIcon from "../../assets/icons/geoloc-icon.png";
 import AstroBoy from "../../assets/avatars/astro-boy.png";
 import Title from "../../components/TitleRed-R/Title";
 import Button from "../../components/Button-R/Button";
 
-function DetailsArtwork() {
+function AdminDetailsArtwork() {
   // ********************* STATE *********************
   const dataArtworkById = useLoaderData();
 
@@ -32,49 +32,10 @@ function DetailsArtwork() {
 
   const publisherUser = data.name;
 
-  // ------------------------------------------------------------------
-  const user = JSON.parse(localStorage.getItem("user"));
-  console.info(user);
-
-  // ------------------------------------------------------------------
-  const [allUser, setAllUser] = useState([]);
-  console.info(allUser);
-
-  const keepId = allUser.map((el) => {
-    return el.is_admin;
-  });
-  console.info(keepId);
-
-  // ------------------------------------------------------------------
-  const profilUser = async () => {
-    const apiURL = import.meta.env.VITE_BACKEND_URL;
-    const token = localStorage.getItem("token");
-
-    const response = await fetch(`${apiURL}/api/users`, {
-      headers: {
-        Authorization: `Bearer ${token}`,
-      },
-    });
-    const dataAllUser = await response.json();
-    setAllUser(dataAllUser);
-
-    if (!response.ok) {
-      throw new Error(
-        JSON.stringify({ message: "Could not fetch profiles." }),
-        {
-          status: 500,
-        }
-      );
-    }
-  };
-
-  useEffect(() => {
-    profilUser();
-  }, []);
-
   // ********************* RENDER *********************
   return (
-    <div className="main-container-details-artwork">
+    <div className="main-container-admin-details-artwork">
+      <h1>Details de l'oeuvre Administrateur</h1>
       <div className="preview-main">
         <div className="preview-container">
           <img className="preview-image" src={currentImage} alt="artwork" />
@@ -130,7 +91,7 @@ function DetailsArtwork() {
   );
 }
 
-export default DetailsArtwork;
+export default AdminDetailsArtwork;
 
 export const dataArtwork = async (req) => {
   const token = localStorage.getItem("token");
