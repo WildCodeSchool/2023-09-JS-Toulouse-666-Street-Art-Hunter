@@ -45,7 +45,7 @@ function PannelAdministrateur() {
       <p className="title">Œuvres disparues</p>
       <ArtworkPannel
         dataMap={profils.ArtworksToMissing}
-        pageName="missing-artwork"
+        pageName="admin-missing-artwork"
       />
 
       <div className="pannel-link">
