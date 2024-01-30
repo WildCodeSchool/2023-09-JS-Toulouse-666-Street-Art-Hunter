@@ -122,10 +122,21 @@ function ValidatePhoto() {
 
   return (
     <div className="validate-photo-container">
-      <h3>Photo utilisateur</h3>
-      <img className="image" src={photo.image} alt={photo.title} />
-      <h3>Original</h3>
-      <img className="image" src={selectedArtwork.image} alt={photo.title} />
+      <div className="images-container">
+        <div className="one-image-container">
+          <h3>Photo utilisateur</h3>
+          <img className="image" src={photo.image} alt={photo.title} />
+        </div>
+        <div className="one-image-container">
+          <h3>Original</h3>
+          <img
+            className="image"
+            src={selectedArtwork.image}
+            alt={photo.title}
+          />
+        </div>
+      </div>
+
       <h2>PUBLIE PAR</h2>
       <div className="avatar">
         <img
