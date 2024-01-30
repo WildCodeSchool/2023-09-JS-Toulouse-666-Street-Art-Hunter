@@ -38,7 +38,10 @@ function PannelAdministrateur() {
         pageName="validate-photo"
       />
       <p className="title">Œuvres ajoutées</p>
-      <ArtworkPannel dataMap={profils.ArtworksToAdd} pageName="add-artwork" />
+      <ArtworkPannel
+        dataMap={profils.ArtworksToAdd}
+        pageName="validate-artwork"
+      />
       <p className="title">Œuvres disparues</p>
       <ArtworkPannel
         dataMap={profils.ArtworksToMissing}

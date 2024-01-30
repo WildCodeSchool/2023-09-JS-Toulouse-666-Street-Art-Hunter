@@ -46,6 +46,7 @@ import AboutUs from "./pages/AboutUs/AboutUs";
 import ValidatePhoto, {
   artworksLoader,
 } from "./pages/ValidatePhoto/ValidatePhoto";
+import ValidateArtwork from "./pages/ValidateArtwork/ValidateArtwork";
 
 const router = createBrowserRouter(
   createRoutesFromElements(
@@ -91,6 +92,7 @@ const router = createBrowserRouter(
           element={<ValidatePhoto />}
           loader={artworksLoader}
         />
+        <Route path="validate-artwork/:id" element={<ValidateArtwork />} />
       </Route>
 
       <Route
