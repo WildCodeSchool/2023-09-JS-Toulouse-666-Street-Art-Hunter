@@ -5,6 +5,7 @@
   padding-inline: 10%;
   gap: 1rem;
   font-family: "PressStart2P";
+  min-height: calc(100vh - 160px);
   .images-container {
     display: flex;
     flex-direction: column;

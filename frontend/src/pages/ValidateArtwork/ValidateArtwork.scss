@@ -5,6 +5,7 @@
   padding-inline: 10%;
   gap: 1rem;
   font-family: "PressStart2P";
+  min-height: calc(100vh - 160px);
 
   .image {
     width: 100%;
@@ -113,6 +114,7 @@
     flex-direction: row;
     .image {
       width: 50%;
+      height: 50%;
       max-height: calc(100vh - 164px);
     }
     .content-container {
