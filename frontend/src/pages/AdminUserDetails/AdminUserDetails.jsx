@@ -58,7 +58,6 @@ function AdminUserDetails() {
       description: user.description,
       email: user.email,
       score: user.score,
-      hashed_password: user.hashed_password,
       is_admin: user.is_admin,
       is_banned: 1,
       selected_avatar: user.selected_avatar,

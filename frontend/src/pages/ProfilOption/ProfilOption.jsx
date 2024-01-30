@@ -69,7 +69,6 @@ export const option = async ({ request }) => {
     ...data,
     email: dataU.email,
     score: dataU.score,
-    hashed_password: user.hashed_password,
     is_admin: user.is_admin,
     is_banned: user.is_banned,
     selected_avatar: dataU.selected_avatar,
