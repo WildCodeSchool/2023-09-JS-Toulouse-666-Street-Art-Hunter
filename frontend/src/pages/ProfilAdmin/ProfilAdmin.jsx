@@ -34,12 +34,14 @@ function ProfilAdmin() {
   const photoId = parseInt(userId, 10);
   const userArt = artPhoto(photoId);
   const navigate = useNavigate();
-  const handleClickOption = () => {
-    navigate(`/profil/${id}/option`);
-  };
   const handleClickAdmin = () => {
     navigate(`/admin/pannel-administrateur/${id}`);
   };
+
+  const handleClickOption = () => {
+    navigate(`/profil/${id}/option`);
+  };
+
   const [isModaleOpen, setModaleOpen] = useState(false);
   const handleClickreturn = () => {
     setModaleOpen(false);
@@ -56,7 +58,6 @@ function ProfilAdmin() {
   } else {
     ModaleButton = "avatar-modal-open";
   }
-  // console.log(profils.img);
 
   const [idAvatar, setIdAvatar] = useState("");
 
