@@ -110,7 +110,6 @@ export const adminModify = async ({ params, request }) => {
   const formData = {
     ...data,
     email: user.email,
-    hashed_password: user.hashed_password,
     is_banned: user.is_banned,
     selected_avatar: user.selected_avatar,
     border: user.border,
