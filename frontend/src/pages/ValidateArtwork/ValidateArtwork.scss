@@ -1,4 +1,4 @@
-.validate-photo-container {
+.validate-artwork-container {
   display: flex;
   flex-direction: column;
   width: 80%;
@@ -6,33 +6,36 @@
   gap: 1rem;
   font-family: "PressStart2P";
   min-height: calc(100vh - 160px);
-  .images-container {
+
+  .image {
+    width: 100%;
+    aspect-ratio: 1;
+    object-fit: cover;
+    background: var(--primary-color);
+    border-right: 2px solid pink;
+    border-top: 2px solid pink;
+    border-left: 2px solid deeppink;
+    border-bottom: 2px solid deeppink;
+  }
+  .content-container {
     display: flex;
     flex-direction: column;
     gap: 1rem;
-    .one-image-container {
-      display: flex;
-      flex-direction: column;
-      gap: 1rem;
-      .image {
-        width: 100%;
-        aspect-ratio: 1;
-        object-fit: cover;
-        background: var(--primary-color);
-        border-right: 2px solid pink;
-        border-top: 2px solid pink;
-        border-left: 2px solid deeppink;
-        border-bottom: 2px solid deeppink;
-      }
+    h2 {
+      font-size: 1.5rem;
+      background: var(--red-gradient);
+      background-clip: text;
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      text-transform: uppercase;
     }
-  }
-
-  .avatar {
-    display: flex;
-    align-items: center;
-    gap: 2rem;
-    img {
-      width: 50px;
+    .avatar {
+      display: flex;
+      align-items: center;
+      gap: 2rem;
+      img {
+        width: 50px;
+      }
     }
   }
   button {
@@ -104,37 +107,18 @@
   }
 }
 
-@media screen and (min-width: 480px) {
-  .validate-photo-container {
-    align-items: center;
-    .images-container {
-      .one-image-container {
-        .image {
-          width: 100%;
-          max-width: 500px;
-        }
-      }
-    }
-  }
-}
-
 @media screen and (min-width: 1024px) {
-  .validate-photo-container {
-    align-items: flex-start;
+  .validate-artwork-container {
     width: 90%;
     padding-inline: 5%;
-    .images-container {
-      display: flex;
-      flex-direction: row;
-      .one-image-container {
-        display: flex;
-        flex-direction: column;
-        width: 50%;
-        .image {
-          width: 100%;
-          max-width: none;
-        }
-      }
+    flex-direction: row;
+    .image {
+      width: 50%;
+      height: 50%;
+      max-height: calc(100vh - 164px);
+    }
+    .content-container {
+      gap: 3rem;
     }
   }
 }

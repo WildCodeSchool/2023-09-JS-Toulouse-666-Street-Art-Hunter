@@ -4,6 +4,7 @@ import {
   useParams,
   useNavigate,
 } from "react-router-dom";
+import { useState } from "react";
 
 import "./Profil.scss";
 
@@ -36,15 +37,124 @@ function Profil() {
     navigate(`/profil/${id}/option`);
   };
 
+  const [isModaleOpen, setModaleOpen] = useState(false);
+  const handleClickreturn = () => {
+    setModaleOpen(false);
+    navigate(`/profil/${id}`);
+  };
+
+  const toggleModale = () => {
+    setModaleOpen(!isModaleOpen);
+  };
+
+  let ModaleButton;
+  if (!isModaleOpen) {
+    ModaleButton = "avatar-modal-close";
+  } else {
+    ModaleButton = "avatar-modal-open";
+  }
+
+  const [idAvatar, setIdAvatar] = useState("");
+
+  const changeAvatar = async (params) => {
+    const apiURL = import.meta.env.VITE_BACKEND_URL;
+    const datau = JSON.parse(localStorage.getItem("user"));
+    const ida = params;
+    if (datau.id !== ida) {
+      navigate("/");
+    } else {
+      const responseU = await fetch(`${apiURL}/api/users/${id}`, {
+        headers: {
+          Authorization: `Bearer ${token}`,
+        },
+      });
+      const user = await responseU.json();
+
+      const formData = {
+        name: user.name,
+        description: user.description,
+        email: user.email,
+        score: user.score,
+        is_admin: user.is_admin,
+        is_banned: user.is_banned,
+        selected_avatar: idAvatar,
+        border: user.border,
+      };
+      try {
+        const response = await fetch(
+          `${import.meta.env.VITE_BACKEND_URL}/api/users/${id}`,
+          {
+            method: "Put",
+            headers: {
+              "Content-Type": "application/json",
+              Authorization: `Bearer ${token}`,
+            },
+            body: JSON.stringify(formData),
+          }
+        );
+
+        if (response.ok) {
+          handleClickreturn();
+        }
+        throw new Error("cant fetch user");
+      } catch (error) {
+        console.error(error);
+        return true;
+      }
+    }
+    return true;
+  };
+  const handleClickChangeAvatar = () => {
+    const userIdToChange = id;
+    changeAvatar(userIdToChange);
+  };
   return (
     <>
+      <div className={ModaleButton}>
+        <div className="profil-modal-title">Avatar</div>
+        <div className="profil-map-div-block">
+          {profils.img.map((item) => {
+            return (
+              <div key={item.id} className="map-div-avatar">
+                <button
+                  className="modale-validate"
+                  type="button"
+                  onClick={() => setIdAvatar(item.img_url)}
+                >
+                  <img
+                    className="avatar-img"
+                    src={item.img_url}
+                    alt={item.id}
+                  />
+                </button>
+              </div>
+            );
+          })}
+        </div>
+        <button
+          className="button-validate"
+          type="button"
+          onClick={handleClickChangeAvatar}
+        >
+          Validé
+        </button>
+      </div>
       <div className="profil-page">
         <div className="profil-top">
-          <img
-            className="avatar"
-            src={profils.user.selected_avatar}
-            alt="avatar"
-          />
+          <div className="profile-block-avatar">
+            <button
+              type="button"
+              className="avatar-button"
+              onClick={toggleModale}
+            >
+              x
+            </button>
+            <img
+              className="avatar"
+              src={profils.user.selected_avatar}
+              alt="avatar"
+            />
+          </div>
 
           <button
             className="profil-button"
@@ -101,6 +211,12 @@ export const profilLoader = async (req) => {
     },
   });
   const art = await responseArt.json();
+  const responseImg = await fetch(`${apiURL}/api/avatars`, {
+    headers: {
+      Authorization: `Bearer ${token}`,
+    },
+  });
+  const img = await responseImg.json();
 
   if (!response.ok) {
     throw new Error(JSON.stringify({ message: "Could not fetch profiles." }), {
@@ -108,7 +224,7 @@ export const profilLoader = async (req) => {
     });
   }
 
-  const resp = { user, art };
+  const resp = { user, art, img };
 
   return resp;
 };

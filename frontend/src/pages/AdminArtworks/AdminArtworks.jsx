@@ -33,7 +33,7 @@ function AdminArtworks() {
   };
 
   const handleArtworkClick = (id) => {
-    navigate(`/details-artwork/${id}`);
+    navigate(`/admin/admin-details-artwork/${id}`);
   };
 
   return (
