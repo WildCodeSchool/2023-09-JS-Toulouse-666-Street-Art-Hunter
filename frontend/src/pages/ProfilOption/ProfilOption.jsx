@@ -1,6 +1,7 @@
 import { Form, useParams, redirect, Navigate, Link } from "react-router-dom";
 import Input from "../../components/Input-R/Input";
 import "./ProfilOption.scss";
+import InputTextarea from "../../components/InputTextarea/InputTextarea";
 // penser a changer l'inpute en textArea
 function ProfilOption() {
   const { id } = useParams();
@@ -26,7 +27,7 @@ function ProfilOption() {
           labelText="Pseudo :"
           maxLength="14"
         />
-        <Input
+        <InputTextarea
           className="input"
           labelName="description"
           type="description"
@@ -69,8 +70,8 @@ export const option = async ({ request }) => {
     email: dataU.email,
     score: dataU.score,
     hashed_password: user.hashed_password,
-    is_admin: 0,
-    is_banned: 0,
+    is_admin: user.is_admin,
+    is_banned: user.is_banned,
     selected_avatar: dataU.selected_avatar,
     border: dataU.border,
   };

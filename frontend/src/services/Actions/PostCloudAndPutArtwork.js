@@ -1,32 +1,37 @@
-const postCloudAndArtwork = async (
+const postCloudAndPutArtwork = async (
   base64EncodedImage,
-  coordinates,
+  valueLongitude,
+  valueLatitude,
   valueAddress,
   valueDesc,
   currentFormattedDate,
-  setShowModal,
-  setLoadingModal
+  askArchive,
+  isArchive,
+  isValidate,
+  artworkId
 ) => {
   const dataArtwork = {
     image: base64EncodedImage,
-    longitude: coordinates.lon,
-    latitude: coordinates.lat,
+    longitude: valueLongitude,
+    latitude: valueLatitude,
     adress: valueAddress,
     description: valueDesc,
     date_published: currentFormattedDate,
-    ask_to_archived: 0,
-    is_archived: 0,
-    is_validate: 0,
+    ask_to_archived: askArchive,
+    is_archived: isArchive,
+    is_validate: isValidate,
+    id: artworkId,
   };
   console.info(dataArtwork);
 
   const token = localStorage.getItem("token");
-
   try {
     const response = await fetch(
-      `${import.meta.env.VITE_BACKEND_URL}/api/artworks/upload`,
+      `${
+        import.meta.env.VITE_BACKEND_URL
+      }/api/artworks/uploadModify/${artworkId}`,
       {
-        method: "POST",
+        method: "PUT",
         body: JSON.stringify({ dataArtwork }),
         headers: {
           "Content-Type": "application/json",
@@ -43,10 +48,7 @@ const postCloudAndArtwork = async (
         }`
       );
     }
-    if (response.status === 200) {
-      setShowModal(true);
-      setLoadingModal(false);
-    }
+
     console.info("Artwork uploaded successfully!");
   } catch (error) {
     console.error("Error:", error.message);
@@ -54,4 +56,4 @@ const postCloudAndArtwork = async (
   }
 };
 
-export default postCloudAndArtwork;
+export default postCloudAndPutArtwork;

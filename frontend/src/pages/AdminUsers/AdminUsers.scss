@@ -39,7 +39,7 @@
   }
   .div-users {
     font-family: "PressStart2P";
-    margin: 5%;
+
     display: flex;
     justify-content: center;
     flex-direction: column;
@@ -58,14 +58,11 @@
       justify-content: space-between;
       font-family: "PressStart2P";
       gap: 16px;
+      max-width: 300px;
       .link-img {
         width: 50px;
       }
-      .score {
-        display: flex;
-        justify-content: space-between;
-        width: 130px;
-        padding-left: 8px;
+      .user-name {
         background: linear-gradient(
           180deg,
           #4475f5 0%,
@@ -76,6 +73,12 @@
         background-clip: text;
         -webkit-background-clip: text;
         -webkit-text-fill-color: transparent;
+      }
+      .score {
+        display: flex;
+        justify-content: space-between;
+        width: 130px;
+        padding-left: 8px;
       }
     }
   }

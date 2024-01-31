@@ -45,6 +45,14 @@ class PhotoManager extends AbstractManager {
     );
     return photos;
   }
+
+  async readPhotoAndUser(id) {
+    const [rows] = await this.database.query(
+      `SELECT ${this.table}.*, user.name, user.selected_avatar FROM ${this.table} INNER JOIN user ON ${this.table}.user_id = user.id WHERE ${this.table}.id = ?`,
+      [id]
+    );
+    return rows[0];
+  }
 }
 
 module.exports = PhotoManager;

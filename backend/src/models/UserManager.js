@@ -44,7 +44,7 @@ class UserManager extends AbstractManager {
       name,
       description,
       email,
-      hashed_password: hashedPassword,
+      hashedPassword,
       score,
       is_admin: isAdmin,
       is_banned: isBanned,
@@ -75,6 +75,21 @@ class UserManager extends AbstractManager {
       [email]
     );
 
+    return rows[0];
+  }
+
+  async readAllWithoutPassword() {
+    const [rows] = await this.database.query(
+      `SELECT id, name, description, email, score, is_admin, is_banned, selected_avatar, border FROM ${this.table}`
+    );
+    return rows;
+  }
+
+  async readWithoutPassword(id) {
+    const [rows] = await this.database.query(
+      `SELECT id, name, description, email, score, is_admin, is_banned, selected_avatar, border FROM ${this.table} WHERE ${this.table}.id = ?`,
+      [id]
+    );
     return rows[0];
   }
 }

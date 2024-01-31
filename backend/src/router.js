@@ -19,6 +19,8 @@ const userControllers = require("./controllers/userControllers");
 const articleControllers = require("./controllers/articleControllers");
 const photoControllers = require("./controllers/photoControllers");
 const artistControllers = require("./controllers/artistControllers");
+const secureUser = require("./middlewares/secureUser");
+
 const {
   hashPassword,
   verifyPassword,
@@ -40,17 +42,18 @@ router.get("/articles", articleControllers.browse);
 router.get("/articles/:id", articleControllers.read);
 router.get("/artists", artistControllers.browse);
 router.get("/artists/:id", artistControllers.read);
-router.get("/users", userControllers.browse);
-router.get("/users/:id", userControllers.read);
+router.get("/users", userControllers.readAllWithoutPassword);
+router.get("/users/:id", userControllers.readWithoutPassword);
 
 router.get("/photos", photoControllers.browse);
 router.get("/photos/:id", photoControllers.read);
 router.get("/artworks/publishers/:id", artworkControllers.readArtworkAndUser);
+router.get("/photos/publishers/:id", photoControllers.readPhotoAndUser);
 
 // --------------------------- Mur d'authentification ---------------------------
 router.use(verifyToken);
 
-router.put("/users/:id", userControllers.edit);
+router.put("/users/:id", secureUser, userControllers.edit);
 router.post("/artworks", validateArtwork, artworkControllers.add);
 router.put("/artworks/:id", validateArtwork, artworkControllers.edit);
 router.post("/photos", validatePhoto, photoControllers.add);
@@ -64,6 +67,8 @@ router.get("/images", photoControllers.getImagesFromCloud);
 
 // --------------------------- Mur d'authentification Admin ---------------------------
 router.use(verifyAdmin);
+
+router.put("/artworks/uploadModify/:id", artworkControllers.uploadCloudModify);
 
 router.get("/pannel-administrateur/users", userControllers.count);
 router.get("/pannel-administrateur/artworks", artworkControllers.count);

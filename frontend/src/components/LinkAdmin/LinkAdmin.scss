@@ -3,7 +3,7 @@
   text-decoration: inherit;
   display: flex;
   width: 330px;
-  padding: 10px;
+  padding-block: 10px;
   justify-content: center;
   align-items: center;
   gap: 10px;
@@ -41,8 +41,8 @@
 
 @media screen and (min-width: 480px) {
   .link-admin {
-    width: 530px;
-    font-size: 26px;
-    padding-block: 26px;
+    width: 450px;
+    font-size: 24px;
+    padding-block: 24px;
   }
 }

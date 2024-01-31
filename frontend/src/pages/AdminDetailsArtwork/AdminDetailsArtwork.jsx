@@ -1,22 +1,18 @@
-import React from "react";
-import { useLoaderData, useNavigate } from "react-router-dom";
+import { useLoaderData, useParams } from "react-router-dom";
 import "./AdminDetailsArtwork.scss";
 import GeolocIcon from "../../assets/icons/geoloc-icon.png";
 import AstroBoy from "../../assets/avatars/astro-boy.png";
 import Title from "../../components/TitleRed-R/Title";
-import Button from "../../components/Button-R/Button";
+import LinkAdmin from "../../components/LinkAdmin/LinkAdmin";
 
 function AdminDetailsArtwork() {
   // ********************* STATE *********************
   const dataArtworkById = useLoaderData();
 
-  // ********************* LOGIQUE *********************
-  const { data, userPhotos } = dataArtworkById;
-  const idPhotos = userPhotos.map((el) => {
-    return el.artwork_id;
-  });
+  const { id } = useParams();
 
-  const navigate = useNavigate();
+  // ********************* LOGIQUE *********************
+  const { data } = dataArtworkById;
 
   const currentAddress = data.adress;
 
@@ -35,7 +31,6 @@ function AdminDetailsArtwork() {
   // ********************* RENDER *********************
   return (
     <div className="main-container-admin-details-artwork">
-      <h1>Details de l'oeuvre Administrateur</h1>
       <div className="preview-main">
         <div className="preview-container">
           <img className="preview-image" src={currentImage} alt="artwork" />
@@ -74,17 +69,10 @@ function AdminDetailsArtwork() {
       </div>
 
       <div className="btn-container">
-        {idPhotos.includes(data.id) === false && (
-          <Button
-            name="submit"
-            textBtn="Trouver ?"
-            onClick={() => navigate("/add-existing-artwork")}
-          />
-        )}
-        <Button
-          name="submit"
-          textBtn="Disparu ?"
-          onClick={() => navigate("/artwork-missing")}
+        <LinkAdmin
+          lien={`/admin/admin-details-artwork/option/${id}`}
+          textLink="Modifier"
+          nameClass="link-admin b"
         />
       </div>
     </div>
