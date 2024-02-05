@@ -37,12 +37,14 @@ function Profil() {
   const userArt = artPhoto(photoId);
   const navigate = useNavigate();
   const handleClickOption = () => {
+    window.scrollTo(0, 0);
     navigate(`/profil/${id}/option`);
   };
 
   const [isModaleOpen, setModaleOpen] = useState(false);
   const handleClickreturn = () => {
     setModaleOpen(false);
+    window.scrollTo(0, 0);
     navigate(`/profil/${id}`);
   };
 
@@ -64,6 +66,7 @@ function Profil() {
     const datau = JSON.parse(localStorage.getItem("user"));
     const ida = params;
     if (datau.id !== ida) {
+      window.scrollTo(0, 0);
       navigate("/");
     } else {
       const responseU = await fetch(`${apiURL}/api/users/${id}`, {

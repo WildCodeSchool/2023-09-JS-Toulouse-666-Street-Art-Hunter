@@ -117,6 +117,7 @@ function AdminArtworkMissing() {
       if (!responseUser.ok) {
         throw new Error("Failed to update user");
       }
+      window.scrollTo(0, 0);
       navigate(`/admin/pannel-administrateur/${user.id}`);
     } catch (error) {
       console.error("Error validating artwork:", error);
@@ -152,7 +153,7 @@ function AdminArtworkMissing() {
       if (!responseArtwork.ok) {
         throw new Error("Failed to validate artwork");
       }
-
+      window.scrollTo(0, 0);
       navigate(`/admin/pannel-administrateur/${user.id}`);
     } catch (error) {
       console.error("Error validating artwork:", error);

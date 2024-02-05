@@ -34,6 +34,7 @@ function AdminArtworks() {
   };
 
   const handleArtworkClick = (id) => {
+    window.scrollTo(0, 0);
     navigate(`/admin/admin-details-artwork/${id}`);
   };
 
@@ -43,6 +44,7 @@ function AdminArtworks() {
         <button
           type="button"
           onClick={() => {
+            window.scrollTo(0, 0);
             navigate(-1);
           }}
         >

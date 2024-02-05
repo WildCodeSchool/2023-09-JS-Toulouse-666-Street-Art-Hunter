@@ -44,7 +44,7 @@ function ValidatePhoto() {
       artwork_id: photo.artwork_id,
     };
 
-    const userOfPhoto = usersData.find((el) => el.id === photo.user_id);
+    const userOfPhoto = usersData.find((el) => el.id === +photo.user_id);
 
     const validateUserData = {
       name: userOfPhoto.name,
@@ -87,6 +87,7 @@ function ValidatePhoto() {
       if (!responseUser.ok) {
         throw new Error("Failed to validate user");
       }
+      window.scrollTo(0, 0);
       navigate(`/admin/pannel-administrateur/${user.id}`);
     } catch (error) {
       console.error("Error validating photo:", error);
@@ -108,6 +109,7 @@ function ValidatePhoto() {
       if (!response.ok) {
         throw new Error("Failed to delete photo");
       }
+      window.scrollTo(0, 0);
       navigate(`/admin/pannel-administrateur/${user.id}`);
     } catch (error) {
       console.error("Error deleting photo:", error);
@@ -118,7 +120,9 @@ function ValidatePhoto() {
     return <div>Loading...</div>; // Render a loading indicator while fetching photo
   }
 
-  const selectedArtwork = artworksData.find((el) => el.id === photo.artwork_id);
+  const selectedArtwork = artworksData.find(
+    (el) => el.id === +photo.artwork_id
+  );
 
   return (
     <div className="validate-photo-container">

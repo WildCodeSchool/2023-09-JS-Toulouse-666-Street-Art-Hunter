@@ -29,6 +29,7 @@ function LandingPage() {
             to="/rules"
             className="links"
             onClick={() => {
+              window.scrollTo(0, 0);
               navigate("/rules");
             }}
           >

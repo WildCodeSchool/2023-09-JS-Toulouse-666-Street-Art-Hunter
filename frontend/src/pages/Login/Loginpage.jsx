@@ -12,6 +12,7 @@ function Login() {
 
   // ********************* LOGIQUE *********************
   const handleClickRegister = () => {
+    window.scrollTo(0, 0);
     navigate("/register");
   };
 
