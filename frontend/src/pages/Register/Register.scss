@@ -1,9 +1,11 @@
 .register-page {
   display: flex;
   flex-direction: column;
-  align-items: center;
-  gap: 40px;
-  min-height: calc(100vh - 160px);
+  min-height: calc(100vh - 160px - clamp(2.5rem, 8vw, 5rem));
+  margin-block: clamp(2.5rem, 8vw, 5rem);
+  margin-inline: 10%;
+  width: 80%;
+  row-gap: clamp(2.5rem, 8vw, 5rem);
 
   .register-input {
     width: 100%;
@@ -12,53 +14,127 @@
       flex-direction: column;
       align-items: center;
       justify-content: center;
-      color: rgba(217, 93, 0, 1);
       text-transform: uppercase;
-      font-size: 28px;
+      font-size: clamp(1.5rem, 7vw, 3.5rem);
+      font-family: var(--secondary-font);
+      // Red-gradient color text
+      background: var(--red-gradient);
+      background-clip: text;
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      // -----------------------
     }
     .form {
       display: flex;
       flex-direction: column;
       align-items: center;
-      gap: 30px;
-      margin-top: 60px;
+      gap: clamp(2.5rem, 6vw, 3.5rem);
+      margin-top: 4rem;
     }
 
-    .continue {
-      border: 3px solid #ff1c96;
-      background: rgba(200, 56, 56, 0.2);
-      box-shadow: 2px 1px 0px 0px #5d75f0;
-      text-align: center;
-      font-size: 18px;
-      font-style: normal;
-      font-weight: 400;
-      line-height: normal;
-      color: black;
-      font-family: "PressStart2P";
-      padding: 4px;
+    .btn-container {
+      button {
+        padding: 0.5rem;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        border: 3px solid #ff1c96;
+        background: var(--primary-color);
+        &:hover {
+          transform: scale(0.95);
+        }
+        &:active {
+          transform: scale(0.9);
+        }
+
+        .btn-span {
+          font-family: var(--primary-font);
+          font-size: 18px;
+          text-transform: uppercase;
+          background: var(--red-gradient);
+          background-clip: text;
+          -webkit-background-clip: text;
+          -webkit-text-fill-color: transparent;
+        }
+      }
     }
   }
 }
 
+// ******************************************
+//               MEDIA QUERIES
+// ******************************************
+
 @media screen and (min-width: 800px) {
   .register-page {
     .register-input {
-      .register-title {
+      .register-hero {
+        display: flex;
+        justify-content: center;
         background-image: url(../../assets/photos/BeatlsHd.jpg);
         background-repeat: no-repeat;
         background-size: cover;
-        width: 95%;
-        min-height: 450px;
-        filter: brightness(0.75);
-        margin-inline: 26px;
+        background-position: 50% 0%;
+        width: 100%;
+        min-height: 400px;
         font-size: 36px;
+        .register-title {
+        }
       }
+      // ----------------------------------------------------
+      @property --angle {
+        syntax: "<angle>";
+        initial-value: 90deg;
+        inherits: true;
+      }
+
+      @property --gradX {
+        syntax: "<percentage>";
+        initial-value: 50%;
+        inherits: true;
+      }
+
+      @property --gradY {
+        syntax: "<percentage>";
+        initial-value: 0%;
+        inherits: true;
+      }
+
+      :root {
+        --d: 3000ms;
+        --angle: 90deg;
+        --gradX: 100%;
+        --gradY: 50%;
+        --c1: rgb(200, 11, 175);
+        --c2: rgba(168, 239, 255, 0.1);
+      }
+
+      .register-hero {
+        font-size: 3vw;
+        border: 0.5rem solid;
+        border-image: conic-gradient(
+            from var(--angle),
+            var(--c2),
+            var(--c1) 0.1turn,
+            var(--c1) 0.15turn,
+            var(--c2) 0.25turn
+          )
+          30;
+        animation: borderRotate var(--d) linear infinite forwards;
+      }
+
+      @keyframes borderRotate {
+        100% {
+          --angle: 420deg;
+        }
+      }
+      // ----------------------------------------------------
+
       .form {
         display: flex;
         flex-direction: column;
         align-items: center;
         justify-content: space-between;
-        gap: 40px;
         margin-inline: 10%;
 
         .label-composent-css {

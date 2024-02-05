@@ -7,7 +7,9 @@ function Register() {
   return (
     <div className="register-page">
       <div className="register-input">
-        <h1 className="register-title">inscription</h1>
+        <div className="register-hero">
+          <h1 className="register-title">inscription</h1>
+        </div>
         <Form className="form" method="post" action="/register" replace>
           <Input
             className="input"
@@ -38,9 +40,11 @@ function Register() {
             maxLength="255"
           />
 
-          <button className="continue" type="submit">
-            CONTINUE
-          </button>
+          <div className="btn-container">
+            <button type="submit" name="submit">
+              <span className="btn-span">continue</span>
+            </button>
+          </div>
         </Form>
       </div>
     </div>

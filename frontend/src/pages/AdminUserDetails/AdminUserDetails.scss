@@ -1,181 +1,19 @@
-.admin-user-details-block {
+.main-container-admin-user-details {
   display: flex;
   flex-direction: column;
-  align-items: center;
-  gap: 24px;
-  margin-inline: 5%;
-  font-family: "PressStart2P";
-  .modal-delete {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    position: absolute;
-    width: 100vw;
-    height: 100vh;
-    backdrop-filter: blur(10px);
-    left: 0px;
-    top: 0px;
-
-    .modale-delete-texte {
-      background-color: #12141a;
-      display: flex;
-      justify-content: space-around;
-      align-items: center;
-      flex-direction: column;
-      width: 100vw;
-      height: 100vh;
-      .modale-validate {
-        font-family: "PressStart2P";
-        color: white;
-        text-align: right;
-        width: 100%;
-        display: flex;
-        justify-content: flex-end;
-        .button-validate {
-          background-color: green;
-          width: 190px;
-          padding: 20px;
-          font-size: 20px;
-        }
-      }
-      .modale-return {
-        font-family: "PressStart2P";
-        color: white;
-        text-align: left;
-        width: 100%;
-
-        .button-return {
-          background-color: red;
-          width: 190px;
-          padding: 20px;
-          font-size: 20px;
-        }
-      }
-    }
-  }
-  .modal-open {
-    display: none;
-  }
-  .admin-user-detail-block-link {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    gap: 24px;
-    .button-admin-delete {
-      font-family: "PressStart2P";
-      text-decoration: inherit;
-      display: flex;
-      width: 330px;
-      padding: 10px;
-      justify-content: center;
-      align-items: center;
-      gap: 10px;
-      border: 2px solid #000;
-      box-shadow: 4px 4px 4px 0px rgba(0, 0, 0, 0.25);
-      color: #fff;
-      text-align: center;
-      font-style: normal;
-      font-weight: 400;
-      font-size: 18px;
-      line-height: normal;
-      background: #b9b271;
-    }
-    .button-admin-ban {
-      font-family: "PressStart2P";
-      text-decoration: inherit;
-      display: flex;
-      width: 330px;
-      padding: 10px;
-      justify-content: center;
-      align-items: center;
-      gap: 10px;
-      border: 2px solid #000;
-      box-shadow: 4px 4px 4px 0px rgba(0, 0, 0, 0.25);
-      color: #fff;
-      text-align: center;
-      font-style: normal;
-      font-weight: 400;
-      font-size: 18px;
-      line-height: normal;
-      background: #b97171;
-    }
-  }
-
-  .admin-user-info {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    gap: 24px;
-    .admin-img {
-      display: flex;
-      flex-direction: row;
-      align-items: center;
-
-      gap: 24px;
-
-      .link-img {
-        width: 100px;
-      }
-      .admin-name {
-        font-size: 24px;
-        text-align: center;
-        background: linear-gradient(
-          180deg,
-          #4475f5 0%,
-          #4e75ff 32.81%,
-          #aeb1ff 67.71%,
-          #fff 100%
-        );
-        background-clip: text;
-        -webkit-background-clip: text;
-        -webkit-text-fill-color: transparent;
-      }
-    }
-    .admin-resume {
-      font-size: 18px;
-    }
-    .admin-resume-score {
-      display: flex;
-      flex-direction: row;
-      align-items: center;
-      gap: 48px;
-      .admin-score {
-        font-size: 18px;
-        background: linear-gradient(
-          180deg,
-          #f00 0%,
-          #d95d00 28.13%,
-          #be7c68 50.52%,
-          #f5ff87 100%
-        );
-
-        background-clip: text;
-        -webkit-background-clip: text;
-        -webkit-text-fill-color: transparent;
-        text-transform: uppercase;
-      }
-    }
-  }
-}
-@media screen and (min-width: 480px) {
+  min-height: calc(
+    100vh - 160px - clamp(2.5rem, 8vw, 5rem) - clamp(2rem, 7vw, 4rem)
+  );
+  margin-block: clamp(2.5rem, 8vw, 4rem);
+  margin-inline: 10%;
+  width: 80%;
+  row-gap: clamp(2rem, 7vw, 4rem);
   .admin-user-details-block {
-    margin-block: 36px;
     display: flex;
     flex-direction: row-reverse;
     align-items: center;
-    justify-content: space-between;
-    .admin-user-detail-block-link {
-      .button-admin-delete {
-        width: 534px;
-        font-size: 26px;
-        padding-block: 26px;
-      }
-      .button-admin-ban {
-        width: 534px;
-        font-size: 26px;
-        padding-block: 26px;
-      }
-    }
+    column-gap: clamp(3rem, 10vw, 4rem);
+
     .modal-delete {
       display: flex;
       align-items: center;
@@ -188,43 +26,251 @@
       top: 0px;
 
       .modale-delete-texte {
-        background-color: #12141a;
-        height: 650px;
-        width: 850px;
         display: flex;
         justify-content: space-around;
         align-items: center;
         flex-direction: column;
+        width: 100vw;
+        height: 100vh;
         .modale-validate {
+          font-family: "PressStart2P";
           color: white;
+          text-align: right;
+          width: 100%;
+          display: flex;
+          justify-content: flex-end;
+          .button-validate {
+            background-color: green;
+            width: 190px;
+            padding: 20px;
+            font-size: 20px;
+          }
         }
         .modale-return {
+          font-family: "PressStart2P";
           color: white;
+          text-align: left;
+          width: 100%;
+
+          .button-return {
+            background-color: red;
+            width: 190px;
+            padding: 20px;
+            font-size: 20px;
+          }
         }
       }
     }
     .modal-open {
       display: none;
     }
+    .admin-user-detail-block-link {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      gap: 24px;
+      min-width: 300px;
+      .button-admin-delete {
+        display: flex;
+        justify-content: center;
+        text-align: center;
+        max-width: 400px;
+        width: 100%;
+        padding-block: clamp(14px, 3vw, 20px);
+        border: 3px solid whitesmoke;
+        color: whitesmoke;
+        font-family: var(--primary-font);
+        font-size: clamp(14px, 3vw, 20px);
+        line-height: clamp(18px, 4vw, 26px);
+        background: #b9b271;
+        text-decoration: inherit;
 
+        &:hover {
+          transform: scale(1.05);
+          transition-duration: 0.5s;
+        }
+        &:active {
+          transform: scale(0.95);
+          transition-duration: 0.5s;
+        }
+      }
+      .button-admin-ban {
+        display: flex;
+        justify-content: center;
+        text-align: center;
+        max-width: 400px;
+        width: 100%;
+        padding-block: clamp(14px, 3vw, 20px);
+        border: 3px solid whitesmoke;
+        color: whitesmoke;
+        font-family: var(--primary-font);
+        font-size: clamp(14px, 3vw, 20px);
+        line-height: clamp(18px, 4vw, 26px);
+        background: #b97171;
+        text-decoration: inherit;
+
+        &:hover {
+          transform: scale(1.05);
+          transition-duration: 0.5s;
+        }
+        &:active {
+          transform: scale(0.95);
+          transition-duration: 0.5s;
+        }
+      }
+    }
     .admin-user-info {
-      gap: 36px;
+      display: flex;
+      flex-direction: column;
+      align-items: start;
+      gap: 24px;
       .admin-img {
+        display: flex;
+        flex-direction: row;
+        align-items: center;
+        gap: 24px;
         .link-img {
-          width: 150px;
+          width: 100px;
         }
         .admin-name {
-          font-size: 32px;
+          font-size: 24px;
+          text-align: center;
+          background: var(--blue-gradient);
+          background-clip: text;
+          -webkit-background-clip: text;
+          -webkit-text-fill-color: transparent;
         }
       }
       .admin-resume {
-        font-size: 24px;
+        font-size: clamp(0.7rem, 2.5vw, 1.2rem);
+        line-height: clamp(1.4rem, 5vw, 2.8rem);
       }
       .admin-resume-score {
+        display: flex;
+        flex-direction: row;
+        align-items: center;
+        gap: 48px;
         .admin-score {
-          font-size: 32px;
+          font-size: clamp(1.5rem, 3vw, 2rem);
+          background: var(--red-gradient);
+          background-clip: text;
+          -webkit-background-clip: text;
+          -webkit-text-fill-color: transparent;
+          text-transform: uppercase;
+        }
+      }
+    }
+  }
+  .artwork {
+    display: flex;
+    flex-direction: column;
+    row-gap: 1.5rem;
+    .map-artwork {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: space-evenly;
+      border: clamp(5px, 1.2vw, 10px) solid #dd0bff;
+      box-shadow: 4px 4px 0px 0px #ed1385;
+      padding: 1rem;
+      padding-block: clamp(1.5rem, 5vw, 2.5rem);
+      gap: 1rem;
+      background-color: rgba(255, 192, 203, 0.209);
+      .item {
+        .link-img {
+          width: clamp(250px, 20vw, 350px);
+          height: clamp(200px, 20vw, 350px);
+          object-fit: cover;
+          aspect-ratio: 1/1;
+          padding: 5px;
+          border: 2px solid whitesmoke;
         }
       }
     }
   }
 }
+
+// ******************************************
+//               MEDIA QUERIES
+// ******************************************
+
+@media screen and (max-width: 1200px) {
+  .main-container-admin-user-details {
+    .admin-user-details-block {
+      display: flex;
+      flex-direction: column-reverse; //
+      align-items: center;
+      row-gap: clamp(3rem, 10vw, 4rem); //
+    }
+  }
+}
+// @media screen and (min-width: 480px) {
+//   .admin-user-details-block {
+//     margin-block: 36px;
+//     display: flex;
+//     flex-direction: row-reverse;
+//     align-items: center;
+//     justify-content: space-between;
+//     .admin-user-detail-block-link {
+//       .button-admin-delete {
+//         width: 534px;
+//         font-size: 26px;
+//         padding-block: 26px;
+//       }
+//       .button-admin-ban {
+//         width: 534px;
+//         font-size: 26px;
+//         padding-block: 26px;
+//       }
+//     }
+//     .modal-delete {
+//       display: flex;
+//       align-items: center;
+//       justify-content: center;
+//       position: absolute;
+//       width: 100vw;
+//       height: 100vh;
+//       backdrop-filter: blur(10px);
+//       left: 0px;
+//       top: 0px;
+
+//       .modale-delete-texte {
+//         background-color: #12141a;
+//         height: 650px;
+//         width: 850px;
+//         display: flex;
+//         justify-content: space-around;
+//         align-items: center;
+//         flex-direction: column;
+//         .modale-validate {
+//           color: white;
+//         }
+//         .modale-return {
+//           color: white;
+//         }
+//       }
+//     }
+//     .modal-open {
+//       display: none;
+//     }
+
+//     .admin-user-info {
+//       gap: 36px;
+//       .admin-img {
+//         .link-img {
+//           width: 150px;
+//         }
+//         .admin-name {
+//           font-size: 32px;
+//         }
+//       }
+//       .admin-resume {
+//         font-size: 24px;
+//       }
+//       .admin-resume-score {
+//         .admin-score {
+//           font-size: 32px;
+//         }
+//       }
+//     }
+//   }
+// }

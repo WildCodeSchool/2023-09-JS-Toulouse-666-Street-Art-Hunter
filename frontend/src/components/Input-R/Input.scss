@@ -1,16 +1,3 @@
-:root {
-  --primary-color: rgb(89, 50, 76);
-  --primary-font: "PressStart2P", sans-serif;
-  --secondary-font: "PixelBit", sans-serif;
-  --red-gradient: linear-gradient(
-    180deg,
-    #f00 0%,
-    #d95d00 28.13%,
-    #be7c68 50.52%,
-    #f5ff87 100%
-  );
-}
-
 .label-container {
   display: flex;
   flex-direction: column;
@@ -25,15 +12,13 @@
     background-clip: text;
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
-    // text-shadow: 2px 1px 0px #5d75f0;
   }
 
   .input-container {
-    width: 316px;
+    // width: 316px;
     height: 40px;
     padding-inline: 10px;
     font-family: var(--primary-font);
-    color: white;
     font-size: clamp(16px, 2vw, 24px);
     background: var(--primary-color);
     border-right: 2px solid pink;

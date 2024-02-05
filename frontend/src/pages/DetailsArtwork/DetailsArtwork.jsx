@@ -86,13 +86,17 @@ function DetailsArtwork() {
           <Title title="Adresse:" />
           <p className="address-text">{currentAddress}</p>
         </div>
-        <div className="section-icon">
+        <button
+          type="button"
+          className="section-icon"
+          onClick={() => navigate("/map")}
+        >
           <img
             className="address-image"
             src={GeolocIcon}
             alt="geolocalition icon"
           />
-        </div>
+        </button>
       </div>
 
       <div className="published-container">

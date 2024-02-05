@@ -27,13 +27,16 @@ function Rules() {
           <Title title="FAQ" />
           <div className="text-1-section-3">
             <p className="question-1-section-3">
-              Où je peux trouver les oeuvres ?
+              <span> Où je peux trouver les oeuvres ? </span>
             </p>
             <p>Regarde autour de toi ! Et visite ta ville. </p>
           </div>
           <div className="text-2-section-3">
             <p className="question-2-section-3">
-              Comment modifier mon pseudo, ma description ou mon email ?{" "}
+              <span>
+                {" "}
+                Comment modifier mon pseudo, ma description ou mon email ?
+              </span>
             </p>
             <p>
               Accède à ton profil. Tu devrais repérer un logo en forme de roue

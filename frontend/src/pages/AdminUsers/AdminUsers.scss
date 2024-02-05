@@ -1,112 +1,103 @@
 .admin-users {
-  min-height: calc(100vh - 160px);
-  font-family: "PressStart2P";
-  margin-inline: 5%;
+  display: flex;
+  flex-direction: column;
+  min-height: calc(
+    100vh - 160px - clamp(2.5rem, 8vw, 5rem) - clamp(2rem, 7vw, 4rem)
+  );
+  margin-block: clamp(2.5rem, 8vw, 4rem);
+  margin-inline: 10%;
+  width: 80%;
+  row-gap: clamp(2rem, 7vw, 4rem);
   .admin-title {
     margin-block: 24px;
     text-align: center;
     text-transform: uppercase;
-    background: linear-gradient(
-      180deg,
-      #f00 0%,
-      #d95d00 28.13%,
-      #be7c68 50.52%,
-      #f5ff87 100%
-    );
-
+    background: var(--red-gradient);
     background-clip: text;
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
     text-transform: uppercase;
   }
-  .admin-table {
-    margin-block: 24px;
-    line-height: 1.5rem;
-    text-align: center;
-    text-transform: uppercase;
-    background: linear-gradient(
-      180deg,
-      #f00 0%,
-      #d95d00 28.13%,
-      #be7c68 50.52%,
-      #f5ff87 100%
-    );
 
-    background-clip: text;
-    -webkit-background-clip: text;
-    -webkit-text-fill-color: transparent;
-    text-transform: uppercase;
-  }
-  .div-users {
-    font-family: "PressStart2P";
-
+  .section-title {
     display: flex;
+    flex-direction: row;
+    align-items: center;
     justify-content: center;
-    flex-direction: column;
-    color: white;
-    padding-block: 0.5rem;
-    border: 2px solid #dd0bff;
-    padding-inline: 8px;
-    font-size: 12px;
-    box-shadow: 4px 4px 0px 0px #ed1385;
-
-    .div-fiche-perso {
-      margin-block: 8px;
-      align-items: center;
-      display: flex;
-      flex-direction: row;
-      justify-content: space-between;
-      font-family: "PressStart2P";
-      gap: 16px;
-      max-width: 300px;
-      .link-img {
-        width: 50px;
+    column-gap: clamp(1rem, 5vw, 3rem);
+    img {
+      width: clamp(50px, 10vw, 100px);
+      height: clamp(50px, 10vw, 100px);
+      cursor: pointer;
+      &:hover {
+        transform: scale(1.05);
       }
-      .user-name {
-        background: linear-gradient(
-          180deg,
-          #4475f5 0%,
-          #4e75ff 32.81%,
-          #aeb1ff 67.71%,
-          #fff 100%
-        );
-        background-clip: text;
-        -webkit-background-clip: text;
-        -webkit-text-fill-color: transparent;
-      }
-      .score {
-        display: flex;
-        justify-content: space-between;
-        width: 130px;
-        padding-left: 8px;
+      &:active {
+        transform: scale(0.95);
       }
     }
+    h1 {
+      font-family: var(--secondary-font);
+      // Red-gradient color text
+      background: var(--red-gradient);
+      background-clip: text;
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      // -----------------------
+      font-size: clamp(1.5rem, 6vw, 2.5rem);
+      line-height: clamp(2rem, 7vw, 3rem);
+    }
   }
-}
-@media screen and (min-width: 480px) {
-  .admin-users {
+
+  .div-users {
     display: flex;
     justify-content: center;
-    flex-direction: column;
     align-items: center;
-
-    .div-users {
+    flex-direction: column;
+    row-gap: 1rem;
+    border: clamp(4px, 1.2vw, 8px) solid #dd0bff;
+    box-shadow: 4px 4px 0px 0px #ed1385;
+    padding-block: 2rem;
+    .map-div-users {
+      display: flex;
+      justify-content: center;
       align-items: center;
-      width: 950px;
-
+      width: 100%;
+      // Bordure grise -----------------------------
+      border: 1px solid rgba(128, 128, 128, 0.361);
+      box-sizing: border-box;
+      padding: clamp(0.3rem, 3vw, 0.7rem);
+      // -------------------------------------------
+      &:hover {
+        background-color: rgba(128, 128, 128, 0.361);
+      }
+      &:active {
+        transform: scale(0.95);
+      }
       .div-fiche-perso {
-        font-size: 20px;
-        gap: 48px;
-        padding: 0.5rem;
-        border: 2px solid #ffffff1b;
-        width: 600px;
-        max-width: none;
+        display: flex;
+        flex-direction: row;
+        align-items: center;
+        justify-content: center;
+        margin-block: 8px;
+        font-family: "PressStart2P";
+        gap: clamp(1rem, 5vw, 2rem);
+
         .link-img {
-          width: 75px;
+          width: clamp(50px, 8vw, 80px);
+        }
+        .user-name {
+          font-size: clamp(0.8rem, 2.5vw, 1.3rem);
+          background: var(--blue-gradient);
+          background-clip: text;
+          -webkit-background-clip: text;
+          -webkit-text-fill-color: transparent;
         }
         .score {
-          font-size: 20px;
-          width: 240px;
+          font-size: clamp(0.8rem, 2.5vw, 1.3rem);
+          display: flex;
+          color: whitesmoke;
+          justify-content: space-between;
         }
       }
     }

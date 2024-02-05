@@ -7,6 +7,7 @@ import InputTextarea from "../../components/InputTextarea/InputTextarea";
 function AdminUserModify() {
   const { id } = useParams();
   const [isAdminOpen, setAdminOpen] = useState(false);
+  const [valueDescription, setValueDescription] = useState("");
 
   const toggleAdmin = () => {
     setAdminOpen(!isAdminOpen);
@@ -51,6 +52,8 @@ function AdminUserModify() {
           labelText="Description :"
           maxLength="255"
           height="80px"
+          value={valueDescription}
+          setValue={setValueDescription}
         />
         <Input
           className="input"

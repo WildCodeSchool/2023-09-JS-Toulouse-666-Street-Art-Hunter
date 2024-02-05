@@ -4,6 +4,7 @@ import "./PannelAdministrateur.scss";
 import LinkAdmin from "../../components/LinkAdmin/LinkAdmin";
 import ArtworkPannel from "../../components/ArtworkPannel/ArtworkPannel";
 import Thors from "../../assets/photos/Thors.png";
+import Title from "../../components/TitleRed-R/Title";
 
 function PannelAdministrateur() {
   const profils = useLoaderData();
@@ -16,37 +17,53 @@ function PannelAdministrateur() {
     <div className="pannel-administrateur-page">
       <div className="pannel-stats">
         <img
-          src={Thors}
           className="img-admin"
-          alt="Magnifique street art de thors"
+          src={Thors}
+          alt="Beautiful street art of Thors"
         />
-        <div className="title">Statistiques</div>
-        <div className="map-admin">
-          Nombres d'utilisateurs : {profils.users[0].numberOfUser} <br />
-          Nombres d'oeuvres : {profils.artworks[0].numberOfUser}
-          <br />
-          Nombres d'oeuvres non validé :{" "}
-          {profils.artworksNoValidate[0].numberOfArtwork}
-          <br />
-          Nombres d'artists : {profils.artists[0].numberOfUser}
+        <div className="arrays">
+          <Title title="Statistiques" />
+          <div className="map-admin">
+            <p>
+              {" "}
+              Utilisateurs: <span>{profils.users[0].numberOfUser}</span>
+            </p>
+            <p>
+              Oeuvres: <span>{profils.artworks[0].numberOfUser}</span>
+            </p>
+            <p>
+              {" "}
+              Oeuvres non-validés:
+              <span>{profils.artworksNoValidate[0].numberOfArtwork}</span>
+            </p>
+            <p>
+              {" "}
+              Artistes: <span>{profils.artists[0].numberOfUser}</span>
+            </p>
+          </div>
         </div>
       </div>
-
-      <p className="title">Photos à valider</p>
-      <ArtworkPannel
-        dataMap={profils.PhotoNoValidate}
-        pageName="validate-photo"
-      />
-      <p className="title">Œuvres ajoutées</p>
-      <ArtworkPannel
-        dataMap={profils.ArtworksToAdd}
-        pageName="validate-artwork"
-      />
-      <p className="title">Œuvres disparues</p>
-      <ArtworkPannel
-        dataMap={profils.ArtworksToMissing}
-        pageName="admin-missing-artwork"
-      />
+      <div className="arrays">
+        <Title title="Photos à valider :" />
+        <ArtworkPannel
+          dataMap={profils.PhotoNoValidate}
+          pageName="validate-photo"
+        />
+      </div>
+      <div className="arrays">
+        <Title title="Oeuvres ajoutées :" />
+        <ArtworkPannel
+          dataMap={profils.ArtworksToAdd}
+          pageName="validate-artwork"
+        />
+      </div>
+      <div className="arrays">
+        <Title title="Oeuvres disparues :" />
+        <ArtworkPannel
+          dataMap={profils.ArtworksToMissing}
+          pageName="admin-missing-artwork"
+        />
+      </div>
 
       <div className="pannel-link">
         <LinkAdmin
@@ -61,27 +78,19 @@ function PannelAdministrateur() {
         />
         <LinkAdmin
           lien="/map"
-          textLink="Listes Artistes"
+          textLink="Liste Artistes"
           nameClass="link-admin y"
         />
-        <LinkAdmin
-          lien="/map"
-          textLink="Listes Articles"
-          nameClass="link-admin v"
-        />
+
         <LinkAdmin
           lien="/map"
           textLink="Créer Artistes"
           nameClass="link-admin r"
         />
+
         <LinkAdmin
           lien="/map"
-          textLink="Créer Articles"
-          nameClass="link-admin p"
-        />
-        <LinkAdmin
-          lien="/map"
-          textLink="Liste Utilisateurs Banni"
+          textLink="Liste Utilisateurs Bannis"
           nameClass="link-admin black"
         />
       </div>

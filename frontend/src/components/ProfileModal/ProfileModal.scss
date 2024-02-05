@@ -3,33 +3,39 @@
   display: flex;
   height: 80px;
   position: fixed;
-  top: 0;
-  right: -340px;
-  background: rgba(113, 24, 24);
-  width: calc(340px - 40px);
-  justify-content: space-between;
-  padding-inline: 20px;
+  top: 0px;
+  right: -100vw;
+  background: rgb(163, 19, 0);
+  backdrop-filter: blur(3px);
+  width: 100%;
+  justify-content: center;
+  align-items: center;
+  // padding-inline: 20px;
   transition: right 0.5s ease;
   z-index: 1001;
 
   div {
     display: flex;
-    flex-direction: column;
-    justify-content: space-around;
-
+    text-align: center;
+    justify-content: center;
+    align-items: center;
+    column-gap: clamp(2rem, 8vw, 5rem);
+    padding-inline: 2rem;
     a {
-      font-family: "PressStart2P";
+      font-family: var(--primary-font);
       text-decoration: none;
-      color: white;
-      text-transform: uppercase;
+      color: whitesmoke;
       font-size: 1rem;
+      border: 1px solid gray;
+      padding: 10px;
     }
 
     button {
-      font-family: "PressStart2P";
-      color: white;
-      text-transform: uppercase;
+      font-family: var(--primary-font);
+      color: whitesmoke;
       font-size: 1rem;
+      border: 1px solid gray;
+      padding: 10px;
     }
   }
 }

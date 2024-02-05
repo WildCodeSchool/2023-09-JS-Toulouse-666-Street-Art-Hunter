@@ -1,7 +1,7 @@
 .main-container-details-artwork {
   display: flex;
   flex-direction: column;
-  row-gap: 3rem;
+  row-gap: 2.5rem;
   margin-inline: 10%;
   margin-block: 2.5rem;
   width: 80%;
@@ -34,7 +34,7 @@
       height: 100%;
       display: grid;
       place-items: center;
-      border: 4px solid var(--Stroke-violet, #dd0bff);
+      border: clamp(5px, 1.5vw, 8px) solid var(--Stroke-violet, #dd0bff);
       border-image: radial-gradient(
           rgb(11, 231, 172),
           rgb(255, 222, 8),
@@ -63,13 +63,12 @@
       flex-direction: column;
       justify-content: end;
       align-items: flex-start;
-      row-gap: 1.3rem;
+      row-gap: 1rem;
 
       .address-text {
         font-size: clamp(0.8rem, 2.5vw, 1.1rem);
         font-family: var(--primary-font);
         line-height: 1.3rem;
-        background-color: var(--background-text-opacity);
         padding: 5px;
       }
     }
@@ -129,18 +128,14 @@
       font-family: var(--primary-font);
     }
   }
-
   .description-container {
     display: flex;
     flex-direction: column;
     align-content: flex-start;
-    row-gap: 1.3rem;
+    row-gap: 1rem;
     .description-text {
-      font-size: clamp(0.8rem, 2.5vw, 1.1rem);
-      font-family: var(--primary-font);
-      line-height: 1.5rem;
-      background-color: var(--background-text-opacity);
-      padding: 5px;
+      font-size: clamp(0.8rem, 2.5vw, 1.3rem);
+      line-height: clamp(1.5rem, 5vw, 3rem);
     }
   }
 
@@ -163,7 +158,7 @@
     grid-template-rows: 1fr 1fr 1fr 1fr; //
     align-items: center;
     row-gap: 2rem;
-    column-gap: 3rem;
+    column-gap: 6rem;
     margin-inline: 10%;
     margin-block: 2.5rem;
     width: 80%;
@@ -182,7 +177,7 @@
         max-height: clamp(350px, 30vw, 400px);
         display: grid;
         place-items: center;
-        border: 4px solid var(--Stroke-violet, #dd0bff);
+        border: clamp(5px, 1.5vw, 8px) solid var(--Stroke-violet, #dd0bff);
         border-image: radial-gradient(
             rgb(11, 231, 172),
             rgb(255, 222, 8),
@@ -206,6 +201,7 @@
       display: grid; //
       grid-area: 1/ 2 / 2/ 3; //
       justify-content: start;
+      row-gap: 1rem;
       .section-text {
         display: flex;
         flex-direction: column;
@@ -214,9 +210,7 @@
         row-gap: 1.3rem;
 
         .address-text {
-          font-family: var(--primary-font);
           line-height: 1.3rem;
-          background-color: var(--background-text-opacity);
           padding: 5px;
         }
       }
@@ -253,7 +247,6 @@
         align-items: center;
         border: 2px solid white;
         padding-inline: 1 / rem;
-        background-color: var(--background-text-opacity);
         margin-bottom: 1rem;
         img {
           width: 5Opx;
@@ -282,10 +275,6 @@
       align-content: flex-start;
 
       .description-text {
-        font-family: var(--primary-font);
-        line-height: 1.5rem;
-        background-color: var(--background-text-opacity);
-        padding: 1rem; //
       }
     }
 

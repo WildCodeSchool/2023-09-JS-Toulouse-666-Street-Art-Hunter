@@ -1,7 +1,5 @@
 import { Link, useNavigate, Navigate } from "react-router-dom";
 import PropTypes from "prop-types";
-
-import closeLogo from "../../assets/icons/close-logo.svg";
 import "./ProfileModal.scss";
 
 function ProfileModal({ modalIsConnected, setModalIsConnected }) {
@@ -22,24 +20,20 @@ function ProfileModal({ modalIsConnected, setModalIsConnected }) {
   const { id } = data;
 
   return (
-    <div
+    <button
+      type="button"
       className={`profile-modal-container ${
         modalIsConnected ? "slide-in" : ""
       }`}
+      onClick={() => setModalIsConnected(!modalIsConnected)}
     >
       <div>
-        <Link to={`/profil/${id}`}>Profile</Link>
+        {data && <Link to={`/profil/${id}`}>Profile</Link>}
         <button type="button" onClick={handleDisconnect}>
           Déconnexion
         </button>
       </div>
-      <button
-        type="button"
-        onClick={() => setModalIsConnected(!modalIsConnected)}
-      >
-        <img src={closeLogo} alt="X logo" />
-      </button>
-    </div>
+    </button>
   );
 }
 

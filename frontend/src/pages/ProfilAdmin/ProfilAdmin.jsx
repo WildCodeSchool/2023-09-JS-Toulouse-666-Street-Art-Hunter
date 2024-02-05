@@ -8,8 +8,11 @@ import {
 import "./ProfilAdmin.scss";
 import { useState } from "react";
 import Trophy from "../../assets/icons/Trophy.png";
-import Option from "../../assets/icons/Icon_option.png";
+import Tools from "../../assets/icons/tools.svg";
 import Admin from "../../assets/icons/adminLogo.png";
+import Previous from "../../assets/icons/previous.svg";
+import TextBlue from "../../components/TextBlue-R/TextBlue";
+import Title from "../../components/TitleRed-R/Title";
 
 function ProfilAdmin() {
   const profils = useLoaderData();
@@ -139,58 +142,78 @@ function ProfilAdmin() {
           Validé
         </button>
       </div>
-      <div className="profil-admin-page">
-        <div className="profil-top">
-          <div className="profile-block-avatar">
-            <button
-              type="button"
-              className="avatar-button"
-              onClick={toggleModale}
-            >
-              x
-            </button>
-            <img
-              className="avatar"
-              src={profils.user.selected_avatar}
-              alt="avatar"
-            />
-          </div>
+
+      <div className="main-container-profil-admin">
+        <div className="section-title">
           <button
-            className="profil-button"
             type="button"
-            onClick={handleClickOption}
+            onClick={() => {
+              navigate(-1);
+            }}
           >
-            <img className="option" src={Option} alt="option" />
+            <img src={Previous} alt="button previous" />
           </button>
+          <h1>Admin</h1>
         </div>
-        <div key={profils.user.id} className="profil-user">
-          <div className="topic">
-            <h1 className="pseudo">{profils.user.name}</h1>
-            <p className="resume"> {profils.user.description}</p>
+
+        <div className="profil-admin-page">
+          <div className="profil-top">
+            <div className="profile-block-avatar">
+              <button
+                className="avatar-button"
+                type="button"
+                onClick={toggleModale}
+              >
+                x
+              </button>
+              <img
+                className="avatar"
+                src={profils.user.selected_avatar}
+                alt="avatar"
+              />
+            </div>
+            <button
+              className="option-btn"
+              type="button"
+              onClick={handleClickOption}
+            >
+              <img src={Tools} alt="option" />
+            </button>
           </div>
-          <div className="score-block">
-            <img className="trophy" src={Trophy} alt="trophy" />
-            <p className="score">{profils.user.score} pts</p>
+          <div key={profils.user.id} className="profil-user">
+            <div className="topic">
+              <TextBlue text={profils.user.name} />
+              <p className="resume"> {profils.user.description}</p>
+            </div>
+            <div className="score-block">
+              <img className="trophy" src={Trophy} alt="trophy" />
+              <p className="score">{profils.user.score} pts</p>
+            </div>
           </div>
         </div>
-      </div>
-      <div className="admin-block">
-        <img className="admin-img" src={Admin} alt="icon admin" />
-        <button type="button" className="admin-text" onClick={handleClickAdmin}>
-          Pannel Administrateur
-        </button>
-        <img className="admin-img" src={Admin} alt="icon admin" />
-      </div>
-      <div className="artwork">
-        <p className="title">Tableau de chasse</p>
-        <div className="map-artwork">
-          {userArt.map((item) => {
-            return (
-              <div key={item.id} className="item">
-                <img className="link-img" src={item.image} alt="street art" />
-              </div>
-            );
-          })}
+
+        <div className="admin-block">
+          <img className="admin-img" src={Admin} alt="icon admin" />
+          <button
+            type="button"
+            className="admin-text"
+            onClick={handleClickAdmin}
+          >
+            Pannel Administrateur
+          </button>
+          <img className="admin-img" src={Admin} alt="icon admin" />
+        </div>
+        <div className="artwork">
+          <Title title="Tableau de chasse" />
+          <div className="map-artwork">
+            {userArt.map((item) => {
+              return (
+                <div key={item.id} className="item">
+                  <img className="link-img" src={item.image} alt="street art" />
+                </div>
+              );
+            })}
+          </div>
         </div>
       </div>
     </>

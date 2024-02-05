@@ -2,16 +2,17 @@
   display: flex;
   flex-direction: column;
   row-gap: 2.5rem;
-  margin-inline: 5%;
+  margin-inline: 10%;
   margin-block: 2.5rem;
-  width: 90%;
+  width: 80%;
   min-height: calc(100vh - 160px - 5rem);
   .adrien,
   .tristan,
   .theo {
     display: flex;
     flex-direction: column;
-    padding: clamp(2rem, 10vw, 4rem);
+    padding: clamp(2rem, 8vw, 3rem);
+    box-sizing: border-box;
     align-items: center;
     row-gap: 2rem;
     background-color: #0000007e;
@@ -38,7 +39,7 @@
         .tristan-title,
         .theo-title {
           font-family: var(--primary-font);
-          font-size: clamp(1rem, 4vw, 2rem);
+          font-size: clamp(1rem, 4vw, 1.8rem);
           // Blue-gradient color text
           background: var(--blue-gradient);
           background-clip: text;
@@ -89,9 +90,9 @@
     flex-direction: row;
     column-gap: 2rem;
     justify-content: center;
-    margin-inline: 5%;
+    margin-inline: 10%;
     margin-block: 2.5rem;
-    width: 90%;
+    width: 80%;
     min-height: calc(100vh - 160px - 5rem);
   }
 }
@@ -102,9 +103,9 @@
     flex-direction: row;
     column-gap: 2rem;
     justify-content: center;
-    margin-inline: 5%;
+    margin-inline: 10%;
     margin-block: 2.5rem;
-    width: 90%;
+    width: 80%;
     min-height: calc(100vh - 160px - 5rem);
   }
 }
