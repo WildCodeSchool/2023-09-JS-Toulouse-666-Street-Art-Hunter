@@ -7,6 +7,7 @@ function InputTextarea({
   labelText,
   maxLength,
   height,
+  width,
   value,
   setValue,
 }) {
@@ -26,14 +27,17 @@ function InputTextarea({
         name={labelName}
         value={value}
         onChange={handleClick}
-        style={{ height }}
+        style={{ height, width }}
       />
     </label>
   );
 }
 
 InputTextarea.defaultProps = {
-  height: "auto", // Vous pouvez ajuster la valeur par défaut selon vos besoins
+  height: "auto",
+  width: "auto",
+  value: "",
+  setValue: () => {},
 };
 
 export default InputTextarea;
@@ -44,6 +48,7 @@ InputTextarea.propTypes = {
   labelText: PropTypes.string.isRequired,
   maxLength: PropTypes.string.isRequired,
   height: PropTypes.string,
-  value: PropTypes.string.isRequired,
-  setValue: PropTypes.func.isRequired,
+  width: PropTypes.string,
+  value: PropTypes.string,
+  setValue: PropTypes.func,
 };

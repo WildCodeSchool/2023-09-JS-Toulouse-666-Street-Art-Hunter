@@ -12,25 +12,20 @@
   font-size: 12px;
   a {
     text-decoration: none;
-    background: linear-gradient(
-      180deg,
-      #f00 0%,
-      #d95d00 28.13%,
-      #be7c68 50.52%,
-      #f5ff87 100%
-    );
+    font-family: var(--primary-font);
+    font-size: clamp(0.7rem, 2vw, 1.2rem);
+
+    background: var(--red-gradient);
     background-clip: text;
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
   }
   p {
-    background: linear-gradient(
-      180deg,
-      #f00 0%,
-      #d95d00 28.13%,
-      #be7c68 50.52%,
-      #f5ff87 100%
-    );
+    text-decoration: none;
+    font-family: var(--primary-font);
+    font-size: clamp(0.7rem, 2vw, 1.2rem);
+    text-transform: uppercase;
+    background: var(--red-gradient);
     background-clip: text;
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
@@ -45,7 +40,7 @@
 
 @media screen and (min-width: 1024px) {
   .footer-container {
-    width: 90%;
-    padding-inline: 5%;
+    width: 80%;
+    padding-inline: 10%;
   }
 }

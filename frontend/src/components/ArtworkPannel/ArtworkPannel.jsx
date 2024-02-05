@@ -12,9 +12,9 @@ function ArtworkPannel({ dataMap, pageName }) {
       {dataMap.map((item) => {
         return (
           <button
+            className="map-tableau"
             type="button"
             key={item.id}
-            className="map-tableau"
             onClick={() => handleClick(item.id)}
           >
             <div className="div-img">

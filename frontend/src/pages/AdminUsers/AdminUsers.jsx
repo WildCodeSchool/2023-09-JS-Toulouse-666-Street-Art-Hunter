@@ -1,6 +1,7 @@
 import React from "react";
 import { useLoaderData, useNavigate } from "react-router-dom";
 import "./AdminUsers.scss";
+import Previous from "../../assets/icons/previous.svg";
 
 function AdminUsers() {
   const navigate = useNavigate();
@@ -12,8 +13,18 @@ function AdminUsers() {
 
   return (
     <div className="admin-users">
-      <div className="admin-title">utilisateurs</div>
-      <div className="admin-table">Listes des utilisateurs</div>
+      <div className="section-title">
+        <button
+          type="button"
+          onClick={() => {
+            navigate(-1);
+          }}
+        >
+          <img src={Previous} alt="button previous" />
+        </button>
+        <h1>Liste utilisateurs</h1>
+      </div>
+
       <div className="div-users">
         {profils.users.map((item) => {
           return (
@@ -32,8 +43,7 @@ function AdminUsers() {
                 />
                 <div className="user-name">{item.name}</div>
                 <div className="score">
-                  <div>{item.score}</div>
-                  <div>POINT</div>
+                  <p>{item.score} points</p>
                 </div>
               </button>
             </div>

@@ -1,22 +1,42 @@
 .ranking-main-container {
   display: flex;
+  display: flex;
   flex-direction: column;
-  row-gap: 2.5rem;
-  margin-inline: 5%;
-  margin-block: 2.5rem;
-  width: 90%;
-  min-height: calc(100vh - 160px - 5rem);
-  .main-title {
+  min-height: calc(
+    100vh - 160px - clamp(2.5rem, 8vw, 5rem) - clamp(2rem, 7vw, 4rem)
+  );
+  margin-block: clamp(2.5rem, 8vw, 4rem);
+  margin-inline: 10%;
+  width: 80%;
+  row-gap: clamp(2rem, 7vw, 4rem);
+  .section-title {
     display: flex;
+    flex-direction: row;
+    align-items: center;
     justify-content: center;
-    font-size: clamp(1.5rem, 8vw, 4rem);
-    font-family: var(--secondary-font);
-    // Red-gradient color text
-    background: var(--red-gradient);
-    background-clip: text;
-    -webkit-background-clip: text;
-    -webkit-text-fill-color: transparent;
-    // -----------------------
+    column-gap: 2rem;
+    img {
+      width: clamp(50px, 10vw, 100px);
+      height: clamp(50px, 10vw, 100px);
+      cursor: pointer;
+      &:hover {
+        transform: scale(1.05);
+      }
+      &:active {
+        transform: scale(0.95);
+      }
+    }
+    h1 {
+      font-size: 2rem;
+      font-family: var(--secondary-font);
+      // Red-gradient color text
+      background: var(--red-gradient);
+      background-clip: text;
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      // -----------------------
+      font-size: clamp(1.5rem, 7vw, 3rem);
+    }
   }
   .score-container {
     display: flex;
@@ -86,7 +106,7 @@
       font-size: clamp(10px, 3vw, 18px);
       display: flex;
       flex-direction: column;
-      row-gap: clamp(0.5rem, 3vw, 3rem);
+      row-gap: clamp(0.5rem, 3vw, 1rem);
       padding: clamp(0.5rem, 3vw, 3rem);
       border: clamp(4px, 1vw, 8px) solid var(--Stroke-violet, #dd0bff);
       border-image: radial-gradient(
@@ -107,10 +127,11 @@
         p {
           display: flex;
           justify-content: center;
+          font-size: clamp(10px, 3vw, 20px);
         }
         button {
           font-family: var(--primary-font);
-          font-size: clamp(10px, 3vw, 18px);
+          font-size: clamp(10px, 3vw, 20px);
         }
         #name-other {
           // Blue-gradient color text
@@ -175,23 +196,29 @@
 @media only screen and (min-width: 1024px) {
   .ranking-main-container {
     display: flex;
+    display: flex;
     flex-direction: column;
-    row-gap: 2.5rem;
+    min-height: calc(
+      100vh - 160px - clamp(2.5rem, 8vw, 5rem) - clamp(2rem, 7vw, 4rem)
+    );
+    margin-block: clamp(2.5rem, 8vw, 4rem);
     margin-inline: 10%;
-    margin-block: 2.5rem;
     width: 80%;
-    min-height: calc(100vh - 160px - 5rem);
+    row-gap: clamp(2rem, 7vw, 4rem);
   }
 }
 
 @media only screen and (min-width: 1280px) {
   .ranking-main-container {
     display: flex;
+    display: flex;
     flex-direction: column;
-    row-gap: 2.5rem;
-    margin-inline: 15%;
-    margin-block: 2.5rem;
-    width: 70%;
-    min-height: calc(100vh - 160px - 5rem);
+    min-height: calc(
+      100vh - 160px - clamp(2.5rem, 8vw, 5rem) - clamp(2rem, 7vw, 4rem)
+    );
+    margin-block: clamp(2.5rem, 8vw, 4rem);
+    margin-inline: 10%;
+    width: 80%;
+    row-gap: clamp(2rem, 7vw, 4rem);
   }
 }

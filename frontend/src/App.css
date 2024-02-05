@@ -107,10 +107,12 @@ section {
 }
 body {
   line-height: 1;
-  background-color: #12141a;
+  background-color: #1c1e24;
   box-sizing: border-box;
   margin: 0;
   padding: 0;
+  color: whitesmoke;
+  font-family: var(--primary-font);
 }
 ol,
 ul {
@@ -147,6 +149,7 @@ button {
   --primary-color: rgb(89, 50, 76);
   --primary-font: "PressStart2P", sans-serif;
   --secondary-font: "PixelBit", sans-serif;
+  --thirdary-font: "Nintendo";
   --red-gradient: linear-gradient(
     180deg,
     #f00 0%,
@@ -156,16 +159,22 @@ button {
   );
   --blue-gradient: linear-gradient(
     180deg,
-    #4475f5 0%,
+    #0b3dbc 0%,
     #4e75ff 32.81%,
     #aeb1ff 67.71%,
-    #fff 100%
+    #b8bfec 100%
   );
+  --background-text-opacity: rgba(255, 255, 255, 0.119);
 }
 
 @font-face {
   font-family: "PressStart2P";
   src: url("./assets/fonts/PressStart2P.ttf");
+}
+
+@font-face {
+  font-family: "Nintendo";
+  src: url("./assets/fonts/Nintendo.ttf");
 }
 @font-face {
   font-family: "PixelBit";

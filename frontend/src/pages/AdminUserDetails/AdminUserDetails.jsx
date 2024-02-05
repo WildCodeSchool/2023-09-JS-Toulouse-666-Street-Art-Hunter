@@ -3,6 +3,7 @@ import "./AdminUserDetails.scss";
 import { useLoaderData, useNavigate, useParams } from "react-router-dom";
 import LinkAdmin from "../../components/LinkAdmin/LinkAdmin";
 import Trophy from "../../assets/icons/Trophy.png";
+import Title from "../../components/TitleRed-R/Title";
 
 function AdminUserDetails() {
   const userP = useLoaderData();
@@ -120,7 +121,7 @@ function AdminUserDetails() {
   }
 
   return (
-    <>
+    <div className="main-container-admin-user-details">
       <div className="admin-user-details-block">
         <div className={ModaleButton}>
           <div className="modale-delete-texte">
@@ -201,7 +202,7 @@ function AdminUserDetails() {
         </div>
       </div>
       <div className="artwork">
-        <p className="title">Tableau de chasse</p>
+        <Title title="Tableau de chasse" />
         <div className="map-artwork">
           {userArt.map((item) => {
             return (
@@ -212,7 +213,7 @@ function AdminUserDetails() {
           })}
         </div>
       </div>
-    </>
+    </div>
   );
 }
 

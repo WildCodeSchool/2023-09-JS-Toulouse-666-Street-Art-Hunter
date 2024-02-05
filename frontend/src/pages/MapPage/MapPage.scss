@@ -4,22 +4,22 @@
   justify-content: center;
   align-items: center;
   width: 100%;
-  background-color: #12141a;
-  height: calc(100vh - 160px);
+  height: calc(100dvh - 160px - 5rem);
   margin-block: 2.5rem;
   .leaflet-container {
     position: relative;
   }
   .photo-logo {
     position: absolute;
-    z-index: 500;
-    bottom: 10px;
-    left: calc(50% - 50px);
-    width: 100px;
-    height: auto;
-    img {
-      width: 150px;
-      height: 150px;
+
+    z-index: 900;
+    bottom: 80px;
+    left: calc(50% - 40px);
+    width: clamp(90px, 10vw, 150px);
+    height: clamp(90px, 10vw, 150px);
+    &:hover {
+      transform: scale(1.1);
+      transition-duration: 0.5s;
     }
   }
 }

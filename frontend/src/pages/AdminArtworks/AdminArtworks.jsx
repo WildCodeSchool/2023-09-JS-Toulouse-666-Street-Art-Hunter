@@ -5,6 +5,7 @@ import "./AdminArtworks.scss";
 import askToArchived from "../../assets/icons/ask_to_archived.png";
 import archived from "../../assets/icons/archived.png";
 import validate from "../../assets/icons/validate.png";
+import Previous from "../../assets/icons/previous.svg";
 
 function AdminArtworks() {
   const [value, setValue] = useState("");
@@ -33,17 +34,27 @@ function AdminArtworks() {
   };
 
   const handleArtworkClick = (id) => {
-    navigate(`/details-artwork/${id}`);
+    navigate(`/admin/admin-details-artwork/${id}`);
   };
 
   return (
     <div className="admin-artworks-container">
-      <h1>OEuvres</h1>
+      <div className="section-title">
+        <button
+          type="button"
+          onClick={() => {
+            navigate(-1);
+          }}
+        >
+          <img src={Previous} alt="button previous" />
+        </button>
+        <h1>Admin</h1>
+      </div>
       <label
         className="label-container admin-artworks-label"
         htmlFor="input-artwork"
       >
-        <span className="label-title">LISTE DES OEUVRES</span>
+        <span className="label-title">Adresse :</span>
         <input
           className="input-container"
           type="input"
@@ -55,8 +66,8 @@ function AdminArtworks() {
       <div className="list-artworks">
         {filteredArtworks.map((artwork) => (
           <button
-            type="button"
             className="one-artwork"
+            type="button"
             key={artwork.id}
             onClick={() => handleArtworkClick(artwork.id)}
           >

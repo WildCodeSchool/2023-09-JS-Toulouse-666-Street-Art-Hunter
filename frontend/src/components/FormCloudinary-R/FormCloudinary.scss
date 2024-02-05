@@ -4,7 +4,7 @@
   flex-direction: column;
   row-gap: 2.5rem;
   width: auto;
-  // min-height: calc(100vh - 80px);
+  min-height: calc(100vh - 80px);
   height: auto;
   .section-title {
     display: flex;
@@ -85,7 +85,6 @@
         background-clip: text;
         -webkit-background-clip: text;
         -webkit-text-fill-color: transparent;
-
         // -----------------------
         text-align: center;
         margin-bottom: 2rem;
@@ -93,7 +92,6 @@
           transform: scale(0.95);
         }
       }
-
       .file-name {
         width: 45%;
         height: 40px;

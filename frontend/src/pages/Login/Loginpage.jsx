@@ -7,16 +7,15 @@ import Girl from "../../assets/photos/filleHd.jpg";
 import "./Loginpage.scss";
 
 function Login() {
+  // ********************* STATE *********************
   const navigate = useNavigate();
-  // Permet de suprimer le token au Click
-  const handleClick = () => {
-    localStorage.removeItem("user");
-    localStorage.removeItem("token");
-    navigate("/");
-  };
+
+  // ********************* LOGIQUE *********************
   const handleClickRegister = () => {
     navigate("/register");
   };
+
+  // ********************* RENDER *********************
   return (
     <div className="login-page">
       <div className="input-block">
@@ -38,28 +37,24 @@ function Login() {
               labelText="Mot de passe"
               maxLength="455"
             />
-            <button className="continue" type="submit">
-              CONTINUE
-            </button>
+            <div className="btn-container">
+              <button type="submit" name="submit">
+                <span className="btn-span">continue</span>
+              </button>
+            </div>
           </Form>
         </div>
         <img className="right-girl" src={Girl} alt="Une jeunne fille" />
       </div>
-      <div className="logout-page">
-        <button type="submit" onClick={handleClick}>
-          Déconnexion
-        </button>
-      </div>
+
       <div className="login-text">
         <img src={PeintBomb} className="peint-bomb" alt="Bombe de peinture" />
         <div className="text">Nouveau dans la jungle urbaine?</div>
-        <button
-          className="register"
-          type="submit"
-          onClick={handleClickRegister}
-        >
-          INSCRITS-TOI
-        </button>
+        <div className="btn-container">
+          <button type="submit" name="submit" onClick={handleClickRegister}>
+            <span className="btn-span">inscris-toi</span>
+          </button>
+        </div>
       </div>
     </div>
   );

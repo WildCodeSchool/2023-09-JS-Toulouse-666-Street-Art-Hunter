@@ -5,7 +5,7 @@ import PropTypes from "prop-types";
 import pinkSplatter from "../../assets/images/pink-splatter.svg";
 import tealSplatter from "../../assets/images/teal-splatter.svg";
 import greenSplatter from "../../assets/images/green-splatter.svg";
-import burgerLogo from "../../assets/icons/burger-logo.svg";
+import LogoSimple from "../../assets/icons/logo-simple.svg";
 import "./BurgerModal.scss";
 
 function BurgerModal({ isOpen, handleBurger }) {
@@ -14,12 +14,12 @@ function BurgerModal({ isOpen, handleBurger }) {
     <div className={`overlay-container ${isOpen ? "profile-modal-slide" : ""}`}>
       <div className="logo-container">
         <button className="burger" type="button" onClick={handleBurger}>
-          <img src={burgerLogo} alt="burger logo" />
+          <img src={LogoSimple} alt="burger logo" />
         </button>
       </div>
       <li className="links-container">
         <Link to="/map" onClick={handleBurger}>
-          CARTE
+          Carte
         </Link>
         <Link
           to="/ranking"
@@ -28,14 +28,9 @@ function BurgerModal({ isOpen, handleBurger }) {
             handleBurger();
           }}
         >
-          CLASSEMENT
+          Classement
         </Link>
-        <Link to="/article" onClick={handleBurger}>
-          ARTICLES
-        </Link>
-        <Link to="/artist" onClick={handleBurger}>
-          ARTISTES
-        </Link>
+
         <Link
           to="/rules"
           onClick={() => {
@@ -43,8 +38,9 @@ function BurgerModal({ isOpen, handleBurger }) {
             handleBurger();
           }}
         >
-          REGLES
+          Règles
         </Link>
+
         <Link
           to="/about-us"
           onClick={() => {
@@ -52,7 +48,16 @@ function BurgerModal({ isOpen, handleBurger }) {
             handleBurger();
           }}
         >
-          CREATEURS
+          Créateurs
+        </Link>
+        <Link
+          to="/legals"
+          onClick={() => {
+            navigate("/legals");
+            handleBurger();
+          }}
+        >
+          Mentions
         </Link>
       </li>
       <img

@@ -1,16 +1,19 @@
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import { Link, useNavigate } from "react-router-dom";
 import PropTypes from "prop-types";
+import fetchUserData from "../../services/Loaders/FetchUserData";
 
 import "./NavBar.scss";
 
 import burgerLogo from "../../assets/icons/burger-logo.svg";
-import profileLogo from "../../assets/icons/profile-logo.svg";
+import LogoProfileUser from "../../assets/icons/profile-user.svg";
+import LogoProfileAdmin from "../../assets/icons/profile-admin.svg";
 import ProfileModal from "../ProfileModal/ProfileModal";
 import BurgerModal from "../BurgerModal/BurgerModal";
 
 function NavBar({ isOpen, setIsOpen }) {
   const [modalIsConnected, setModalIsConnected] = useState(false);
+  const [isAdmin, setIsAdmin] = useState();
   const token = localStorage.getItem("token");
   const navigate = useNavigate();
 
@@ -26,6 +29,25 @@ function NavBar({ isOpen, setIsOpen }) {
     setModalIsConnected(!modalIsConnected);
   };
 
+  // Vérifier si la personne connecté est admin ou simple utilisateur pour changer le logo
+  const user = localStorage.getItem("user");
+  const userParse = JSON.parse(user);
+
+  const [userData, setUserData] = useState();
+
+  useEffect(() => {
+    fetchUserData(setUserData, userData);
+  }, []);
+
+  useEffect(() => {
+    if (userParse) {
+      const currentUser =
+        userData && userData.find((el) => el.id === userParse.id);
+      const admin = currentUser && currentUser.is_admin === 1;
+      setIsAdmin(admin); // Mettez à jour l'état ici au lieu de le faire dans le rendu
+    }
+  }, [userParse, userData]);
+
   return (
     <>
       <header className="navbar-container">
@@ -36,18 +58,26 @@ function NavBar({ isOpen, setIsOpen }) {
         <li>
           <Link to="/map">CARTE</Link>
           <Link to="/ranking">CLASSEMENT</Link>
-          <Link to="/article">ARTICLES</Link>
-          <Link to="/artist">ARTISTES</Link>
           <Link to="/rules">REGLES</Link>
           <Link to="/about-us">CREATEURS</Link>
         </li>
-        <button
-          className="profile"
-          type="button"
-          onClick={token ? handleProfile : handleLogin}
-        >
-          <img src={profileLogo} alt="profile logo" />
-        </button>
+        {isAdmin ? (
+          <button
+            className="profile"
+            type="button"
+            onClick={token ? handleProfile : handleLogin}
+          >
+            <img src={LogoProfileAdmin} alt="profile logo" />
+          </button>
+        ) : (
+          <button
+            className="profile"
+            type="button"
+            onClick={token ? handleProfile : handleLogin}
+          >
+            <img src={LogoProfileUser} alt="profile logo" />
+          </button>
+        )}
       </header>
       <BurgerModal
         isOpen={isOpen}

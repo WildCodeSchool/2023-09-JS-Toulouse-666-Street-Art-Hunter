@@ -68,6 +68,8 @@ router.get("/images", photoControllers.getImagesFromCloud);
 // --------------------------- Mur d'authentification Admin ---------------------------
 router.use(verifyAdmin);
 
+router.put("/artworks/uploadModify/:id", artworkControllers.uploadCloudModify);
+
 router.get("/pannel-administrateur/users", userControllers.count);
 router.get("/pannel-administrateur/artworks", artworkControllers.count);
 router.get(

@@ -31,7 +31,8 @@ const artworkData = [
     longitude: "43.595109572714044",
     latitude: "1.4555986919348944",
     adress: "5 Rue Jean Aillet",
-    description: "C'est beau !",
+    description:
+      "Au cœur des ruelles animées d'Oulan-Bator, une femme empreinte de la richesse de ses expériences, a laissé sa marque artistique sur un mur délaissé. 'L'Éclat de la Sagesse Nomade' est une œuvre qui transcende le temps, capturant la quintessence de la vie nomade à travers le regard sage d'une femme âgée.",
     date_published: "2024/01/03",
     ask_to_archived: 1,
     is_archived: 0,
@@ -134,11 +135,12 @@ const artworkData = [
 const userData = [
   {
     name: "Adrien",
-    description: "Où sont les genies ?",
+    description:
+      "Chercheur passionné à la recherche des génies cachés. J'adore explorer le monde de l'extraordinaire et découvrir des idées novatrices. Rejoignez-moi dans cette aventure fascinante !",
     email: "adrien@mail.com",
     hashed_password:
       "$argon2id$v=19$m=65536,t=5,p=1$gchAbeLDP59sJZs35SWYqg$sAsiLe6qaxjX2wAzvHusVMb/fmkCY0huxibzvOyj0UM",
-    score: 0,
+    score: 275,
     is_admin: 1,
     is_banned: 0,
     selected_avatar:
@@ -147,7 +149,8 @@ const userData = [
   },
   {
     name: "Arthur",
-    description: "J'aime les prototypes",
+    description:
+      "Passionné par les prototypes et les innovations, je suis constamment à l'affût des dernières tendances technologiques. Si vous partagez cette passion, on a sûrement beaucoup de choses à se dire !",
     email: "arthur@mail.com",
     hashed_password:
       "$argon2id$v=19$m=65536,t=5,p=1$gchAbeLDP59sJZs35SWYqg$sAsiLe6qaxjX2wAzvHusVMb/fmkCY0huxibzvOyj0UM",
@@ -155,12 +158,13 @@ const userData = [
     is_admin: 0,
     is_banned: 0,
     selected_avatar:
-      "https://res.cloudinary.com/dikhzx4qt/image/upload/v1706104114/Avatar/6_qomins.png",
+      "https://res.cloudinary.com/dikhzx4qt/image/upload/v1706104116/Avatar/20_fpmygb.png",
     border: "#32FFFF",
   },
   {
     name: "Nathalie",
-    description: "La créativité est contagieuse, transmettez-la.",
+    description:
+      "Fervente croyante en la contagion de la créativité. J'encourage chacun à transmettre l'inspiration et à laisser libre cours à son imagination. Rejoignez-moi dans cette aventure artistique !",
     email: "nathalie@mail.com",
     hashed_password:
       "$argon2id$v=19$m=65536,t=5,p=1$gchAbeLDP59sJZs35SWYqg$sAsiLe6qaxjX2wAzvHusVMb/fmkCY0huxibzvOyj0UM",
@@ -168,25 +172,27 @@ const userData = [
     is_admin: 0,
     is_banned: 0,
     selected_avatar:
-      "https://res.cloudinary.com/dikhzx4qt/image/upload/v1706104114/Avatar/6_qomins.png",
+      "https://res.cloudinary.com/dikhzx4qt/image/upload/v1706104115/Avatar/12_mzlkk1.png",
     border: "#F5FF87",
   },
   {
-    name: "Sophie",
-    description: "Voyageuse du monde à temps plein.",
-    email: "sophie@mail.com",
+    name: "Marie",
+    description:
+      "Voyageuse du monde à temps plein. Ma passion ? Découvrir et savourer les différentes cultures et saveurs du monde entier. Si vous aimez l'aventure et les expériences uniques, on pourrait bien s'entendre !",
+    email: "marie@mail.com",
     hashed_password:
       "$argon2id$v=19$m=65536,t=5,p=1$gchAbeLDP59sJZs35SWYqg$sAsiLe6qaxjX2wAzvHusVMb/fmkCY0huxibzvOyj0UM",
     score: 420,
     is_admin: 0,
     is_banned: 0,
     selected_avatar:
-      "https://res.cloudinary.com/dikhzx4qt/image/upload/v1706104114/Avatar/6_qomins.png",
+      "https://res.cloudinary.com/dikhzx4qt/image/upload/v1706104115/Avatar/17_mlwsjn.jpg",
     border: "#5D75F0",
   },
   {
     name: "Nicolas",
-    description: "Passionné par la technologie et l'innovation.",
+    description:
+      "Passionné par la technologie et l'innovation. Toujours à la recherche des dernières avancées, je suis un adepte de la révolution numérique. Rejoignez-moi pour explorer le futur ensemble !",
     email: "nicolas@mail.com",
     hashed_password:
       "$argon2id$v=19$m=65536,t=5,p=1$gchAbeLDP59sJZs35SWYqg$sAsiLe6qaxjX2wAzvHusVMb/fmkCY0huxibzvOyj0UM",
@@ -194,12 +200,13 @@ const userData = [
     is_admin: 0,
     is_banned: 0,
     selected_avatar:
-      "https://res.cloudinary.com/dikhzx4qt/image/upload/v1706104114/Avatar/6_qomins.png",
+      "https://res.cloudinary.com/dikhzx4qt/image/upload/v1706104115/Avatar/13_wqoqog.png",
     border: "#FF0000",
   },
   {
     name: "Julie",
-    description: "Exploratrice culinaire et amatrice de bons livres.",
+    description:
+      "Exploratrice culinaire et amatrice de bons livres, je suis constamment à la recherche des plaisirs simples de la vie. Si vous partagez ces passions, rejoignez-moi dans cette aventure gourmande et littéraire !",
     email: "julie@mail.com",
     hashed_password:
       "$argon2id$v=19$m=65536,t=5,p=1$gchAbeLDP59sJZs35SWYqg$sAsiLe6qaxjX2wAzvHusVMb/fmkCY0huxibzvOyj0UM",
@@ -207,12 +214,13 @@ const userData = [
     is_admin: 0,
     is_banned: 0,
     selected_avatar:
-      "https://res.cloudinary.com/dikhzx4qt/image/upload/v1706104114/Avatar/6_qomins.png",
+      "https://res.cloudinary.com/dikhzx4qt/image/upload/v1706104116/Avatar/19_jkiohs.jpg",
     border: "#ED7CC6",
   },
   {
     name: "Alexandre",
-    description: "Amateur de musique et de sports extrêmes.",
+    description:
+      "Amateur de musique et de sports extrêmes, je suis toujours partant pour de nouvelles aventures. Si vous aimez l'adrénaline et la bonne musique, vous êtes au bon endroit !",
     email: "alexandre@mail.com",
     hashed_password:
       "$argon2id$v=19$m=65536,t=5,p=1$gchAbeLDP59sJZs35SWYqg$sAsiLe6qaxjX2wAzvHusVMb/fmkCY0huxibzvOyj0UM",
@@ -220,8 +228,36 @@ const userData = [
     is_admin: 0,
     is_banned: 0,
     selected_avatar:
-      "https://res.cloudinary.com/dikhzx4qt/image/upload/v1706104114/Avatar/6_qomins.png",
+      "https://res.cloudinary.com/dikhzx4qt/image/upload/v1706104115/Avatar/14_pqsz3w.png",
     border: "#8FED7C",
+  },
+  {
+    name: "Sophie",
+    description:
+      "Passionnée par la photographie et les voyages. Mon appareil photo est mon meilleur compagnon de route, capturant des moments inoubliables aux quatre coins du monde. Rejoignez-moi dans cette aventure visuelle !",
+    email: "sophie@mail.com",
+    hashed_password:
+      "$argon2id$v=19$m=65536,t=5,p=1$gchAbeLDP59sJZs35SWYqg$sAsiLe6qaxjX2wAzvHusVMb/fmkCY0huxibzvOyj0UM",
+    score: 250,
+    is_admin: 0,
+    is_banned: 0,
+    selected_avatar:
+      "https://res.cloudinary.com/dikhzx4qt/image/upload/v1706104115/Avatar/18_tfxij9.png",
+    border: "#FF7F50",
+  },
+  {
+    name: "Lucas",
+    description:
+      "Adepte de jeux vidéo et de cuisine, je trouve l'équilibre entre l'univers virtuel et la réalité gourmande. Si vous partagez ces passions, rejoignez-moi pour des moments de plaisir et de découverte !",
+    email: "lucas@mail.com",
+    hashed_password:
+      "$argon2id$v=19$m=65536,t=5,p=1$gchAbeLDP59sJZs35SWYqg$sAsiLe6qaxjX2wAzvHusVMb/fmkCY0huxibzvOyj0UM",
+    score: 400,
+    is_admin: 0,
+    is_banned: 0,
+    selected_avatar:
+      "https://res.cloudinary.com/dikhzx4qt/image/upload/v1706104115/Avatar/10_cvbacc.jpg",
+    border: "#6495ED",
   },
 ];
 

@@ -21,6 +21,7 @@ const browse = async (req, res, next) => {
   }
 };
 
+// ------------------ ------------------
 const count = async (req, res, next) => {
   try {
     const artworks = await tables.artwork.countAll();
@@ -31,6 +32,7 @@ const count = async (req, res, next) => {
   }
 };
 
+// ------------------ ------------------
 const countNoValidate = async (req, res, next) => {
   try {
     const artworks = await tables.artwork.countArtworkNoValidate();
@@ -40,6 +42,8 @@ const countNoValidate = async (req, res, next) => {
     next(err);
   }
 };
+
+// ------------------ ------------------
 const readToAdd = async (req, res, next) => {
   try {
     const artworks = await tables.artwork.readAllToAdd();
@@ -49,6 +53,8 @@ const readToAdd = async (req, res, next) => {
     next(err);
   }
 };
+
+// ------------------ ------------------
 const readToMissing = async (req, res, next) => {
   try {
     const artworks = await tables.artwork.readAllToMissing();
@@ -138,6 +144,30 @@ const uploadCloud = async (req, res) => {
   }
 };
 
+// ------------------ Méthode PUT for CLOUDINARY ------------------
+const uploadCloudModify = async (req, res) => {
+  // Post on Cloudinary
+  try {
+    const { dataArtwork } = req.body;
+    const uploadResponse = await cloudinary.uploader.upload(dataArtwork.image, {
+      upload_presets: "wwh5pcwo",
+    });
+
+    delete dataArtwork.image;
+    const updatedObject = { ...dataArtwork, image: uploadResponse.secure_url };
+
+    console.info("updatedObject", updatedObject);
+    console.info("uploadResponse", uploadResponse);
+
+    // Post on database artwork
+    const response = await tables.artwork.update(req.params.id, updatedObject);
+    console.info(response);
+    res.json({ response, msg: "ARTWORKKKKK MODIFYYYYYYYY" });
+  } catch (error) {
+    console.error(error);
+  }
+};
+
 // ------------------ Méthode GET BY ID ------------------
 const readArtworkAndUser = async (req, res, next) => {
   try {
@@ -165,4 +195,5 @@ module.exports = {
   readToAdd,
   readToMissing,
   readArtworkAndUser,
+  uploadCloudModify,
 };
