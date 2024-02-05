@@ -79,19 +79,13 @@ function PannelAdministrateur() {
         <LinkAdmin
           lien="/map"
           textLink="Liste Artistes"
-          nameClass="link-admin y"
+          nameClass="link-admin y disabled"
         />
 
         <LinkAdmin
           lien="/map"
           textLink="Créer Artistes"
-          nameClass="link-admin r"
-        />
-
-        <LinkAdmin
-          lien="/map"
-          textLink="Liste Utilisateurs Bannis"
-          nameClass="link-admin black"
+          nameClass="link-admin r disabled"
         />
       </div>
     </div>

@@ -31,6 +31,7 @@ function AdminUserDetails() {
       });
 
       if (responseUser.ok) {
+        window.scrollTo(0, 0);
         navigate("/admin/pannel-administrateur/users");
       } else {
         console.error("Échec de la suppression de l'utilisateur.");
@@ -78,6 +79,7 @@ function AdminUserDetails() {
       );
 
       if (response.ok) {
+        window.scrollTo(0, 0);
         navigate("/admin/pannel-administrateur/users");
       }
       throw new Error("cant fetch user");

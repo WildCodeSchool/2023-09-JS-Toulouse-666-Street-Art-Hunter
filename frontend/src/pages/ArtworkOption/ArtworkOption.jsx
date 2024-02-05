@@ -256,6 +256,7 @@ function ArtworkOption() {
           className="btn-form"
           type="button"
           onClick={() => {
+            window.scrollTo(0, 0);
             navigate(-1);
           }}
         >

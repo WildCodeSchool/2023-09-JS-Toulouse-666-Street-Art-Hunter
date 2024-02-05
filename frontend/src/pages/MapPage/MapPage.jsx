@@ -14,7 +14,10 @@ function MapPage() {
       <Map />
       <button
         type="button"
-        onClick={() => navigate("/add-non-existing-artwork")}
+        onClick={() => {
+          window.scrollTo(0, 0);
+          navigate("/add-non-existing-artwork");
+        }}
       >
         <img className="photo-logo" src={photoLogo} alt="logo de la camera" />
       </button>

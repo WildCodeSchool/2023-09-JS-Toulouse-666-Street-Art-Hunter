@@ -38,16 +38,19 @@ function ProfilAdmin() {
   const userArt = artPhoto(photoId);
   const navigate = useNavigate();
   const handleClickAdmin = () => {
+    window.scrollTo(0, 0);
     navigate(`/admin/pannel-administrateur/${id}`);
   };
 
   const handleClickOption = () => {
+    window.scrollTo(0, 0);
     navigate(`/profil/${id}/option`);
   };
 
   const [isModaleOpen, setModaleOpen] = useState(false);
   const handleClickreturn = () => {
     setModaleOpen(false);
+    window.scrollTo(0, 0);
     navigate(`/admin/profil/${id}`);
   };
 
@@ -148,6 +151,7 @@ function ProfilAdmin() {
           <button
             type="button"
             onClick={() => {
+              window.scrollTo(0, 0);
               navigate(-1);
             }}
           >

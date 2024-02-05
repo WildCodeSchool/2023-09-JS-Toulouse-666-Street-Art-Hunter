@@ -19,10 +19,11 @@ class ArtworkManager extends AbstractManager {
       ask_to_archived: askToArchived,
       is_archived: isArchived,
       is_validate: isValidate,
+      publisher_id: publisherId,
     } = artwork;
 
     const [rows] = await this.database.query(
-      `INSERT INTO ${this.table} (image, longitude, latitude, adress, description, date_published, ask_to_archived, is_archived, is_validate) VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?)`,
+      `INSERT INTO ${this.table} (image, longitude, latitude, adress, description, date_published, ask_to_archived, is_archived, is_validate, publisher_id) VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?)`,
       [
         image,
         longitude,
@@ -33,6 +34,7 @@ class ArtworkManager extends AbstractManager {
         askToArchived,
         isArchived,
         isValidate,
+        publisherId,
       ]
     );
 
@@ -51,10 +53,11 @@ class ArtworkManager extends AbstractManager {
       ask_to_archived: askToArchived,
       is_archived: isArchived,
       is_validate: isValidate,
+      publisher_id: publisherId,
     } = artwork;
 
     const [rows] = await this.database.query(
-      `UPDATE ${this.table} SET image = ?, longitude = ?, latitude = ?, adress = ?, description = ?, date_published = ?, ask_to_archived = ?, is_archived = ?, is_validate = ? WHERE id = ?`,
+      `UPDATE ${this.table} SET image = ?, longitude = ?, latitude = ?, adress = ?, description = ?, date_published = ?, ask_to_archived = ?, is_archived = ?, is_validate = ?, publisher_id = ? WHERE id = ?`,
       [
         image,
         longitude,
@@ -65,6 +68,7 @@ class ArtworkManager extends AbstractManager {
         askToArchived,
         isArchived,
         isValidate,
+        publisherId,
         id,
       ]
     );

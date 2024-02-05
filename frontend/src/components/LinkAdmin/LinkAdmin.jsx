@@ -5,7 +5,7 @@ import "./LinkAdmin.scss";
 
 function LinkAdmin({ lien, textLink, nameClass }) {
   return (
-    <Link to={lien} className={nameClass}>
+    <Link to={lien} className={nameClass} onClick={() => window.scrollTo(0, 0)}>
       {textLink}
     </Link>
   );

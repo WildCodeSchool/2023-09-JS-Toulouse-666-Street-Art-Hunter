@@ -87,6 +87,7 @@ function ValidatePhoto() {
       if (!responseUser.ok) {
         throw new Error("Failed to validate user");
       }
+      window.scrollTo(0, 0);
       navigate(`/admin/pannel-administrateur/${user.id}`);
     } catch (error) {
       console.error("Error validating photo:", error);
@@ -108,6 +109,7 @@ function ValidatePhoto() {
       if (!response.ok) {
         throw new Error("Failed to delete photo");
       }
+      window.scrollTo(0, 0);
       navigate(`/admin/pannel-administrateur/${user.id}`);
     } catch (error) {
       console.error("Error deleting photo:", error);

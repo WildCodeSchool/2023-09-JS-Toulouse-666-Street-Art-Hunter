@@ -5,7 +5,8 @@ const postCloudAndArtwork = async (
   valueDesc,
   currentFormattedDate,
   setShowModal,
-  setLoadingModal
+  setLoadingModal,
+  publisherId
 ) => {
   const dataArtwork = {
     image: base64EncodedImage,
@@ -17,6 +18,7 @@ const postCloudAndArtwork = async (
     ask_to_archived: 0,
     is_archived: 0,
     is_validate: 0,
+    publisher_id: publisherId,
   };
   console.info(dataArtwork);
 
