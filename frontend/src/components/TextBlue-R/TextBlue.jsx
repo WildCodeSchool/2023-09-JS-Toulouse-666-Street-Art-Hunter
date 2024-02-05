@@ -1,8 +1,11 @@
-import React from "react";
-import "./TextBlue.scss";
+import PropTypes from "prop-types";
 
-function TextBlue() {
-  return <h2 className="title-blue-container">TextBlue</h2>;
+function TextBlue({ text }) {
+  return <h2 className="title-blue-container">{text}</h2>;
 }
+
+TextBlue.propTypes = {
+  text: PropTypes.string.isRequired,
+};
 
 export default TextBlue;

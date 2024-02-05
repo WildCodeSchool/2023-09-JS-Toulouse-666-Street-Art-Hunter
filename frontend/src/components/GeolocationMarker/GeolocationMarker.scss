@@ -1,16 +1,23 @@
 .locate-button {
-  height: 50px;
-  width: 50px;
-  background-color: #f4f4f4;
+  height: 60px;
+  width: 60px;
+  background-color: #eaace7;
+  padding: 5px;
   position: absolute;
   z-index: 500;
   top: 12px;
   right: 12px;
-  border: 2px solid rgba(0, 0, 0, 0.2);
+  border: 1px solid black;
   background-clip: padding-box;
-  border-radius: 4px;
+  &:hover {
+    transform: scale(1.03);
+    background-color: white;
+  }
+  &:active {
+    transform: scale(0.95);
+  }
   img {
-    width: 90%;
-    height: 90%;
+    width: 100%;
+    height: 100%;
   }
 }

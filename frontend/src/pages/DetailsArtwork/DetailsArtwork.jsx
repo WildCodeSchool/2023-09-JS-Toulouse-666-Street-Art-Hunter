@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useEffect, useState } from "react";
 import { useLoaderData, useNavigate } from "react-router-dom";
 import "./DetailsArtwork.scss";
 import GeolocIcon from "../../assets/icons/geoloc-icon.png";
@@ -18,8 +18,6 @@ function DetailsArtwork() {
 
   const navigate = useNavigate();
 
-  const currentArtist = "Miss Van";
-
   const currentAddress = data.adress;
 
   const currentDate = data.date_published;
@@ -34,14 +32,49 @@ function DetailsArtwork() {
 
   const publisherUser = data.name;
 
+  // ------------------------------------------------------------------
+  const user = JSON.parse(localStorage.getItem("user"));
+  console.info(user);
+
+  // ------------------------------------------------------------------
+  const [allUser, setAllUser] = useState([]);
+  console.info(allUser);
+
+  const keepId = allUser.map((el) => {
+    return el.is_admin;
+  });
+  console.info(keepId);
+
+  // ------------------------------------------------------------------
+  const profilUser = async () => {
+    const apiURL = import.meta.env.VITE_BACKEND_URL;
+    const token = localStorage.getItem("token");
+
+    const response = await fetch(`${apiURL}/api/users`, {
+      headers: {
+        Authorization: `Bearer ${token}`,
+      },
+    });
+    const dataAllUser = await response.json();
+    setAllUser(dataAllUser);
+
+    if (!response.ok) {
+      throw new Error(
+        JSON.stringify({ message: "Could not fetch profiles." }),
+        {
+          status: 500,
+        }
+      );
+    }
+  };
+
+  useEffect(() => {
+    profilUser();
+  }, []);
+
   // ********************* RENDER *********************
   return (
     <div className="main-container-details-artwork">
-      {/* Pensez à rajouter des artistes si besoin  */}
-      <div className="artist-container">
-        <Title title="Artiste:" />
-        <p className="artist-name">{currentArtist}</p>
-      </div>
       <div className="preview-main">
         <div className="preview-container">
           <img className="preview-image" src={currentImage} alt="artwork" />
@@ -53,17 +86,21 @@ function DetailsArtwork() {
           <Title title="Adresse:" />
           <p className="address-text">{currentAddress}</p>
         </div>
-        <div className="section-icon">
+        <button
+          type="button"
+          className="section-icon"
+          onClick={() => navigate("/map")}
+        >
           <img
             className="address-image"
             src={GeolocIcon}
             alt="geolocalition icon"
           />
-        </div>
+        </button>
       </div>
 
       <div className="published-container">
-        <Title title="Publié par:" />
+        <Title title="Publie par:" />
         <div className="user-container">
           <img src={AstroBoy} alt="user-avatar" />
           <p className="user-name">

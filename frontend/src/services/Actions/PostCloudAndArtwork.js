@@ -17,7 +17,6 @@ const postCloudAndArtwork = async (
     ask_to_archived: 0,
     is_archived: 0,
     is_validate: 0,
-    artist_id: 1,
   };
   console.info(dataArtwork);
 

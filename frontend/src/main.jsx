@@ -41,11 +41,13 @@ import AdminUserModify, {
 import AdminArtworks, {
   adminArtworksLoader,
 } from "./pages/AdminArtworks/AdminArtworks";
+import AdminDetailsArtworks from "./pages/AdminDetailsArtwork/AdminDetailsArtwork";
 import Ranking from "./pages/Ranking/Ranking";
 import AboutUs from "./pages/AboutUs/AboutUs";
 import ValidatePhoto, {
   artworksLoader,
 } from "./pages/ValidatePhoto/ValidatePhoto";
+import ArtworkOption from "./pages/ArtworkOption/ArtworkOption";
 import ValidateArtwork from "./pages/ValidateArtwork/ValidateArtwork";
 import AdminArtworkMissing from "./pages/AdminArtworkMissing/AdminArtworkMissing";
 
@@ -57,6 +59,27 @@ const router = createBrowserRouter(
       <Route path="/register" element={<Register />} action={enrolment} />
       <Route path="/login" element={<Login />} action={authenticate} />
       <Route path="/profil/:id" element={<Profil />} loader={profilLoader} />
+      <Route
+        path="/profil/:id/option"
+        element={<ProfilOption />}
+        action={option}
+      />
+      <Route path="/add-existing-artwork" element={<AddExistingArtwork />} />
+      <Route
+        path="/add-non-existing-artwork"
+        element={<AddNonExistingArtwork />}
+      />
+      <Route path="/artwork-missing" element={<ArtworkMissing />} />
+      <Route
+        path="/details-artwork/:id"
+        element={<DetailsArtwork />}
+        loader={dataArtwork}
+      />
+      <Route path="/rules" element={<Rules />} />
+      <Route path="/legals" element={<Legals />} />
+      <Route path="/ranking" element={<Ranking />} />
+      <Route path="/about-us" element={<AboutUs />} />
+
       <Route element={<AdminLayout />} path="/admin" loader={adminLayout}>
         <Route
           path="profil/:id"
@@ -89,6 +112,16 @@ const router = createBrowserRouter(
           loader={adminArtworksLoader}
         />
         <Route
+          path="admin-details-artwork/:id"
+          element={<AdminDetailsArtworks />}
+          loader={dataArtwork}
+        />
+        <Route
+          path="admin-details-artwork/option/:id"
+          element={<ArtworkOption />}
+          // action={adminModifyArtwork}
+        />
+        <Route
           path="validate-photo/:id"
           element={<ValidatePhoto />}
           loader={artworksLoader}
@@ -99,28 +132,6 @@ const router = createBrowserRouter(
           element={<AdminArtworkMissing />}
         />
       </Route>
-
-      <Route
-        path="/profil/:id/option"
-        element={<ProfilOption />}
-        action={option}
-      />
-      <Route path="/add-existing-artwork" element={<AddExistingArtwork />} />
-
-      <Route
-        path="/add-non-existing-artwork"
-        element={<AddNonExistingArtwork />}
-      />
-      <Route path="/artwork-missing" element={<ArtworkMissing />} />
-      <Route
-        path="/details-artwork/:id"
-        element={<DetailsArtwork />}
-        loader={dataArtwork}
-      />
-      <Route path="/rules" element={<Rules />} />
-      <Route path="/legals" element={<Legals />} />
-      <Route path="/ranking" element={<Ranking />} />
-      <Route path="/about-us" element={<AboutUs />} />
     </Route>
   )
 );

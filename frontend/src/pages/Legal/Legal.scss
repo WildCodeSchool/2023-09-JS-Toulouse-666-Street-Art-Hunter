@@ -1,74 +1,58 @@
 .legal-container {
   display: flex;
+  display: flex;
   flex-direction: column;
-  align-items: center;
-  min-height: calc(100vh - 160px);
-  background-color: #12141a;
+  min-height: calc(
+    100vh - 160px - clamp(2.5rem, 8vw, 5rem) - clamp(2rem, 7vw, 4rem)
+  );
+  margin-block: clamp(2.5rem, 8vw, 4rem);
+  margin-inline: 10%;
   width: 80%;
-  padding-inline: 10%;
-  gap: 2rem;
-  margin-block: 40px;
+  row-gap: clamp(2rem, 7vw, 4rem);
   h1 {
-    font-family: "PixelBit";
-    color: white;
-    font-size: 1.5rem;
+    display: flex;
     text-align: center;
-    text-transform: uppercase;
+    font-family: var(--secondary-font);
+    font-size: clamp(1rem, 6vw, 3rem);
+    line-height: clamp(2rem, 8vw, 4.5rem);
+    // Red-gradient color text
     background: var(--red-gradient);
     background-clip: text;
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
+    // -----------------------
   }
   div {
     display: flex;
     flex-direction: column;
-    font-family: "PressStart2P";
-    font-size: 1rem;
-    gap: 1rem;
+    font-family: var(--primary-font);
+    row-gap: 1.5rem;
     h3 {
-      font-size: 0.8rem;
+      font-size: clamp(0.8rem, 2.5vw, 1.3rem);
+      line-height: clamp(1.5rem, 5vw, 3rem);
       background: var(--red-gradient);
       background-clip: text;
       -webkit-background-clip: text;
       -webkit-text-fill-color: transparent;
     }
     p {
-      color: white;
-      font-size: 0.8rem;
-      line-height: 24px;
-    }
-  }
-}
-
-@media screen and (min-width: 480px) {
-  .legal-container {
-    h1 {
-      font-size: 2rem;
-    }
-    div {
-      h3 {
-        font-size: 1rem;
-      }
-      p {
-        font-size: 1rem;
-      }
+      font-size: clamp(0.8rem, 2.5vw, 1.3rem);
+      line-height: clamp(1.5rem, 5vw, 3rem);
     }
   }
 }
 
 @media screen and (min-width: 1024px) {
   .legal-container {
-    width: 90%;
-    padding-inline: 5%;
-    div {
-      gap: 1.5rem;
-      h3 {
-        padding-inline: 2rem;
-      }
-      p {
-        padding-inline: 2rem;
-        line-height: 2rem;
-      }
-    }
+    display: flex;
+    display: flex;
+    flex-direction: column;
+    min-height: calc(
+      100vh - 160px - clamp(2.5rem, 8vw, 5rem) - clamp(2rem, 7vw, 4rem)
+    );
+    margin-block: clamp(2.5rem, 8vw, 4rem);
+    margin-inline: 10%;
+    width: 80%;
+    row-gap: clamp(2rem, 7vw, 4rem);
   }
 }

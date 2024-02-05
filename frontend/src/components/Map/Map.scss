@@ -1,23 +1,37 @@
 .leaflet-container {
-  width: 80%;
+  width: calc(80% - clamp(5px, 1.2vw, 12px));
   height: calc(80vh - 10px);
-  border: 5px solid;
+  border: clamp(5px, 1.2vw, 12px) solid;
   border-image: radial-gradient(rgb(11, 231, 172), rgb(255, 222, 8), #dd0bff) 1;
   box-shadow: 5px 5px 0px 0px #ed13846a;
 
   .marker {
     cursor: pointer;
-    border-radius: 50%;
+    border-radius: 0px;
     width: 20px;
     height: 20px;
-    background-color: red;
+  }
+  .leaflet-bar a {
+    background-color: #eaace7;
+    padding: 4px;
+    border: 1px solid black;
+
+    &:hover {
+      transform: scale(1.05);
+    }
+    &:active {
+      transform: scale(0.95);
+    }
   }
 
   .leaflet-control-zoom-in,
   .leaflet-control-zoom-out {
+    border-radius: 0px;
+
     span {
       font-family: "PressStart2P";
-      color: #000000;
+      padding: 2px;
+      box-shadow: 2px 2px 0px black;
     }
   }
 
@@ -28,6 +42,6 @@
 
 @media screen and (min-width: 1024px) {
   .leaflet-container {
-    width: 90%;
+    width: calc(80% - clamp(5px, 1.2vw, 12px));
   }
 }

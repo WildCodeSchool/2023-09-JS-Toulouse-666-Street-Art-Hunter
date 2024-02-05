@@ -1,6 +1,12 @@
+.add-existing-artwork-container {
+  display: flex;
+  flex-direction: column;
+  margin-block: 2.5rem;
+  min-height: calc(100vh - 160px - 5rem);
+}
+
 @media screen and (min-width: 768px) {
   .add-existing-artwork-container {
-    margin-top: 2.5rem;
     background:
 
     // blue
@@ -17,7 +23,6 @@
 
 @media screen and (min-width: 1024px) {
   .add-existing-artwork-container {
-    margin-top: 2.5rem;
     background:
     // blue
       no-repeat left -220px top -100px url("../../assets/spray/spray-blue.png"),
@@ -33,7 +38,6 @@
 
 @media screen and (min-width: 1250px) {
   .add-existing-artwork-container {
-    margin-top: 2.5rem;
     background:
     // blue
       no-repeat left -220px top -100px url("../../assets/spray/spray-blue.png"),

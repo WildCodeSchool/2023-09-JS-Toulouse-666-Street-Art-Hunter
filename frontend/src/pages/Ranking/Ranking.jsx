@@ -2,15 +2,16 @@ import React, { useEffect, useState } from "react";
 import "./Ranking.scss";
 import { useNavigate } from "react-router-dom";
 
+import Previous from "../../assets/icons/previous.svg";
+
 function Ranking() {
   // ********************* STATE *********************
   const [userData, setUserData] = useState();
   const [userDataByScore, setUserDataByScore] = useState();
   const [othersPlayers, setOthersPlayers] = useState();
   const navigate = useNavigate();
-
   // ********************* LOGIQUE *********************
-  const userScoreLoader = async () => {
+  const fetchUserData = async () => {
     const apiURL = import.meta.env.VITE_BACKEND_URL;
     try {
       const response = await fetch(`${apiURL}/api/users`);
@@ -23,7 +24,7 @@ function Ranking() {
 
   // Récupère toutes la data de la table user
   useEffect(() => {
-    userScoreLoader();
+    fetchUserData();
   }, []);
 
   // Récupère les utilisateurs triés par score
@@ -44,14 +45,15 @@ function Ranking() {
   }, [userDataByScore]);
 
   // Récupérer l'utilisateur actuel
-  const currentUserString = localStorage.getItem("user");
-  const currentUser = currentUserString ? JSON.parse(currentUserString) : null;
+  const currentUser = JSON.parse(localStorage.getItem("user"));
 
   // Récupère l'index de l'utilisateur actuel pour indiquer son classement
   const indexCurrentUser = () => {
     if (userDataByScore && currentUser) {
-      const index = userDataByScore.findIndex((el) => el.id === currentUser.id);
-      return index;
+      const index = userDataByScore.findIndex(
+        (el) => el.name === currentUser.name
+      );
+      return index + 1;
     }
     return null;
   };
@@ -59,7 +61,17 @@ function Ranking() {
   // ********************* RENDER *********************
   return (
     <div className="ranking-main-container">
-      <h1 className="main-title">Classement</h1>
+      <div className="section-title">
+        <button
+          type="button"
+          onClick={() => {
+            navigate(-1);
+          }}
+        >
+          <img src={Previous} alt="button previous" />
+        </button>
+        <h1>Classement</h1>
+      </div>
 
       <div className="score-container">
         <div className="score-tiers-list">
@@ -170,7 +182,7 @@ function Ranking() {
                 src={currentUser.selected_avatar}
                 alt="avatar"
               />
-              {userDataByScore && <p>{indexCurrentUser() + 1}e</p>}
+              {userDataByScore && <p>{indexCurrentUser()}e</p>}
               <button
                 className="name-player-current"
                 type="button"
