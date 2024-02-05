@@ -35,16 +35,14 @@
   .links-container {
     display: flex;
     flex-direction: column;
-    // height: calc(45vh);
     row-gap: clamp(3rem, 5vw, 5rem);
     align-self: center;
     z-index: 1002;
     justify-content: space-between;
-    // margin-top: 15vh;
     a {
       text-decoration: none;
       font-family: var(--primary-font);
-      font-size: clamp(24px, 5vw, 32px); //24px;
+      font-size: clamp(24px, 5vw, 32px); //
       background: var(--red-gradient);
       background-clip: text;
       -webkit-background-clip: text;
@@ -87,7 +85,6 @@
 @media screen and (min-width: 768px) {
   .overlay-container {
     background:
-      // no-repeat left -200px top 20px url(../../assets/images/blue-splatter.svg),
       no-repeat left 80% bottom -200px url(../../assets/images/orange-splatter.svg),
       #12141a;
     background-size: 500px;
