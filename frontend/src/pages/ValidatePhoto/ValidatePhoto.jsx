@@ -44,7 +44,7 @@ function ValidatePhoto() {
       artwork_id: photo.artwork_id,
     };
 
-    const userOfPhoto = usersData.find((el) => el.id === photo.user_id);
+    const userOfPhoto = usersData.find((el) => el.id === +photo.user_id);
 
     const validateUserData = {
       name: userOfPhoto.name,
@@ -118,7 +118,9 @@ function ValidatePhoto() {
     return <div>Loading...</div>; // Render a loading indicator while fetching photo
   }
 
-  const selectedArtwork = artworksData.find((el) => el.id === photo.artwork_id);
+  const selectedArtwork = artworksData.find(
+    (el) => el.id === +photo.artwork_id
+  );
 
   return (
     <div className="validate-photo-container">
