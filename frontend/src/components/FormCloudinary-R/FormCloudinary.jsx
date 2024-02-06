@@ -78,7 +78,8 @@ function FormCloudinary({ title, button, nonExisting, missing, validated }) {
       valueDesc,
       currentFormattedDate,
       setShowModal,
-      setLoadingModal
+      setLoadingModal,
+      user.id
     );
   };
   //-------------------------------------------------------------
@@ -128,6 +129,7 @@ function FormCloudinary({ title, button, nonExisting, missing, validated }) {
         <button
           type="button"
           onClick={() => {
+            window.scrollTo(0, 0);
             navigate(-1);
           }}
         >

@@ -8,6 +8,7 @@ function AdminUsers() {
   const profils = useLoaderData();
 
   const handleClickCard = (id) => {
+    window.scrollTo(0, 0);
     navigate(`/admin/pannel-administrateur/users/${id}`);
   };
 
@@ -17,6 +18,7 @@ function AdminUsers() {
         <button
           type="button"
           onClick={() => {
+            window.scrollTo(0, 0);
             navigate(-1);
           }}
         >

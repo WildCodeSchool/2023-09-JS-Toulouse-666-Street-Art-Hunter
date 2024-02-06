@@ -74,6 +74,7 @@ function Ranking() {
         <button
           type="button"
           onClick={() => {
+            window.scrollTo(0, 0);
             navigate(-1);
           }}
         >
@@ -96,9 +97,13 @@ function Ranking() {
                 <button
                   className="name-player"
                   type="button"
-                  onClick={() => navigate(`/profil/${userDataByScore[0].id}`)}
+                  onClick={() => {
+                    window.scrollTo(0, 0);
+                    navigate(`/profil/${userDataByScore[0].id}`);
+                  }}
                   onKeyDown={(e) => {
                     if (e.key === "Enter" || e.key === " ") {
+                      window.scrollTo(0, 0);
                       navigate(`/profil/${userDataByScore[0].id}`);
                     }
                   }}
@@ -121,9 +126,13 @@ function Ranking() {
                 <button
                   className="name-player"
                   type="button"
-                  onClick={() => navigate(`/profil/${userDataByScore[1].id}`)}
+                  onClick={() => {
+                    window.scrollTo(0, 0);
+                    navigate(`/profil/${userDataByScore[1].id}`);
+                  }}
                   onKeyDown={(e) => {
                     if (e.key === "Enter" || e.key === " ") {
+                      window.scrollTo(0, 0);
                       navigate(`/profil/${userDataByScore[0].id}`);
                     }
                   }}
@@ -146,9 +155,13 @@ function Ranking() {
                 <button
                   className="name-player"
                   type="button"
-                  onClick={() => navigate(`/profil/${userDataByScore[2].id}`)}
+                  onClick={() => {
+                    window.scrollTo(0, 0);
+                    navigate(`/profil/${userDataByScore[2].id}`);
+                  }}
                   onKeyDown={(e) => {
                     if (e.key === "Enter" || e.key === " ") {
+                      window.scrollTo(0, 0);
                       navigate(`/profil/${userDataByScore[0].id}`);
                     }
                   }}
@@ -169,9 +182,13 @@ function Ranking() {
                 <button
                   id="name-other"
                   type="button"
-                  onClick={() => navigate(`/profil/${el.id}`)}
+                  onClick={() => {
+                    window.scrollTo(0, 0);
+                    navigate(`/profil/${el.id}`);
+                  }}
                   onKeyDown={(e) => {
                     if (e.key === "Enter" || e.key === " ") {
+                      window.scrollTo(0, 0);
                       navigate(`/profil/${userDataByScore[0].id}`);
                     }
                   }}
@@ -195,9 +212,13 @@ function Ranking() {
               <button
                 className="name-player-current"
                 type="button"
-                onClick={() => navigate(`/profil/${currentUser.id}`)}
+                onClick={() => {
+                  window.scrollTo(0, 0);
+                  navigate(`/profil/${currentUser.id}`);
+                }}
                 onKeyDown={(e) => {
                   if (e.key === "Enter" || e.key === " ") {
+                    window.scrollTo(0, 0);
                     navigate(`/profil/${userDataByScore[0].id}`);
                   }
                 }}
