@@ -14,13 +14,7 @@
     font-family: "PressStart2P";
     text-align: center;
     margin-top: 40px;
-    background: linear-gradient(
-      180deg,
-      #f00 0%,
-      #d95d00 28.13%,
-      #be7c68 50.52%,
-      #f5ff87 100%
-    );
+    background: var(--red-gradient);
 
     background-clip: text;
     -webkit-background-clip: text;
@@ -64,7 +58,8 @@
     display: flex;
     flex-direction: row;
     align-items: center;
-    justify-content: space-evenly;
+    justify-content: center;
+    column-gap: clamp(1rem, 3vw, 4rem);
     img {
       width: clamp(50px, 10vw, 100px);
       height: clamp(50px, 10vw, 100px);
@@ -109,14 +104,14 @@
         }
         .avatar {
           border: 4px solid rgb(36, 126, 205);
-          width: clamp(100px, 15vw, 180px);
+          width: clamp(100px, 10vw, 160px);
         }
       }
       .option-btn {
         width: 100%;
 
         img {
-          width: clamp(100px, 15vw, 180px);
+          width: clamp(100px, 10vw, 160px);
           &:hover {
             transform: scale(1.05);
           }
@@ -148,12 +143,16 @@
       .score-block {
         display: flex;
         justify-content: space-evenly;
-        align-items: center;
+        align-items: end;
+
         .trophy {
-          width: clamp(100px, 15vw, 150px);
+          width: clamp(80px, 15vw, 150px);
         }
         .score {
-          font-size: clamp(1.5rem, 5vw, 2.5rem);
+          font-size: clamp(1rem, 3vw, 2.5rem);
+          span {
+            color: #fcb315;
+          }
         }
       }
     }
@@ -236,6 +235,7 @@
       .profil-top {
         flex-direction: column;
         justify-content: space-between;
+        min-height: 500px;
         .profile-block-avatar {
           width: 100%;
           .avatar-button {
@@ -246,13 +246,15 @@
       .profil-user {
         display: flex;
         flex-direction: column;
+        justify-content: space-between; //
         row-gap: clamp(2.5rem, 8vw, 4rem);
-        width: 100%;
         .topic {
           display: flex;
           flex-direction: column;
           gap: clamp(1rem, 3vw, 2rem);
+          width: 100%;
           .resume {
+            width: 100%;
             font-size: clamp(0.8rem, 2.5vw, 1.3rem);
             line-height: clamp(1.5rem, 5vw, 3rem);
           }
@@ -262,7 +264,6 @@
           justify-content: space-evenly;
           align-items: center;
           .score {
-            font-size: clamp(1.5rem, 5vw, 2.5rem);
           }
         }
       }

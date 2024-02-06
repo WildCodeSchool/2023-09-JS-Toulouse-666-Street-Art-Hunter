@@ -12,14 +12,7 @@
     font-size: 28px;
     text-align: center;
     margin-top: 40px;
-    background: linear-gradient(
-      180deg,
-      #f00 0%,
-      #d95d00 28.13%,
-      #be7c68 50.52%,
-      #f5ff87 100%
-    );
-
+    background: var(--red-gradient);
     background-clip: text;
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
@@ -46,7 +39,6 @@
   }
 }
 .main-container-profil-user {
-  display: flex;
   display: flex;
   flex-direction: column;
   min-height: calc(

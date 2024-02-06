@@ -1,9 +1,8 @@
 import React from "react";
 import { Form, redirect, useNavigate } from "react-router-dom";
 import Input from "../../components/Input-R/Input";
-import PeintBomb from "../../assets/photos/Peint-login.png";
-import Boy from "../../assets/photos/garçonHd.jpg";
-import Girl from "../../assets/photos/filleHd.jpg";
+import Boy from "../../assets/photos/boy.png";
+import Girl from "../../assets/photos/girl.png";
 import "./Loginpage.scss";
 
 function Login() {
@@ -20,22 +19,24 @@ function Login() {
   return (
     <div className="login-page">
       <div className="input-block">
-        <img className="left-boy" src={Boy} alt="Un jeune garçon" />
+        <div className="image-container-boy">
+          <img className="left-boy" src={Boy} alt="dessin jeune garçon" />
+        </div>
         <div className="login-input">
-          <h1 className="login-title">connecte-toi</h1>
+          <h1 className="main-title">connection</h1>
           <Form className="login-form" method="post" action="/login" replace>
             <Input
               className="input"
               labelName="email"
               type="email"
-              labelText="Adresse Mail"
+              labelText="Adresse Mail:"
               maxLength="45"
             />
             <Input
               className="input"
               labelName="password"
               type="password"
-              labelText="Mot de passe"
+              labelText="Mot de passe:"
               maxLength="455"
             />
             <div className="btn-container">
@@ -45,12 +46,13 @@ function Login() {
             </div>
           </Form>
         </div>
-        <img className="right-girl" src={Girl} alt="Une jeunne fille" />
+        <div className="image-container-girl">
+          <img className="right-girl" src={Girl} alt="dessin jeune fille" />
+        </div>
       </div>
 
       <div className="login-text">
-        <img src={PeintBomb} className="peint-bomb" alt="Bombe de peinture" />
-        <div className="text">Nouveau dans la jungle urbaine?</div>
+        <div className="text">Nouveau dans la jungle urbaine ?</div>
         <div className="btn-container">
           <button type="submit" name="submit" onClick={handleClickRegister}>
             <span className="btn-span">inscris-toi</span>

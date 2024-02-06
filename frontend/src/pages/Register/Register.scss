@@ -1,35 +1,43 @@
 .register-page {
   display: flex;
   flex-direction: column;
-  min-height: calc(100vh - 160px - clamp(2.5rem, 8vw, 5rem));
+  min-height: calc(
+    100vh - 160px - clamp(2.5rem, 8vw, 5rem) - clamp(2.5rem, 8vw, 5rem)
+  );
   margin-block: clamp(2.5rem, 8vw, 5rem);
   margin-inline: 10%;
   width: 80%;
   row-gap: clamp(2.5rem, 8vw, 5rem);
 
   .register-input {
-    width: 100%;
-    .register-title {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    row-gap: 4.5rem;
+    .register-hero {
       display: flex;
-      flex-direction: column;
-      align-items: center;
       justify-content: center;
-      text-transform: uppercase;
-      font-size: clamp(1.5rem, 7vw, 3.5rem);
-      font-family: var(--secondary-font);
-      // Red-gradient color text
-      background: var(--red-gradient);
-      background-clip: text;
-      -webkit-background-clip: text;
-      -webkit-text-fill-color: transparent;
-      // -----------------------
+      align-items: center;
+      .register-title {
+        display: flex;
+        justify-content: center;
+        font-size: clamp(1.5rem, 8vw, 2.5rem);
+        font-family: var(--secondary-font);
+        // Red-gradient color text
+        background: var(--red-gradient);
+        background-clip: text;
+        -webkit-background-clip: text;
+        -webkit-text-fill-color: transparent;
+        // -----------------------
+      }
     }
-    .form {
+
+    .register-form {
       display: flex;
       flex-direction: column;
       align-items: center;
       gap: clamp(2.5rem, 6vw, 3.5rem);
-      margin-top: 4rem;
     }
 
     .btn-container {
@@ -77,40 +85,6 @@
         background-position: 50% 0%;
         width: 100%;
         min-height: 400px;
-        font-size: 36px;
-        .register-title {
-        }
-      }
-      // ----------------------------------------------------
-      @property --angle {
-        syntax: "<angle>";
-        initial-value: 90deg;
-        inherits: true;
-      }
-
-      @property --gradX {
-        syntax: "<percentage>";
-        initial-value: 50%;
-        inherits: true;
-      }
-
-      @property --gradY {
-        syntax: "<percentage>";
-        initial-value: 0%;
-        inherits: true;
-      }
-
-      :root {
-        --d: 3000ms;
-        --angle: 90deg;
-        --gradX: 100%;
-        --gradY: 50%;
-        --c1: rgb(200, 11, 175);
-        --c2: rgba(168, 239, 255, 0.1);
-      }
-
-      .register-hero {
-        font-size: 3vw;
         border: 0.5rem solid;
         border-image: conic-gradient(
             from var(--angle),
@@ -121,21 +95,36 @@
           )
           30;
         animation: borderRotate var(--d) linear infinite forwards;
+        .register-title {
+          display: flex;
+          justify-content: center;
+          font-size: clamp(1.5rem, 8vw, 2.5rem);
+          font-family: var(--secondary-font);
+          // Red-gradient color text
+          background: var(--red-gradient);
+          background-clip: text;
+          -webkit-background-clip: text;
+          -webkit-text-fill-color: transparent;
+          // -----------------------
+        }
       }
-
       @keyframes borderRotate {
         100% {
           --angle: 420deg;
         }
       }
-      // ----------------------------------------------------
 
-      .form {
-        display: flex;
-        flex-direction: column;
-        align-items: center;
-        justify-content: space-between;
-        margin-inline: 10%;
+      .register-form {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        column-gap: 6rem;
+        row-gap: 2rem;
+
+        .btn-container {
+          display: flex;
+          justify-content: center;
+          align-items: center;
+        }
 
         .label-composent-css {
           color: red;

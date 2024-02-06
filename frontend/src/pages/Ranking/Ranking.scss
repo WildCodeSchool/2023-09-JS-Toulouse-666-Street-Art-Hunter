@@ -1,6 +1,5 @@
 .ranking-main-container {
   display: flex;
-  display: flex;
   flex-direction: column;
   min-height: calc(
     100vh - 160px - clamp(2.5rem, 8vw, 5rem) - clamp(2rem, 7vw, 4rem)
@@ -14,7 +13,7 @@
     flex-direction: row;
     align-items: center;
     justify-content: center;
-    column-gap: 2rem;
+    column-gap: clamp(1rem, 3vw, 4rem);
     img {
       width: clamp(50px, 10vw, 100px);
       height: clamp(50px, 10vw, 100px);
