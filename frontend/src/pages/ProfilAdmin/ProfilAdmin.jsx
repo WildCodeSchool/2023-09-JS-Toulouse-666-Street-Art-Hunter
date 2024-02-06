@@ -141,6 +141,13 @@ function ProfilAdmin() {
         >
           Validé
         </button>
+        <button
+          className="button-validate"
+          type="button"
+          onClick={toggleModale}
+        >
+          retour
+        </button>
       </div>
 
       <div className="main-container-profil-admin">

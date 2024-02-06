@@ -63,7 +63,8 @@ function Profil() {
     const apiURL = import.meta.env.VITE_BACKEND_URL;
     const datau = JSON.parse(localStorage.getItem("user"));
     const ida = params;
-    if (datau.id !== ida) {
+
+    if (datau.id !== parseInt(ida, 10)) {
       navigate("/");
     } else {
       const responseU = await fetch(`${apiURL}/api/users/${id}`, {
@@ -140,6 +141,13 @@ function Profil() {
           onClick={handleClickChangeAvatar}
         >
           Validé
+        </button>
+        <button
+          className="button-validate"
+          type="button"
+          onClick={toggleModale}
+        >
+          retour
         </button>
       </div>
 

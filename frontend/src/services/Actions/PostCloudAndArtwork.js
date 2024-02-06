@@ -18,7 +18,7 @@ const postCloudAndArtwork = async (
     is_archived: 0,
     is_validate: 0,
   };
-  console.info(dataArtwork);
+  // console.info(dataArtwork);
 
   const token = localStorage.getItem("token");
 
@@ -47,7 +47,6 @@ const postCloudAndArtwork = async (
       setShowModal(true);
       setLoadingModal(false);
     }
-    console.info("Artwork uploaded successfully!");
   } catch (error) {
     console.error("Error:", error.message);
     throw error;
