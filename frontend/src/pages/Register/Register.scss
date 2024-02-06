@@ -4,7 +4,7 @@
   min-height: calc(
     100vh - 160px - clamp(2.5rem, 8vw, 5rem) - clamp(2.5rem, 8vw, 5rem)
   );
-  margin-block: clamp(2.5rem, 8vw, 5rem);
+  margin-block: clamp(2.5rem, 7vw, 3rem);
   margin-inline: 10%;
   width: 80%;
   row-gap: clamp(2.5rem, 8vw, 5rem);
@@ -85,6 +85,7 @@
         background-position: 50% 0%;
         width: 100%;
         min-height: 400px;
+        // --- ANIMATION BORDER --- //
         border: 0.5rem solid;
         border-image: conic-gradient(
             from var(--angle),
@@ -95,6 +96,7 @@
           )
           30;
         animation: borderRotate var(--d) linear infinite forwards;
+        // ------------------------ //
         .register-title {
           display: flex;
           justify-content: center;

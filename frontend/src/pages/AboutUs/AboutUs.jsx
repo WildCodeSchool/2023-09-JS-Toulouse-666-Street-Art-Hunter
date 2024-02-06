@@ -3,6 +3,8 @@ import "./AboutUs.scss";
 import AstroBoy from "../../assets/avatars/astro-boy.png";
 import Dino from "../../assets/avatars/dino.png";
 import Soldat from "../../assets/avatars/Soldat.png";
+import Linkedin from "../../assets/icons/linkedin-pixel.png";
+import Github from "../../assets/icons/github-pixel.png";
 
 function AboutUs() {
   return (
@@ -24,6 +26,24 @@ function AboutUs() {
             algorithmes, transcende les frontières.
           </p>
         </div>
+        <div className="network">
+          <a
+            className="link-img"
+            href="https://www.linkedin.com/in/adrien-manente-780336299/"
+            target="_blank"
+            rel="noreferrer"
+          >
+            <img src={Linkedin} alt="linkedin logo" />
+          </a>
+          <a
+            className="link-img"
+            href="https://github.com/Adri-bis"
+            target="_blank"
+            rel="noreferrer"
+          >
+            <img src={Github} alt="github logo" />
+          </a>
+        </div>
       </div>
 
       <div className="tristan">
@@ -43,6 +63,24 @@ function AboutUs() {
             chaque ligne de code.
           </p>
         </div>
+        <div className="network">
+          <a
+            className="link-img"
+            href="https://www.linkedin.com/in/tristan-delmas/"
+            target="_blank"
+            rel="noreferrer"
+          >
+            <img src={Linkedin} alt="linkedin logo" />
+          </a>
+          <a
+            className="link-img"
+            href="https://github.com/Delmastan"
+            target="_blank"
+            rel="noreferrer"
+          >
+            <img src={Github} alt="github logo" />
+          </a>
+        </div>
       </div>
 
       <div className="theo">
@@ -61,6 +99,24 @@ function AboutUs() {
             Théo consacre son énergie à des projets caritatifs, apportant une
             dose d'humanité à son monde technologique.
           </p>
+        </div>
+        <div className="network">
+          <a
+            className="link-img"
+            href="https://www.linkedin.com/in/th%C3%A9o-napoly-1943a183/"
+            target="_blank"
+            rel="noreferrer"
+          >
+            <img src={Linkedin} alt="linkedin logo" />
+          </a>
+          <a
+            className="link-img"
+            href="https://github.com/theonapoly"
+            target="_blank"
+            rel="noreferrer"
+          >
+            <img src={Github} alt="github logo" />
+          </a>
         </div>
       </div>
     </div>

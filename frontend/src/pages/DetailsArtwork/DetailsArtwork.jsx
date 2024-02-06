@@ -1,4 +1,3 @@
-import React, { useEffect, useState } from "react";
 import { useLoaderData, useNavigate } from "react-router-dom";
 import "./DetailsArtwork.scss";
 import GeolocIcon from "../../assets/icons/geoloc-icon.png";
@@ -31,46 +30,6 @@ function DetailsArtwork() {
   const currentDescription = data.description;
 
   const publisherUser = data.name;
-
-  // ------------------------------------------------------------------
-  const user = JSON.parse(localStorage.getItem("user"));
-  console.info(user);
-
-  // ------------------------------------------------------------------
-  const [allUser, setAllUser] = useState([]);
-  console.info(allUser);
-
-  const keepId = allUser.map((el) => {
-    return el.is_admin;
-  });
-  console.info(keepId);
-
-  // ------------------------------------------------------------------
-  const profilUser = async () => {
-    const apiURL = import.meta.env.VITE_BACKEND_URL;
-    const token = localStorage.getItem("token");
-
-    const response = await fetch(`${apiURL}/api/users`, {
-      headers: {
-        Authorization: `Bearer ${token}`,
-      },
-    });
-    const dataAllUser = await response.json();
-    setAllUser(dataAllUser);
-
-    if (!response.ok) {
-      throw new Error(
-        JSON.stringify({ message: "Could not fetch profiles." }),
-        {
-          status: 500,
-        }
-      );
-    }
-  };
-
-  useEffect(() => {
-    profilUser();
-  }, []);
 
   const handleNavigate = () => {
     window.scrollTo(0, 0);
