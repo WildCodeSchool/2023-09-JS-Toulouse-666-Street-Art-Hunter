@@ -72,6 +72,21 @@ function DetailsArtwork() {
     profilUser();
   }, []);
 
+  const handleNavigate = () => {
+    window.scrollTo(0, 0);
+    navigate("/map");
+  };
+
+  const handleFind = () => {
+    window.scrollTo(0, 0);
+    navigate("/add-existing-artwork");
+  };
+
+  const handleMissing = () => {
+    window.scrollTo(0, 0);
+    navigate("/artwork-missing");
+  };
+
   // ********************* RENDER *********************
   return (
     <div className="main-container-details-artwork">
@@ -86,11 +101,7 @@ function DetailsArtwork() {
           <Title title="Adresse:" />
           <p className="address-text">{currentAddress}</p>
         </div>
-        <button
-          type="button"
-          className="section-icon"
-          onClick={() => navigate("/map")}
-        >
+        <button type="button" className="section-icon" onClick={handleNavigate}>
           <img
             className="address-image"
             src={GeolocIcon}
@@ -118,17 +129,9 @@ function DetailsArtwork() {
 
       <div className="btn-container">
         {idPhotos.includes(data.id) === false && (
-          <Button
-            name="submit"
-            textBtn="Trouver ?"
-            onClick={() => navigate("/add-existing-artwork")}
-          />
+          <Button name="submit" textBtn="Trouver ?" onClick={handleFind} />
         )}
-        <Button
-          name="submit"
-          textBtn="Disparu ?"
-          onClick={() => navigate("/artwork-missing")}
-        />
+        <Button name="submit" textBtn="Disparu ?" onClick={handleMissing} />
       </div>
     </div>
   );

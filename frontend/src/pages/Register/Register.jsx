@@ -10,33 +10,38 @@ function Register() {
         <div className="register-hero">
           <h1 className="register-title">inscription</h1>
         </div>
-        <Form className="form" method="post" action="/register" replace>
+        <Form
+          className="register-form"
+          method="post"
+          action="/register"
+          replace
+        >
           <Input
-            className="input"
+            className="name"
             labelName="name"
             type="name"
-            labelText="joueur"
+            labelText="Pseudo:"
             maxLength="14"
           />
           <Input
-            className="input"
-            labelName="email"
-            type="email"
-            labelText="email"
-            maxLength="45"
-          />
-          <Input
-            className="input"
+            className="password"
             labelName="password"
             type="password"
-            labelText="mot de passe"
+            labelText="mot de passe:"
             maxLength="255"
           />
           <Input
-            className="input"
+            className="email"
+            labelName="email"
+            type="email"
+            labelText="Adresse mail:"
+            maxLength="45"
+          />
+          <Input
+            className="confirm-password"
             labelName="passwordConfirm"
             type="password"
-            labelText="confirmation mdp"
+            labelText="confirmation mdp:"
             maxLength="255"
           />
 

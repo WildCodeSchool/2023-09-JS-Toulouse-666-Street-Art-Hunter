@@ -1,4 +1,5 @@
 import PropTypes from "prop-types";
+import "./TextBlue.scss";
 
 function TextBlue({ text }) {
   return <h2 className="title-blue-container">{text}</h2>;

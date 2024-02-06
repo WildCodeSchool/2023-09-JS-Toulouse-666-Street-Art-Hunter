@@ -60,7 +60,7 @@ function ValidateArtwork() {
     };
 
     fetchArtwork();
-  }, []);
+  }, [artwork, id, token, user]);
 
   const handleValidate = async () => {
     const validateDataArtwork = {
@@ -117,6 +117,7 @@ function ValidateArtwork() {
       if (!responseUser.ok) {
         throw new Error("Failed to update user");
       }
+      window.scrollTo(0, 0);
       navigate(`/admin/pannel-administrateur/${user.id}`);
     } catch (error) {
       console.error("Error validating artwork:", error);
@@ -138,6 +139,7 @@ function ValidateArtwork() {
       if (!response.ok) {
         throw new Error("Failed to delete photo");
       }
+      window.scrollTo(0, 0);
       navigate(`/admin/pannel-administrateur/${user.id}`);
     } catch (error) {
       console.error("Error deleting photo:", error);

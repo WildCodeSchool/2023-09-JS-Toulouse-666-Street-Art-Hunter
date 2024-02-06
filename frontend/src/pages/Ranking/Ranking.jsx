@@ -50,13 +50,22 @@ function Ranking() {
   // Récupère l'index de l'utilisateur actuel pour indiquer son classement
   const indexCurrentUser = () => {
     if (userDataByScore && currentUser) {
-      const index = userDataByScore.findIndex(
-        (el) => el.name === currentUser.name
-      );
+      const index = userDataByScore.findIndex((el) => el.id === currentUser.id);
       return index + 1;
     }
     return null;
   };
+
+  const currentUserData = () => {
+    if (userDataByScore && currentUser) {
+      const userById = userDataByScore.find((el) => el.id === currentUser.id);
+
+      return userById;
+    }
+    return null;
+  };
+
+  const currentUserValue = currentUserData();
 
   // ********************* RENDER *********************
   return (
@@ -65,6 +74,7 @@ function Ranking() {
         <button
           type="button"
           onClick={() => {
+            window.scrollTo(0, 0);
             navigate(-1);
           }}
         >
@@ -87,9 +97,13 @@ function Ranking() {
                 <button
                   className="name-player"
                   type="button"
-                  onClick={() => navigate(`/profil/${userDataByScore[0].id}`)}
+                  onClick={() => {
+                    window.scrollTo(0, 0);
+                    navigate(`/profil/${userDataByScore[0].id}`);
+                  }}
                   onKeyDown={(e) => {
                     if (e.key === "Enter" || e.key === " ") {
+                      window.scrollTo(0, 0);
                       navigate(`/profil/${userDataByScore[0].id}`);
                     }
                   }}
@@ -112,9 +126,13 @@ function Ranking() {
                 <button
                   className="name-player"
                   type="button"
-                  onClick={() => navigate(`/profil/${userDataByScore[1].id}`)}
+                  onClick={() => {
+                    window.scrollTo(0, 0);
+                    navigate(`/profil/${userDataByScore[1].id}`);
+                  }}
                   onKeyDown={(e) => {
                     if (e.key === "Enter" || e.key === " ") {
+                      window.scrollTo(0, 0);
                       navigate(`/profil/${userDataByScore[0].id}`);
                     }
                   }}
@@ -137,9 +155,13 @@ function Ranking() {
                 <button
                   className="name-player"
                   type="button"
-                  onClick={() => navigate(`/profil/${userDataByScore[2].id}`)}
+                  onClick={() => {
+                    window.scrollTo(0, 0);
+                    navigate(`/profil/${userDataByScore[2].id}`);
+                  }}
                   onKeyDown={(e) => {
                     if (e.key === "Enter" || e.key === " ") {
+                      window.scrollTo(0, 0);
                       navigate(`/profil/${userDataByScore[0].id}`);
                     }
                   }}
@@ -160,9 +182,13 @@ function Ranking() {
                 <button
                   id="name-other"
                   type="button"
-                  onClick={() => navigate(`/profil/${el.id}`)}
+                  onClick={() => {
+                    window.scrollTo(0, 0);
+                    navigate(`/profil/${el.id}`);
+                  }}
                   onKeyDown={(e) => {
                     if (e.key === "Enter" || e.key === " ") {
+                      window.scrollTo(0, 0);
                       navigate(`/profil/${userDataByScore[0].id}`);
                     }
                   }}
@@ -179,23 +205,30 @@ function Ranking() {
             <>
               <img
                 className="avatar-img-current"
-                src={currentUser.selected_avatar}
+                src={currentUserValue && currentUserValue.selected_avatar}
                 alt="avatar"
               />
               {userDataByScore && <p>{indexCurrentUser()}e</p>}
               <button
                 className="name-player-current"
                 type="button"
-                onClick={() => navigate(`/profil/${currentUser.id}`)}
+                onClick={() => {
+                  window.scrollTo(0, 0);
+                  navigate(`/profil/${currentUser.id}`);
+                }}
                 onKeyDown={(e) => {
                   if (e.key === "Enter" || e.key === " ") {
+                    window.scrollTo(0, 0);
                     navigate(`/profil/${userDataByScore[0].id}`);
                   }
                 }}
               >
                 {currentUser.name}
               </button>
-              <p className="score-player-current">{currentUser.score} pts</p>
+
+              <p className="score-player-current">
+                {currentUserValue ? `${currentUserValue.score} pts` : "N/A"}
+              </p>
             </>
           )}
         </div>

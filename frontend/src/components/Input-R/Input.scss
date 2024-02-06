@@ -1,8 +1,9 @@
-.label-container {
+.input-main-container {
   display: flex;
   flex-direction: column;
   row-gap: 0.7rem;
   align-items: flex-start;
+  width: 100%;
 
   .label-title {
     font-family: var(--primary-font);
@@ -14,9 +15,12 @@
     -webkit-text-fill-color: transparent;
   }
 
-  .input-container {
+  .input-value {
+    width: 100%;
+    max-width: 350px;
+    min-width: 285px;
+    box-sizing: border-box;
     height: 40px;
-    padding-inline: 10px;
     font-family: var(--primary-font);
     font-size: clamp(16px, 2vw, 24px);
     background: var(--primary-color);
@@ -24,6 +28,8 @@
     border-top: 2px solid pink;
     border-left: 2px solid deeppink;
     border-bottom: 2px solid deeppink;
+    color: whitesmoke;
+    font-size: 1rem;
   }
 }
 
