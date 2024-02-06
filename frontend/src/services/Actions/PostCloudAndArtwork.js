@@ -20,7 +20,6 @@ const postCloudAndArtwork = async (
     is_validate: 0,
     publisher_id: publisherId,
   };
-  // console.info(dataArtwork);
 
   const token = localStorage.getItem("token");
 
