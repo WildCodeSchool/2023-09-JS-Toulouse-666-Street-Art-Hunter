@@ -182,12 +182,15 @@ function ProfilAdmin() {
           </div>
           <div key={profils.user.id} className="profil-user">
             <div className="topic">
-              <TextBlue text={profils.user.name} />
+              <TextBlue text={profils && profils.user.name} />
               <p className="resume"> {profils.user.description}</p>
             </div>
             <div className="score-block">
               <img className="trophy" src={Trophy} alt="trophy" />
-              <p className="score">{profils.user.score} pts</p>
+              <p className="score">
+                {profils.user.score}
+                <span> pts</span>
+              </p>
             </div>
           </div>
         </div>

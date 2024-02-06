@@ -13,10 +13,10 @@ function Input({ labelName, type, labelText, maxLength, height }) {
   };
 
   return (
-    <label className="label-container" htmlFor={labelName}>
+    <label className="input-main-container" htmlFor={labelName}>
       <span className="label-title">{labelText}</span>
       <input
-        className="input-container"
+        className="input-value"
         type={type}
         name={labelName}
         value={value}
