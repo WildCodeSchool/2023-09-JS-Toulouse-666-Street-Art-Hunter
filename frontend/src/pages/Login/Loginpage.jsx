@@ -52,7 +52,6 @@ function Login() {
       </div>
 
       <div className="login-text">
-        {/* <img src={PeintBomb} className="peint-bomb" alt="Bombe de peinture" /> */}
         <div className="text">Nouveau dans la jungle urbaine ?</div>
         <div className="btn-container">
           <button type="submit" name="submit" onClick={handleClickRegister}>
