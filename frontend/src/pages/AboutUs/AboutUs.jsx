@@ -21,9 +21,9 @@ function AboutUs() {
             Adrien, le virtuose du développement web, manie les langages comme
             un chef d'orchestre dirige son ensemble. Avec une agilité
             exceptionnelle sur le clavier, il transforme des lignes de code en
-            symphonies digitales. En dehors du monde binaire, Adrien se plonge
-            dans la création de musique électronique qui, tout comme ses
-            algorithmes, transcende les frontières.
+            symphonies digitales. En dehors du monde binaire, Adrien s'immerge
+            dans le monde du sport, où, tel un athlète de l'informatique, il
+            repousse les limites et transcende les frontières.
           </p>
         </div>
         <div className="network">
@@ -57,7 +57,7 @@ function AboutUs() {
           <p>
             Tristan, le magicien de l'intelligence artificielle, jongle avec les
             algorithmes comme s'il s'agissait d'un tour de magie bien orchestré.
-            En provenance de la Ville Lumière, il capture les moments éphémères
+            En provenance de la Ville Rose, il capture les moments éphémères
             avec son appareil photo tout en faisant des randonnées dans le monde
             infini de la technologie. Tristan apporte une touche de magie à
             chaque ligne de code.
@@ -94,10 +94,10 @@ function AboutUs() {
           <p>
             Théo, l'architecte des applications mobiles, érige des structures
             numériques avec une ingéniosité qui défie la gravité. Originaire de
-            Marseille, il peint avec des pixels plutôt qu'avec des pinceaux,
-            créant des œuvres d'art interactives. En dehors du royaume digital,
-            Théo consacre son énergie à des projets caritatifs, apportant une
-            dose d'humanité à son monde technologique.
+            Paris, il peint avec des pixels plutôt qu'avec des pinceaux, créant
+            des œuvres d'art interactives. En dehors du royaume digital, Théo
+            consacre son énergie à des projets caritatifs, apportant une dose
+            d'humanité à son monde technologique.
           </p>
         </div>
         <div className="network">

@@ -1,3 +1,4 @@
+import { useState } from "react";
 import { Form, useParams, redirect, Navigate, Link } from "react-router-dom";
 import Input from "../../components/Input-R/Input";
 import "./ProfilOption.scss";
@@ -6,6 +7,7 @@ import InputTextarea from "../../components/InputTextarea/InputTextarea";
 function ProfilOption() {
   const { id } = useParams();
   const data = JSON.parse(localStorage.getItem("user"));
+  const [description, setDescription] = useState("");
 
   if (parseInt(id, 10) !== data.id) {
     return <Navigate to="/login" replace />;
@@ -24,6 +26,7 @@ function ProfilOption() {
           className="input"
           labelName="name"
           type="name"
+          value={data.name}
           labelText="Pseudo :"
           maxLength="14"
         />
@@ -33,6 +36,8 @@ function ProfilOption() {
           type="description"
           labelText="Description :"
           maxLength="255"
+          value={description}
+          setValue={setDescription}
         />
 
         <button className="continue" type="submit">
