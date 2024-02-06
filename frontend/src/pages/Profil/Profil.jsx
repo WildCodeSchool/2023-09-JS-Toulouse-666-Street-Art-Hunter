@@ -36,6 +36,12 @@ function Profil() {
   const userId = id;
   const photoId = parseInt(userId, 10);
   const userArt = artPhoto(photoId);
+  const validatedArt = userArt.filter((el) => {
+    return el.is_validated === 1;
+  });
+  const pendingArt = userArt.filter((el) => {
+    return el.is_validated === 0;
+  });
   const navigate = useNavigate();
   const handleClickOption = () => {
     window.scrollTo(0, 0);
@@ -215,16 +221,46 @@ function Profil() {
       <div className="artwork-gallery">
         <Title title="Tableau de chasse" />
         <div className="map-artwork">
-          {userArt && userArt.length > 0 ? (
-            userArt.map((el) => {
+          {validatedArt && validatedArt.length > 0 ? (
+            validatedArt.map((el) => {
               return (
-                <div key={el.id} className="item">
+                <button
+                  type="button"
+                  key={el.id}
+                  className="item"
+                  onClick={() => {
+                    window.scrollTo(0, 0);
+                    navigate(`/details-artwork/${el.id}`);
+                  }}
+                >
                   <img className="link-img" src={el.image} alt="street art" />
-                </div>
+                </button>
               );
             })
           ) : (
             <p>Votre tableau de chasse est vide</p>
+          )}
+        </div>
+        <Title title="Tableau de chasse en attente" />
+        <div className="map-artwork">
+          {pendingArt && pendingArt.length > 0 ? (
+            pendingArt.map((el) => {
+              return (
+                <button
+                  type="button"
+                  key={el.id}
+                  className="item"
+                  onClick={() => {
+                    window.scrollTo(0, 0);
+                    navigate(`/details-artwork/${el.id}`);
+                  }}
+                >
+                  <img className="link-img" src={el.image} alt="street art" />
+                </button>
+              );
+            })
+          ) : (
+            <p>Vous n'avez aucune oeuvre en cours de validation</p>
           )}
         </div>
       </div>
