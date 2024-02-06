@@ -36,6 +36,12 @@ function ProfilAdmin() {
   const userId = id;
   const photoId = parseInt(userId, 10);
   const userArt = artPhoto(photoId);
+  const validatedArt = userArt.filter((el) => {
+    return el.is_validated === 1;
+  });
+  const pendingArt = userArt.filter((el) => {
+    return el.is_validated === 0;
+  });
   const navigate = useNavigate();
   const handleClickAdmin = () => {
     window.scrollTo(0, 0);
@@ -210,13 +216,47 @@ function ProfilAdmin() {
         <div className="artwork">
           <Title title="Tableau de chasse" />
           <div className="map-artwork">
-            {userArt.map((item) => {
-              return (
-                <div key={item.id} className="item">
-                  <img className="link-img" src={item.image} alt="street art" />
-                </div>
-              );
-            })}
+            {validatedArt && validatedArt.length > 0 ? (
+              validatedArt.map((el) => {
+                return (
+                  <button
+                    type="button"
+                    key={el.id}
+                    className="item"
+                    onClick={() => {
+                      window.scrollTo(0, 0);
+                      navigate(`/details-artwork/${el.id}`);
+                    }}
+                  >
+                    <img className="link-img" src={el.image} alt="street art" />
+                  </button>
+                );
+              })
+            ) : (
+              <p>Votre tableau de chasse est vide</p>
+            )}
+          </div>
+          <Title title="Tableau de chasse" />
+          <div className="map-artwork">
+            {pendingArt && pendingArt.length > 0 ? (
+              pendingArt.map((el) => {
+                return (
+                  <button
+                    type="button"
+                    key={el.id}
+                    className="item"
+                    onClick={() => {
+                      window.scrollTo(0, 0);
+                      navigate(`/details-artwork/${el.id}`);
+                    }}
+                  >
+                    <img className="link-img" src={el.image} alt="street art" />
+                  </button>
+                );
+              })
+            ) : (
+              <p>Vous n'avez aucune oeuvre en cours de validation</p>
+            )}
           </div>
         </div>
       </div>
