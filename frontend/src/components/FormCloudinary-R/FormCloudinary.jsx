@@ -1,4 +1,4 @@
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import PropTypes from "prop-types";
 import "./FormCloudinary.scss";
 import { createPortal } from "react-dom";
@@ -10,7 +10,6 @@ import postCloudAndPhoto from "../../services/Actions/PostCloudAndPhoto";
 import postCloudAndArtwork from "../../services/Actions/PostCloudAndArtwork";
 
 import Graffeur from "../../assets/images/graffeur.svg";
-import Nuage from "../../assets/icons/nuage.png";
 import LogoUploader from "../../assets/images/logo-uploader.svg";
 import Previous from "../../assets/icons/previous.svg";
 
@@ -27,6 +26,7 @@ function FormCloudinary({ title, button, nonExisting, missing, validated }) {
   const [valueDesc, setValueDesc] = useState();
   const [coordinates, setCoordinates] = useState();
   const [toggleBtn, setToggleBtn] = useState("off");
+  const [userData, setUserData] = useState();
   const navigate = useNavigate();
 
   // ******************* LOGIQUE *******************
@@ -92,6 +92,35 @@ function FormCloudinary({ title, button, nonExisting, missing, validated }) {
       setAddresses([]);
     }
   };
+  // ---------------------------------------------------------------
+  // Récupère toutes la data de la table user
+  const fetchUserData = async () => {
+    const apiURL = import.meta.env.VITE_BACKEND_URL;
+    try {
+      const response = await fetch(`${apiURL}/api/users`);
+      const data = await response.json();
+      setUserData(data);
+    } catch (err) {
+      console.error(err);
+    }
+  };
+
+  useEffect(() => {
+    fetchUserData();
+  }, []);
+
+  // Récupérer l'utilisateur actuel
+  const currentUser = JSON.parse(localStorage.getItem("user"));
+
+  const currentUserData = () => {
+    if (userData && currentUser) {
+      const userById = userData.find((el) => el.id === currentUser.id);
+      return userById;
+    }
+    return null;
+  };
+
+  const currentUserValue = currentUserData();
 
   // ******************* RENDER *******************
   return (
@@ -178,7 +207,10 @@ function FormCloudinary({ title, button, nonExisting, missing, validated }) {
             <div className="publication-container">
               <h2>Publié par</h2>
               <div className="user-container">
-                <img src={Nuage} alt="avatar" />
+                <img
+                  src={currentUserValue && currentUserValue.selected_avatar}
+                  alt="avatar"
+                />
                 <h3>{user.name}</h3>
               </div>
               <p>Le {currentFormattedDate}</p>

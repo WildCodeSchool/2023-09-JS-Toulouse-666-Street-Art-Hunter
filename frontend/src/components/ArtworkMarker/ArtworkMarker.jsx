@@ -30,7 +30,9 @@ function ArtworkMarker() {
     });
   };
 
-  const userPhotoId = userPhotos.map((photo) => photo.artwork_id);
+  const userPhotoId = userPhotos
+    ? userPhotos.map((photo) => photo.artwork_id)
+    : [];
 
   return (
     <MarkerClusterGroup chunkedLoading iconCreateFunction={clusters}>

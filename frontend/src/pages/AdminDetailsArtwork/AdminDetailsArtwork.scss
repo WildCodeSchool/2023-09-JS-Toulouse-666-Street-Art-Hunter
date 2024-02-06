@@ -1,11 +1,13 @@
 .main-container-admin-details-artwork {
   display: flex;
   flex-direction: column;
-  row-gap: 3rem;
+  min-height: calc(
+    100vh - 160px - clamp(2.5rem, 8vw, 5rem) - clamp(2rem, 7vw, 4rem)
+  );
+  margin-block: clamp(2.5rem, 8vw, 4rem);
   margin-inline: 10%;
-  margin-block: 2.5rem;
   width: 80%;
-  min-height: calc(100vh - 160px - 5rem);
+  row-gap: clamp(2rem, 7vw, 4rem);
   h1 {
     display: flex;
     justify-content: center;
@@ -78,7 +80,6 @@
         font-size: clamp(0.8rem, 2.5vw, 1.1rem);
         font-family: var(--primary-font);
         line-height: 1.3rem;
-        background-color: var(--background-text-opacity);
         padding: 5px;
       }
     }
@@ -115,7 +116,6 @@
       align-items: center;
       border: 2px solid white;
       padding: 0.5rem;
-      background-color: var(--background-text-opacity);
       img {
         width: 5Opx;
         height: 50px;
@@ -148,7 +148,6 @@
       font-size: clamp(0.8rem, 2.5vw, 1.1rem);
       font-family: var(--primary-font);
       line-height: 1.5rem;
-      background-color: var(--background-text-opacity);
       padding: 5px;
     }
   }
@@ -172,7 +171,7 @@
     grid-template-rows: 1fr 1fr 1fr 1fr; //
     align-items: center;
     row-gap: 2rem;
-    column-gap: 3rem;
+    column-gap: 6rem;
     margin-inline: 10%;
     margin-block: 2.5rem;
     width: 80%;
@@ -225,7 +224,6 @@
         .address-text {
           font-family: var(--primary-font);
           line-height: 1.3rem;
-          background-color: var(--background-text-opacity);
           padding: 5px;
         }
       }
@@ -262,7 +260,6 @@
         align-items: center;
         border: 2px solid white;
         padding-inline: 1 / rem;
-        background-color: var(--background-text-opacity);
         margin-bottom: 1rem;
         img {
           width: 5Opx;
@@ -293,8 +290,6 @@
       .description-text {
         font-family: var(--primary-font);
         line-height: 1.5rem;
-        background-color: var(--background-text-opacity);
-        padding: 1rem; //
       }
     }
 
