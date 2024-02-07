@@ -3,7 +3,7 @@ import { Form, useParams, redirect, Navigate, Link } from "react-router-dom";
 import Input from "../../components/Input-R/Input";
 import "./ProfilOption.scss";
 import InputTextarea from "../../components/InputTextarea/InputTextarea";
-// penser a changer l'inpute en textArea
+
 function ProfilOption() {
   const { id } = useParams();
   const data = JSON.parse(localStorage.getItem("user"));
