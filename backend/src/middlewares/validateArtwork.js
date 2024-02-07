@@ -60,18 +60,14 @@ const validateArtwork = (req, res, next) => {
         "Oups ! Vous avez dépassé la limite de caractères autorisée pour ce champ. Veuillez réduire le nombre de caractères à 100 ou moins et réessayer.",
     });
   }
-  if (description == null) {
-    errors.push({
-      field: "description",
-      message:
-        "Attention ! Ce champ est obligatoire. Veuillez le remplir pour poursuivre",
-    });
-  } else if (description.length >= 500) {
-    errors.push({
-      field: "description",
-      message:
-        "Oups ! Vous avez dépassé la limite de caractères autorisée pour ce champ. Veuillez réduire le nombre de caractères à 500 ou moins et réessayer.",
-    });
+  if (description) {
+    if (description.length >= 500) {
+      errors.push({
+        field: "description",
+        message:
+          "Oups ! Vous avez dépassé la limite de caractères autorisée pour ce champ. Veuillez réduire le nombre de caractères à 500 ou moins et réessayer.",
+      });
+    }
   }
   if (datePublished == null) {
     errors.push({
