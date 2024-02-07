@@ -5,6 +5,7 @@ import "./AdminArtworkMissing.scss";
 import tealSplatter from "../../assets/images/teal-splatter.svg";
 import pinkSplatter from "../../assets/images/pink-splatter.svg";
 import greenSplatter from "../../assets/images/green-splatter.svg";
+import Title from "../../components/TitleRed-R/Title";
 
 function AdminArtworkMissing() {
   const navigate = useNavigate();
@@ -168,17 +169,21 @@ function AdminArtworkMissing() {
         className="image"
       />
       <div className="content-container">
-        <h2>Publie par</h2>
-        <div className="avatar">
-          <img
-            src={publisher.selected_avatar}
-            alt={`${publisher.name} avatar`}
-          />
-          <p>{publisher.name}</p>
+        <div className="box">
+          <Title title="Publie par:" />
+          <div className="avatar">
+            <img
+              src={publisher.selected_avatar}
+              alt={`${publisher.name} avatar`}
+            />
+            <p>{publisher.name}</p>
+          </div>
         </div>
-        <h2>Adresse</h2>
-        <p>{artwork.adress}</p>
-        <p>Le {date(artwork.date_published)}</p>
+        <div className="box">
+          <h2>Adresse</h2>
+          <p>{artwork.adress}</p>
+          <p>Le {date(artwork.date_published)}</p>
+        </div>
         <button
           type="button"
           onClick={() => setModalValidate(true)}

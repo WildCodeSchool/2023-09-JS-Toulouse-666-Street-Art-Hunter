@@ -14,12 +14,41 @@
 
     z-index: 900;
     bottom: 80px;
-    left: calc(50% - 40px);
-    width: clamp(90px, 10vw, 150px);
-    height: clamp(90px, 10vw, 150px);
+    left: calc(50% - 50px);
+    width: 100px;
+    height: 100px;
     &:hover {
       transform: scale(1.1);
       transition-duration: 0.5s;
+    }
+  }
+}
+
+@media screen and (min-width: 1024px) {
+  .map-page {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    height: calc(100dvh - 160px - 5rem);
+    margin-block: 2.5rem;
+    .leaflet-container {
+      position: relative;
+    }
+    .photo-logo {
+      position: absolute;
+
+      z-index: 900;
+      bottom: 80px;
+      left: calc(50% - 70px);
+      width: 140px;
+      height: 140px;
+      transform: translateY(10%);
+      &:hover {
+        transform: scale(1.1);
+        transition-duration: 0.5s;
+      }
     }
   }
 }

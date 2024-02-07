@@ -3,7 +3,6 @@ import { Form, useParams, redirect, Navigate, Link } from "react-router-dom";
 import Input from "../../components/Input-R/Input";
 import "./ProfilOption.scss";
 import InputTextarea from "../../components/InputTextarea/InputTextarea";
-// import fetchUserData from "../../services/Loaders/FetchUserData";
 
 function ProfilOption() {
   // ********************* STATE *********************

@@ -5,7 +5,7 @@
   position: fixed;
   top: 0px;
   right: -100vw;
-  background: rgb(163, 19, 0);
+  background: rgb(186, 8, 112);
   backdrop-filter: blur(3px);
   width: 100%;
   justify-content: center;
@@ -24,17 +24,23 @@
       font-family: var(--primary-font);
       text-decoration: none;
       color: whitesmoke;
-      font-size: 1rem;
-      border: 1px solid gray;
-      padding: 10px;
+      font-size: clamp(0.5rem, 3vw, 1rem);
+      border: 1px solid whitesmoke;
+      padding: clamp(0.5rem, 3vw, 1rem);
+      &:hover {
+        background-color: rgba(245, 245, 245, 0.437);
+      }
     }
 
     button {
       font-family: var(--primary-font);
       color: whitesmoke;
-      font-size: 1rem;
-      border: 1px solid gray;
-      padding: 10px;
+      font-size: clamp(0.5rem, 3vw, 1rem);
+      border: 1px solid whitesmoke;
+      padding: clamp(0.5rem, 3vw, 1rem);
+      &:hover {
+        background-color: rgba(245, 245, 245, 0.437);
+      }
     }
   }
 }
