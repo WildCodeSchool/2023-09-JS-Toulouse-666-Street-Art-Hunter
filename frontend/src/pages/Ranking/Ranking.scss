@@ -113,6 +113,10 @@
       }
     }
     .score-others-players {
+      background-image: url("../../assets/images/galaxie.png");
+      background-position: center;
+      background-size: cover;
+      backdrop-filter: invert(80%);
       font-family: var(--primary-font);
       font-size: clamp(10px, 3vw, 18px);
       display: flex;
@@ -129,6 +133,7 @@
       box-shadow: 4px 4px 0px 0px #ed1385;
 
       .other-player {
+        background-color: rgba(0, 0, 0, 0.686);
         display: grid;
         grid-template-columns: 20% 50% 30%;
         justify-content: center;

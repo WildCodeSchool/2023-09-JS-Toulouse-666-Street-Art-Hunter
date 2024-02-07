@@ -5,6 +5,7 @@ import "./ValidatePhoto.scss";
 import tealSplatter from "../../assets/images/teal-splatter.svg";
 import pinkSplatter from "../../assets/images/pink-splatter.svg";
 import greenSplatter from "../../assets/images/green-splatter.svg";
+import Title from "../../components/TitleRed-R/Title";
 
 function ValidatePhoto() {
   const navigate = useNavigate();
@@ -140,14 +141,15 @@ function ValidatePhoto() {
           />
         </div>
       </div>
-
-      <h2>PUBLIE PAR</h2>
-      <div className="avatar">
-        <img
-          src={photo.selected_avatar}
-          alt={`Selected avatar of ${photo.name}`}
-        />
-        <p>{photo.name}</p>
+      <div className="published">
+        <Title title="Publie par:" />
+        <div className="avatar">
+          <img
+            src={photo.selected_avatar}
+            alt={`Selected avatar of ${photo.name}`}
+          />
+          <p>{photo.name}</p>
+        </div>
       </div>
       <button
         type="button"

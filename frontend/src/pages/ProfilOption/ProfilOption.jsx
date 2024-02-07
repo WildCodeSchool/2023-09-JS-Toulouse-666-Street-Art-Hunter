@@ -5,14 +5,19 @@ import "./ProfilOption.scss";
 import InputTextarea from "../../components/InputTextarea/InputTextarea";
 
 function ProfilOption() {
-  const { id } = useParams();
-  const data = JSON.parse(localStorage.getItem("user"));
+  // ********************* STATE *********************
   const [description, setDescription] = useState("");
+
+  // ********************* LOGIQUE *********************
+  const { id } = useParams();
+
+  const data = JSON.parse(localStorage.getItem("user"));
 
   if (parseInt(id, 10) !== data.id) {
     return <Navigate to="/login" replace />;
   }
 
+  // ********************* RENDER *********************
   return (
     <div className="profil-option-input-option">
       <h1 className="input-option-title">Modifie tes données!</h1>
