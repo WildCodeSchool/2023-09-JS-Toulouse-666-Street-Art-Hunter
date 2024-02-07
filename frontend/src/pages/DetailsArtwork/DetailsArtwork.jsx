@@ -11,10 +11,7 @@ function DetailsArtwork() {
   const dataArtworkById = useLoaderData();
 
   // ********************* LOGIQUE *********************
-  const { data, userPhotos } = dataArtworkById;
-  const idPhotos = userPhotos.map((el) => {
-    return el.artwork_id;
-  });
+  const { data, idPhotos } = dataArtworkById;
 
   const navigate = useNavigate();
 
@@ -128,7 +125,7 @@ function DetailsArtwork() {
       </div>
 
       <div className="btn-container">
-        {idPhotos.includes(data.id) === false && (
+        {idPhotos && idPhotos.includes(data.id) === false && (
           <Button name="submit" textBtn="Trouver ?" onClick={handleFind} />
         )}
         <Button name="submit" textBtn="Disparu ?" onClick={handleMissing} />
@@ -166,7 +163,11 @@ export const dataArtwork = async (req) => {
 
       const userPhotos = await photoByUser.json();
 
-      return { data, userPhotos };
+      const idPhotos = userPhotos.map((el) => {
+        return el.artwork_id;
+      });
+
+      return { data, idPhotos };
     }
 
     return { data };
