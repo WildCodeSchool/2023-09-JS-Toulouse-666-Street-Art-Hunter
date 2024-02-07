@@ -72,12 +72,12 @@ export const option = async ({ request }) => {
 
   const formData = {
     ...data,
-    email: dataU.email,
-    score: dataU.score,
+    email: user.email,
+    score: user.score,
     is_admin: user.is_admin,
     is_banned: user.is_banned,
-    selected_avatar: dataU.selected_avatar,
-    border: dataU.border,
+    selected_avatar: user.selected_avatar,
+    border: user.border,
   };
   try {
     const response = await fetch(

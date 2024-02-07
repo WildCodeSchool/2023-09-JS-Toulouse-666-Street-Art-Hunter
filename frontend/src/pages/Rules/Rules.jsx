@@ -19,8 +19,8 @@ function Rules() {
         <div className="section-2">
           <Title title="Attention" />
           <ul className="list-section-2">
-            <li>Ne te met pas en danger pour prendre une photo </li>
-            <li>Utilise un seul compte par joueur</li>
+            <li>Ne te met pas en danger pour prendre une photo.</li>
+            <li>Utilise un seul compte par joueur.</li>
           </ul>
         </div>
         <div className="section-3">
