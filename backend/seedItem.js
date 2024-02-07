@@ -67,58 +67,6 @@ const artworkData = [
   },
   {
     image:
-      "https://res.cloudinary.com/dikhzx4qt/image/upload/v1706108272/Avatar/a50ae9cf-dcc6-4b52-8ded-59f6ae704776_gci64j.jpg",
-    longitude: "43.60568091093529",
-    latitude: "1.4491256754932784",
-    adress: "18 All. Jean Jaurès",
-    description: "C'est un mur !",
-    date_published: "2022/01/01",
-    ask_to_archived: 0,
-    is_archived: 0,
-    is_validate: 0,
-    publisher_id: 2,
-  },
-  {
-    image:
-      "https://res.cloudinary.com/dikhzx4qt/image/upload/v1706108272/Avatar/a50ae9cf-dcc6-4b52-8ded-59f6ae704776_gci64j.jpg",
-    longitude: "43.60568091093529",
-    latitude: "1.4491256754932784",
-    adress: "18 All. Jean Jaurès",
-    description: "C'est un mur !",
-    date_published: "2022/01/01",
-    ask_to_archived: 0,
-    is_archived: 0,
-    is_validate: 0,
-    publisher_id: 2,
-  },
-  {
-    image:
-      "https://res.cloudinary.com/dikhzx4qt/image/upload/v1706108272/Avatar/a50ae9cf-dcc6-4b52-8ded-59f6ae704776_gci64j.jpg",
-    longitude: "43.60568091093529",
-    latitude: "1.4491256754932784",
-    adress: "18 All. Jean Jaurès",
-    description: "C'est un mur !",
-    date_published: "2022/01/01",
-    ask_to_archived: 0,
-    is_archived: 0,
-    is_validate: 0,
-    publisher_id: 2,
-  },
-  {
-    image:
-      "https://res.cloudinary.com/dikhzx4qt/image/upload/v1706108272/Avatar/a50ae9cf-dcc6-4b52-8ded-59f6ae704776_gci64j.jpg",
-    longitude: "43.60568091093529",
-    latitude: "1.4491256754932784",
-    adress: "18 All. Jean Jaurès",
-    description: "C'est un mur !",
-    date_published: "2022/01/01",
-    ask_to_archived: 0,
-    is_archived: 0,
-    is_validate: 0,
-    publisher_id: 1,
-  },
-  {
-    image:
       "https://3.bp.blogspot.com/-v3QXxWDaV4g/WyaK66UcrcI/AAAAAAAAQN4/Ibd1RhTqA0QTlAvSnBsFX1NV_ychGM6WgCLcBGAs/s1600/01.JPG",
     longitude: "43.605918557771076",
     latitude: "1.4560548575085943",
@@ -126,6 +74,62 @@ const artworkData = [
     description: "C'est beau !",
     date_published: "2022/01/01",
     ask_to_archived: 1,
+    is_archived: 0,
+    is_validate: 1,
+    publisher_id: 1,
+  },
+  {
+    image:
+      "https://www.toulouse-tourisme.com/sites/www.toulouse-tourisme.com/files/styles/edito_paragraphes/public/thumbnails/image/visiter_toulouse_street_art_kat.jpg?itok=sc-X5-NJ",
+    longitude: "43.60168837902242",
+    latitude: "1.4420412396067641",
+    adress: "5 Rue Sainte-Ursule",
+    description:
+      "Une magnifique fresque colorée, réalisée par l'une des pionnières du graff toulousain, Mademoiselle Kat.",
+    date_published: "2023/06/12",
+    ask_to_archived: 0,
+    is_archived: 0,
+    is_validate: 1,
+    publisher_id: 1,
+  },
+  {
+    image:
+      "https://www.toulouse-tourisme.com/sites/www.toulouse-tourisme.com/files/styles/edito_paragraphes/public/thumbnails/image/visiter_toulouse_miss_van_street_art.jpg?itok=xeQBWJad",
+    longitude: "43.598065240880395",
+    latitude: "1.4418348684429794",
+    adress: "5 Rue du Pont de Tounis",
+    description:
+      "Cette œuvre, intitulée La Symphonie des Songes et réalisée par Miss Van, a été peinte au pinceau dans le cadre du festival de la culture urbaine Rose Béton.",
+    date_published: "2024/02/01",
+    ask_to_archived: 0,
+    is_archived: 0,
+    is_validate: 1,
+    publisher_id: 1,
+  },
+  {
+    image:
+      "https://www.toulouse-tourisme.com/sites/www.toulouse-tourisme.com/files/styles/edito_paragraphes/public/thumbnails/image/visiter_toulouse_street_art_gilgamesch.jpg?itok=zp1hXdfE",
+    longitude: "43.58622318501382",
+    latitude: "1.4535165242605759",
+    adress: "30 Rue Marceau",
+    description:
+      "Oeuvre antique L'épopée de Gilgamesh, récit cunéiforme, revisité de manière contemporaine par Poes et Jober dans le quartier du Busca à Toulouse.",
+    date_published: "2024/02/01",
+    ask_to_archived: 0,
+    is_archived: 0,
+    is_validate: 1,
+    publisher_id: 1,
+  },
+  {
+    image:
+      "https://www.toulouse-tourisme.com/sites/www.toulouse-tourisme.com/files/styles/edito_paragraphes/public/thumbnails/image/visiter_toulouse_graff_100taur.jpg?itok=yvp0gaGa",
+    longitude: "43.6212166532323",
+    latitude: "1.4383002519129797",
+    adress: "19 Rue des anges",
+    description:
+      "100Taur a créé cette remarquable fresque, l'une des plus longues de la ville. Inspiré par Picasso et Jérôme Bosch, l'artiste a imaginé un univers peuplé de créatures fantastiques.",
+    date_published: "2024/02/01",
+    ask_to_archived: 0,
     is_archived: 0,
     is_validate: 1,
     publisher_id: 1,
