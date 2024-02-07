@@ -158,7 +158,7 @@ function Profil() {
               type="button"
               onClick={handleClickChangeAvatar}
             >
-              Validé
+              Valider
             </button>
             <button
               className="button-back"

@@ -46,7 +46,7 @@ function ProfilOption() {
         />
 
         <button className="continue" type="submit">
-          Validé
+          Valider
         </button>
       </Form>
       <Link className="option-button" to={`/profil/${id}`}>
