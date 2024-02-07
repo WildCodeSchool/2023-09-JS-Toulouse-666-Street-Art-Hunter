@@ -30,6 +30,11 @@
     border-bottom: 2px solid deeppink;
     color: whitesmoke;
     font-size: 1rem;
+    outline: none;
+    &:focus-visible {
+      background-color: rgba(255, 192, 203, 0.442);
+      outline: 1px dashed yellow;
+    }
   }
 }
 
