@@ -241,7 +241,8 @@ function Profil() {
             <p>Votre tableau de chasse est vide</p>
           )}
         </div>
-        <Title title="Tableau de chasse en attente" />
+        <br />
+        <Title title="en attente" />
         <div className="map-artwork">
           {pendingArt && pendingArt.length > 0 ? (
             pendingArt.map((el) => {

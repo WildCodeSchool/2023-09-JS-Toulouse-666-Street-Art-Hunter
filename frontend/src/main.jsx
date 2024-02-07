@@ -37,6 +37,7 @@ import AdminLayout, { adminLayout } from "./Layouts/RootLayout/AdminLayout";
 import Legals from "./pages/Legal/Legal";
 import AdminUserModify, {
   adminModify,
+  adminModifyUsers,
 } from "./pages/AdminUserModify/AdminUserModify";
 import AdminArtworks, {
   adminArtworksLoader,
@@ -105,6 +106,7 @@ const router = createBrowserRouter(
           path="pannel-administrateur/users/option/:id"
           element={<AdminUserModify />}
           action={adminModify}
+          loader={adminModifyUsers}
         />
         <Route
           path="admin-artworks"

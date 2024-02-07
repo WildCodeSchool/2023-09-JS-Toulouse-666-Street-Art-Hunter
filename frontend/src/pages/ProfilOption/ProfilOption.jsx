@@ -7,7 +7,8 @@ import InputTextarea from "../../components/InputTextarea/InputTextarea";
 function ProfilOption() {
   const { id } = useParams();
   const data = JSON.parse(localStorage.getItem("user"));
-  const [description, setDescription] = useState("");
+  const [description, setDescription] = useState(data.description);
+  const [name, setName] = useState(data.name);
 
   if (parseInt(id, 10) !== data.id) {
     return <Navigate to="/login" replace />;
@@ -26,7 +27,8 @@ function ProfilOption() {
           className="input"
           labelName="name"
           type="name"
-          value={data.name}
+          value={name}
+          setValue={setName}
           labelText="Pseudo :"
           maxLength="14"
         />

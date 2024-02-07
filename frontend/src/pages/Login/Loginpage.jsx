@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useState } from "react";
 import { Form, redirect, useNavigate } from "react-router-dom";
 import Input from "../../components/Input-R/Input";
 import Boy from "../../assets/photos/boy.png";
@@ -8,6 +8,8 @@ import "./Loginpage.scss";
 function Login() {
   // ********************* STATE *********************
   const navigate = useNavigate();
+  const [email, setEmail] = useState("");
+  const [password, setPassword] = useState("");
 
   // ********************* LOGIQUE *********************
   const handleClickRegister = () => {
@@ -31,6 +33,8 @@ function Login() {
               type="email"
               labelText="Adresse Mail:"
               maxLength="45"
+              value={email}
+              setValue={setEmail}
             />
             <Input
               className="input"
@@ -38,6 +42,8 @@ function Login() {
               type="password"
               labelText="Mot de passe:"
               maxLength="455"
+              value={password}
+              setValue={setPassword}
             />
             <div className="btn-container">
               <button type="submit" name="submit">

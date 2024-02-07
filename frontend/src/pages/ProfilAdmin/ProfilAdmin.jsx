@@ -249,7 +249,8 @@ function ProfilAdmin() {
             <p>Votre tableau de chasse est vide</p>
           )}
         </div>
-        <Title title="Tableau de chasse" />
+        <br />
+        <Title title="en attente" />
         <div className="map-artwork">
           {pendingArt && pendingArt.length > 0 ? (
             pendingArt.map((el) => {

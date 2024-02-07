@@ -40,7 +40,7 @@ function ArtworkMarker() {
         return (
           <Marker
             key={artwork.id}
-            position={[artwork.longitude, artwork.latitude]}
+            position={[artwork.latitude, artwork.longitude]}
             icon={userPhotoId.includes(artwork.id) ? found : notFound}
           >
             {userPhotoId.includes(artwork.id) ? (
