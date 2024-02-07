@@ -15,48 +15,54 @@
     column-gap: clamp(3rem, 10vw, 4rem);
 
     .modal-delete {
+      position: fixed;
       display: flex;
-      align-items: center;
-      justify-content: center;
-      position: absolute;
-      width: 100vw;
-      height: 100vh;
+      left: -105%;
+      width: 100dvw;
+      height: 100dvh;
+      background-color: rgba(0, 0, 0, 0.5);
       backdrop-filter: blur(10px);
       left: 0px;
       top: 0px;
+      transition: left 0.5s ease;
+      align-items: center;
+      justify-content: center;
+      flex-direction: column;
+      gap: 3rem;
+      text-align: center;
+      z-index: 3;
 
       .modale-delete-texte {
         display: flex;
-        justify-content: space-around;
+        justify-content: center;
         align-items: center;
         flex-direction: column;
         width: 100vw;
         height: 100vh;
-        .modale-validate {
-          font-family: "PressStart2P";
-          color: white;
-          text-align: right;
-          width: 100%;
+        gap: 40px;
+        .div-modale-user {
           display: flex;
-          justify-content: flex-end;
-          .button-validate {
-            background-color: green;
-            width: 190px;
-            padding: 20px;
-            font-size: 20px;
-          }
-        }
-        .modale-return {
-          font-family: "PressStart2P";
-          color: white;
-          text-align: left;
-          width: 100%;
+          gap: 1rem;
+          position: relative;
+          .modale-validate {
+            font-family: "PressStart2P";
+            color: white;
 
-          .button-return {
-            background-color: red;
-            width: 190px;
+            width: 100%;
+            display: flex;
+            justify-content: flex-end;
+            background-color: green;
             padding: 20px;
-            font-size: 20px;
+            font-size: 14px;
+            text-align: center;
+          }
+          .modale-return {
+            font-family: "PressStart2P";
+            color: white;
+            text-align: center;
+            background-color: red;
+            padding: 20px;
+            font-size: 14px;
           }
         }
       }

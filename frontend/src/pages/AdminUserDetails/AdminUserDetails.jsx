@@ -128,39 +128,43 @@ function AdminUserDetails() {
         <div className={ModaleButton}>
           <div className="modale-delete-texte">
             <div className="modale-title">Etes vous sur?</div>
-            <button
-              className="modale-validate"
-              type="button"
-              onClick={handleClickDelet}
-            >
-              <div className="button-validate">Validé</div>
-            </button>
-            <button
-              onClick={toggleModale}
-              className="modale-return"
-              type="button"
-            >
-              <div className="button-return">Retour</div>
-            </button>
+            <div className="div-modale-user">
+              <button
+                className="modale-validate"
+                type="button"
+                onClick={handleClickDelet}
+              >
+                Oui
+              </button>
+              <button
+                onClick={toggleModale}
+                className="modale-return"
+                type="button"
+              >
+                Non
+              </button>
+            </div>
           </div>
         </div>
         <div className={ModaleBanButton}>
           <div className="modale-delete-texte">
             <div className="modale-title">Etes vous sur?</div>
-            <button
-              className="modale-validate"
-              type="button"
-              onClick={handleClickBan}
-            >
-              <div className="button-validate">Validé</div>
-            </button>
-            <button
-              onClick={toggleModaleBan}
-              className="modale-return"
-              type="button"
-            >
-              <div className="button-return">Retour</div>
-            </button>
+            <div className="div-modale-user">
+              <button
+                className="modale-validate"
+                type="button"
+                onClick={handleClickBan}
+              >
+                Oui
+              </button>
+              <button
+                onClick={toggleModaleBan}
+                className="modale-return"
+                type="button"
+              >
+                Non
+              </button>
+            </div>
           </div>
         </div>
         <div className="admin-user-detail-block-link">
