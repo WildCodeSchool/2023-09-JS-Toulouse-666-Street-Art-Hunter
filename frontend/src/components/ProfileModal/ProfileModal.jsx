@@ -20,12 +20,16 @@ function ProfileModal({ modalIsConnected, setModalIsConnected }) {
   const { id } = data;
 
   return (
-    <button
-      type="button"
+    <div
       className={`profile-modal-container ${
         modalIsConnected ? "slide-in" : ""
       }`}
+      role="button"
+      tabIndex="0"
       onClick={() => setModalIsConnected(!modalIsConnected)}
+      onKeyDown={(e) =>
+        e.key === "Escape" && setModalIsConnected(!modalIsConnected)
+      }
     >
       <div>
         {data && <Link to={`/profil/${id}`}>Profile</Link>}
@@ -33,7 +37,7 @@ function ProfileModal({ modalIsConnected, setModalIsConnected }) {
           Déconnexion
         </button>
       </div>
-    </button>
+    </div>
   );
 }
 

@@ -119,7 +119,6 @@ const router = createBrowserRouter(
         <Route
           path="admin-details-artwork/option/:id"
           element={<ArtworkOption />}
-          // action={adminModifyArtwork}
         />
         <Route
           path="validate-photo/:id"

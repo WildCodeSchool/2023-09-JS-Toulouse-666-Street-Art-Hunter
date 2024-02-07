@@ -2,46 +2,6 @@
 .avatar-modal-close {
   display: none;
 }
-.avatar-modal-open {
-  height: 100vh;
-  width: 100vw;
-  left: 0%;
-  top: 0%;
-  position: absolute;
-  z-index: 2;
-  .profil-modal-title {
-    font-size: 28px;
-    font-family: "PressStart2P";
-    text-align: center;
-    margin-top: 40px;
-    background: var(--red-gradient);
-
-    background-clip: text;
-    -webkit-background-clip: text;
-    -webkit-text-fill-color: transparent;
-    text-transform: uppercase;
-  }
-  .profil-map-div-block {
-    padding: 16px;
-    display: flex;
-    flex-direction: row;
-    flex-wrap: wrap;
-    gap: 4px;
-    justify-content: center;
-    border: 2px solid #dd0bff;
-    box-shadow: 4px 4px 0px 0px #ed1385;
-    margin-inline: 16px;
-    margin-top: 40px;
-    .map-div-avatar {
-      .avatar-img {
-        width: 75px;
-      }
-    }
-  }
-  .button-validate {
-    color: white;
-  }
-}
 
 // -------- PROFIL ADMIN --------
 .main-container-profil-admin {
@@ -54,6 +14,69 @@
   margin-inline: 10%;
   width: 80%;
   row-gap: clamp(2rem, 7vw, 4rem);
+  .avatar-modal-open {
+    font-family: "PressStart2P";
+    height: 100%;
+    width: 100%;
+    left: 0%;
+    top: 0%;
+    position: fixed;
+    z-index: 2;
+
+    background-color: #1c1e24;
+
+    .profil-modal-title {
+      font-size: 28px;
+      text-align: center;
+      margin-top: 40px;
+      background: var(--red-gradient);
+      background-clip: text;
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      text-transform: uppercase;
+    }
+    .profil-map-div-block {
+      padding: 16px;
+      display: flex;
+      flex-direction: row;
+      flex-wrap: wrap;
+      gap: 4px;
+      justify-content: center;
+      border: 2px solid #dd0bff;
+      box-shadow: 4px 4px 0px 0px #ed1385;
+      margin-inline: 16px;
+      margin-top: 40px;
+      .map-div-avatar {
+        .avatar-img {
+          width: 75px;
+        }
+      }
+    }
+    .block-button-validate-img {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      .avatar-img-selectioned {
+        width: 145px;
+        padding: 20px;
+      }
+      .block-button-photo {
+        display: flex;
+        justify-content: space-between;
+        gap: 80px;
+        .button-validate {
+          color: white;
+          font-size: 18px;
+          font-family: "PressStart2P";
+        }
+        .button-back {
+          color: white;
+          font-family: "PressStart2P";
+          font-size: 18px;
+        }
+      }
+    }
+  }
   .section-title {
     display: flex;
     flex-direction: row;
@@ -101,6 +124,10 @@
         width: 100%;
         .avatar-button {
           position: absolute;
+          .img-modal {
+            width: 30px;
+            border-radius: 10px;
+          }
         }
         .avatar {
           border: 4px solid rgb(36, 126, 205);
@@ -225,6 +252,23 @@
   .main-container-profil-admin {
     margin-inline: 10%;
     width: 80%;
+    .avatar-modal-open {
+      .profil-map-div-block {
+        .map-div-avatar {
+          .modale-validate {
+            .avatar-img {
+              width: 170px;
+            }
+          }
+        }
+      }
+      .block-button-validate-img {
+        .avatar-img-selectioned {
+          width: 205px;
+          padding: 50px;
+        }
+      }
+    }
     .section-title {
       justify-content: center;
       column-gap: clamp(2.5rem, 8vw, 5rem);
@@ -234,7 +278,7 @@
       column-gap: clamp(2.5rem, 8vw, 5rem);
       .profil-top {
         flex-direction: column;
-        justify-content: space-between;
+        justify-content: space-evenly;
         min-height: 500px;
         .profile-block-avatar {
           width: 100%;

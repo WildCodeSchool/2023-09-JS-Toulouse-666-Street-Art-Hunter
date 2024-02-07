@@ -7,6 +7,7 @@ import {
 
 import "./ProfilAdmin.scss";
 import { useState } from "react";
+import Crayon from "../../assets/icons/pixel-crayon.avif";
 import Trophy from "../../assets/icons/Trophy.png";
 import Tools from "../../assets/icons/tools.svg";
 import Admin from "../../assets/icons/adminLogo.png";
@@ -121,7 +122,7 @@ function ProfilAdmin() {
   };
 
   return (
-    <>
+    <div className="main-container-profil-admin">
       <div className={ModaleButton}>
         <div className="profil-modal-title">Avatar</div>
         <div className="profil-map-div-block">
@@ -143,127 +144,135 @@ function ProfilAdmin() {
             );
           })}
         </div>
-        <button
-          className="button-validate"
-          type="button"
-          onClick={handleClickChangeAvatar}
-        >
-          Validé
-        </button>
-      </div>
-
-      <div className="main-container-profil-admin">
-        <div className="section-title">
-          <button
-            type="button"
-            onClick={() => {
-              window.scrollTo(0, 0);
-              navigate(-1);
-            }}
-          >
-            <img src={Previous} alt="button previous" />
-          </button>
-          <h1>Admin</h1>
-        </div>
-
-        <div className="profil-admin-page">
-          <div className="profil-top">
-            <div className="profile-block-avatar">
-              <button
-                className="avatar-button"
-                type="button"
-                onClick={toggleModale}
-              >
-                x
-              </button>
-              <img
-                className="avatar"
-                src={profils.user.selected_avatar}
-                alt="avatar"
-              />
-            </div>
+        <div className="block-button-validate-img">
+          <img
+            className="avatar-img-selectioned"
+            src={idAvatar}
+            alt="Clique sur un dessin!!"
+          />
+          <div className="block-button-photo">
             <button
-              className="option-btn"
+              className="button-validate"
               type="button"
-              onClick={handleClickOption}
+              onClick={handleClickChangeAvatar}
             >
-              <img src={Tools} alt="option" />
+              Validé
+            </button>
+            <button
+              className="button-back"
+              type="button"
+              onClick={toggleModale}
+            >
+              Retour
             </button>
           </div>
-          <div key={profils.user.id} className="profil-user">
-            <div className="topic">
-              <TextBlue text={profils && profils.user.name} />
-              <p className="resume"> {profils.user.description}</p>
-            </div>
-            <div className="score-block">
-              <img className="trophy" src={Trophy} alt="trophy" />
-              <p className="score">
-                {profils.user.score}
-                <span> pts</span>
-              </p>
-            </div>
-          </div>
         </div>
+      </div>
+      <div className="section-title">
+        <button
+          type="button"
+          onClick={() => {
+            window.scrollTo(0, 0);
+            navigate(-1);
+          }}
+        >
+          <img src={Previous} alt="button previous" />
+        </button>
+        <h1>Admin</h1>
+      </div>
 
-        <div className="admin-block">
-          <img className="admin-img" src={Admin} alt="icon admin" />
-          <button
-            type="button"
-            className="admin-text"
-            onClick={handleClickAdmin}
-          >
-            Pannel Administrateur
-          </button>
-          <img className="admin-img" src={Admin} alt="icon admin" />
-        </div>
-        <div className="artwork">
-          <Title title="Tableau de chasse" />
-          <div className="map-artwork">
-            {validatedArt && validatedArt.length > 0 ? (
-              validatedArt.map((el) => {
-                return (
-                  <button
-                    type="button"
-                    key={el.id}
-                    className="item"
-                    onClick={() => {
-                      window.scrollTo(0, 0);
-                      navigate(`/details-artwork/${el.id}`);
-                    }}
-                  >
-                    <img className="link-img" src={el.image} alt="street art" />
-                  </button>
-                );
-              })
-            ) : (
-              <p>Votre tableau de chasse est vide</p>
-            )}
+      <div className="profil-admin-page">
+        <div className="profil-top">
+          <div className="profile-block-avatar">
+            <button
+              className="avatar-button"
+              type="button"
+              onClick={toggleModale}
+            >
+              <img className="img-modal" src={Crayon} alt="un petit crayon" />
+            </button>
+            <img
+              className="avatar"
+              src={profils.user.selected_avatar}
+              alt="avatar"
+            />
           </div>
-          <Title title="Tableau de chasse" />
-          <div className="map-artwork">
-            {pendingArt && pendingArt.length > 0 ? (
-              pendingArt.map((el) => {
-                return (
-                  <button
-                    type="button"
-                    key={el.id}
-                    className="item"
-                    onClick={() => {
-                      window.scrollTo(0, 0);
-                      navigate(`/details-artwork/${el.id}`);
-                    }}
-                  >
-                    <img className="link-img" src={el.image} alt="street art" />
-                  </button>
-                );
-              })
-            ) : (
-              <p>Vous n'avez aucune oeuvre en cours de validation</p>
-            )}
+          <button
+            className="option-btn"
+            type="button"
+            onClick={handleClickOption}
+          >
+            <img src={Tools} alt="option" />
+          </button>
+        </div>
+        <div key={profils.user.id} className="profil-user">
+          <div className="topic">
+            <TextBlue text={profils && profils.user.name} />
+            <p className="resume"> {profils.user.description}</p>
+          </div>
+          <div className="score-block">
+            <img className="trophy" src={Trophy} alt="trophy" />
+            <p className="score">
+              {profils.user.score}
+              <span> pts</span>
+            </p>
           </div>
         </div>
       </div>
-    </>
+      <div className="admin-block">
+        <img className="admin-img" src={Admin} alt="icon admin" />
+        <button type="button" className="admin-text" onClick={handleClickAdmin}>
+          Pannel Administrateur
+        </button>
+        <img className="admin-img" src={Admin} alt="icon admin" />
+      </div>
+      <div className="artwork">
+        <Title title="Tableau de chasse" />
+        <div className="map-artwork">
+          {validatedArt && validatedArt.length > 0 ? (
+            validatedArt.map((el) => {
+              return (
+                <button
+                  type="button"
+                  key={el.id}
+                  className="item"
+                  onClick={() => {
+                    window.scrollTo(0, 0);
+                    navigate(`/details-artwork/${el.id}`);
+                  }}
+                >
+                  <img className="link-img" src={el.image} alt="street art" />
+                </button>
+              );
+            })
+          ) : (
+            <p>Votre tableau de chasse est vide</p>
+          )}
+        </div>
+        <Title title="Tableau de chasse" />
+        <div className="map-artwork">
+          {pendingArt && pendingArt.length > 0 ? (
+            pendingArt.map((el) => {
+              return (
+                <button
+                  type="button"
+                  key={el.id}
+                  className="item"
+                  onClick={() => {
+                    window.scrollTo(0, 0);
+                    navigate(`/details-artwork/${el.id}`);
+                  }}
+                >
+                  <img className="link-img" src={el.image} alt="street art" />
+                </button>
+              );
+            })
+          ) : (
+            <p>Vous n'avez aucune oeuvre en cours de validation</p>
+          )}
+        </div>
+      </div>
+    </div>
   );
 }
 
