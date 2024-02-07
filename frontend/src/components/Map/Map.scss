@@ -1,9 +1,10 @@
 .leaflet-container {
+  box-sizing: border-box;
   width: calc(80% - clamp(5px, 1.2vw, 12px));
   height: calc(80vh - 10px);
   border: clamp(5px, 1.2vw, 12px) solid;
   border-image: radial-gradient(rgb(11, 231, 172), rgb(255, 222, 8), #dd0bff) 1;
-  box-shadow: 5px 5px 0px 0px #ed13846a;
+  box-shadow: 8px 8px 0px 0px #ed13846a;
 
   .marker {
     cursor: pointer;
