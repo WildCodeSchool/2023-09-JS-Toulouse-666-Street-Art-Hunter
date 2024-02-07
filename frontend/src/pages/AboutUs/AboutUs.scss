@@ -3,7 +3,7 @@
   flex-direction: column;
   row-gap: 2.5rem;
   margin-inline: 10%;
-  margin-block: 2.5rem;
+  margin-block: clamp(2.5rem, 8vw, 3rem);
   width: 80%;
   min-height: calc(100vh - 160px - 5rem);
   .adrien,
@@ -16,10 +16,10 @@
     align-items: center;
     row-gap: 2rem;
     background-color: #0000007e;
-    backdrop-filter: blur(3px);
+    backdrop-filter: blur(10px);
     .header {
       display: flex;
-      flex-direction: column-reverse;
+      flex-direction: column;
       justify-content: center;
       align-items: center;
       row-gap: 1rem;
@@ -53,9 +53,32 @@
     .adrien-description,
     .tristan-description,
     .theo-description {
+      display: flex;
+      flex-direction: column;
+      gap: 2rem;
+      justify-content: space-between;
       font-family: var(--primary-font);
       font-size: clamp(0.6rem, 3vw, 1rem);
       line-height: clamp(1.5rem, 4vw, 2rem);
+    }
+    .network {
+      display: flex;
+      justify-content: space-evenly;
+      gap: 2rem;
+      .link-img {
+        img {
+          width: clamp(50px, 10vw, 100px);
+          height: clamp(50px, 10vw, 100px);
+          &:hover {
+            transform: scale(1.05);
+            background-color: pink;
+            transition-duration: 2s;
+          }
+          &:active {
+            transform: scale(0.95);
+          }
+        }
+      }
     }
   }
 }

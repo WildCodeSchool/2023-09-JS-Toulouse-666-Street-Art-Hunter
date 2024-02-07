@@ -1,3 +1,58 @@
 .artwork-missing-container {
-  margin-top: 2.5rem;
+  display: flex;
+  flex-direction: column;
+  margin-block: clamp(2.5rem, 8vw, 4rem);
+  height: calc(100vh - 160px - clamp(2.5rem, 8vw, 4rem));
+}
+
+@media screen and (min-width: 768px) {
+  .artwork-missing-container {
+    background:
+
+    // blue
+      no-repeat left -220px top -100px url("../../assets/spray/spray-blue.png"),
+      // orange
+      no-repeat left -200px top 400px url("../../assets/spray/spray-orange.png"),
+      // yellow
+      no-repeat right -100px top 300px url("../../assets/spray/spray-yellow.png"),
+      // green-forest
+      no-repeat right -150px top -50px
+        url("../../assets/spray/spray-green-forest.png");
+  }
+}
+
+@media screen and (min-width: 1024px) {
+  .artwork-missing-container {
+    background:
+    // blue
+      no-repeat left -220px top -100px url("../../assets/spray/spray-blue.png"),
+      // orange
+      no-repeat left -200px top 400px url("../../assets/spray/spray-orange.png"),
+      // yellow
+      no-repeat right -100px top 300px url("../../assets/spray/spray-yellow.png"),
+      // green-forest
+      no-repeat right -150px top -50px
+        url("../../assets/spray/spray-green-forest.png");
+  }
+}
+
+@media screen and (min-width: 1250px) {
+  .artwork-missing-container {
+    background:
+    // blue
+      no-repeat left -220px top -100px url("../../assets/spray/spray-blue.png"),
+      // orange
+      no-repeat left -100px top 400px url("../../assets/spray/spray-orange.png"),
+      // yellow
+      no-repeat right 100px top 450px url("../../assets/spray/spray-yellow.png"),
+      // green-forest
+      no-repeat right -50px top -50px
+        url("../../assets/spray/spray-green-forest.png");
+
+    background-size:
+      500px 500px,
+      500px 500px,
+      450px 450px,
+      500px 500px;
+  }
 }

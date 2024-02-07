@@ -1,10 +1,9 @@
 .login-page {
   display: flex;
   flex-direction: column;
-  // justify-content: center;
   row-gap: 4rem;
   min-height: calc(100vh - 160px - clamp(2.5rem, 8vw, 4rem) - 4rem);
-  margin-block: clamp(2.5rem, 8vw, 4rem);
+  margin-block: clamp(2.5rem, 8vw, 3rem);
   width: 80%;
   margin-inline: 10%;
   .input-block {
@@ -307,19 +306,3 @@
     }
   }
 }
-
-// &::-webkit-scrollbar {
-//   width: 0;
-//   height: 0.5rem;
-// }
-// &::-webkit-scrollbar-thumb {
-//   background-color: var(--smoothGoldColor);
-//   border-radius: 5px;
-//   visibility: hidden;
-// }
-// &::-webkit-scrollbar-corner {
-//   visibility: hidden;
-// }
-// &:hover::-webkit-scrollbar-thumb {
-//   visibility: visible;
-// }

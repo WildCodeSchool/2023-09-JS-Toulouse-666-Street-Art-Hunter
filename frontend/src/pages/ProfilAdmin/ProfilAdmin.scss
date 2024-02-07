@@ -278,7 +278,7 @@
       column-gap: clamp(2.5rem, 8vw, 5rem);
       .profil-top {
         flex-direction: column;
-        justify-content: space-between;
+        justify-content: space-evenly;
         min-height: 500px;
         .profile-block-avatar {
           width: 100%;
