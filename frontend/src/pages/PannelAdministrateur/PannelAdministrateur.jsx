@@ -55,7 +55,7 @@ function PannelAdministrateur() {
       </div>
       <div className="arrays">
         <Title title="Photos à valider :" />
-        {profils.PhotoNoValidate.length > 1 ? (
+        {profils.PhotoNoValidate.length > 0 ? (
           <ArtworkPannel
             dataMap={profils.PhotoNoValidate}
             pageName="validate-photo"
@@ -66,7 +66,7 @@ function PannelAdministrateur() {
       </div>
       <div className="arrays">
         <Title title="Oeuvres ajoutées :" />
-        {profils.ArtworksToAdd.length > 1 ? (
+        {profils.ArtworksToAdd.length > 0 ? (
           <ArtworkPannel
             dataMap={profils.ArtworksToAdd}
             pageName="validate-artwork"
@@ -77,7 +77,7 @@ function PannelAdministrateur() {
       </div>
       <div className="arrays">
         <Title title="Oeuvres disparues :" />
-        {profils.ArtworksToMissing.length > 1 ? (
+        {profils.ArtworksToMissing.length > 0 ? (
           <ArtworkPannel
             dataMap={profils.ArtworksToMissing}
             pageName="admin-missing-artwork"
