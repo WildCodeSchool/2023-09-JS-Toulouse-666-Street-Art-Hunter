@@ -110,11 +110,12 @@
       flex-direction: row;
       justify-content: space-evenly;
       text-align: center;
-      // Bordure grise -----------------------------
-      border: 1px solid rgba(128, 128, 128, 0.361);
+      // Border + bg Pink *************
+      background-color: #f34cb651;
       box-sizing: border-box;
       padding: clamp(1.5rem, 6vw, 3rem);
-      // -------------------------------------------
+      // *******************************
+
       .profile-block-avatar {
         width: 100%;
         .avatar-button {
@@ -147,11 +148,11 @@
       flex-direction: column;
       row-gap: clamp(2.5rem, 8vw, 4rem);
       width: 100%;
-      // Bordure grise -----------------------------
-      border: 1px solid rgba(128, 128, 128, 0.361);
+      // Border + bg Pink *************
+      background-color: #f34cb651;
       box-sizing: border-box;
       padding: clamp(1.5rem, 6vw, 3rem);
-      // -------------------------------------------
+      // *******************************
       .topic {
         display: flex;
         flex-direction: column;
@@ -178,6 +179,7 @@
     display: flex;
     flex-direction: column;
     row-gap: 1.5rem;
+
     .map-artwork {
       display: flex;
       flex-wrap: wrap;
@@ -188,6 +190,12 @@
       padding-block: clamp(1.5rem, 5vw, 2.5rem);
       gap: 1rem;
       background-color: rgba(255, 192, 203, 0.209);
+
+      // Border + bg Pink *************
+      background-color: #f34cb651;
+      box-sizing: border-box;
+      padding: clamp(1.5rem, 6vw, 3rem);
+      // *******************************
       .item {
         .link-img {
           width: clamp(250px, 20vw, 350px);
@@ -229,18 +237,18 @@
     }
   }
   .main-container-profil-user {
-    margin-inline: 10%; //
-    width: 80%; //
+    margin-inline: 10%;
+    width: 80%;
     .section-title {
-      justify-content: center; //
-      column-gap: clamp(2.5rem, 8vw, 5rem); //
+      justify-content: center;
+      column-gap: clamp(2.5rem, 8vw, 5rem);
     }
     .profil-page {
-      flex-direction: row; //
-      column-gap: clamp(2.5rem, 8vw, 5rem); //
+      flex-direction: row;
+      column-gap: clamp(2.5rem, 8vw, 5rem);
       .profil-top {
-        flex-direction: column; //
-        justify-content: space-evenly; //
+        flex-direction: column;
+        justify-content: space-evenly;
         text-align: center;
         row-gap: 5rem;
         .profile-block-avatar {

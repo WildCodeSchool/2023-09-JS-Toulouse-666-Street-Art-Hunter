@@ -11,6 +11,7 @@ function AddNonExistingArtwork() {
         missing={false}
         nonExisting
         validated
+        params={false}
       />
     </div>
   );

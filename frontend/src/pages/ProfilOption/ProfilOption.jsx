@@ -27,7 +27,7 @@ function ProfilOption() {
   // ********************* RENDER *********************
   return (
     <div className="profil-option-input-option">
-      <h1 className="input-option-title">Modifie tes données!</h1>
+      <h1 className="input-option-title">Modifie ton compte</h1>
       <Form
         className="form"
         method="put"
@@ -49,6 +49,7 @@ function ProfilOption() {
           type="description"
           labelText="Description :"
           maxLength="255"
+          height="150px"
           value={description}
           setValue={setDescription}
         />

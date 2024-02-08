@@ -50,7 +50,7 @@ function AdminArtworks() {
         >
           <img src={Previous} alt="button previous" />
         </button>
-        <h1>Admin</h1>
+        <h1>Liste oeuvres</h1>
       </div>
       <label
         className="label-container admin-artworks-label"

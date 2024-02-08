@@ -22,7 +22,6 @@
     top: 0%;
     position: fixed;
     z-index: 2;
-
     background-color: #1c1e24;
 
     .profil-modal-title {
@@ -82,10 +81,10 @@
     flex-direction: row;
     align-items: center;
     justify-content: center;
-    column-gap: clamp(1rem, 3vw, 4rem);
+    column-gap: clamp(1rem, 7vw, 4rem);
     img {
-      width: clamp(50px, 10vw, 100px);
-      height: clamp(50px, 10vw, 100px);
+      width: clamp(40px, 10vw, 95px);
+      height: clamp(40px, 10vw, 95px);
       cursor: pointer;
       &:hover {
         transform: scale(1.05);
@@ -96,13 +95,14 @@
     }
     h1 {
       font-family: var(--secondary-font);
+      font-size: clamp(16px, 7vw, 60px);
+      line-height: clamp(32px, 7vw, 150px);
       // Red-gradient color text
       background: var(--red-gradient);
       background-clip: text;
       -webkit-background-clip: text;
       -webkit-text-fill-color: transparent;
       // -----------------------
-      font-size: clamp(1.5rem, 7vw, 3rem);
     }
   }
   .profil-admin-page {
@@ -120,6 +120,14 @@
       box-sizing: border-box;
       padding: clamp(1.5rem, 6vw, 3rem);
       // -------------------------------------------
+
+      // Border + bg Pink *************
+      background-color: #f34cb651;
+      // border: 3px solid #f34cb6;
+      box-sizing: border-box;
+      padding: clamp(1.5rem, 6vw, 3rem);
+      // *******************************
+
       .profile-block-avatar {
         width: 100%;
         .avatar-button {
@@ -159,6 +167,13 @@
       box-sizing: border-box;
       padding: clamp(1.5rem, 6vw, 3rem);
       // -------------------------------------------
+
+      // Border + bg Pink *************
+      background-color: #f34cb651;
+      box-sizing: border-box;
+      padding: clamp(1.5rem, 6vw, 3rem);
+      // *******************************
+
       .topic {
         display: flex;
         flex-direction: column;
@@ -188,12 +203,16 @@
 
   // -------- PANNEL ADMIN --------
   .admin-block {
-    margin: 16px;
     display: flex;
     justify-content: center;
     align-items: end;
     flex-direction: row;
     gap: 1rem;
+    width: 100%;
+    // Bordure grise -----------------
+    box-sizing: border-box;
+    padding: clamp(1.5rem, 6vw, 3rem);
+    // -------------------------------
     .admin-img {
       width: clamp(50px, 6vw, 70px);
     }
@@ -225,20 +244,30 @@
       display: flex;
       flex-wrap: wrap;
       justify-content: space-evenly;
+      padding: 1rem;
+      gap: 1rem;
+      line-height: clamp(1rem, 4vw, 2rem);
+      font-size: clamp(0.8rem, 2.5vw, 1.3rem);
       border: clamp(5px, 1.2vw, 10px) solid #dd0bff;
       box-shadow: 4px 4px 0px 0px #ed1385;
-      padding: 1rem;
       padding-block: clamp(1.5rem, 5vw, 2.5rem);
-      gap: 1rem;
       background-color: rgba(255, 192, 203, 0.209);
+
+      // Border + bg Pink *************
+      background-color: #f34cb651;
+      box-sizing: border-box;
+      padding: clamp(1.5rem, 6vw, 3rem);
+      // *******************************
+
       .item {
         .link-img {
           width: clamp(250px, 20vw, 350px);
           height: clamp(200px, 20vw, 350px);
           object-fit: cover;
           aspect-ratio: 1/1;
+          background-color: #1c1e24;
           padding: 5px;
-          border: 2px solid whitesmoke;
+          border: 2px solid #5d75f0;
         }
       }
     }
@@ -317,7 +346,7 @@
 
     // -------- PANNEL ADMIN --------
     .admin-block {
-      margin: 16px;
+      // margin: 16px;
       display: flex;
       justify-content: center;
       align-items: end;

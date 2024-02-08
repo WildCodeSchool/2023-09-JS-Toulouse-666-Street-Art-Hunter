@@ -1,6 +1,10 @@
 .main-root {
-  height: 100vh;
+  height: 100%;
   background-color: #1c1e24;
+  background-image: url("../../assets/images/bg-5.png");
+  background-position: center;
+  background-repeat: repeat;
+  background-size: cover;
 }
 
 .background-page {

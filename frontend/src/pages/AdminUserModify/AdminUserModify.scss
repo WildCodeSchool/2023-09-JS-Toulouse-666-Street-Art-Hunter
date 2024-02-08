@@ -1,10 +1,18 @@
 .profil-option-input-option {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
   .form {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
     .label-container {
       .input-container-invisi {
         display: none;
       }
       .button-admin {
+        display: flex;
         background-color: aliceblue;
         width: 90px;
 
@@ -24,11 +32,31 @@
       }
     }
     .continue {
+      background-color: rgb(3, 159, 16);
       font-family: "PressStart2P";
       font-size: clamp(18px, 3vw, 28px);
+      width: clamp(200px, 35vw, 300px);
+      padding: 0.5rem;
+      box-sizing: border-box;
+      &:hover {
+        transform: scale(1.05);
+      }
+      &:active {
+        transform: scale(0.95);
+      }
     }
   }
   .option-button {
+    background-color: rgb(61, 61, 60);
     font-size: clamp(18px, 3vw, 28px);
+    width: clamp(200px, 35vw, 300px);
+    padding: 0.5rem;
+    box-sizing: border-box;
+    &:hover {
+      transform: scale(1.05);
+    }
+    &:active {
+      transform: scale(0.95);
+    }
   }
 }

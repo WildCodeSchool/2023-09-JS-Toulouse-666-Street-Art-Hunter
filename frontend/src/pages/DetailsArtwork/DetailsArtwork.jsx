@@ -1,15 +1,17 @@
 import { useState } from "react";
-import { useLoaderData, useNavigate } from "react-router-dom";
+import { useLoaderData, useNavigate, useParams } from "react-router-dom";
 import "./DetailsArtwork.scss";
 import GeolocIcon from "../../assets/icons/geoloc-icon.png";
 import AstroBoy from "../../assets/avatars/astro-boy.png";
 import Title from "../../components/TitleRed-R/Title";
 import Button from "../../components/Button-R/Button";
+import Previous from "../../assets/icons/previous.svg";
 
 function DetailsArtwork() {
   // ********************* STATE *********************
   const dataArtworkById = useLoaderData();
   const [modalMissing, setModalMissing] = useState(false);
+  const { id } = useParams();
 
   // ********************* LOGIQUE *********************
   const { data, idPhotos } = dataArtworkById;
@@ -44,7 +46,7 @@ function DetailsArtwork() {
 
   const handleFind = () => {
     window.scrollTo(0, 0);
-    navigate("/add-existing-artwork");
+    navigate(`/add-existing-artwork/${id}`);
   };
 
   const handleMissing = async () => {
@@ -91,6 +93,18 @@ function DetailsArtwork() {
   // ********************* RENDER *********************
   return (
     <div className="main-container-details-artwork">
+      <div className="section-title">
+        <button
+          type="button"
+          onClick={() => {
+            window.scrollTo(0, 0);
+            navigate(-1);
+          }}
+        >
+          <img src={Previous} alt="button previous" />
+        </button>
+        <h1>Details</h1>
+      </div>
       <div className="preview-main">
         <div className="preview-container">
           <img className="preview-image" src={currentImage} alt="artwork" />
@@ -130,9 +144,9 @@ function DetailsArtwork() {
 
       <div className="btn-container">
         {idPhotos && idPhotos.includes(data.id) === false && (
-          <Button name="submit" textBtn="Trouver ?" onClick={handleFind} />
+          <Button name="submit" textBtn="Trouvée ?" onClick={handleFind} />
         )}
-        <Button name="submit" textBtn="Disparu ?" onClick={handleClick} />
+        <Button name="submit" textBtn="Disparue ?" onClick={handleClick} />
       </div>
       <div
         className={`modal-refuse modal ${modalMissing ? "modal-slide" : ""}`}
