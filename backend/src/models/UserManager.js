@@ -5,71 +5,92 @@ class UserManager extends AbstractManager {
     super({ table: "user" });
   }
 
-  // The C of CRUD - Create operation
+  // --------- CRUD ---------
 
+  // ------------------ Méthode POST ------------------
   async create(user) {
     // Execute the SQL INSERT query to add a new user to the "user" table
+    const {
+      name,
+      description,
+      email,
+      hashed_password: hashedPassword,
+      score,
+      is_admin: isAdmin,
+      is_banned: isBanned,
+      selected_avatar: selectedAvatar,
+      border,
+    } = user;
     const [result] = await this.database.query(
-      `INSERT INTO ${this.table} (name, description, email, password, score, is_admin, is_banned, selected_avatar, border) VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?)`,
+      `INSERT INTO ${this.table} (name, description, email, hashed_password, score, is_admin, is_banned, selected_avatar, border) VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?)`,
       [
-        user.name,
-        user.description,
-        user.email,
-        user.password,
-        user.score,
-        user.is_admin,
-        user.is_banned,
-        user.selected_avatar,
-        user.border,
+        name,
+        description,
+        email,
+        hashedPassword,
+        score,
+        isAdmin,
+        isBanned,
+        selectedAvatar,
+        border,
       ]
     );
     return result.insertId;
   }
 
-  // The Rs of CRUD - Read operations
-
-  async read(id) {
-    const [rows] = await this.database.query(
-      `SELECT * FROM ${this.table} WHERE id = ?`,
-      [id]
-    );
-    return rows[0];
-  }
-
-  async readAll() {
-    const [rows] = await this.database.query(`SELECT * FROM ${this.table}`);
-    return rows;
-  }
-
-  // The U of CRUD - Update operation
-
+  // ------------------ Méthode PUT ------------------
   async update(id, user) {
+    const {
+      name,
+      description,
+      email,
+      hashedPassword,
+      score,
+      is_admin: isAdmin,
+      is_banned: isBanned,
+      selected_avatar: selectedAvatar,
+      border,
+    } = user;
     const [rows] = await this.database.query(
-      `UPDATE ${this.table} SET name = ?, description = ?, email = ?, password = ?, score = ?, is_admin = ?, is_banned = ?, selected_avatar = ?, border = ? WHERE id = ?`,
+      `UPDATE ${this.table} SET name = ?, description = ?, email = ?, hashed_password = ?, score = ?, is_admin = ?, is_banned = ?, selected_avatar = ?, border = ? WHERE id = ?`,
       [
-        user.name,
-        user.description,
-        user.email,
-        user.password,
-        user.score,
-        user.is_admin,
-        user.is_banned,
-        user.selected_avatar,
-        user.border,
+        name,
+        description,
+        email,
+        hashedPassword,
+        score,
+        isAdmin,
+        isBanned,
+        selectedAvatar,
+        border,
         id,
       ]
     );
     return rows;
   }
 
-  // The D of CRUD - Delete operation
-
-  async delete(id) {
+  async readByEmail(email) {
     const [rows] = await this.database.query(
-      `DELETE FROM ${this.table} WHERE id = ?`,
-      [id]
+      `select * from ${this.table} where email = ?`,
+      [email]
+    );
+
+    return rows[0];
+  }
+
+  async readAllWithoutPassword() {
+    const [rows] = await this.database.query(
+      `SELECT id, name, description, email, score, is_admin, is_banned, selected_avatar, border FROM ${this.table}`
     );
     return rows;
+  }
+
+  async readWithoutPassword(id) {
+    const [rows] = await this.database.query(
+      `SELECT id, name, description, email, score, is_admin, is_banned, selected_avatar, border FROM ${this.table} WHERE ${this.table}.id = ?`,
+      [id]
+    );
+    return rows[0];
   }
 }
 

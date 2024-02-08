@@ -12,6 +12,17 @@ const browse = async (req, res, next) => {
   }
 };
 
+// -------------
+const count = async (req, res, next) => {
+  try {
+    const users = await tables.user.countAll();
+    res.status(200).json(users);
+  } catch (err) {
+    console.error(err);
+    next(err);
+  }
+};
+
 // The R of BREAD - Read operation
 const read = async (req, res, next) => {
   try {
@@ -38,6 +49,20 @@ const edit = async (req, res, next) => {
     }
   } catch (err) {
     console.error(err);
+    next(err);
+  }
+};
+const readByEmailAndPassToNext = async (req, res, next) => {
+  try {
+    const user = await tables.user.readByEmail(req.body.email);
+
+    if (user == null) {
+      res.sendStatus(401);
+    } else {
+      req.user = user;
+      next();
+    }
+  } catch (err) {
     next(err);
   }
 };
@@ -69,11 +94,38 @@ const destroy = async (req, res, next) => {
   }
 };
 
+const readAllWithoutPassword = async (req, res, next) => {
+  try {
+    const users = await tables.user.readAllWithoutPassword();
+    res.status(200).json(users);
+  } catch (err) {
+    console.error(err);
+    next(err);
+  }
+};
+
+const readWithoutPassword = async (req, res, next) => {
+  try {
+    const user = await tables.user.readWithoutPassword(req.params.id);
+    if (user == null) {
+      res.sendStatus(404);
+    } else {
+      res.status(200).json(user);
+    }
+  } catch (err) {
+    console.error(err);
+    next(err);
+  }
+};
 // Ready to export the controller functions
 module.exports = {
   browse,
   read,
   edit,
+  readByEmailAndPassToNext,
   add,
   destroy,
+  count,
+  readAllWithoutPassword,
+  readWithoutPassword,
 };

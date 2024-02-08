@@ -1,0 +1,39 @@
+@media screen and (min-width: 768px) {
+  .add-non-existing-artwork-container {
+    margin-top: 2.5rem;
+    background:
+  // // green-apple
+      no-repeat left -220px top 0px url("../../assets/spray/spray-green-apple.png"),
+      // blue
+      no-repeat left -320px bottom 80px url("../../assets/spray/spray-blue.png"),
+      // orange
+      no-repeat left -250px top 600px url("../../assets/spray/spray-orange.png"),
+      // yellow
+      no-repeat right -250px top 800px url("../../assets/spray/spray-yellow.png"),
+      // green-forest
+      no-repeat right -100px top 100px url("../../assets/spray/spray-green-forest.png");
+  }
+}
+
+@media screen and (min-width: 1024px) {
+  .add-non-existing-artwork-container {
+    margin-top: 2.5rem;
+    background:
+  // // green-apple
+      no-repeat left -220px top 0px url("../../assets/spray/spray-green-apple.png"),
+      // blue
+      no-repeat left -220px bottom 80px url("../../assets/spray/spray-blue.png"),
+      // orange
+      no-repeat left -200px top 600px url("../../assets/spray/spray-orange.png"),
+      // yellow
+      no-repeat right -100px top 800px url("../../assets/spray/spray-yellow.png"),
+      // green-forest
+      no-repeat right -250px top 50px url("../../assets/spray/spray-green-forest.png");
+    background-size:
+      500px 500px,
+      500px 500px,
+      550px 550px,
+      400px 450px,
+      550px 550px;
+  }
+}

@@ -1,0 +1,45 @@
+.link-admin {
+  display: flex;
+  justify-content: center;
+  text-align: center;
+  width: 100%;
+  max-width: 400px;
+  min-width: 300px;
+  padding-block: clamp(14px, 3vw, 20px);
+  border: 3px solid whitesmoke;
+  color: whitesmoke;
+  font-size: clamp(14px, 3vw, 20px);
+  line-height: clamp(18px, 4vw, 26px);
+  text-decoration: inherit;
+
+  &:hover {
+    transform: scale(1.05);
+    transition-duration: 0.5s;
+  }
+  &:active {
+    transform: scale(0.95);
+    transition-duration: 0.5s;
+  }
+
+  &.b {
+    background: #7189b9;
+  }
+  &.g {
+    background: #77b971;
+  }
+  &.y {
+    background: #b9b271;
+  }
+  &.v {
+    background: #8656c2;
+  }
+  &.r {
+    background: #b97171;
+  }
+  &.p {
+    background: #b771b9;
+  }
+  &.black {
+    background: #33363d;
+  }
+}

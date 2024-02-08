@@ -1,0 +1,374 @@
+// -------- MODAL --------
+.avatar-modal-close {
+  display: none;
+}
+
+// -------- PROFIL ADMIN --------
+.main-container-profil-admin {
+  display: flex;
+  flex-direction: column;
+  min-height: calc(
+    100vh - 160px - clamp(2.5rem, 8vw, 5rem) - clamp(2rem, 7vw, 4rem)
+  );
+  margin-block: clamp(2.5rem, 8vw, 4rem);
+  margin-inline: 10%;
+  width: 80%;
+  row-gap: clamp(2rem, 7vw, 4rem);
+  .avatar-modal-open {
+    font-family: "PressStart2P";
+    height: 100%;
+    width: 100%;
+    left: 0%;
+    top: 0%;
+    position: fixed;
+    z-index: 2;
+    background-color: #1c1e24;
+
+    .profil-modal-title {
+      font-size: 28px;
+      text-align: center;
+      margin-top: 40px;
+      background: var(--red-gradient);
+      background-clip: text;
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      text-transform: uppercase;
+    }
+    .profil-map-div-block {
+      padding: 16px;
+      display: flex;
+      flex-direction: row;
+      flex-wrap: wrap;
+      gap: 4px;
+      justify-content: center;
+      border: 2px solid #dd0bff;
+      box-shadow: 4px 4px 0px 0px #ed1385;
+      margin-inline: 16px;
+      margin-top: 40px;
+      .map-div-avatar {
+        .avatar-img {
+          width: 75px;
+        }
+      }
+    }
+    .block-button-validate-img {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      .avatar-img-selectioned {
+        width: 145px;
+        padding: 20px;
+      }
+      .block-button-photo {
+        display: flex;
+        justify-content: space-between;
+        gap: 80px;
+        .button-validate {
+          color: white;
+          font-size: 18px;
+          font-family: "PressStart2P";
+        }
+        .button-back {
+          color: white;
+          font-family: "PressStart2P";
+          font-size: 18px;
+        }
+      }
+    }
+  }
+  .section-title {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+    column-gap: clamp(1rem, 7vw, 4rem);
+    img {
+      width: clamp(40px, 10vw, 95px);
+      height: clamp(40px, 10vw, 95px);
+      cursor: pointer;
+      &:hover {
+        transform: scale(1.05);
+      }
+      &:active {
+        transform: scale(0.95);
+      }
+    }
+    h1 {
+      font-family: var(--secondary-font);
+      font-size: clamp(16px, 7vw, 60px);
+      line-height: clamp(32px, 7vw, 150px);
+      // Red-gradient color text
+      background: var(--red-gradient);
+      background-clip: text;
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      // -----------------------
+    }
+  }
+  .profil-admin-page {
+    display: flex;
+    flex-direction: column;
+    row-gap: clamp(2.5rem, 8vw, 5rem);
+
+    .profil-top {
+      display: flex;
+      flex-direction: row;
+      justify-content: space-evenly;
+      text-align: center;
+      // Bordure grise -----------------------------
+      border: 1px solid rgba(128, 128, 128, 0.361);
+      box-sizing: border-box;
+      padding: clamp(1.5rem, 6vw, 3rem);
+      // -------------------------------------------
+
+      // Border + bg Pink *************
+      background-color: #f34cb651;
+      // border: 3px solid #f34cb6;
+      box-sizing: border-box;
+      padding: clamp(1.5rem, 6vw, 3rem);
+      // *******************************
+
+      .profile-block-avatar {
+        width: 100%;
+        .avatar-button {
+          position: absolute;
+          .img-modal {
+            width: 30px;
+
+            border: 1px solid rgba(128, 128, 128, 0.361);
+          }
+        }
+        .avatar {
+          border: 4px solid rgb(36, 126, 205);
+          width: clamp(100px, 10vw, 160px);
+        }
+      }
+      .option-btn {
+        width: 100%;
+
+        img {
+          width: clamp(100px, 10vw, 160px);
+          &:hover {
+            transform: scale(1.05);
+          }
+          &:active {
+            transform: scale(0.95);
+          }
+        }
+      }
+    }
+    .profil-user {
+      display: flex;
+      flex-direction: column;
+      row-gap: clamp(2.5rem, 8vw, 4rem);
+      width: 100%;
+      // Bordure grise -----------------------------
+      border: 1px solid rgba(128, 128, 128, 0.361);
+      box-sizing: border-box;
+      padding: clamp(1.5rem, 6vw, 3rem);
+      // -------------------------------------------
+
+      // Border + bg Pink *************
+      background-color: #f34cb651;
+      box-sizing: border-box;
+      padding: clamp(1.5rem, 6vw, 3rem);
+      // *******************************
+
+      .topic {
+        display: flex;
+        flex-direction: column;
+        gap: clamp(1rem, 3vw, 2rem);
+        .resume {
+          font-size: clamp(0.8rem, 2.5vw, 1.3rem);
+          line-height: clamp(1.5rem, 5vw, 3rem);
+        }
+      }
+      .score-block {
+        display: flex;
+        justify-content: space-evenly;
+        align-items: end;
+
+        .trophy {
+          width: clamp(80px, 15vw, 150px);
+        }
+        .score {
+          font-size: clamp(1rem, 3vw, 2.5rem);
+          span {
+            color: #fcb315;
+          }
+        }
+      }
+    }
+  }
+
+  // -------- PANNEL ADMIN --------
+  .admin-block {
+    display: flex;
+    justify-content: center;
+    align-items: end;
+    flex-direction: row;
+    gap: 1rem;
+    width: 100%;
+    // Bordure grise -----------------
+    box-sizing: border-box;
+    padding: clamp(1.5rem, 6vw, 3rem);
+    // -------------------------------
+    .admin-img {
+      width: clamp(50px, 6vw, 70px);
+    }
+
+    .admin-text {
+      background: var(--blue-gradient);
+      padding: clamp(0.4rem, 2vw, 1.5rem);
+      padding-block: clamp(0.5rem, 3vw, 1.5rem);
+      color: whitesmoke;
+      font-family: var(--primary-font);
+      font-size: clamp(0.8rem, 2.5vw, 1.3rem);
+      line-height: clamp(1rem, 4vw, 2rem);
+      border: 3px solid whitesmoke;
+      box-shadow: 2px 2px 0px pink;
+      &:hover {
+        transform: scale(1.05);
+      }
+      &:active {
+        transform: scale(0.95);
+      }
+    }
+  }
+
+  .artwork {
+    display: flex;
+    flex-direction: column;
+    row-gap: 1.5rem;
+    .map-artwork {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      gap: clamp(1rem, 5vw, 3rem);
+      padding: 1rem;
+      line-height: clamp(1rem, 4vw, 2rem);
+      font-size: clamp(0.8rem, 2.5vw, 1.3rem);
+      border: clamp(5px, 1.2vw, 10px) solid #dd0bff;
+      box-shadow: 4px 4px 0px 0px #ed1385;
+      padding-block: clamp(1.5rem, 5vw, 2.5rem);
+      background-color: rgba(255, 192, 203, 0.209);
+
+      // Border + bg Pink *************
+      background-color: #f34cb651;
+      box-sizing: border-box;
+      padding: clamp(1.5rem, 6vw, 3rem);
+      // *******************************
+
+      .item {
+        .link-img {
+          width: clamp(250px, 20vw, 350px);
+          height: clamp(200px, 20vw, 350px);
+          object-fit: cover;
+          aspect-ratio: 1/1;
+          background-color: #1c1e24;
+          padding: 5px;
+          border: 2px solid #5d75f0;
+        }
+      }
+    }
+  }
+}
+
+// ******************************************
+//               MEDIA QUERIES
+// ******************************************
+
+@media screen and (min-width: 1024px) {
+  // -------- PROFIL ADMIN --------
+  .main-container-profil-admin {
+    margin-inline: 10%;
+    width: 80%;
+    .avatar-modal-open {
+      .profil-map-div-block {
+        .map-div-avatar {
+          .modale-validate {
+            .avatar-img {
+              width: 170px;
+            }
+          }
+        }
+      }
+      .block-button-validate-img {
+        .avatar-img-selectioned {
+          width: 205px;
+          padding: 50px;
+        }
+      }
+    }
+    .section-title {
+      justify-content: center;
+      column-gap: clamp(2.5rem, 8vw, 5rem);
+    }
+    .profil-admin-page {
+      flex-direction: row;
+      column-gap: clamp(2.5rem, 8vw, 5rem);
+      .profil-top {
+        flex-direction: column;
+        justify-content: space-evenly;
+        min-height: 500px;
+        .profile-block-avatar {
+          width: 100%;
+          .avatar-button {
+            position: absolute;
+          }
+        }
+      }
+      .profil-user {
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between; //
+        row-gap: clamp(2.5rem, 8vw, 4rem);
+        .topic {
+          display: flex;
+          flex-direction: column;
+          gap: clamp(1rem, 3vw, 2rem);
+          width: 100%;
+          .resume {
+            width: 100%;
+            font-size: clamp(0.8rem, 2.5vw, 1.3rem);
+            line-height: clamp(1.5rem, 5vw, 3rem);
+          }
+        }
+        .score-block {
+          display: flex;
+          justify-content: space-evenly;
+          align-items: center;
+          .score {
+          }
+        }
+      }
+    }
+
+    // -------- PANNEL ADMIN --------
+    .admin-block {
+      // margin: 16px;
+      display: flex;
+      justify-content: center;
+      align-items: end;
+      flex-direction: row;
+      gap: 2.5rem;
+
+      .admin-text {
+        background: var(--blue-gradient);
+
+        color: whitesmoke;
+        font-family: var(--primary-font);
+        font-size: clamp(0.8rem, 2.5vw, 1.3rem);
+        line-height: clamp(1rem, 4vw, 2rem);
+        border: 3px solid whitesmoke;
+        box-shadow: 2px 2px 0px pink;
+        &:hover {
+          transform: scale(1.05);
+        }
+        &:active {
+          transform: scale(0.95);
+        }
+      }
+    }
+  }
+}

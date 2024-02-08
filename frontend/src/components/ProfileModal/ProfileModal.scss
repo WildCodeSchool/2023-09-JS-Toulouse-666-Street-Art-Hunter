@@ -1,0 +1,49 @@
+.profile-modal-container {
+  overflow: hidden;
+  display: flex;
+  height: 80px;
+  position: fixed;
+  top: 0px;
+  right: -100vw;
+  background: rgb(186, 8, 112);
+  backdrop-filter: blur(3px);
+  width: 100%;
+  justify-content: center;
+  align-items: center;
+  transition: right 0.5s ease;
+  z-index: 1001;
+
+  div {
+    display: flex;
+    text-align: center;
+    justify-content: center;
+    align-items: center;
+    column-gap: clamp(2rem, 8vw, 5rem);
+    padding-inline: 2rem;
+    a {
+      font-family: var(--primary-font);
+      text-decoration: none;
+      color: whitesmoke;
+      font-size: clamp(0.5rem, 3vw, 1rem);
+      padding: clamp(0.5rem, 3vw, 1rem);
+      &:hover {
+        background-color: rgba(245, 245, 245, 0.437);
+      }
+    }
+
+    button {
+      font-family: var(--primary-font);
+      color: whitesmoke;
+      font-size: clamp(0.5rem, 3vw, 1rem);
+      padding: clamp(0.5rem, 3vw, 1rem);
+      &:hover {
+        background-color: rgba(245, 245, 245, 0.437);
+      }
+    }
+  }
+}
+
+.profile-modal-container.slide-in {
+  right: 0px;
+  overflow-x: hidden;
+}

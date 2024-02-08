@@ -1,0 +1,46 @@
+.footer-container {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  height: 80px;
+  width: 80%;
+  padding-inline: 10%;
+  background-color: #12141a;
+  background-color: transparent;
+  color: white;
+  font-family: "PressStart2P";
+  font-size: 12px;
+  a {
+    text-decoration: none;
+    font-family: var(--primary-font);
+    font-size: clamp(0.7rem, 2vw, 1.2rem);
+
+    background: var(--red-gradient);
+    background-clip: text;
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+  }
+  p {
+    text-decoration: none;
+    font-family: var(--primary-font);
+    font-size: clamp(0.7rem, 2vw, 1.2rem);
+    text-transform: uppercase;
+    background: var(--red-gradient);
+    background-clip: text;
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+  }
+}
+
+@media screen and (min-width: 480px) {
+  .footer-container {
+    font-size: 1rem;
+  }
+}
+
+@media screen and (min-width: 1024px) {
+  .footer-container {
+    width: 80%;
+    padding-inline: 10%;
+  }
+}

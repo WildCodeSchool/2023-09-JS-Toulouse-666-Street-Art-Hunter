@@ -5,21 +5,7 @@ class ArtworkManager extends AbstractManager {
     super({ table: "artwork" });
   }
 
-  // ------------------ Méthode GET BY ID ------------------
-  async read(id) {
-    const parseId = parseInt(id, 10);
-    const [rows] = await this.database.query(
-      `SELECT * FROM ${this.table} WHERE id = ?`,
-      [parseId]
-    );
-    return rows[0];
-  }
-
-  // ------------------ Méthode GET ------------------
-  async readAll() {
-    const [rows] = await this.database.query(`SELECT * FROM ${this.table}`);
-    return rows;
-  }
+  // --------- CRUD ---------
 
   // ------------------ Méthode POST ------------------
   async create(artwork) {
@@ -29,14 +15,15 @@ class ArtworkManager extends AbstractManager {
       latitude,
       adress,
       description,
-      datePublished,
-      askToArchived,
-      isArchived,
-      isValidate,
+      date_published: datePublished,
+      ask_to_archived: askToArchived,
+      is_archived: isArchived,
+      is_validate: isValidate,
+      publisher_id: publisherId,
     } = artwork;
 
     const [rows] = await this.database.query(
-      `INSERT INTO ${this.table} (image, longitude, latitude, adress, description, date_published, ask_to_archived, is_archived, is_validate) VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?)`,
+      `INSERT INTO ${this.table} (image, longitude, latitude, adress, description, date_published, ask_to_archived, is_archived, is_validate, publisher_id) VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?)`,
       [
         image,
         longitude,
@@ -47,6 +34,7 @@ class ArtworkManager extends AbstractManager {
         askToArchived,
         isArchived,
         isValidate,
+        publisherId,
       ]
     );
 
@@ -61,14 +49,15 @@ class ArtworkManager extends AbstractManager {
       latitude,
       adress,
       description,
-      datePublished,
-      askToArchived,
-      isArchived,
-      isValidate,
+      date_published: datePublished,
+      ask_to_archived: askToArchived,
+      is_archived: isArchived,
+      is_validate: isValidate,
+      publisher_id: publisherId,
     } = artwork;
 
     const [rows] = await this.database.query(
-      `UPDATE ${this.table} SET image = ?, longitude = ?, latitude = ?, adress = ?, description = ?, date_published = ?, ask_to_archived = ?, is_archived = ?, is_validate = ? WHERE id = ?`,
+      `UPDATE ${this.table} SET image = ?, longitude = ?, latitude = ?, adress = ?, description = ?, date_published = ?, ask_to_archived = ?, is_archived = ?, is_validate = ?, publisher_id = ? WHERE id = ?`,
       [
         image,
         longitude,
@@ -79,19 +68,44 @@ class ArtworkManager extends AbstractManager {
         askToArchived,
         isArchived,
         isValidate,
+        publisherId,
         id,
       ]
     );
     return rows;
   }
 
-  // ------------------ Méthode DELETE ------------------
-  async delete(id) {
+  // ------------------ ------------------
+  async countArtworkNoValidate() {
     const [rows] = await this.database.query(
-      `DELETE FROM ${this.table} WHERE id = ?`,
-      [id]
+      `SELECT COUNT(*) AS numberOfArtwork FROM ${this.table} WHERE is_validate='0'`
     );
     return rows;
+  }
+
+  // ------------------ ------------------
+  async readAllToAdd() {
+    const [rows] = await this.database.query(
+      `SELECT * FROM ${this.table} WHERE is_validate='0'`
+    );
+    return rows;
+  }
+
+  // ------------------ ------------------
+  async readAllToMissing() {
+    const [rows] = await this.database.query(
+      `SELECT * FROM ${this.table} WHERE ask_to_archived='1'`
+    );
+    return rows;
+  }
+
+  // ------------------ Méthode GET BY ID ------------------
+  async readArtworkAndUser(id) {
+    const [rows] = await this.database.query(
+      `SELECT ${this.table}.*, user.name FROM ${this.table} INNER JOIN user ON ${this.table}.publisher_id = user.id WHERE ${this.table}.id = ?`,
+      [id]
+    );
+    return rows[0];
   }
 }
 

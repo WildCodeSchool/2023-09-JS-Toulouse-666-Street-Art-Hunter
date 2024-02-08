@@ -1,0 +1,136 @@
+.about-us-main-container {
+  display: flex;
+  flex-direction: column;
+  row-gap: 2.5rem;
+  margin-inline: 10%;
+  margin-block: clamp(2.5rem, 8vw, 3rem);
+  width: 80%;
+  min-height: calc(100vh - 160px - 5rem);
+  .adrien,
+  .tristan,
+  .theo {
+    width: 30%;
+    display: flex;
+    flex-direction: column;
+    padding: clamp(2rem, 8vw, 3rem);
+    box-sizing: border-box;
+    align-items: center;
+    row-gap: 2rem;
+    background-color: #0000007e;
+    backdrop-filter: blur(10px);
+    justify-content: space-between;
+    .header {
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      row-gap: 1rem;
+      .adrien-avatar,
+      .tristan-avatar,
+      .theo-avatar {
+        width: 100px;
+        height: 100px;
+        border: 4px solid rgb(240, 86, 248);
+      }
+      .adrien-title-container,
+      .tristan-title-container,
+      .theo-title-container {
+        background-color: rgba(255, 255, 255, 0.19);
+        padding: 10px 10px;
+        .adrien-title,
+        .tristan-title,
+        .theo-title {
+          font-family: var(--primary-font);
+          font-size: clamp(1rem, 4vw, 1.8rem);
+          // Blue-gradient color text
+          background: var(--blue-gradient);
+          background-clip: text;
+          -webkit-background-clip: text;
+          -webkit-text-fill-color: transparent;
+          filter: drop-shadow(1px 1px 0px white);
+          // -----------------------
+        }
+      }
+    }
+    .adrien-description,
+    .tristan-description,
+    .theo-description {
+      display: flex;
+      flex-direction: column;
+      gap: 2rem;
+      justify-content: space-between;
+      font-family: var(--primary-font);
+      font-size: clamp(0.6rem, 3vw, 1rem);
+      line-height: clamp(1.5rem, 4vw, 2rem);
+    }
+    .network {
+      display: flex;
+      justify-content: space-evenly;
+      gap: 2rem;
+      .link-img {
+        img {
+          width: clamp(50px, 10vw, 100px);
+          height: clamp(50px, 10vw, 100px);
+          &:hover {
+            transform: scale(1.05);
+            background-color: pink;
+            transition-duration: 2s;
+          }
+          &:active {
+            transform: scale(0.95);
+          }
+        }
+      }
+    }
+  }
+}
+
+@media only screen and (max-width: 360px) {
+  .about-us-main-container {
+    display: flex;
+    flex-direction: column;
+    row-gap: 2.5rem;
+    margin-inline: 10%;
+    margin-block: 2.5rem;
+    width: 80%;
+    min-height: calc(100vh - 160px - 5rem);
+    .adrien,
+    .tristan,
+    .theo {
+      align-items: center;
+      .header {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        row-gap: 1rem;
+      }
+    }
+  }
+}
+
+@media only screen and (min-width: 800px) {
+  .about-us-main-container {
+    display: flex;
+    flex-direction: row;
+    column-gap: 2rem;
+    justify-content: center;
+    margin-inline: 10%;
+    margin-block: 2.5rem;
+    width: 80%;
+    min-height: calc(100vh - 160px - 5rem);
+  }
+}
+
+@media only screen and (min-width: 1024px) {
+  .about-us-main-container {
+    display: flex;
+    flex-direction: row;
+    column-gap: 2rem;
+    justify-content: center;
+    margin-inline: 10%;
+    margin-block: 2.5rem;
+    width: 80%;
+    min-height: calc(100vh - 160px - 5rem);
+  }
+}

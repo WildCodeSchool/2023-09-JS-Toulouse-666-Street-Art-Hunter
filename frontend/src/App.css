@@ -1,0 +1,206 @@
+/* http://meyerweb.com/eric/tools/css/reset/ 
+   v2.0 | 20110126
+   License: none (public domain)
+*/
+
+html,
+body,
+div,
+span,
+applet,
+object,
+iframe,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+p,
+blockquote,
+pre,
+a,
+abbr,
+acronym,
+address,
+big,
+cite,
+code,
+del,
+dfn,
+em,
+img,
+ins,
+kbd,
+q,
+s,
+samp,
+small,
+strike,
+strong,
+sub,
+sup,
+tt,
+var,
+b,
+u,
+i,
+center,
+dl,
+dt,
+dd,
+ol,
+ul,
+li,
+fieldset,
+form,
+label,
+legend,
+table,
+caption,
+tbody,
+tfoot,
+thead,
+tr,
+th,
+td,
+article,
+aside,
+canvas,
+details,
+embed,
+figure,
+figcaption,
+footer,
+header,
+hgroup,
+menu,
+nav,
+output,
+ruby,
+section,
+summary,
+time,
+mark,
+audio,
+video {
+  margin: 0;
+  padding: 0;
+  border: 0;
+  font-size: 100%;
+  font: inherit;
+  vertical-align: baseline;
+}
+/* HTML5 display-role reset for older browsers */
+article,
+aside,
+details,
+figcaption,
+figure,
+footer,
+header,
+hgroup,
+menu,
+nav,
+section {
+  display: block;
+}
+body {
+  background-color: #1c1e24;
+  line-height: 1;
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+  color: whitesmoke;
+  font-family: var(--primary-font);
+}
+ol,
+ul {
+  list-style: none;
+}
+blockquote,
+q {
+  quotes: none;
+}
+blockquote:before,
+blockquote:after,
+q:before,
+q:after {
+  content: "";
+  content: none;
+}
+table {
+  border-collapse: collapse;
+  border-spacing: 0;
+}
+
+button {
+  cursor: pointer;
+  border: none;
+  color: transparent;
+  padding: 0;
+  margin: 0;
+  background-color: transparent;
+}
+
+/* custom fonts */
+
+:root {
+  --primary-color: rgb(89, 50, 76);
+  --primary-font: "PressStart2P", sans-serif;
+  --secondary-font: "PixelBit", sans-serif;
+  --thirdary-font: "Nintendo";
+  --red-gradient: linear-gradient(
+    180deg,
+    #f00 0%,
+    #d95d00 28.13%,
+    #be7c68 50.52%,
+    #f5ff87 100%
+  );
+  --blue-gradient: linear-gradient(
+    180deg,
+    #0b3dbc 0%,
+    #4e75ff 32.81%,
+    #aeb1ff 67.71%,
+    #b8bfec 100%
+  );
+  --background-text-opacity: rgba(255, 255, 255, 0.119);
+  --d: 4000ms;
+  --angle: 90deg;
+  --gradX: 100%;
+  --gradY: 50%;
+  --c1: rgb(235, 224, 16);
+  --c2: rgba(186, 159, 24, 0.337);
+}
+
+@property --angle {
+  syntax: "<angle>";
+  initial-value: 90deg;
+  inherits: true;
+}
+
+@property --gradX {
+  syntax: "<percentage>";
+  initial-value: 50%;
+  inherits: true;
+}
+
+@property --gradY {
+  syntax: "<percentage>";
+  initial-value: 0%;
+  inherits: true;
+}
+
+@font-face {
+  font-family: "PressStart2P";
+  src: url("./assets/fonts/PressStart2P.ttf");
+}
+
+@font-face {
+  font-family: "Nintendo";
+  src: url("./assets/fonts/Nintendo.ttf");
+}
+@font-face {
+  font-family: "PixelBit";
+  src: url("./assets/fonts/pixel-bit-advanced.ttf");
+}

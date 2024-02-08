@@ -1,0 +1,49 @@
+.profil-option-input-option {
+  display: flex;
+  flex-direction: column;
+  min-height: calc(
+    100vh - 160px - clamp(2.5rem, 8vw, 5rem) - clamp(2rem, 7vw, 4rem)
+  );
+  margin-block: clamp(2.5rem, 8vw, 4rem);
+  margin-inline: 10%;
+  width: 80%;
+  row-gap: clamp(2rem, 7vw, 4rem);
+  .input-option-title {
+    font-size: clamp(1rem, 5vw, 2rem);
+    line-height: clamp(1.6rem, 8vw, 2.5rem);
+  }
+  .form {
+    display: flex;
+    gap: 40px;
+    flex-direction: column;
+    .continue {
+      color: white;
+      font-size: 36px;
+    }
+  }
+  .option-button {
+    text-decoration: none;
+    color: white;
+    font-size: 36px;
+    text-align: center;
+  }
+}
+
+// ******************************************
+//               MEDIA QUERIES
+// ******************************************
+
+@media screen and (min-width: 480px) {
+  .profil-option-input-option {
+    align-items: center;
+    .input-option-title {
+    }
+    .form {
+      .label-composent-css {
+        .input-composent-css {
+          width: clamp(320px, 34vw, 550px);
+        }
+      }
+    }
+  }
+}

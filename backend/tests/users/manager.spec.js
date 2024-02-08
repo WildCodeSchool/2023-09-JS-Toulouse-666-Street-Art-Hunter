@@ -9,7 +9,7 @@ describe("Create user", () => {
       name: "6sous",
       description: "Lorem Ipsum",
       email: "6sous@exemple.com",
-      password: "0123456789",
+      hashed_password: "0123456789",
       score: 0,
       is_admin: 0,
       is_banned: 0,

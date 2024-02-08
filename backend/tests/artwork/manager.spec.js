@@ -11,10 +11,10 @@ describe("Create artwork", () => {
       latitude: "1°27'18.9°E",
       adress: "1 Rue de Valenciennes, 31000 Toulouse",
       description: "oeuvre expérimentale",
-      datePublished: "2023-12-19",
-      askToArchived: 0,
-      isArchived: 0,
-      isValidate: 1,
+      date_published: "2023-12-19",
+      ask_to_archived: 0,
+      is_archived: 0,
+      is_validate: 1,
       artistId: null,
     };
 

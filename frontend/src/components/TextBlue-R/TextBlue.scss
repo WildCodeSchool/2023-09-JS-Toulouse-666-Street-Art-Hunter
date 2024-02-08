@@ -1,0 +1,11 @@
+.title-blue-container {
+  font-size: clamp(1.5rem, 5vw, 2.5rem);
+  font-family: var(--primary-font);
+  // Blue-gradient color text
+  background: var(--blue-gradient);
+  background-clip: text;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  filter: drop-shadow(2px 1px 0px white);
+  // -----------------------
+}

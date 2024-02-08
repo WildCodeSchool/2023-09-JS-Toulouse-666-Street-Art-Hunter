@@ -1,0 +1,160 @@
+.admin-artworks-container {
+  display: flex;
+  flex-direction: column;
+  min-height: calc(
+    100vh - 160px - clamp(2.5rem, 8vw, 5rem) - clamp(2rem, 7vw, 4rem)
+  );
+  margin-block: clamp(2.5rem, 8vw, 4rem);
+  margin-inline: 10%;
+  width: 80%;
+  row-gap: clamp(2rem, 7vw, 3rem);
+
+  .section-title {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+    column-gap: clamp(1rem, 7vw, 4rem);
+    img {
+      width: clamp(40px, 10vw, 80px);
+      height: clamp(40px, 10vw, 80px);
+      cursor: pointer;
+      &:hover {
+        transform: scale(1.05);
+      }
+      &:active {
+        transform: scale(0.95);
+      }
+    }
+    h1 {
+      font-family: var(--secondary-font);
+      font-size: clamp(16px, 5vw, 50px);
+      line-height: clamp(32px, 7vw, 150px);
+
+      // Red-gradient color text
+      background: var(--red-gradient);
+      background-clip: text;
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      // -----------------------
+    }
+  }
+
+  .admin-artworks-label {
+    display: flex;
+    flex-direction: column;
+    align-items: start;
+    text-align: center;
+    width: 100%;
+    max-width: 400px;
+    font-family: "PressStart2P";
+    margin-top: 2rem;
+    input {
+      width: 70%;
+    }
+  }
+
+  .list-artworks {
+    display: flex;
+    flex-direction: column;
+    border: 2px solid #dd0bff;
+    box-shadow: 4px 4px 0px 0px #ed1385;
+    padding-block: 0.5rem;
+    gap: 1rem;
+    background: rgba(255, 255, 255, 0.103);
+    width: 100%;
+    font-family: "PressStart2P";
+    font-size: 10px;
+    .one-artwork {
+      border: 1px solid rgba(128, 128, 128, 0.361);
+      display: flex;
+      flex-direction: row;
+      align-items: center;
+      column-gap: 1rem;
+      padding: 1rem;
+      height: 100%;
+      // Border + bg Pink *************
+      background-color: #f34cb651;
+      box-sizing: border-box;
+      // *******************************
+      &:hover {
+        background-color: rgba(128, 128, 128, 0.361);
+      }
+      .image-artwork {
+        border: 2px solid whitesmoke;
+        padding: 5px;
+        width: 100px;
+        aspect-ratio: 1;
+        object-fit: cover;
+      }
+      div {
+        display: flex;
+        flex-direction: column;
+        justify-content: space-around;
+        width: 100%;
+        height: 100%;
+        align-items: space-around;
+        gap: clamp(1rem, 5vw, 2rem);
+        p {
+          font-family: "PressStart2P";
+          color: whitesmoke;
+          font-size: clamp(0.5rem, 3vw, 1.3rem);
+          line-height: clamp(1rem, 3.5vw, 1.8rem);
+        }
+        div {
+          display: flex;
+          flex-direction: row;
+          gap: 1rem;
+          img {
+            width: clamp(1.5rem, 4vw, 3.2rem);
+            height: clamp(1.5rem, 4vw, 3.2rem);
+          }
+          .transparent-icon {
+            opacity: 0.2;
+          }
+        }
+      }
+    }
+  }
+}
+
+@media screen and (min-width: 1024px) {
+  .admin-artworks-container {
+    .admin-artworks-label {
+      input {
+        width: 80%;
+      }
+    }
+    .list-artworks {
+      .one-artwork {
+        .image-artwork {
+          width: 200px;
+        }
+        div {
+          div {
+          }
+        }
+      }
+    }
+  }
+}
+
+@media screen and (min-width: 1280px) {
+  .admin-artworks-container {
+    .admin-artworks-label {
+      input {
+        width: 80%;
+      }
+    }
+    .list-artworks {
+      .one-artwork {
+        .image-artwork {
+          width: 300px;
+        }
+        div {
+          padding-block: 1rem;
+        }
+      }
+    }
+  }
+}

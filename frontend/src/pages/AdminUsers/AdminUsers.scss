@@ -1,0 +1,106 @@
+.admin-users {
+  display: flex;
+  flex-direction: column;
+  min-height: calc(
+    100vh - 160px - clamp(2.5rem, 8vw, 5rem) - clamp(2rem, 7vw, 4rem)
+  );
+  margin-block: clamp(2.5rem, 8vw, 4rem);
+  margin-inline: 10%;
+  width: 80%;
+  row-gap: clamp(2rem, 7vw, 4rem);
+  .admin-title {
+    margin-block: 24px;
+    text-align: center;
+    text-transform: uppercase;
+    background: var(--red-gradient);
+    background-clip: text;
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    text-transform: uppercase;
+  }
+
+  .section-title {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+    column-gap: clamp(1rem, 7vw, 4rem);
+    img {
+      width: clamp(40px, 10vw, 80px);
+      height: clamp(40px, 10vw, 80px);
+      cursor: pointer;
+      &:hover {
+        transform: scale(1.05);
+      }
+      &:active {
+        transform: scale(0.95);
+      }
+    }
+    h1 {
+      font-family: var(--secondary-font);
+      font-size: clamp(16px, 5vw, 50px);
+      line-height: clamp(32px, 7vw, 150px);
+
+      // Red-gradient color text
+      background: var(--red-gradient);
+      background-clip: text;
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      // -----------------------
+    }
+  }
+
+  .div-users {
+    display: flex;
+    justify-content: start;
+    align-items: center;
+    flex-direction: column;
+    row-gap: 1rem;
+    border: clamp(4px, 1.2vw, 8px) solid #dd0bff;
+    box-shadow: 4px 4px 0px 0px #ed1385;
+    padding-block: 2rem;
+    .map-div-users {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      width: clamp(270px, 60vw, 600px);
+      // Border + bg Pink *************
+      background-color: #f34cb651;
+      box-sizing: border-box;
+      border: 3px solid #f34cb6;
+      // *******************************
+      &:hover {
+        background-color: rgba(128, 128, 128, 0.361);
+      }
+      &:active {
+        transform: scale(0.95);
+      }
+      .div-fiche-perso {
+        display: flex;
+        flex-direction: row;
+        align-items: center;
+        justify-content: center;
+        margin-block: 8px;
+        font-family: "PressStart2P";
+        gap: clamp(1rem, 5vw, 2rem);
+
+        .link-img {
+          width: clamp(50px, 8vw, 80px);
+        }
+        .user-name {
+          font-size: clamp(0.7rem, 2.5vw, 1.3rem);
+          background: var(--blue-gradient);
+          background-clip: text;
+          -webkit-background-clip: text;
+          -webkit-text-fill-color: transparent;
+        }
+        .score {
+          font-size: clamp(0.7rem, 2.5vw, 1.3rem);
+          display: flex;
+          color: whitesmoke;
+          justify-content: space-between;
+        }
+      }
+    }
+  }
+}
