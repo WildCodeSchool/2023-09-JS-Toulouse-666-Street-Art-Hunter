@@ -96,6 +96,8 @@ function ArtworkOption() {
   // Date d'aujourd'hui (voir utils.js)
   const currentFormattedDate = getCurrentFormattedDate();
 
+  const user = JSON.parse(localStorage.getItem("user"));
+
   // Déclenche la fonction "postCloudAndPutArtwork"
   const handleSubmitArtwork = (e) => {
     e.preventDefault();
@@ -113,7 +115,8 @@ function ArtworkOption() {
       valueAskArchive,
       valueIsArchive,
       valueIsValidate,
-      artworkId
+      artworkId,
+      user.id
     );
   };
 
