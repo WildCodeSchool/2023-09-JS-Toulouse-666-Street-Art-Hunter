@@ -203,7 +203,7 @@
           width: 100%;
           height: 100%;
           max-height: clamp(350px, 30vw, 400px);
-          object-fit: contain;
+          object-fit: cover;
           object-position: center;
           aspect-ratio: 1/1;
         }
@@ -261,6 +261,9 @@
         border: 2px solid white;
         padding-inline: 1 / rem;
         margin-bottom: 1rem;
+        // Border + bg Pink *************
+        background-color: #f34cb651;
+        // *******************************
         img {
           width: 5Opx;
           height: 50px;

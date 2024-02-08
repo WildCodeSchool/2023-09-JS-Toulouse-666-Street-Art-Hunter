@@ -25,7 +25,6 @@
       text-decoration: none;
       color: whitesmoke;
       font-size: clamp(0.5rem, 3vw, 1rem);
-      border: 1px solid whitesmoke;
       padding: clamp(0.5rem, 3vw, 1rem);
       &:hover {
         background-color: rgba(245, 245, 245, 0.437);
@@ -36,7 +35,6 @@
       font-family: var(--primary-font);
       color: whitesmoke;
       font-size: clamp(0.5rem, 3vw, 1rem);
-      border: 1px solid whitesmoke;
       padding: clamp(0.5rem, 3vw, 1rem);
       &:hover {
         background-color: rgba(245, 245, 245, 0.437);

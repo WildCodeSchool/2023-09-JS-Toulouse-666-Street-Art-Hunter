@@ -38,9 +38,7 @@ function AdminUserModify() {
 
   return (
     <div className="profil-option-input-option">
-      <h1 className="input-option-title">
-        Modifie les données de l'utilisateur!
-      </h1>
+      <h1 className="input-option-title">Modifie l'utilisateur</h1>
       <Form
         className="form"
         method="put"
@@ -62,7 +60,7 @@ function AdminUserModify() {
           type="description"
           labelText="Description :"
           maxLength="255"
-          height="80px"
+          height="150px"
           value={valueDescription}
           setValue={setValueDescription}
         />

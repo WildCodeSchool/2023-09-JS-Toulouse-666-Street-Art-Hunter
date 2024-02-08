@@ -1,13 +1,15 @@
 import React from "react";
-import { Navigate, useLoaderData } from "react-router-dom";
+import { Navigate, useLoaderData, useNavigate } from "react-router-dom";
 import "./PannelAdministrateur.scss";
 import LinkAdmin from "../../components/LinkAdmin/LinkAdmin";
 import ArtworkPannel from "../../components/ArtworkPannel/ArtworkPannel";
 import Thors from "../../assets/photos/Thors.png";
 import Title from "../../components/TitleRed-R/Title";
+import Previous from "../../assets/icons/previous.svg";
 
 function PannelAdministrateur() {
   const profils = useLoaderData();
+  const navigate = useNavigate();
 
   if (profils.admin.is_admin !== 1) {
     return <Navigate to="/" replace />;
@@ -15,6 +17,18 @@ function PannelAdministrateur() {
 
   return (
     <div className="pannel-administrateur-page">
+      <div className="section-title">
+        <button
+          type="button"
+          onClick={() => {
+            window.scrollTo(0, 0);
+            navigate(-1);
+          }}
+        >
+          <img src={Previous} alt="button previous" />
+        </button>
+        <h1>Pannel admin</h1>
+      </div>
       <div className="pannel-stats">
         <img
           className="img-admin"
@@ -41,24 +55,36 @@ function PannelAdministrateur() {
       </div>
       <div className="arrays">
         <Title title="Photos à valider :" />
-        <ArtworkPannel
-          dataMap={profils.PhotoNoValidate}
-          pageName="validate-photo"
-        />
+        {profils.PhotoNoValidate.length > 0 ? (
+          <ArtworkPannel
+            dataMap={profils.PhotoNoValidate}
+            pageName="validate-photo"
+          />
+        ) : (
+          <p className="artworks-gallery-empty">Aucune oeuvre en cours</p>
+        )}
       </div>
       <div className="arrays">
         <Title title="Oeuvres ajoutées :" />
-        <ArtworkPannel
-          dataMap={profils.ArtworksToAdd}
-          pageName="validate-artwork"
-        />
+        {profils.ArtworksToAdd.length > 0 ? (
+          <ArtworkPannel
+            dataMap={profils.ArtworksToAdd}
+            pageName="validate-artwork"
+          />
+        ) : (
+          <p className="artworks-gallery-empty">Aucune oeuvre en cours</p>
+        )}
       </div>
       <div className="arrays">
         <Title title="Oeuvres disparues :" />
-        <ArtworkPannel
-          dataMap={profils.ArtworksToMissing}
-          pageName="admin-missing-artwork"
-        />
+        {profils.ArtworksToMissing.length > 0 ? (
+          <ArtworkPannel
+            dataMap={profils.ArtworksToMissing}
+            pageName="admin-missing-artwork"
+          />
+        ) : (
+          <p className="artworks-gallery-empty">Aucune oeuvre en cours</p>
+        )}
       </div>
 
       <div className="pannel-link">

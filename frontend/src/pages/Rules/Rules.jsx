@@ -1,11 +1,25 @@
 import React from "react";
+import { useNavigate } from "react-router-dom";
 import Title from "../../components/TitleRed-R/Title";
 import "./Rules.scss";
+import Previous from "../../assets/icons/previous.svg";
 
 function Rules() {
+  const navigate = useNavigate();
   return (
     <div className="rules-main-container">
-      <h1 className="rules-main-title">Regles</h1>
+      <div className="section-title">
+        <button
+          type="button"
+          onClick={() => {
+            window.scrollTo(0, 0);
+            navigate(-1);
+          }}
+        >
+          <img src={Previous} alt="button previous" />
+        </button>
+        <h1>Regles</h1>
+      </div>
       <div className="section-container">
         <div className="section-1">
           <Title title="Votre mission" />

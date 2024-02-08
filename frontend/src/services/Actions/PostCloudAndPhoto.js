@@ -1,13 +1,15 @@
 const postCloudAndPhoto = async (
   base64EncodedImage,
   setShowModal,
-  setLoadingModal
+  setLoadingModal,
+  userId,
+  paramsArtwork
 ) => {
   const objectToPost = {
     image: base64EncodedImage,
     is_validated: 0,
-    user_id: 1,
-    artwork_id: 1,
+    user_id: userId,
+    artwork_id: paramsArtwork,
   };
 
   const token = localStorage.getItem("token");

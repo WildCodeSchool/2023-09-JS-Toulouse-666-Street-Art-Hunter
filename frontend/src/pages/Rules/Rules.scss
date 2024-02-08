@@ -10,17 +10,34 @@
   width: 80%;
   row-gap: clamp(3rem, 10vw, 6rem);
 
-  .rules-main-title {
+  .section-title {
     display: flex;
+    flex-direction: row;
+    align-items: center;
     justify-content: center;
-    font-family: var(--secondary-font);
-    // Red-gradient color text
-    background: var(--red-gradient);
-    background-clip: text;
-    -webkit-background-clip: text;
-    -webkit-text-fill-color: transparent;
-    // -----------------------
-    font-size: clamp(1.5rem, 7vw, 3rem);
+    column-gap: clamp(1rem, 7vw, 4rem);
+    img {
+      width: clamp(40px, 10vw, 95px);
+      height: clamp(40px, 10vw, 95px);
+      cursor: pointer;
+      &:hover {
+        transform: scale(1.05);
+      }
+      &:active {
+        transform: scale(0.95);
+      }
+    }
+    h1 {
+      font-family: var(--secondary-font);
+      font-size: clamp(16px, 7vw, 60px);
+      line-height: clamp(32px, 7vw, 150px);
+      // Red-gradient color text
+      background: var(--red-gradient);
+      background-clip: text;
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      // -----------------------
+    }
   }
 
   .section-container {

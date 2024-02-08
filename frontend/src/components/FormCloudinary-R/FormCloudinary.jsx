@@ -15,7 +15,14 @@ import Previous from "../../assets/icons/previous.svg";
 
 import ModalValidation from "../ModalValidation/ModalValidation";
 
-function FormCloudinary({ title, button, nonExisting, missing, validated }) {
+function FormCloudinary({
+  title,
+  button,
+  nonExisting,
+  missing,
+  validated,
+  paramsArtwork,
+}) {
   // ******************* STATE *******************
   const [previewSource, setPreviewSource] = useState();
   const [fileName, setFileName] = useState("");
@@ -30,7 +37,6 @@ function FormCloudinary({ title, button, nonExisting, missing, validated }) {
   const navigate = useNavigate();
 
   // ******************* LOGIQUE *******************
-
   // Récupérer l'utilisateur connecté (localStorage) pour l'afficher
   const user = JSON.parse(localStorage.getItem("user"));
 
@@ -61,7 +67,13 @@ function FormCloudinary({ title, button, nonExisting, missing, validated }) {
       return;
     }
     setLoadingModal(true);
-    postCloudAndPhoto(previewSource, setShowModal, setLoadingModal);
+    postCloudAndPhoto(
+      previewSource,
+      setShowModal,
+      setLoadingModal,
+      user.id,
+      paramsArtwork
+    );
   };
 
   const handleSubmitArtwork = (e) => {
@@ -281,6 +293,7 @@ FormCloudinary.propTypes = {
   nonExisting: PropTypes.bool.isRequired,
   missing: PropTypes.bool.isRequired,
   validated: PropTypes.bool.isRequired,
+  paramsArtwork: PropTypes.number.isRequired,
 };
 
 export default FormCloudinary;

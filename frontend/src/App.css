@@ -106,8 +106,8 @@ section {
   display: block;
 }
 body {
-  line-height: 1;
   background-color: #1c1e24;
+  line-height: 1;
   box-sizing: border-box;
   margin: 0;
   padding: 0;
@@ -165,12 +165,12 @@ button {
     #b8bfec 100%
   );
   --background-text-opacity: rgba(255, 255, 255, 0.119);
-  --d: 3000ms;
+  --d: 4000ms;
   --angle: 90deg;
   --gradX: 100%;
   --gradY: 50%;
-  --c1: rgb(200, 11, 175);
-  --c2: rgba(134, 214, 233, 0.1);
+  --c1: rgb(235, 224, 16);
+  --c2: rgba(186, 159, 24, 0.337);
 }
 
 @property --angle {

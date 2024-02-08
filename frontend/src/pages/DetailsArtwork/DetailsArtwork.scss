@@ -1,11 +1,42 @@
 .main-container-details-artwork {
   display: flex;
   flex-direction: column;
-  row-gap: 2.5rem;
+  min-height: calc(
+    100vh - 160px - clamp(2.5rem, 8vw, 5rem) - clamp(2rem, 7vw, 4rem)
+  );
+  margin-block: clamp(2.5rem, 8vw, 4rem);
   margin-inline: 10%;
-  margin-block: 2.5rem;
   width: 80%;
-  min-height: calc(100vh - 160px - 5rem);
+  row-gap: clamp(2rem, 7vw, 4rem);
+  .section-title {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+    column-gap: clamp(1rem, 7vw, 4rem);
+    img {
+      width: clamp(40px, 10vw, 95px);
+      height: clamp(40px, 10vw, 95px);
+      cursor: pointer;
+      &:hover {
+        transform: scale(1.05);
+      }
+      &:active {
+        transform: scale(0.95);
+      }
+    }
+    h1 {
+      font-family: var(--secondary-font);
+      font-size: clamp(16px, 7vw, 60px);
+      line-height: clamp(32px, 7vw, 150px);
+      // Red-gradient color text
+      background: var(--red-gradient);
+      background-clip: text;
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      // -----------------------
+    }
+  }
 
   .artist-container {
     display: flex;
@@ -106,6 +137,10 @@
       border: 2px solid white;
       padding: 0.5rem;
       background-color: var(--background-text-opacity);
+      // Border + bg Pink *************
+      background-color: #f34cb651;
+      // *******************************
+
       img {
         width: 5Opx;
         height: 50px;
@@ -163,6 +198,9 @@
     margin-block: 2.5rem;
     width: 80%;
     min-height: calc(100vh - 160px - 5rem);
+    .section-title {
+      display: none;
+    }
 
     .preview-main {
       display: grid;
