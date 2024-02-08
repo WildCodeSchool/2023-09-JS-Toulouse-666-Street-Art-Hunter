@@ -243,9 +243,9 @@
     .map-artwork {
       display: flex;
       flex-wrap: wrap;
-      justify-content: space-evenly;
+      justify-content: center;
+      gap: clamp(1rem, 5vw, 3rem);
       padding: 1rem;
-      gap: 1rem;
       line-height: clamp(1rem, 4vw, 2rem);
       font-size: clamp(0.8rem, 2.5vw, 1.3rem);
       border: clamp(5px, 1.2vw, 10px) solid #dd0bff;
