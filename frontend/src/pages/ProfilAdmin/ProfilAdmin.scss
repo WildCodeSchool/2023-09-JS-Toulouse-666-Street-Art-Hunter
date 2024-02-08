@@ -199,7 +199,8 @@
 
     .admin-text {
       background: var(--blue-gradient);
-      padding: 0.5rem;
+      padding: clamp(0.4rem, 2vw, 1.5rem);
+      padding-block: clamp(0.5rem, 3vw, 1.5rem);
       color: whitesmoke;
       font-family: var(--primary-font);
       font-size: clamp(0.8rem, 2.5vw, 1.3rem);
@@ -324,7 +325,7 @@
 
       .admin-text {
         background: var(--blue-gradient);
-        padding: 0.5rem;
+
         color: whitesmoke;
         font-family: var(--primary-font);
         font-size: clamp(0.8rem, 2.5vw, 1.3rem);

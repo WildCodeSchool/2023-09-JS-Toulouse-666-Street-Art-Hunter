@@ -36,10 +36,6 @@ function PannelAdministrateur() {
               Oeuvres non-validés:
               <span>{profils.artworksNoValidate[0].numberOfArtwork}</span>
             </p>
-            <p>
-              {" "}
-              Artistes: <span>{profils.artists[0].numberOfUser}</span>
-            </p>
           </div>
         </div>
       </div>

@@ -1,19 +1,30 @@
 import { useState } from "react";
-import { Form, useParams, redirect, Navigate, Link } from "react-router-dom";
+import {
+  Form,
+  useParams,
+  redirect,
+  Navigate,
+  Link,
+  useLoaderData,
+} from "react-router-dom";
 import Input from "../../components/Input-R/Input";
 import "./ProfilOption.scss";
 import InputTextarea from "../../components/InputTextarea/InputTextarea";
 
 function ProfilOption() {
-  const { id } = useParams();
-  const data = JSON.parse(localStorage.getItem("user"));
+  // ********************* STATE *********************
+  const data = useLoaderData();
   const [description, setDescription] = useState(data.description);
   const [name, setName] = useState(data.name);
+
+  // ********************* LOGIQUE *********************
+  const { id } = useParams();
 
   if (parseInt(id, 10) !== data.id) {
     return <Navigate to="/login" replace />;
   }
 
+  // ********************* RENDER *********************
   return (
     <div className="profil-option-input-option">
       <h1 className="input-option-title">Modifie tes données!</h1>
@@ -74,12 +85,12 @@ export const option = async ({ request }) => {
 
   const formData = {
     ...data,
-    email: dataU.email,
-    score: dataU.score,
+    email: user.email,
+    score: user.score,
     is_admin: user.is_admin,
     is_banned: user.is_banned,
-    selected_avatar: dataU.selected_avatar,
-    border: dataU.border,
+    selected_avatar: user.selected_avatar,
+    border: user.border,
   };
   try {
     const response = await fetch(
@@ -101,5 +112,21 @@ export const option = async ({ request }) => {
   } catch (error) {
     console.error(error);
     return true;
+  }
+};
+
+export const userLoader = async () => {
+  const currentUser = JSON.parse(localStorage.getItem("user"));
+  try {
+    const response = await fetch(
+      `${import.meta.env.VITE_BACKEND_URL}/api/users/${currentUser.id}`
+    );
+    if (!response.ok) {
+      throw new Error("Failed to fetch user");
+    }
+    const user = await response.json();
+    return user;
+  } catch (error) {
+    return console.error(error);
   }
 };

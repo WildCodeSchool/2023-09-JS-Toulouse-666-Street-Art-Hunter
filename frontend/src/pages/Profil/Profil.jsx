@@ -180,7 +180,7 @@ function Profil() {
           <img src={Previous} alt="button previous" />
         </button>
 
-        <h1>Profile</h1>
+        <h1>Profil</h1>
       </div>
       <div className="profil-page">
         <div className="profil-top">

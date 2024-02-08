@@ -7,7 +7,7 @@
   margin-block: clamp(2.5rem, 8vw, 4rem);
   margin-inline: 10%;
   width: 80%;
-  row-gap: clamp(2rem, 7vw, 4rem);
+  row-gap: clamp(2rem, 7vw, 3rem);
 
   .section-title {
     display: flex;
@@ -41,14 +41,17 @@
   .admin-artworks-label {
     display: flex;
     flex-direction: column;
-    align-items: center;
+    align-items: start;
     text-align: center;
-    width: 80vw;
+    width: 100%;
+    max-width: 400px;
     font-family: "PressStart2P";
+    margin-top: 2rem;
     input {
       width: 70%;
     }
   }
+
   .list-artworks {
     display: flex;
     flex-direction: column;

@@ -4,7 +4,6 @@ import "./LandingPage.scss";
 
 import Purple from "../../assets/spray/spray-purple.png";
 import BombSpray from "../../assets/icons/bomb-spray-green.svg";
-
 import Logo from "../../assets/spray/logo.png";
 
 function LandingPage() {

@@ -25,7 +25,7 @@ function Input({
         className="input-value"
         type={type}
         name={labelName}
-        value={value}
+        defaultValue={value}
         onChange={handleClick}
         style={{ inputHeight: height }}
       />

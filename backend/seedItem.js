@@ -18,7 +18,8 @@ const artworkData = [
     longitude: "1.4536899841499504",
     latitude: "43.59494619213161",
     adress: "5 Sq. Boulingrin",
-    description: "C'est beau !",
+    description:
+      "Je me promenais dans les ruelles de Toulouse, sentant les délicieuses odeurs de nourriture s'échapper des restaurants, lorsque je suis tombé sur cette magnifique œuvre !",
     date_published: "2022/01/01",
     ask_to_archived: 0,
     is_archived: 0,
@@ -37,33 +38,7 @@ const artworkData = [
     ask_to_archived: 1,
     is_archived: 0,
     is_validate: 1,
-    publisher_id: 2,
-  },
-  {
-    image:
-      "https://www.toulouse-tournages.fr/sites/www.toulouse-tournages.fr/files/styles/top_banniere/public/thumbnails/image/decor_tournage_rue_neuve_toulouse.jpg?itok=mcjMBwAF",
-    longitude: "1.4552773682148064",
-    latitude: "43.59620372139065",
-    adress: "8 Rue de Valenciennes",
-    description: "LoL, Il y A pA d'oeuVre D'art iCi !",
-    date_published: "2022/01/01",
-    ask_to_archived: 0,
-    is_archived: 0,
-    is_validate: 0,
-    publisher_id: 1,
-  },
-  {
-    image:
-      "https://res.cloudinary.com/dikhzx4qt/image/upload/v1706108272/Avatar/a50ae9cf-dcc6-4b52-8ded-59f6ae704776_gci64j.jpg",
-    longitude: "1.4491256754932784",
-    latitude: "43.60568091093529",
-    adress: "18 All. Jean Jaurès",
-    description: "C'est un mur !",
-    date_published: "2022/01/01",
-    ask_to_archived: 0,
-    is_archived: 0,
-    is_validate: 0,
-    publisher_id: 2,
+    publisher_id: 3,
   },
   {
     image:
@@ -71,12 +46,12 @@ const artworkData = [
     longitude: "1.4560548575085943",
     latitude: "43.605918557771076",
     adress: "23Bis Bd Pierre-Paul Riquet",
-    description: "C'est beau !",
+    description: "Il semble que l'œuvre ait disparu !",
     date_published: "2022/01/01",
     ask_to_archived: 1,
     is_archived: 0,
     is_validate: 1,
-    publisher_id: 1,
+    publisher_id: 4,
   },
   {
     image:
@@ -90,7 +65,7 @@ const artworkData = [
     ask_to_archived: 0,
     is_archived: 0,
     is_validate: 1,
-    publisher_id: 1,
+    publisher_id: 3,
   },
   {
     image:
@@ -104,7 +79,7 @@ const artworkData = [
     ask_to_archived: 0,
     is_archived: 0,
     is_validate: 1,
-    publisher_id: 1,
+    publisher_id: 6,
   },
   {
     image:
@@ -118,7 +93,7 @@ const artworkData = [
     ask_to_archived: 0,
     is_archived: 0,
     is_validate: 1,
-    publisher_id: 1,
+    publisher_id: 7,
   },
   {
     image:
@@ -132,6 +107,20 @@ const artworkData = [
     ask_to_archived: 0,
     is_archived: 0,
     is_validate: 1,
+    publisher_id: 5,
+  },
+  {
+    image:
+      "https://www.toulouse-tourisme.com/sites/www.toulouse-tourisme.com/files/styles/edito_paragraphes/public/thumbnails/image/visiter_toulouse_graff_reso.jpg?itok=grrkxqGy",
+    longitude: "1.458264215341629",
+    latitude: "43.57857379700048",
+    adress: "Avenue Albert Bedouce",
+    description:
+      "Immense graff de Reso qui trône sur toute une façade d'immeuble, au bord du canal du Midi.",
+    date_published: "2024/02/01",
+    ask_to_archived: 0,
+    is_archived: 0,
+    is_validate: 0,
     publisher_id: 1,
   },
 ];
@@ -141,10 +130,10 @@ const userData = [
     name: "Adrien",
     description:
       "Chercheur passionné à la recherche des génies cachés. J'adore explorer le monde de l'extraordinaire et découvrir des idées novatrices. Rejoignez-moi dans cette aventure fascinante !",
-    email: "adrien@mail.com",
+    email: "adrien@gmail.com",
     hashed_password:
       "$argon2id$v=19$m=65536,t=5,p=1$gchAbeLDP59sJZs35SWYqg$sAsiLe6qaxjX2wAzvHusVMb/fmkCY0huxibzvOyj0UM",
-    score: 275,
+    score: 500,
     is_admin: 1,
     is_banned: 0,
     selected_avatar:
@@ -155,10 +144,10 @@ const userData = [
     name: "Arthur",
     description:
       "Passionné par les prototypes et les innovations, je suis constamment à l'affût des dernières tendances technologiques. Si vous partagez cette passion, on a sûrement beaucoup de choses à se dire !",
-    email: "arthur@mail.com",
+    email: "arthur@gmail.com",
     hashed_password:
       "$argon2id$v=19$m=65536,t=5,p=1$gchAbeLDP59sJZs35SWYqg$sAsiLe6qaxjX2wAzvHusVMb/fmkCY0huxibzvOyj0UM",
-    score: 1000,
+    score: 300,
     is_admin: 0,
     is_banned: 0,
     selected_avatar:
@@ -169,10 +158,10 @@ const userData = [
     name: "Nathalie",
     description:
       "Fervente croyante en la contagion de la créativité. J'encourage chacun à transmettre l'inspiration et à laisser libre cours à son imagination. Rejoignez-moi dans cette aventure artistique !",
-    email: "nathalie@mail.com",
+    email: "nathalie@gmail.com",
     hashed_password:
       "$argon2id$v=19$m=65536,t=5,p=1$gchAbeLDP59sJZs35SWYqg$sAsiLe6qaxjX2wAzvHusVMb/fmkCY0huxibzvOyj0UM",
-    score: 750,
+    score: 700,
     is_admin: 0,
     is_banned: 0,
     selected_avatar:
@@ -183,10 +172,10 @@ const userData = [
     name: "Marie",
     description:
       "Voyageuse du monde à temps plein. Ma passion ? Découvrir et savourer les différentes cultures et saveurs du monde entier. Si vous aimez l'aventure et les expériences uniques, on pourrait bien s'entendre !",
-    email: "marie@mail.com",
+    email: "marie@gmail.com",
     hashed_password:
       "$argon2id$v=19$m=65536,t=5,p=1$gchAbeLDP59sJZs35SWYqg$sAsiLe6qaxjX2wAzvHusVMb/fmkCY0huxibzvOyj0UM",
-    score: 420,
+    score: 400,
     is_admin: 0,
     is_banned: 0,
     selected_avatar:
@@ -197,10 +186,10 @@ const userData = [
     name: "Nicolas",
     description:
       "Passionné par la technologie et l'innovation. Toujours à la recherche des dernières avancées, je suis un adepte de la révolution numérique. Rejoignez-moi pour explorer le futur ensemble !",
-    email: "nicolas@mail.com",
+    email: "nicolas@gmail.com",
     hashed_password:
       "$argon2id$v=19$m=65536,t=5,p=1$gchAbeLDP59sJZs35SWYqg$sAsiLe6qaxjX2wAzvHusVMb/fmkCY0huxibzvOyj0UM",
-    score: 890,
+    score: 800,
     is_admin: 0,
     is_banned: 0,
     selected_avatar:
@@ -211,7 +200,7 @@ const userData = [
     name: "Julie",
     description:
       "Exploratrice culinaire et amatrice de bons livres, je suis constamment à la recherche des plaisirs simples de la vie. Si vous partagez ces passions, rejoignez-moi dans cette aventure gourmande et littéraire !",
-    email: "julie@mail.com",
+    email: "julie@gmail.com",
     hashed_password:
       "$argon2id$v=19$m=65536,t=5,p=1$gchAbeLDP59sJZs35SWYqg$sAsiLe6qaxjX2wAzvHusVMb/fmkCY0huxibzvOyj0UM",
     score: 600,
@@ -225,7 +214,7 @@ const userData = [
     name: "Alexandre",
     description:
       "Amateur de musique et de sports extrêmes, je suis toujours partant pour de nouvelles aventures. Si vous aimez l'adrénaline et la bonne musique, vous êtes au bon endroit !",
-    email: "alexandre@mail.com",
+    email: "alexandre@gmail.com",
     hashed_password:
       "$argon2id$v=19$m=65536,t=5,p=1$gchAbeLDP59sJZs35SWYqg$sAsiLe6qaxjX2wAzvHusVMb/fmkCY0huxibzvOyj0UM",
     score: 300,
@@ -236,13 +225,13 @@ const userData = [
     border: "#8FED7C",
   },
   {
-    name: "Sophie",
+    name: "Theo",
     description:
-      "Passionnée par la photographie et les voyages. Mon appareil photo est mon meilleur compagnon de route, capturant des moments inoubliables aux quatre coins du monde. Rejoignez-moi dans cette aventure visuelle !",
-    email: "sophie@mail.com",
+      "Explorateur urbain en quête d'art de rue. Je capture l'essence de la street, je partage ici mes trouvailles colorées.",
+    email: "theo@gmail.com",
     hashed_password:
       "$argon2id$v=19$m=65536,t=5,p=1$gchAbeLDP59sJZs35SWYqg$sAsiLe6qaxjX2wAzvHusVMb/fmkCY0huxibzvOyj0UM",
-    score: 250,
+    score: 0,
     is_admin: 0,
     is_banned: 0,
     selected_avatar:
@@ -253,7 +242,7 @@ const userData = [
     name: "Lucas",
     description:
       "Adepte de jeux vidéo et de cuisine, je trouve l'équilibre entre l'univers virtuel et la réalité gourmande. Si vous partagez ces passions, rejoignez-moi pour des moments de plaisir et de découverte !",
-    email: "lucas@mail.com",
+    email: "lucas@gmail.com",
     hashed_password:
       "$argon2id$v=19$m=65536,t=5,p=1$gchAbeLDP59sJZs35SWYqg$sAsiLe6qaxjX2wAzvHusVMb/fmkCY0huxibzvOyj0UM",
     score: 400,
@@ -293,6 +282,48 @@ const photoData = [
     is_validated: 0,
     user_id: 2,
     artwork_id: 1,
+  },
+  {
+    image:
+      "https://blog.artsper.com/wp-content/uploads/2013/08/ObeyGiant_Vhils-1.jpg",
+    is_validated: 1,
+    user_id: 5,
+    artwork_id: 1,
+  },
+  {
+    image:
+      "https://www.toulouse-tourisme.com/sites/www.toulouse-tourisme.com/files/styles/edito_banniere/public/thumbnails/image/visiter_toulouse_fresque_street_art.jpg?itok=gNQa-Uoc",
+    is_validated: 1,
+    user_id: 5,
+    artwork_id: 2,
+  },
+  {
+    image:
+      "https://3.bp.blogspot.com/-v3QXxWDaV4g/WyaK66UcrcI/AAAAAAAAQN4/Ibd1RhTqA0QTlAvSnBsFX1NV_ychGM6WgCLcBGAs/s1600/01.JPG",
+    is_validated: 1,
+    user_id: 5,
+    artwork_id: 3,
+  },
+  {
+    image:
+      "https://www.toulouse-tourisme.com/sites/www.toulouse-tourisme.com/files/styles/edito_paragraphes/public/thumbnails/image/visiter_toulouse_street_art_kat.jpg?itok=sc-X5-NJ",
+    is_validated: 1,
+    user_id: 5,
+    artwork_id: 5,
+  },
+  {
+    image:
+      "https://www.toulouse-tourisme.com/sites/www.toulouse-tourisme.com/files/styles/edito_paragraphes/public/thumbnails/image/visiter_toulouse_miss_van_street_art.jpg?itok=xeQBWJad",
+    is_validated: 0,
+    user_id: 5,
+    artwork_id: 6,
+  },
+  {
+    image:
+      "https://www.toulouse-tourisme.com/sites/www.toulouse-tourisme.com/files/styles/edito_paragraphes/public/thumbnails/image/visiter_toulouse_street_art_gilgamesch.jpg?itok=zp1hXdfE",
+    is_validated: 1,
+    user_id: 5,
+    artwork_id: 7,
   },
 ];
 
