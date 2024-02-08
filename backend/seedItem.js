@@ -146,7 +146,7 @@ const userData = [
     email: "adrien@mail.com",
     hashed_password:
       "$argon2id$v=19$m=65536,t=5,p=1$gchAbeLDP59sJZs35SWYqg$sAsiLe6qaxjX2wAzvHusVMb/fmkCY0huxibzvOyj0UM",
-    score: 275,
+    score: 500,
     is_admin: 1,
     is_banned: 0,
     selected_avatar:
@@ -160,7 +160,7 @@ const userData = [
     email: "arthur@mail.com",
     hashed_password:
       "$argon2id$v=19$m=65536,t=5,p=1$gchAbeLDP59sJZs35SWYqg$sAsiLe6qaxjX2wAzvHusVMb/fmkCY0huxibzvOyj0UM",
-    score: 1000,
+    score: 300,
     is_admin: 0,
     is_banned: 0,
     selected_avatar:
@@ -174,7 +174,7 @@ const userData = [
     email: "nathalie@mail.com",
     hashed_password:
       "$argon2id$v=19$m=65536,t=5,p=1$gchAbeLDP59sJZs35SWYqg$sAsiLe6qaxjX2wAzvHusVMb/fmkCY0huxibzvOyj0UM",
-    score: 750,
+    score: 700,
     is_admin: 0,
     is_banned: 0,
     selected_avatar:
@@ -188,7 +188,7 @@ const userData = [
     email: "marie@mail.com",
     hashed_password:
       "$argon2id$v=19$m=65536,t=5,p=1$gchAbeLDP59sJZs35SWYqg$sAsiLe6qaxjX2wAzvHusVMb/fmkCY0huxibzvOyj0UM",
-    score: 420,
+    score: 400,
     is_admin: 0,
     is_banned: 0,
     selected_avatar:
@@ -202,7 +202,7 @@ const userData = [
     email: "nicolas@mail.com",
     hashed_password:
       "$argon2id$v=19$m=65536,t=5,p=1$gchAbeLDP59sJZs35SWYqg$sAsiLe6qaxjX2wAzvHusVMb/fmkCY0huxibzvOyj0UM",
-    score: 890,
+    score: 800,
     is_admin: 0,
     is_banned: 0,
     selected_avatar:
@@ -244,7 +244,7 @@ const userData = [
     email: "sophie@mail.com",
     hashed_password:
       "$argon2id$v=19$m=65536,t=5,p=1$gchAbeLDP59sJZs35SWYqg$sAsiLe6qaxjX2wAzvHusVMb/fmkCY0huxibzvOyj0UM",
-    score: 250,
+    score: 200,
     is_admin: 0,
     is_banned: 0,
     selected_avatar:
