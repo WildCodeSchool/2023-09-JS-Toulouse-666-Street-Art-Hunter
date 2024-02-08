@@ -247,7 +247,14 @@ function ArtworkOption() {
             />
           </label>
 
-          <button className="btn-form" type="submit">
+          <button
+            className="btn-form"
+            type="submit"
+            onClick={() => {
+              window.scrollTo(0, 0);
+              navigate("/admin/admin-artworks");
+            }}
+          >
             Valider
           </button>
         </form>

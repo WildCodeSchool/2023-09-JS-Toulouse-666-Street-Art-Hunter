@@ -1,13 +1,23 @@
 import React, { useState } from "react";
 import "./AdminUserModify.scss";
-import { Form, Link, redirect, useParams } from "react-router-dom";
+import {
+  Form,
+  Link,
+  redirect,
+  useLoaderData,
+  useParams,
+} from "react-router-dom";
 import Input from "../../components/Input-R/Input";
 import InputTextarea from "../../components/InputTextarea/InputTextarea";
 
 function AdminUserModify() {
   const { id } = useParams();
   const [isAdminOpen, setAdminOpen] = useState(false);
-  const [valueDescription, setValueDescription] = useState("");
+  const users = useLoaderData();
+  const user = users.find((el) => +el.id === +id);
+  const [valueDescription, setValueDescription] = useState(user.description);
+  const [valueName, setValueName] = useState(user.name);
+  const [valueScore, setValueScore] = useState(user.score);
 
   const toggleAdmin = () => {
     setAdminOpen(!isAdminOpen);
@@ -39,9 +49,10 @@ function AdminUserModify() {
           className="input"
           labelName="name"
           type="name"
-          value="adrien"
           labelText="Pseudo :"
           maxLength="14"
+          value={valueName}
+          setValue={setValueName}
         />
         <InputTextarea
           className="input"
@@ -59,6 +70,8 @@ function AdminUserModify() {
           type="score"
           labelText="Score :"
           maxLength="10"
+          value={valueScore}
+          setValue={setValueScore}
         />
 
         <label className="label-container" htmlFor="Admin">
@@ -94,10 +107,10 @@ function AdminUserModify() {
 export default AdminUserModify;
 
 export const adminModify = async ({ params, request }) => {
+  const { id } = params;
   const form = await request.formData();
   const token = localStorage.getItem("token");
   const data = Object.fromEntries(form);
-  const { id } = params;
 
   const apiURL = import.meta.env.VITE_BACKEND_URL;
 
@@ -135,5 +148,22 @@ export const adminModify = async ({ params, request }) => {
   } catch (error) {
     console.error(error);
     return true;
+  }
+};
+
+export const adminModifyUsers = async () => {
+  try {
+    const token = localStorage.getItem("token");
+    const apiURL = import.meta.env.VITE_BACKEND_URL;
+
+    const responseU = await fetch(`${apiURL}/api/users/`, {
+      headers: {
+        Authorization: `Bearer ${token}`,
+      },
+    });
+    const users = await responseU.json();
+    return users;
+  } catch (error) {
+    return console.error(error);
   }
 };

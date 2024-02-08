@@ -61,6 +61,7 @@ function ValidateArtwork() {
 
     fetchArtwork();
   }, []);
+
   const handleValidate = async () => {
     const validateDataArtwork = {
       image: artwork.image,

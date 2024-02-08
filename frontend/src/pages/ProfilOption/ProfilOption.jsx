@@ -1,17 +1,24 @@
 import { useState } from "react";
-import { Form, useParams, redirect, Navigate, Link } from "react-router-dom";
+import {
+  Form,
+  useParams,
+  redirect,
+  Navigate,
+  Link,
+  useLoaderData,
+} from "react-router-dom";
 import Input from "../../components/Input-R/Input";
 import "./ProfilOption.scss";
 import InputTextarea from "../../components/InputTextarea/InputTextarea";
 
 function ProfilOption() {
   // ********************* STATE *********************
-  const [description, setDescription] = useState("");
+  const data = useLoaderData();
+  const [description, setDescription] = useState(data.description);
+  const [name, setName] = useState(data.name);
 
   // ********************* LOGIQUE *********************
   const { id } = useParams();
-
-  const data = JSON.parse(localStorage.getItem("user"));
 
   if (parseInt(id, 10) !== data.id) {
     return <Navigate to="/login" replace />;
@@ -31,7 +38,8 @@ function ProfilOption() {
           className="input"
           labelName="name"
           type="name"
-          value={data.name}
+          value={name}
+          setValue={setName}
           labelText="Pseudo :"
           maxLength="14"
         />
@@ -105,5 +113,21 @@ export const option = async ({ request }) => {
   } catch (error) {
     console.error(error);
     return true;
+  }
+};
+
+export const userLoader = async () => {
+  const currentUser = JSON.parse(localStorage.getItem("user"));
+  try {
+    const response = await fetch(
+      `${import.meta.env.VITE_BACKEND_URL}/api/users/${currentUser.id}`
+    );
+    if (!response.ok) {
+      throw new Error("Failed to fetch user");
+    }
+    const user = await response.json();
+    return user;
+  } catch (error) {
+    return console.error(error);
   }
 };

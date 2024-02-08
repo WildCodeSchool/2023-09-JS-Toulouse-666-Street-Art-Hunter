@@ -1,3 +1,4 @@
+import { useState } from "react";
 import { useLoaderData, useNavigate, useParams } from "react-router-dom";
 import "./DetailsArtwork.scss";
 import GeolocIcon from "../../assets/icons/geoloc-icon.png";
@@ -9,6 +10,7 @@ import Previous from "../../assets/icons/previous.svg";
 function DetailsArtwork() {
   // ********************* STATE *********************
   const dataArtworkById = useLoaderData();
+  const [modalMissing, setModalMissing] = useState(false);
   const { id } = useParams();
 
   // ********************* LOGIQUE *********************
@@ -30,6 +32,13 @@ function DetailsArtwork() {
 
   const publisherUser = data.name;
 
+  const dateSplitHour = (e) => {
+    const dateSplit = e.split("T")[0];
+    const hour = e.split("T")[1];
+    const hourSplited = hour.split("Z")[0];
+    return `${dateSplit} ${hourSplited}`;
+  };
+
   const handleNavigate = () => {
     window.scrollTo(0, 0);
     navigate("/map");
@@ -40,9 +49,45 @@ function DetailsArtwork() {
     navigate(`/add-existing-artwork/${id}`);
   };
 
-  const handleMissing = () => {
-    window.scrollTo(0, 0);
-    navigate("/artwork-missing");
+  const handleMissing = async () => {
+    const newArtwork = {
+      image: data.image,
+      longitude: data.longitude,
+      latitude: data.latitude,
+      adress: data.adress,
+      description: data.description,
+      date_published: dateSplitHour(data.date_published),
+      ask_to_archived: 1,
+      is_archived: data.is_archived,
+      is_validate: data.is_validate,
+      publisher_id: data.publisher_id,
+      artist_id: data.artist_id,
+    };
+
+    try {
+      const responseArtwork = await fetch(
+        `${import.meta.env.VITE_BACKEND_URL}/api/artworks/${data.id}`,
+        {
+          method: "PUT",
+          headers: {
+            "Content-Type": "application/json",
+            Authorization: `Bearer ${localStorage.getItem("token")}`,
+          },
+          body: JSON.stringify(newArtwork),
+        }
+      );
+      if (!responseArtwork.ok) {
+        throw new Error("Failed to update artwork");
+      }
+      navigate("/map");
+      window.scrollTo(0, 0);
+    } catch (error) {
+      console.error(error);
+    }
+  };
+
+  const handleClick = () => {
+    setModalMissing(true);
   };
 
   // ********************* RENDER *********************
@@ -101,7 +146,28 @@ function DetailsArtwork() {
         {idPhotos && idPhotos.includes(data.id) === false && (
           <Button name="submit" textBtn="Trouvé ?" onClick={handleFind} />
         )}
-        <Button name="submit" textBtn="Disparue ?" onClick={handleMissing} />
+        <Button name="submit" textBtn="Disparue ?" onClick={handleClick} />
+      </div>
+      <div
+        className={`modal-refuse modal ${modalMissing ? "modal-slide" : ""}`}
+      >
+        <p>Etes vous sur(e) ?</p>
+        <div>
+          <button
+            type="button"
+            onClick={handleMissing}
+            className="validate-button"
+          >
+            Oui
+          </button>
+          <button
+            type="button"
+            onClick={() => setModalMissing(false)}
+            className="refuse-button"
+          >
+            Non
+          </button>
+        </div>
       </div>
     </div>
   );

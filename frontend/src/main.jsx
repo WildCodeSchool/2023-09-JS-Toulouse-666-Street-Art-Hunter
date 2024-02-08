@@ -10,7 +10,10 @@ import {
 import Login, { authenticate } from "./pages/Login/Loginpage";
 import Register, { enrolment } from "./pages/Register/Register";
 import Profil, { profilLoader } from "./pages/Profil/Profil";
-import ProfilOption, { option } from "./pages/ProfilOption/ProfilOption";
+import ProfilOption, {
+  option,
+  userLoader,
+} from "./pages/ProfilOption/ProfilOption";
 import ProfilAdmin, {
   profilLoaderAdmin,
 } from "./pages/ProfilAdmin/ProfilAdmin";
@@ -37,6 +40,7 @@ import AdminLayout, { adminLayout } from "./Layouts/RootLayout/AdminLayout";
 import Legals from "./pages/Legal/Legal";
 import AdminUserModify, {
   adminModify,
+  adminModifyUsers,
 } from "./pages/AdminUserModify/AdminUserModify";
 import AdminArtworks, {
   adminArtworksLoader,
@@ -63,6 +67,7 @@ const router = createBrowserRouter(
         path="/profil/:id/option"
         element={<ProfilOption />}
         action={option}
+        loader={userLoader}
       />
       <Route
         path="/add-existing-artwork/:id"
@@ -108,6 +113,7 @@ const router = createBrowserRouter(
           path="pannel-administrateur/users/option/:id"
           element={<AdminUserModify />}
           action={adminModify}
+          loader={adminModifyUsers}
         />
         <Route
           path="admin-artworks"

@@ -16,7 +16,13 @@ function AdminUserDetails() {
   };
   const userId = id;
   const photoId = parseInt(userId, 10);
-  const userArt = artPhoto(photoId);
+  const userArts = artPhoto(photoId);
+  const userArt = userArts.filter((el) => {
+    return el.is_validated === 1;
+  });
+  const userArtToValidate = userArts.filter((el) => {
+    return el.is_validated === 0;
+  });
 
   const deleteUser = async () => {
     const apiURL = import.meta.env.VITE_BACKEND_URL;
@@ -211,6 +217,18 @@ function AdminUserDetails() {
         <Title title="Tableau de chasse" />
         <div className="map-artwork">
           {userArt.map((item) => {
+            return (
+              <div key={item.id} className="item">
+                <img className="link-img" src={item.image} alt="street art" />
+              </div>
+            );
+          })}
+        </div>
+      </div>
+      <div className="artwork">
+        <Title title="En attente" />
+        <div className="map-artwork">
+          {userArtToValidate.map((item) => {
             return (
               <div key={item.id} className="item">
                 <img className="link-img" src={item.image} alt="street art" />
