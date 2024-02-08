@@ -238,7 +238,7 @@ function ProfilAdmin() {
                   className="item"
                   onClick={() => {
                     window.scrollTo(0, 0);
-                    navigate(`/details-artwork/${el.id}`);
+                    navigate(`/details-artwork/${el.artwork_id}`);
                   }}
                 >
                   <img className="link-img" src={el.image} alt="street art" />
@@ -261,7 +261,7 @@ function ProfilAdmin() {
                   className="item"
                   onClick={() => {
                     window.scrollTo(0, 0);
-                    navigate(`/details-artwork/${el.id}`);
+                    navigate(`/details-artwork/${el.artwork_id}`);
                   }}
                 >
                   <img className="link-img" src={el.image} alt="street art" />
