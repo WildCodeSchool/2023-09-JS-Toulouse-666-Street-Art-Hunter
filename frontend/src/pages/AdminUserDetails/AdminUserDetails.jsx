@@ -23,6 +23,15 @@ function AdminUserDetails() {
   const userArtToValidate = userArts.filter((el) => {
     return el.is_validated === 0;
   });
+  const { artworks } = userP;
+
+  const userArtworks = artworks.filter((el) => {
+    return el.publisher_id === +id;
+  });
+
+  const validateArtwork = userArtworks.filter((el) => {
+    return el.is_validate === 1;
+  });
 
   const deleteUser = async () => {
     const apiURL = import.meta.env.VITE_BACKEND_URL;
@@ -216,25 +225,73 @@ function AdminUserDetails() {
       <div className="artwork">
         <Title title="Tableau de chasse" />
         <div className="map-artwork">
-          {userArt.map((item) => {
-            return (
-              <div key={item.id} className="item">
-                <img className="link-img" src={item.image} alt="street art" />
-              </div>
-            );
-          })}
+          {userArt && userArt.length > 0 ? (
+            userArt.map((el) => {
+              return (
+                <button
+                  type="button"
+                  key={el.id}
+                  className="item"
+                  onClick={() => {
+                    window.scrollTo(0, 0);
+                    navigate(`/details-artwork/${el.artwork_id}`);
+                  }}
+                >
+                  <img className="link-img" src={el.image} alt="street art" />
+                </button>
+              );
+            })
+          ) : (
+            <p>Son tableau de chasse est vide</p>
+          )}
         </div>
       </div>
       <div className="artwork">
-        <Title title="En attente" />
+        <Title title="Photo en attente" />
         <div className="map-artwork">
-          {userArtToValidate.map((item) => {
-            return (
-              <div key={item.id} className="item">
-                <img className="link-img" src={item.image} alt="street art" />
-              </div>
-            );
-          })}
+          {userArtToValidate && userArtToValidate.length > 0 ? (
+            userArtToValidate.map((el) => {
+              return (
+                <button
+                  type="button"
+                  key={el.id}
+                  className="item"
+                  onClick={() => {
+                    window.scrollTo(0, 0);
+                    navigate(`/details-artwork/${el.artwork_id}`);
+                  }}
+                >
+                  <img className="link-img" src={el.image} alt="street art" />
+                </button>
+              );
+            })
+          ) : (
+            <p>Il n'a aucune photo en cours de validation</p>
+          )}
+        </div>
+      </div>
+      <div className="artwork">
+        <Title title="Oeuvre découverte" />
+        <div className="map-artwork">
+          {validateArtwork && validateArtwork.length > 0 ? (
+            validateArtwork.map((el) => {
+              return (
+                <button
+                  type="button"
+                  key={el.id}
+                  className="item"
+                  onClick={() => {
+                    window.scrollTo(0, 0);
+                    navigate(`/details-artwork/${el.artwork_id}`);
+                  }}
+                >
+                  <img className="link-img" src={el.image} alt="street art" />
+                </button>
+              );
+            })
+          ) : (
+            <p>Il n'a trouvé aucune nouvelle oeuvre</p>
+          )}
         </div>
       </div>
     </div>
@@ -260,6 +317,12 @@ export const userDetails = async (req) => {
     },
   });
   const art = await responseArt.json();
+  const reponseArtworks = await fetch(`${apiURL}/api/artworks`, {
+    headers: {
+      Authorization: `Bearer ${token}`,
+    },
+  });
+  const artworks = await reponseArtworks.json();
 
-  return { user, art };
+  return { user, art, artworks };
 };
