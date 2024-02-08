@@ -32,7 +32,7 @@ function ProfileModal({ modalIsConnected, setModalIsConnected }) {
       }
     >
       <div>
-        {data && <Link to={`/profil/${id}`}>Profile</Link>}
+        {data && <Link to={`/profil/${id}`}>Profil</Link>}
         <button type="button" onClick={handleDisconnect}>
           Déconnexion
         </button>

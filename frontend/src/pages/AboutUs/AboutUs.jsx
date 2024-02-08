@@ -18,12 +18,18 @@ function AboutUs() {
         </div>
         <div className="adrien-description">
           <p>
-            Adrien, le virtuose du développement web, manie les langages comme
-            un chef d'orchestre dirige son ensemble. Avec une agilité
-            exceptionnelle sur le clavier, il transforme des lignes de code en
-            symphonies digitales. En dehors du monde binaire, Adrien s'immerge
-            dans le monde du sport, où, tel un athlète de l'informatique, il
-            repousse les limites et transcende les frontières.
+            Un développeur polyvalent spécialisé dans la création d'applications
+            web. Avec une expertise à la fois en développement front-end et
+            back-end, Adrien est votre partenaire idéal pour transformer vos
+            idées en réalité numérique.
+            <br />
+            <br />
+            Sa maîtrise des langages de programmation et des technologies les
+            plus récentes lui permet de concevoir des interfaces utilisateur
+            intuitives et des architectures robustes qui répondent à vos besoins
+            spécifiques. Toujours à l'écoute de vos exigences, Adrien s'engage à
+            fournir des solutions efficaces et personnalisées pour chaque
+            projet.
           </p>
         </div>
         <div className="network">
@@ -55,12 +61,16 @@ function AboutUs() {
         </div>
         <div className="tristan-description">
           <p>
-            Tristan, le magicien de l'intelligence artificielle, jongle avec les
-            algorithmes comme s'il s'agissait d'un tour de magie bien orchestré.
-            En provenance de la Ville Rose, il capture les moments éphémères
-            avec son appareil photo tout en faisant des randonnées dans le monde
-            infini de la technologie. Tristan apporte une touche de magie à
-            chaque ligne de code.
+            Découvrez Tristan, un professionnel du développement logiciel doté
+            d'un esprit logique aiguisé. Spécialisé dans la création
+            d'algorithmes performants, Tristan excelle dans la résolution
+            méthodique de problèmes complexes. Sa capacité à penser de manière
+            analytique et à concevoir des solutions élégantes en fait un atout
+            précieux.
+            <br />
+            <br />
+            Avec Tristan à la barre, vos projets bénéficieront d'une approche
+            sobre et pragmatique, garantissant des résultats efficaces.
           </p>
         </div>
         <div className="network">
@@ -92,12 +102,16 @@ function AboutUs() {
         </div>
         <div className="theo-description">
           <p>
-            Théo, l'architecte des applications mobiles, érige des structures
-            numériques avec une ingéniosité qui défie la gravité. Originaire de
-            Paris, il peint avec des pixels plutôt qu'avec des pinceaux, créant
-            des œuvres d'art interactives. En dehors du royaume digital, Théo
-            consacre son énergie à des projets caritatifs, apportant une dose
-            d'humanité à son monde technologique.
+            Un professionnel du front-end qui excelle particulièrement dans le
+            design. Son talent se manifeste dans la création d'interfaces
+            visuelles attrayantes et fonctionnelles. Théo a une sensibilité
+            esthétique prononcée, apportant une touche visuelle élégante à
+            chaque projet.
+            <br />
+            <br /> En plus de son expertise dans le style, il n'hésite pas à
+            relever des défis techniques pour intégrer des fonctionnalités
+            complexes. Avec Théo à vos côtés, vous pouvez vous attendre à une
+            expérience utilisateur soignée et des fonctionnalités bien pensées.
           </p>
         </div>
         <div className="network">

@@ -180,7 +180,7 @@ function Profil() {
           <img src={Previous} alt="button previous" />
         </button>
 
-        <h1>Profile</h1>
+        <h1>Profil</h1>
       </div>
       <div className="profil-page">
         <div className="profil-top">
@@ -241,7 +241,8 @@ function Profil() {
             <p>Votre tableau de chasse est vide</p>
           )}
         </div>
-        <Title title="Tableau de chasse en attente" />
+        <br />
+        <Title title="en attente" />
         <div className="map-artwork">
           {pendingArt && pendingArt.length > 0 ? (
             pendingArt.map((el) => {

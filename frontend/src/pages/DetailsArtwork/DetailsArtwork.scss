@@ -281,4 +281,68 @@
       justify-content: center; //
     }
   }
+  .modal {
+    position: fixed;
+    display: flex;
+    width: 100dvw;
+    height: 100dvh;
+    background-color: rgba(0, 0, 0, 0.5);
+    backdrop-filter: blur(10px);
+    left: -105%;
+    top: 0px;
+    transition: left 0.5s ease;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    gap: 3rem;
+    text-align: center;
+
+    .validate-button {
+      background-color: green;
+      color: whitesmoke;
+      font-family: "PressStart2P";
+    }
+    .refuse-button {
+      background-color: red;
+      color: whitesmoke;
+      font-family: "PressStart2P";
+    }
+    p {
+      color: whitesmoke;
+    }
+    div {
+      display: flex;
+      gap: 1rem;
+      position: relative;
+      button {
+        width: 100px;
+        height: 50px;
+      }
+      .splatter {
+        display: none;
+        position: absolute;
+      }
+      .pink-splatter {
+        width: clamp(325px, 60vw, 400px);
+        height: clamp(325px, 60vw, 400px);
+        bottom: -50vh;
+        right: 150px;
+      }
+      .teal-splatter {
+        width: clamp(300px, 60vw, 550px);
+        height: clamp(300px, 60vw, 550px);
+        bottom: -60vh;
+        right: -30vh;
+      }
+      .green-splatter {
+        width: clamp(300px, 60vw, 400px);
+        height: clamp(300px, 60vw, 400px);
+        bottom: 0px;
+        left: -120px;
+      }
+    }
+  }
+  .modal-slide {
+    left: 0;
+  }
 }

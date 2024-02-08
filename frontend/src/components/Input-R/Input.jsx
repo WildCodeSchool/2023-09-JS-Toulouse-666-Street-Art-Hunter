@@ -1,10 +1,16 @@
-import React, { useState } from "react";
+import React from "react";
 import PropTypes from "prop-types";
 import "./Input.scss";
 
-function Input({ labelName, type, labelText, maxLength, height }) {
-  const [value, setValue] = useState("");
-
+function Input({
+  labelName,
+  type,
+  labelText,
+  maxLength,
+  height,
+  value,
+  setValue,
+}) {
   // Permet de bloquer l'input si le nombre de caractères tapés dépasse la limite.
   const handleClick = (e) => {
     if (e.target.value.length <= maxLength) {
@@ -39,4 +45,6 @@ Input.propTypes = {
   labelText: PropTypes.string.isRequired,
   maxLength: PropTypes.string.isRequired,
   height: PropTypes.string,
+  value: PropTypes.string.isRequired,
+  setValue: PropTypes.func.isRequired,
 };
