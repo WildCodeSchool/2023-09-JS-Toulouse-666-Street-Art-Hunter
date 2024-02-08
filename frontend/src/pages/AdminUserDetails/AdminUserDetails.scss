@@ -174,12 +174,12 @@
     .map-artwork {
       display: flex;
       flex-wrap: wrap;
-      justify-content: space-evenly;
+      justify-content: center;
+      gap: clamp(1rem, 5vw, 3rem);
       border: clamp(5px, 1.2vw, 10px) solid #dd0bff;
       box-shadow: 4px 4px 0px 0px #ff89c6;
       padding: 1rem;
       padding-block: clamp(1.5rem, 5vw, 2.5rem);
-      gap: 1rem;
       background-color: rgba(255, 192, 203, 0.209);
       // Border + bg Pink *************
       background-color: #f34cb651;
