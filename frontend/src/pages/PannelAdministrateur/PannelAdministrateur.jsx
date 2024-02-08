@@ -47,7 +47,7 @@ function PannelAdministrateur() {
             </p>
             <p>
               {" "}
-              Oeuvres non-validés:
+              Oeuvres non-validées:
               <span>{profils.artworksNoValidate[0].numberOfArtwork}</span>
             </p>
           </div>
