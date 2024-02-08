@@ -8,7 +8,8 @@ const postCloudAndPutArtwork = async (
   askArchive,
   isArchive,
   isValidate,
-  artworkId
+  artworkId,
+  publisherId
 ) => {
   const dataArtwork = {
     image: base64EncodedImage,
@@ -21,6 +22,7 @@ const postCloudAndPutArtwork = async (
     is_archived: isArchive,
     is_validate: isValidate,
     id: artworkId,
+    publisher_id: publisherId,
   };
   console.info(dataArtwork);
 
