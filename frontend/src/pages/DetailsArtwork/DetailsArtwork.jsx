@@ -144,7 +144,7 @@ function DetailsArtwork() {
 
       <div className="btn-container">
         {idPhotos && idPhotos.includes(data.id) === false && (
-          <Button name="submit" textBtn="Trouvé ?" onClick={handleFind} />
+          <Button name="submit" textBtn="Trouvée ?" onClick={handleFind} />
         )}
         <Button name="submit" textBtn="Disparue ?" onClick={handleClick} />
       </div>
