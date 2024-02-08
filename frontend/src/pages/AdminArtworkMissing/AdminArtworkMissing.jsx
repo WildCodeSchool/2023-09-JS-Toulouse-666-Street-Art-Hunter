@@ -73,7 +73,7 @@ function AdminArtworkMissing() {
       date_published: dateSplitHour(artwork.date_published),
       ask_to_archived: 0,
       is_archived: 1,
-      is_validate: artwork.is_validate,
+      is_validate: 0,
       publisher_id: artwork.publisher_id,
     };
 

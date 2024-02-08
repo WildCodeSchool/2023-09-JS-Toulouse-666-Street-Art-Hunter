@@ -1,9 +1,14 @@
-import React from "react";
+import { useState } from "react";
 import { Form, redirect } from "react-router-dom";
 import Input from "../../components/Input-R/Input";
 import "./Register.scss";
 
 function Register() {
+  const [name, setName] = useState("");
+  const [password, setPassword] = useState("");
+  const [email, setEmail] = useState("");
+  const [passwordConfirm, setPasswordConfirm] = useState("");
+
   return (
     <div className="register-page">
       <div className="register-input">
@@ -22,6 +27,8 @@ function Register() {
             type="name"
             labelText="Pseudo:"
             maxLength="14"
+            value={name}
+            setValue={setName}
           />
           <Input
             className="password"
@@ -29,6 +36,8 @@ function Register() {
             type="password"
             labelText="mot de passe:"
             maxLength="255"
+            value={password}
+            setValue={setPassword}
           />
           <Input
             className="email"
@@ -36,6 +45,8 @@ function Register() {
             type="email"
             labelText="Adresse mail:"
             maxLength="45"
+            value={email}
+            setValue={setEmail}
           />
           <Input
             className="confirm-password"
@@ -43,6 +54,8 @@ function Register() {
             type="password"
             labelText="confirmation mdp:"
             maxLength="255"
+            value={passwordConfirm}
+            setValue={setPasswordConfirm}
           />
 
           <div className="btn-container">
