@@ -19,8 +19,17 @@ function ProfilAdmin() {
   const profils = useLoaderData();
   const token = localStorage.getItem("token");
   const data = JSON.parse(localStorage.getItem("user"));
-
   const { id } = useParams();
+  const { artworks } = profils;
+
+  const userArtworks = artworks.filter((el) => {
+    return el.publisher_id === +id;
+  });
+
+  const validateArtwork = userArtworks.filter((el) => {
+    return el.is_validate === 1;
+  });
+
   if (!token) {
     return <Navigate to="/login" replace />;
   }
@@ -250,7 +259,7 @@ function ProfilAdmin() {
           )}
         </div>
         <br />
-        <Title title="en attente" />
+        <Title title="Photo en attente" />
         <div className="map-artwork">
           {pendingArt && pendingArt.length > 0 ? (
             pendingArt.map((el) => {
@@ -270,6 +279,29 @@ function ProfilAdmin() {
             })
           ) : (
             <p>Vous n'avez aucune oeuvre en cours de validation</p>
+          )}
+        </div>
+        <br />
+        <Title title="Oeuvre découverte" />
+        <div className="map-artwork">
+          {validateArtwork && validateArtwork.length > 0 ? (
+            validateArtwork.map((el) => {
+              return (
+                <button
+                  type="button"
+                  key={el.id}
+                  className="item"
+                  onClick={() => {
+                    window.scrollTo(0, 0);
+                    navigate(`/details-artwork/${el.artwork_id}`);
+                  }}
+                >
+                  <img className="link-img" src={el.image} alt="street art" />
+                </button>
+              );
+            })
+          ) : (
+            <p>Vous n'avez trouvé aucune nouvelle oeuvre</p>
           )}
         </div>
       </div>
@@ -305,13 +337,20 @@ export const profilLoaderAdmin = async (req) => {
   });
   const img = await responseImg.json();
 
+  const responseArtwork = await fetch(`${apiURL}/api/artworks`, {
+    headers: {
+      Authorization: `Bearer ${token}`,
+    },
+  });
+  const artworks = await responseArtwork.json();
+
   if (!response.ok) {
     throw new Error(JSON.stringify({ message: "Could not fetch profiles." }), {
       status: 500,
     });
   }
 
-  const resp = { user, art, img };
+  const resp = { user, art, img, artworks };
 
   return resp;
 };
