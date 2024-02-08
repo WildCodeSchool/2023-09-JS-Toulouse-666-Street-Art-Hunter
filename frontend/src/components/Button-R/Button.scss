@@ -6,6 +6,7 @@
     align-items: center;
     border: 3px solid #ff1c96;
     background: #361a20;
+    width: clamp(200px, 35vw, 300px);
     filter: drop-shadow(2px 2px #4475f5);
     &:hover {
       transform: scale(1.05);

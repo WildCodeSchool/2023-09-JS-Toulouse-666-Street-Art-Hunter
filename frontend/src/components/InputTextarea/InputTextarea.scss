@@ -28,18 +28,24 @@
   }
 
   .input-container {
-    width: 316px;
+    width: 100%;
+    max-width: 350px;
+    min-width: 285px;
+    box-sizing: border-box;
     height: 40px;
-    padding-inline: 10px;
     font-family: var(--primary-font);
-    color: white;
-    line-height: 1.5rem;
-    font-size: clamp(12px, 1.5vw, 16px);
+    font-size: clamp(16px, 2vw, 24px);
     background: var(--primary-color);
     border-right: 2px solid pink;
     border-top: 2px solid pink;
     border-left: 2px solid deeppink;
     border-bottom: 2px solid deeppink;
+    color: whitesmoke;
+    font-size: 1rem;
+    outline: none;
+    &:focus-visible {
+      background-color: rgba(255, 192, 203, 0.442);
+    }
   }
 }
 

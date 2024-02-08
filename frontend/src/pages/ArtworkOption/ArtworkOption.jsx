@@ -144,7 +144,7 @@ function ArtworkOption() {
               type="search"
               labelText="Adresse:"
               maxLength="100"
-              height="70px"
+              height="90px"
               width="100%"
               value={valueAddress}
               setValue={setValueAddress}
@@ -179,7 +179,7 @@ function ArtworkOption() {
           </div>
 
           <label className="label label-latitude" htmlFor="latitude">
-            <span>Latitude</span>
+            <span>Latitude:</span>
             <input
               className="input-field"
               type="text"
@@ -192,7 +192,7 @@ function ArtworkOption() {
           </label>
 
           <label className="label label-longitude" htmlFor="longitude">
-            <span>Longitude</span>
+            <span>Longitude:</span>
             <input
               className="input-field"
               type="text"
@@ -205,7 +205,7 @@ function ArtworkOption() {
           </label>
 
           <label className="label label-description" htmlFor="description">
-            <span>Description</span>
+            <span>Description:</span>
             <textarea
               className="input-field"
               name="description"
@@ -218,7 +218,7 @@ function ArtworkOption() {
             className="label label-ask-to-archived"
             htmlFor="ask_to_archived"
           >
-            <span>Demande d'archivage</span>
+            <span>Demande d'archivage:</span>
             <input
               className="input-field"
               name="ask_to_archived"

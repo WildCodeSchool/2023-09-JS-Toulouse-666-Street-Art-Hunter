@@ -8,6 +8,35 @@
   margin-inline: 10%;
   width: 80%;
   row-gap: clamp(2rem, 7vw, 4rem);
+  .section-title {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+    column-gap: clamp(1rem, 7vw, 4rem);
+    img {
+      width: clamp(40px, 10vw, 95px);
+      height: clamp(40px, 10vw, 95px);
+      cursor: pointer;
+      &:hover {
+        transform: scale(1.05);
+      }
+      &:active {
+        transform: scale(0.95);
+      }
+    }
+    h1 {
+      font-family: var(--secondary-font);
+      font-size: clamp(16px, 7vw, 60px);
+      line-height: clamp(30px, 9vw, 150px);
+      // Red-gradient color text
+      background: var(--red-gradient);
+      background-clip: text;
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      // -----------------------
+    }
+  }
   .pannel-stats {
     display: flex;
     flex-direction: column;
@@ -42,6 +71,23 @@
     display: flex;
     flex-direction: column;
     row-gap: clamp(1.2rem, 3vw, 2.5rem);
+    .artworks-gallery-empty {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: space-evenly;
+      padding: 1rem;
+      gap: 1rem;
+      line-height: clamp(1rem, 4vw, 2rem);
+      font-size: clamp(0.8rem, 2.5vw, 1.3rem);
+      border: clamp(5px, 1.2vw, 10px) solid #dd0bff;
+      box-shadow: 4px 4px 0px 0px #fe91c9;
+      padding: clamp(1.5rem, 6vw, 3rem);
+      background-color: rgba(255, 192, 203, 0.209);
+      // Border + bg Pink *************
+      background-color: #f34cb651;
+      box-sizing: border-box;
+      // *******************************
+    }
   }
 
   .tableau {
@@ -49,11 +95,15 @@
     flex-wrap: wrap;
     justify-content: space-evenly;
     border: clamp(5px, 1.2vw, 10px) solid #dd0bff;
-    box-shadow: 4px 4px 0px 0px #ed1385;
+    box-shadow: 4px 4px 0px 0px #fe91c9;
     padding: 1rem;
-    padding-block: clamp(1.5rem, 5vw, 2.5rem);
+    padding-block: clamp(1.5rem, 5vw, 3rem);
     gap: 1rem;
     background-color: rgba(255, 192, 203, 0.209);
+    // Border + bg Pink *************
+    background-color: #f34cb651;
+    box-sizing: border-box;
+    // *******************************
     .map-tableau {
       &:hover {
         transform: scale(1.05);
@@ -115,33 +165,6 @@
       }
     }
   }
-}
-
-@property --angle {
-  syntax: "<angle>";
-  initial-value: 90deg;
-  inherits: true;
-}
-
-@property --gradX {
-  syntax: "<percentage>";
-  initial-value: 50%;
-  inherits: true;
-}
-
-@property --gradY {
-  syntax: "<percentage>";
-  initial-value: 0%;
-  inherits: true;
-}
-
-:root {
-  --d: 3000ms;
-  --angle: 90deg;
-  --gradX: 100%;
-  --gradY: 50%;
-  --c1: rgb(200, 11, 175);
-  --c2: rgba(168, 239, 255, 0.1);
 }
 
 .img-admin {

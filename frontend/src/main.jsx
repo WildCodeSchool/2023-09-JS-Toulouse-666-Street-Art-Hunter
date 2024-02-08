@@ -64,7 +64,10 @@ const router = createBrowserRouter(
         element={<ProfilOption />}
         action={option}
       />
-      <Route path="/add-existing-artwork" element={<AddExistingArtwork />} />
+      <Route
+        path="/add-existing-artwork/:id"
+        element={<AddExistingArtwork />}
+      />
       <Route
         path="/add-non-existing-artwork"
         element={<AddNonExistingArtwork />}
