@@ -193,7 +193,7 @@ button {
 
 @font-face {
   font-family: "PressStart2P";
-  src: url("../../backend/public/assets/fonts/PressStart2P.ttf");
+  src: url("../..//backend//public/assets/fonts/PressStart2P.ttf");
 }
 
 @font-face {
