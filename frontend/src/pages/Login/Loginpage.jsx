@@ -1,8 +1,8 @@
 import React, { useState } from "react";
 import { Form, redirect, useNavigate } from "react-router-dom";
 import Input from "../../components/Input-R/Input";
-import Boy from "../../assets/photos/boy.png";
-import Girl from "../../assets/photos/girl.png";
+import Boy from "../../../../backend/public/assets/photos/boy.png";
+import Girl from "../../../../backend/public/assets/photos/girl.png";
 import "./Loginpage.scss";
 
 function Login() {

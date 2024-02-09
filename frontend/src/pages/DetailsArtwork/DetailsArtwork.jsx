@@ -1,11 +1,11 @@
 import { useState } from "react";
 import { useLoaderData, useNavigate, useParams } from "react-router-dom";
 import "./DetailsArtwork.scss";
-import GeolocIcon from "../../assets/icons/geoloc-icon.png";
-import AstroBoy from "../../assets/avatars/astro-boy.png";
+import GeolocIcon from "../../../../backend/public/assets/icons/geoloc-icon.png";
+import AstroBoy from "../../../../backend/public/assets/avatars/astro-boy.png";
 import Title from "../../components/TitleRed-R/Title";
 import Button from "../../components/Button-R/Button";
-import Previous from "../../assets/icons/previous.svg";
+import Previous from "../../../../backend/public/assets/icons/previous.svg";
 
 function DetailsArtwork() {
   // ********************* STATE *********************

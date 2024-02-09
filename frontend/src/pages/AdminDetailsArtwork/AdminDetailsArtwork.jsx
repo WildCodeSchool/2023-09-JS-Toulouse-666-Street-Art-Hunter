@@ -1,7 +1,7 @@
 import { useLoaderData, useParams } from "react-router-dom";
 import "./AdminDetailsArtwork.scss";
-import GeolocIcon from "../../assets/icons/geoloc-icon.png";
-import AstroBoy from "../../assets/avatars/astro-boy.png";
+import GeolocIcon from "../../../../backend/public/assets/icons/geoloc-icon.png";
+import AstroBoy from "../../../../backend/public/assets/avatars/astro-boy.png";
 import Title from "../../components/TitleRed-R/Title";
 import LinkAdmin from "../../components/LinkAdmin/LinkAdmin";
 

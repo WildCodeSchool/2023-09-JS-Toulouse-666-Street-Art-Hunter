@@ -2,10 +2,10 @@ import React from "react";
 import { Link, useNavigate } from "react-router-dom";
 import PropTypes from "prop-types";
 
-import pinkSplatter from "../../assets/images/pink-splatter.svg";
-import tealSplatter from "../../assets/images/teal-splatter.svg";
-import greenSplatter from "../../assets/images/green-splatter.svg";
-import LogoSimple from "../../assets/icons/logo-simple.svg";
+import pinkSplatter from "../../../../backend/public/assets/images/pink-splatter.svg";
+import tealSplatter from "../../../../backend/public/assets/images/teal-splatter.svg";
+import greenSplatter from "../../../../backend/public/assets/images/green-splatter.svg";
+import LogoSimple from "../../../../backend/public/assets/icons/logo-simple.svg";
 import "./BurgerModal.scss";
 
 function BurgerModal({ isOpen, handleBurger }) {
