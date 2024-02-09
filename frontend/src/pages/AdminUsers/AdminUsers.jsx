@@ -1,7 +1,7 @@
 import React from "react";
 import { useLoaderData, useNavigate } from "react-router-dom";
 import "./AdminUsers.scss";
-import Previous from "../../assets/icons/previous.svg";
+import Previous from "../../../../backend/public/assets/icons/previous.svg";
 
 function AdminUsers() {
   const navigate = useNavigate();

@@ -2,7 +2,7 @@ import { Marker, Popup, useMapEvents } from "react-leaflet";
 import { Icon } from "leaflet";
 import PropTypes from "prop-types";
 
-import gpsPoint from "../../assets/icons/GPS_point.svg";
+import gpsPoint from "../../../../backend/public/assets/icons/GPS_point.svg";
 import "./GeolocationMarker.scss";
 
 function GeolocationMarker({ location }) {

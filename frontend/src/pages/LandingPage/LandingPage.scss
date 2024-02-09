@@ -7,7 +7,7 @@
   row-gap: 3rem;
   position: relative;
   overflow: hidden;
-  background: no-repeat left -220px bottom 0px url("../../assets/spray/spray-blue.png");
+  background: no-repeat left -220px bottom 0px url("../../../../backend/public/assets/spray/spray-blue.png");
   background-size: 400px;
 
   // LOGO
@@ -90,16 +90,16 @@
   .landing-page-main-container {
     background:
       // green-apple
-      no-repeat left -220px top 100px url("../../assets/spray/spray-green-apple.png"),
+      no-repeat left -220px top 100px url("../../../../backend/public/assets/spray/spray-green-apple.png"),
       // blue
       no-repeat left -270px bottom -80px
-        url("../../assets/spray/spray-blue.png"),
+        url("../../../../backend/public/assets/spray/spray-blue.png"),
       // orange
       no-repeat right -300px top -200px
-        url("../../assets/spray/spray-orange.png"),
+        url("../../../../backend/public/assets/spray/spray-orange.png"),
       // pink
       no-repeat right -200px bottom -100px
-        url("../../assets/spray/spray-pink.png");
+        url("../../../../backend/public/assets/spray/spray-pink.png");
     background-size:
       450px 450px,
       450px 450px,
@@ -130,16 +130,16 @@
     background:
       // green-apple
       no-repeat left -220px top -50px
-        url("../../assets/spray/spray-green-apple.png"),
+        url("../../../../backend/public/assets/spray/spray-green-apple.png"),
       // blue
       no-repeat left -220px bottom -80px
-        url("../../assets/spray/spray-blue.png"),
+        url("../../../../backend/public/assets/spray/spray-blue.png"),
       // orange
       no-repeat right -200px top -200px
-        url("../../assets/spray/spray-orange.png"),
+        url("../../../../backend/public/assets/spray/spray-orange.png"),
       // pink
       no-repeat right -200px bottom -100px
-        url("../../assets/spray/spray-pink.png");
+        url("../../../../backend/public/assets/spray/spray-pink.png");
     background-size:
       500px 500px,
       500px 500px,

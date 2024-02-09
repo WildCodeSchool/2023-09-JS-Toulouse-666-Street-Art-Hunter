@@ -2,9 +2,9 @@ import { useEffect, useState } from "react";
 import { useLoaderData, useNavigate, useParams } from "react-router-dom";
 import "./ValidatePhoto.scss";
 
-import tealSplatter from "../../assets/images/teal-splatter.svg";
-import pinkSplatter from "../../assets/images/pink-splatter.svg";
-import greenSplatter from "../../assets/images/green-splatter.svg";
+import tealSplatter from "../../../../backend/public/assets/images/teal-splatter.svg";
+import pinkSplatter from "../../../../backend/public/assets/images/pink-splatter.svg";
+import greenSplatter from "../../../../backend/public/assets/images/green-splatter.svg";
 import Title from "../../components/TitleRed-R/Title";
 
 function ValidatePhoto() {

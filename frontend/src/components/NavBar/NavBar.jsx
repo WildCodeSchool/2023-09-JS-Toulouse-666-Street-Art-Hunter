@@ -5,9 +5,9 @@ import fetchUserData from "../../services/Loaders/FetchUserData";
 
 import "./NavBar.scss";
 
-import burgerLogo from "../../assets/icons/burger-logo.svg";
-import LogoProfileUser from "../../assets/icons/profile-user.svg";
-import LogoProfileAdmin from "../../assets/icons/profile-admin.svg";
+import burgerLogo from "../../../../backend/public/assets/icons/burger-logo.svg";
+import LogoProfileUser from "../../../../backend/public/assets/icons/profile-user.svg";
+import LogoProfileAdmin from "../../../../backend/public/assets/icons/profile-admin.svg";
 import ProfileModal from "../ProfileModal/ProfileModal";
 import BurgerModal from "../BurgerModal/BurgerModal";
 

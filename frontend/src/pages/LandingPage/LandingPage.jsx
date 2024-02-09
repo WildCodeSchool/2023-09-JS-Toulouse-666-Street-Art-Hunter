@@ -2,9 +2,9 @@ import React from "react";
 import { Link, useNavigate } from "react-router-dom";
 import "./LandingPage.scss";
 
-import Purple from "../../assets/spray/spray-purple.png";
-import BombSpray from "../../assets/icons/bomb-spray-green.svg";
-import Logo from "../../assets/spray/logo.png";
+import Purple from "../../../../backend/public/assets/spray/spray-purple.png";
+import BombSpray from "../../../../backend/public/assets/icons/bomb-spray-green.svg";
+import Logo from "../../../../backend/public/assets/spray/logo.png";
 
 function LandingPage() {
   const navigate = useNavigate();

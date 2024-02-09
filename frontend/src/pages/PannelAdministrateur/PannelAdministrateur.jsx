@@ -3,9 +3,9 @@ import { Navigate, useLoaderData, useNavigate } from "react-router-dom";
 import "./PannelAdministrateur.scss";
 import LinkAdmin from "../../components/LinkAdmin/LinkAdmin";
 import ArtworkPannel from "../../components/ArtworkPannel/ArtworkPannel";
-import Thors from "../../assets/photos/Thors.png";
+import Thors from "../../../../backend/public/assets/photos/Thors.png";
 import Title from "../../components/TitleRed-R/Title";
-import Previous from "../../assets/icons/previous.svg";
+import Previous from "../../../../backend/public/assets/icons/previous.svg";
 
 function PannelAdministrateur() {
   const profils = useLoaderData();

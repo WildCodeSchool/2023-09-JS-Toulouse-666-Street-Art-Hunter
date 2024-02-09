@@ -8,10 +8,10 @@ import { useState } from "react";
 
 import "./Profil.scss";
 
-import Crayon from "../../assets/icons/pixel-crayon.avif";
-import Trophy from "../../assets/icons/Trophy.png";
-import Tools from "../../assets/icons/tools.svg";
-import Previous from "../../assets/icons/previous.svg";
+import Crayon from "../../../../backend/public/assets/icons/pixel-crayon.avif";
+import Trophy from "../../../../backend/public/assets/icons/Trophy.png";
+import Tools from "../../../../backend/public/assets/icons/tools.svg";
+import Previous from "../../../../backend/public/assets/icons/previous.svg";
 import Title from "../../components/TitleRed-R/Title";
 import TextBlue from "../../components/TextBlue-R/TextBlue";
 

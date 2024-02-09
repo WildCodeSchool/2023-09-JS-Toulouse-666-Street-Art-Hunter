@@ -2,10 +2,10 @@ import React, { useState } from "react";
 import { useNavigate, useLoaderData } from "react-router-dom";
 import "./AdminArtworks.scss";
 
-import askToArchived from "../../assets/icons/ask_to_archived.png";
-import archived from "../../assets/icons/archived.png";
-import validate from "../../assets/icons/validate.png";
-import Previous from "../../assets/icons/previous.svg";
+import askToArchived from "../../../../backend/public/assets/icons/ask_to_archived.png";
+import archived from "../../../../backend/public/assets/icons/archived.png";
+import validate from "../../../../backend/public/assets/icons/validate.png";
+import Previous from "../../../../backend/public/assets/icons/previous.svg";
 
 function AdminArtworks() {
   const [value, setValue] = useState("");
