@@ -2,7 +2,7 @@ import React, { useState } from "react";
 import "./AdminUserDetails.scss";
 import { useLoaderData, useNavigate, useParams } from "react-router-dom";
 import LinkAdmin from "../../components/LinkAdmin/LinkAdmin";
-import Trophy from "../../assets/icons/Trophy.png";
+import Trophy from "../../../../backend/public/assets/icons/Trophy.png";
 import Title from "../../components/TitleRed-R/Title";
 
 function AdminUserDetails() {

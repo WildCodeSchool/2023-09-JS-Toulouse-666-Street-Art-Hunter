@@ -2,7 +2,7 @@ import React from "react";
 import { useNavigate } from "react-router-dom";
 import Title from "../../components/TitleRed-R/Title";
 import "./Rules.scss";
-import Previous from "../../assets/icons/previous.svg";
+import Previous from "../../../../backend/public/assets/icons/previous.svg";
 
 function Rules() {
   const navigate = useNavigate();

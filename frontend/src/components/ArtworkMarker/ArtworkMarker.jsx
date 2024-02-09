@@ -6,8 +6,8 @@ import { useLoaderData, useNavigate } from "react-router-dom";
 import "./ArtworkMarker.scss";
 
 /** Import icons */
-import artToFind from "../../assets/icons/art_to_find.png";
-import artFound from "../../assets/icons/art_found.png";
+import artToFind from "../../../../backend/public/assets/icons/art_to_find.png";
+import artFound from "../../../../backend/public/assets/icons/art_found.png";
 
 function ArtworkMarker() {
   const navigate = useNavigate();

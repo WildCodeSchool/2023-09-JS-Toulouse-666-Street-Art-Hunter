@@ -3,7 +3,7 @@ import { useNavigate } from "react-router-dom";
 
 import Map from "../../components/Map/Map";
 import "./MapPage.scss";
-import photoLogo from "../../assets/icons/pink_camera.png";
+import photoLogo from "../../../../backend/public/assets/icons/pink_camera.png";
 
 function MapPage() {
   /** Import de la fonstion navigate */

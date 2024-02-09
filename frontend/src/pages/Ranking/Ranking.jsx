@@ -2,7 +2,7 @@ import React, { useEffect, useState } from "react";
 import "./Ranking.scss";
 import { useNavigate } from "react-router-dom";
 
-import Previous from "../../assets/icons/previous.svg";
+import Previous from "../../../../backend/public/assets/icons/previous.svg";
 
 function Ranking() {
   // ********************* STATE *********************

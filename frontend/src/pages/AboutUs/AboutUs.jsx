@@ -1,10 +1,10 @@
 import React from "react";
 import "./AboutUs.scss";
-import AstroBoy from "../../assets/avatars/astro-boy.png";
-import Dino from "../../assets/avatars/dino.png";
-import Soldat from "../../assets/avatars/Soldat.png";
-import Linkedin from "../../assets/icons/linkedin-pixel.png";
-import Github from "../../assets/icons/github-pixel.png";
+import AstroBoy from "../../../../backend/public/assets/avatars/astro-boy.png";
+import Dino from "../../../../backend/public/assets/avatars/dino.png";
+import Soldat from "../../../../backend/public/assets/avatars/Soldat.png";
+import Linkedin from "../../../../backend/public/assets/icons/linkedin-pixel.png";
+import Github from "../../../../backend/public/assets/icons/github-pixel.png";
 
 function AboutUs() {
   return (

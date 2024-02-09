@@ -7,11 +7,11 @@ import {
 
 import "./ProfilAdmin.scss";
 import { useState } from "react";
-import Crayon from "../../assets/icons/pixel-crayon.avif";
-import Trophy from "../../assets/icons/Trophy.png";
-import Tools from "../../assets/icons/tools.svg";
-import Admin from "../../assets/icons/adminLogo.png";
-import Previous from "../../assets/icons/previous.svg";
+import Crayon from "../../../../backend/public/assets/icons/pixel-crayon.avif";
+import Trophy from "../../../../backend/public/assets/icons/Trophy.png";
+import Tools from "../../../../backend/public/assets/icons/tools.svg";
+import Admin from "../../../../backend/public/assets/icons/adminLogo.png";
+import Previous from "../../../../backend/public/assets/icons/previous.svg";
 import TextBlue from "../../components/TextBlue-R/TextBlue";
 import Title from "../../components/TitleRed-R/Title";
 

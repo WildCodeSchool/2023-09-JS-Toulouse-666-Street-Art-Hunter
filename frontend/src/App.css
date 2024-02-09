@@ -193,14 +193,14 @@ button {
 
 @font-face {
   font-family: "PressStart2P";
-  src: url("./assets/fonts/PressStart2P.ttf");
+  src: url("../../backend/public/assets/fonts/PressStart2P.ttf");
 }
 
 @font-face {
   font-family: "Nintendo";
-  src: url("./assets/fonts/Nintendo.ttf");
+  src: url("../../backend/public/assets/fonts/Nintendo.ttf");
 }
 @font-face {
   font-family: "PixelBit";
-  src: url("./assets/fonts/pixel-bit-advanced.ttf");
+  src: url("../../backend/public/assets/fonts/pixel-bit-advanced.ttf");
 }

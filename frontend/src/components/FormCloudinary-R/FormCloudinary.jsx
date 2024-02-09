@@ -9,9 +9,9 @@ import getCurrentFormattedDate from "../../services/utils";
 import postCloudAndPhoto from "../../services/Actions/PostCloudAndPhoto";
 import postCloudAndArtwork from "../../services/Actions/PostCloudAndArtwork";
 
-import Graffeur from "../../assets/images/graffeur.svg";
-import LogoUploader from "../../assets/images/logo-uploader.svg";
-import Previous from "../../assets/icons/previous.svg";
+import Graffeur from "../../../../backend/public/assets/images/graffeur.svg";
+import LogoUploader from "../../../../backend/public/assets/images/logo-uploader.svg";
+import Previous from "../../../../backend/public/assets/icons/previous.svg";
 
 import ModalValidation from "../ModalValidation/ModalValidation";
 

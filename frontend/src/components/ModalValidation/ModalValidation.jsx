@@ -2,8 +2,8 @@ import React from "react";
 import { useNavigate } from "react-router-dom";
 import PropTypes from "prop-types";
 import "./ModalValidation.scss";
-import Feux from "../../assets/icons/feux-1.png";
-import Feux2 from "../../assets/icons/feux-2.png";
+import Feux from "../../../../backend/public/assets/icons/feux-1.png";
+import Feux2 from "../../../../backend/public/assets/icons/feux-2.png";
 
 function ModalValidation({ setShowModal, loadingModal, text1, text2 }) {
   const navigate = useNavigate();
