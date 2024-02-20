@@ -41,12 +41,12 @@ CREATE TABLE IF NOT EXISTS `avatar_user` (
   INDEX `fk_avatar_image_has_User_avatar_image_idx` (`avatar_image_id` ASC) VISIBLE,
   CONSTRAINT `fk_avatar_image_has_User_avatar_image`
     FOREIGN KEY (`avatar_image_id`)
-    REFERENCES `street_art`.`avatar_image` (`id`)
+    REFERENCES `avatar_image` (`id`)
     ON DELETE CASCADE
     ON UPDATE CASCADE,
   CONSTRAINT `fk_avatar_image_has_User_User1`
     FOREIGN KEY (`user_id`)
-    REFERENCES `street_art`.`user` (`id`)
+    REFERENCES `user` (`id`)
     ON DELETE CASCADE
     ON UPDATE CASCADE);
 
@@ -78,14 +78,14 @@ CREATE TABLE IF NOT EXISTS `artwork` (
   INDEX `fk_artwork_publisher1_idx` (`publisher_id` ASC) VISIBLE,
   CONSTRAINT `fk_artwork_publisher1`
     FOREIGN KEY (`publisher_id`)
-    REFERENCES `street_art`.`user` (`id`)
+    REFERENCES `user` (`id`)
     ON DELETE CASCADE
     ON UPDATE CASCADE,
   `artist_id` INT,
   INDEX `fk_artwork_artist1_idx` (`artist_id` ASC) VISIBLE,
   CONSTRAINT `fk_artwork_artist1`
     FOREIGN KEY (`artist_id`)
-    REFERENCES `street_art`.`artist` (`id`)
+    REFERENCES `artist` (`id`)
     ON DELETE CASCADE
     ON UPDATE CASCADE);
 
@@ -101,12 +101,12 @@ CREATE TABLE IF NOT EXISTS `photo` (
   PRIMARY KEY (`id`),
   CONSTRAINT `fk_photo_user1`
     FOREIGN KEY (`user_id`)
-    REFERENCES `street_art`.`user` (`id`)
+    REFERENCES `user` (`id`)
     ON DELETE CASCADE
     ON UPDATE CASCADE,
   CONSTRAINT `fk_photo_artwork1`
     FOREIGN KEY (`artwork_id`)
-    REFERENCES `street_art`.`artwork` (`id`)
+    REFERENCES `artwork` (`id`)
     ON DELETE CASCADE
     ON UPDATE CASCADE
   );
