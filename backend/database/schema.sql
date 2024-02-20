@@ -3,13 +3,11 @@ SET foreign_key_checks = 0;
 -- -----------------------------------------------------
 -- Schema street_art
 -- -----------------------------------------------------
-CREATE SCHEMA IF NOT EXISTS `street_art` DEFAULT CHARACTER SET utf8 ;
-USE `street_art` ;
 
 -- -----------------------------------------------------
 -- Table USER
 -- -----------------------------------------------------
-CREATE TABLE IF NOT EXISTS `street_art`.`user` (
+CREATE TABLE IF NOT EXISTS `user` (
   `id` INT NOT NULL AUTO_INCREMENT,
   `name` VARCHAR(14) NOT NULL,
   `description` VARCHAR(255) NULL,
@@ -25,7 +23,7 @@ CREATE TABLE IF NOT EXISTS `street_art`.`user` (
 -- -----------------------------------------------------
 -- Table AVATAR_IMAGE
 -- -----------------------------------------------------
-CREATE TABLE IF NOT EXISTS `street_art`.`avatar_image` (
+CREATE TABLE IF NOT EXISTS `avatar_image` (
   `id` INT NOT NULL AUTO_INCREMENT,
   `name` VARCHAR(45) NOT NULL,
   `objective` VARCHAR(300) NULL,  
@@ -35,7 +33,7 @@ CREATE TABLE IF NOT EXISTS `street_art`.`avatar_image` (
 -- -----------------------------------------------------
 -- Table AVATAR_USER
 -- -----------------------------------------------------
-CREATE TABLE IF NOT EXISTS `street_art`.`avatar_user` (
+CREATE TABLE IF NOT EXISTS `avatar_user` (
   `avatar_image_id` INT NOT NULL,
   `user_id` INT NOT NULL,
   PRIMARY KEY (`avatar_image_id`, `user_id`),
@@ -55,7 +53,7 @@ CREATE TABLE IF NOT EXISTS `street_art`.`avatar_user` (
 -- -----------------------------------------------------
 -- Table ARTIST
 -- -----------------------------------------------------
-CREATE TABLE IF NOT EXISTS `street_art`.`artist` (
+CREATE TABLE IF NOT EXISTS `artist` (
   `id` INT NOT NULL AUTO_INCREMENT,
   `name` VARCHAR(45) NOT NULL,
   `description` VARCHAR(5000) NOT NULL,
@@ -65,7 +63,7 @@ CREATE TABLE IF NOT EXISTS `street_art`.`artist` (
 -- -----------------------------------------------------
 -- Table ARTWORK
 -- -----------------------------------------------------
-CREATE TABLE IF NOT EXISTS `street_art`.`artwork` (
+CREATE TABLE IF NOT EXISTS `artwork` (
   `id` INT PRIMARY KEY NOT NULL AUTO_INCREMENT,
   `image` LONGTEXT NOT NULL,
   `longitude` VARCHAR(30) NOT NULL,
@@ -94,7 +92,7 @@ CREATE TABLE IF NOT EXISTS `street_art`.`artwork` (
 -- -----------------------------------------------------
 -- Table PHOTO
 -- -----------------------------------------------------
-CREATE TABLE IF NOT EXISTS `street_art`.`photo` (
+CREATE TABLE IF NOT EXISTS `photo` (
   `id` INT NOT NULL AUTO_INCREMENT,
   `image` LONGTEXT NOT NULL,
   `is_validated` TINYINT(1) NOT NULL,
@@ -116,7 +114,7 @@ CREATE TABLE IF NOT EXISTS `street_art`.`photo` (
 -- -----------------------------------------------------
 -- Table ARTICLE
 -- -----------------------------------------------------
-CREATE TABLE IF NOT EXISTS `street_art`.`article` (
+CREATE TABLE IF NOT EXISTS `article` (
   `id` INT NOT NULL AUTO_INCREMENT,
   `title` VARCHAR(50) NOT NULL,
   `description` VARCHAR(5000) NOT NULL,
